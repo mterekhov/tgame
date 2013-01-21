@@ -1,4 +1,5 @@
 #import "ARenderView.h"
+#import "DrawTypes.h"
 
 //==============================================================================
 
@@ -58,18 +59,26 @@
 
 - (void) initGL
 {
-    glClearColor(0.0, 0.0, 0.0, 0.0); // Clear background color to black
-    glViewport(0, 0, self.bounds.size.width, self.bounds.size.height);
-	
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glViewport(0.0f, 0.0f, self.bounds.size.width, self.bounds.size.height);
+
+    GLfloat aspect = self.bounds.size.width / self.bounds.size.height;
+    GLfloat near = 0.1f;
+    GLfloat far = 10000.0f;
+    GLfloat fieldOfView = 45.0f;
+    GLfloat size = near * tanf(DEG_TO_RAD(fieldOfView) / 2.0f);
+    GLfloat width = size;
+    GLfloat height = size / aspect;
+    
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glFrustum(-self.bounds.size.width, self.bounds.size.width, -self.bounds.size.height, self.bounds.size.height, 0.1f, 10000.0f);
+    glFrustum(-width, width, -height, height, near, far);
     
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
     glEnable(GL_DEPTH_TEST);
-	glClearDepth(1.0);
+	glClearDepth(1.0f);
 	glDepthFunc(GL_LESS);
 
 	glEnable(GL_TEXTURE_2D);
@@ -88,6 +97,7 @@
     }
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity();
     
     _blockout->render();
 
