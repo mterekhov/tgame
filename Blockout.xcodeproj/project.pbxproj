@@ -12,7 +12,9 @@
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
 		B732727916AB20C2001DE602 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B732727716AB20C2001DE602 /* Credits.rtf */; };
 		B732727C16AB20C2001DE602 /* AAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727B16AB20C2001DE602 /* AAppDelegate.m */; };
-		B732727F16AB20C3001DE602 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B732727D16AB20C3001DE602 /* MainMenu.xib */; };
+		B732728716AB2507001DE602 /* ARenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B732728616AB2507001DE602 /* ARenderView.m */; };
+		B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7ECFF5016AD422F00946E91 /* Blockout.xib */; };
+		B7ECFF5516AD42C500946E91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ECFF5416AD42C500946E91 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,10 @@
 		B732727816AB20C2001DE602 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		B732727A16AB20C2001DE602 /* AAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAppDelegate.h; sourceTree = "<group>"; };
 		B732727B16AB20C2001DE602 /* AAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAppDelegate.m; sourceTree = "<group>"; };
-		B732727E16AB20C3001DE602 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B732728516AB2507001DE602 /* ARenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARenderView.h; sourceTree = "<group>"; };
+		B732728616AB2507001DE602 /* ARenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARenderView.m; sourceTree = "<group>"; };
+		B7ECFF5116AD422F00946E91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Blockout.xib; sourceTree = "<group>"; };
+		B7ECFF5416AD42C500946E91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7ECFF5516AD42C500946E91 /* OpenGL.framework in Frameworks */,
 				B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +52,8 @@
 		B732725916AB20C2001DE602 = {
 			isa = PBXGroup;
 			children = (
+				B7ECFF5416AD42C500946E91 /* OpenGL.framework */,
+				B732726F16AB20C2001DE602 /* Supporting Files */,
 				B732726E16AB20C2001DE602 /* Blockout */,
 				B732726716AB20C2001DE602 /* Frameworks */,
 				B732726516AB20C2001DE602 /* Products */,
@@ -63,29 +71,23 @@
 		B732726716AB20C2001DE602 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B732726816AB20C2001DE602 /* Cocoa.framework */,
-				B732726A16AB20C2001DE602 /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B732726A16AB20C2001DE602 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
 				B732726B16AB20C2001DE602 /* AppKit.framework */,
 				B732726C16AB20C2001DE602 /* CoreData.framework */,
 				B732726D16AB20C2001DE602 /* Foundation.framework */,
+				B732726816AB20C2001DE602 /* Cocoa.framework */,
 			);
-			name = "Other Frameworks";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B732726E16AB20C2001DE602 /* Blockout */ = {
 			isa = PBXGroup;
 			children = (
+				B7ECFF5016AD422F00946E91 /* Blockout.xib */,
 				B732727A16AB20C2001DE602 /* AAppDelegate.h */,
 				B732727B16AB20C2001DE602 /* AAppDelegate.m */,
-				B732727D16AB20C3001DE602 /* MainMenu.xib */,
-				B732726F16AB20C2001DE602 /* Supporting Files */,
+				B732727416AB20C2001DE602 /* main.m */,
+				B732728516AB2507001DE602 /* ARenderView.h */,
+				B732728616AB2507001DE602 /* ARenderView.m */,
 			);
 			path = Blockout;
 			sourceTree = "<group>";
@@ -95,11 +97,11 @@
 			children = (
 				B732727016AB20C2001DE602 /* Blockout-Info.plist */,
 				B732727116AB20C2001DE602 /* InfoPlist.strings */,
-				B732727416AB20C2001DE602 /* main.m */,
 				B732727616AB20C2001DE602 /* Blockout-Prefix.pch */,
 				B732727716AB20C2001DE602 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			path = Blockout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +158,7 @@
 			files = (
 				B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */,
 				B732727916AB20C2001DE602 /* Credits.rtf in Resources */,
-				B732727F16AB20C3001DE602 /* MainMenu.xib in Resources */,
+				B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +171,7 @@
 			files = (
 				B732727516AB20C2001DE602 /* main.m in Sources */,
 				B732727C16AB20C2001DE602 /* AAppDelegate.m in Sources */,
+				B732728716AB2507001DE602 /* ARenderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +194,12 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		B732727D16AB20C3001DE602 /* MainMenu.xib */ = {
+		B7ECFF5016AD422F00946E91 /* Blockout.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B732727E16AB20C3001DE602 /* en */,
+				B7ECFF5116AD422F00946E91 /* en */,
 			);
-			name = MainMenu.xib;
+			name = Blockout.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -296,6 +299,7 @@
 				B732728416AB20C3001DE602 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

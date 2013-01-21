@@ -29,7 +29,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 Landsknecht. All rights reserved.</string>
 	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
+	<string>Blockout</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
