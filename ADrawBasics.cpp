@@ -27,3 +27,11 @@ ADrawBasics::ADrawBasics()
 ADrawBasics::~ADrawBasics()
 {
 }
+
+//==============================================================================
+
+void drawCube(const GLfloat x, const GLfloat y, const GLfloat z)
+{
+}
+
+//==============================================================================

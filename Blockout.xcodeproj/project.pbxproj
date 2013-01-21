@@ -11,11 +11,12 @@
 		B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B732727116AB20C2001DE602 /* InfoPlist.strings */; };
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
 		B732727916AB20C2001DE602 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B732727716AB20C2001DE602 /* Credits.rtf */; };
-		B732727C16AB20C2001DE602 /* AAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727B16AB20C2001DE602 /* AAppDelegate.m */; };
-		B732728716AB2507001DE602 /* ARenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B732728616AB2507001DE602 /* ARenderView.m */; };
+		B732727C16AB20C2001DE602 /* AAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = B732727B16AB20C2001DE602 /* AAppDelegate.mm */; };
+		B732728716AB2507001DE602 /* ARenderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B732728616AB2507001DE602 /* ARenderView.mm */; };
 		B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7ECFF5016AD422F00946E91 /* Blockout.xib */; };
 		B7ECFF5516AD42C500946E91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ECFF5416AD42C500946E91 /* OpenGL.framework */; };
 		B7ECFF5C16AD4FDD00946E91 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */; };
+		B7ECFF6016AD5F2E00946E91 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ECFF5E16AD5F2E00946E91 /* ABlockout.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,13 +31,15 @@
 		B732727616AB20C2001DE602 /* Blockout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blockout-Prefix.pch"; sourceTree = "<group>"; };
 		B732727816AB20C2001DE602 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		B732727A16AB20C2001DE602 /* AAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAppDelegate.h; sourceTree = "<group>"; };
-		B732727B16AB20C2001DE602 /* AAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAppDelegate.m; sourceTree = "<group>"; };
+		B732727B16AB20C2001DE602 /* AAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AAppDelegate.mm; sourceTree = "<group>"; };
 		B732728516AB2507001DE602 /* ARenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARenderView.h; sourceTree = "<group>"; };
-		B732728616AB2507001DE602 /* ARenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARenderView.m; sourceTree = "<group>"; };
+		B732728616AB2507001DE602 /* ARenderView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ARenderView.mm; sourceTree = "<group>"; };
 		B7ECFF5116AD422F00946E91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Blockout.xib; sourceTree = "<group>"; };
 		B7ECFF5416AD42C500946E91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADrawBasics.cpp; sourceTree = "<group>"; };
 		B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADrawBasics.h; sourceTree = "<group>"; };
+		B7ECFF5E16AD5F2E00946E91 /* ABlockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ABlockout.cpp; sourceTree = "<group>"; };
+		B7ECFF5F16AD5F2E00946E91 /* ABlockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABlockout.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 		B732725916AB20C2001DE602 = {
 			isa = PBXGroup;
 			children = (
+				B7ECFF5D16AD5F1800946E91 /* Game */,
 				B7ECFF5916AD4FBC00946E91 /* Paintings */,
 				B7ECFF5416AD42C500946E91 /* OpenGL.framework */,
 				B732726F16AB20C2001DE602 /* Supporting Files */,
@@ -89,9 +93,9 @@
 				B732727416AB20C2001DE602 /* main.m */,
 				B7ECFF5016AD422F00946E91 /* Blockout.xib */,
 				B732727A16AB20C2001DE602 /* AAppDelegate.h */,
-				B732727B16AB20C2001DE602 /* AAppDelegate.m */,
+				B732727B16AB20C2001DE602 /* AAppDelegate.mm */,
 				B732728516AB2507001DE602 /* ARenderView.h */,
-				B732728616AB2507001DE602 /* ARenderView.m */,
+				B732728616AB2507001DE602 /* ARenderView.mm */,
 			);
 			path = Blockout;
 			sourceTree = "<group>";
@@ -115,6 +119,15 @@
 				B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */,
 			);
 			name = Paintings;
+			sourceTree = "<group>";
+		};
+		B7ECFF5D16AD5F1800946E91 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B7ECFF5E16AD5F2E00946E91 /* ABlockout.cpp */,
+				B7ECFF5F16AD5F2E00946E91 /* ABlockout.h */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,9 +196,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B732727516AB20C2001DE602 /* main.m in Sources */,
-				B732727C16AB20C2001DE602 /* AAppDelegate.m in Sources */,
-				B732728716AB2507001DE602 /* ARenderView.m in Sources */,
+				B732727C16AB20C2001DE602 /* AAppDelegate.mm in Sources */,
+				B732728716AB2507001DE602 /* ARenderView.mm in Sources */,
 				B7ECFF5C16AD4FDD00946E91 /* ADrawBasics.cpp in Sources */,
+				B7ECFF6016AD5F2E00946E91 /* ABlockout.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

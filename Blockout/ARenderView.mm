@@ -11,16 +11,36 @@
     self = [super initWithFrame:frame pixelFormat:format];
     if (self == nil)
         return nil;
+    
+    _blockout = 0;
 
     return self;
 }
 
 //==============================================================================
 
+- (void) dealloc
+{
+    if (_blockout)
+        delete _blockout;
+    
+    [super dealloc];
+}
+
+//==============================================================================
+
 - (void) initRender
 {
+    if (_blockout)
+    {
+        NSLog(@"second attempt to init render");
+        return;
+    }
+    
     [self initContext:self.pixelFormat];
     [self initGL];
+    
+    _blockout = new ABlockout();
 }
 
 //==============================================================================
@@ -61,7 +81,15 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
+    if (_blockout == 0)
+    {
+        NSLog(@"render was not inited");
+        return;
+    }
+    
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    _blockout->render();
 
 	[[NSOpenGLContext currentContext] flushBuffer];
 }
