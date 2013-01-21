@@ -58,7 +58,7 @@
 
 - (void) initGL
 {
-	glClearColor(0.0, 0.0, 0.0, 0.0); // Clear background color to black
+    glClearColor(0.0, 0.0, 0.0, 0.0); // Clear background color to black
     glViewport(0, 0, self.bounds.size.width, self.bounds.size.height);
 	
     glMatrixMode(GL_PROJECTION);

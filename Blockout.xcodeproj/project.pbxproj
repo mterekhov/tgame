@@ -40,6 +40,7 @@
 		B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADrawBasics.h; sourceTree = "<group>"; };
 		B7ECFF5E16AD5F2E00946E91 /* ABlockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ABlockout.cpp; sourceTree = "<group>"; };
 		B7ECFF5F16AD5F2E00946E91 /* ABlockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABlockout.h; sourceTree = "<group>"; };
+		B7ECFF6116AD68A000946E91 /* DrawTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +61,6 @@
 			children = (
 				B7ECFF5D16AD5F1800946E91 /* Game */,
 				B7ECFF5916AD4FBC00946E91 /* Paintings */,
-				B7ECFF5416AD42C500946E91 /* OpenGL.framework */,
 				B732726F16AB20C2001DE602 /* Supporting Files */,
 				B732726E16AB20C2001DE602 /* Blockout */,
 				B732726716AB20C2001DE602 /* Frameworks */,
@@ -79,6 +79,7 @@
 		B732726716AB20C2001DE602 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7ECFF5416AD42C500946E91 /* OpenGL.framework */,
 				B732726B16AB20C2001DE602 /* AppKit.framework */,
 				B732726C16AB20C2001DE602 /* CoreData.framework */,
 				B732726D16AB20C2001DE602 /* Foundation.framework */,
@@ -117,6 +118,7 @@
 			children = (
 				B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */,
 				B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */,
+				B7ECFF6116AD68A000946E91 /* DrawTypes.h */,
 			);
 			name = Paintings;
 			sourceTree = "<group>";
