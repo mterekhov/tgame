@@ -4,4 +4,5 @@
 //==============================================================================
 
 @interface ARenderView : NSOpenGLView
+- (void) initRender;
 @end

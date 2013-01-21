@@ -15,6 +15,7 @@
 		B732728716AB2507001DE602 /* ARenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B732728616AB2507001DE602 /* ARenderView.m */; };
 		B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7ECFF5016AD422F00946E91 /* Blockout.xib */; };
 		B7ECFF5516AD42C500946E91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ECFF5416AD42C500946E91 /* OpenGL.framework */; };
+		B7ECFF5C16AD4FDD00946E91 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		B732728616AB2507001DE602 /* ARenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARenderView.m; sourceTree = "<group>"; };
 		B7ECFF5116AD422F00946E91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Blockout.xib; sourceTree = "<group>"; };
 		B7ECFF5416AD42C500946E91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADrawBasics.cpp; sourceTree = "<group>"; };
+		B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADrawBasics.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 		B732725916AB20C2001DE602 = {
 			isa = PBXGroup;
 			children = (
+				B7ECFF5916AD4FBC00946E91 /* Paintings */,
 				B7ECFF5416AD42C500946E91 /* OpenGL.framework */,
 				B732726F16AB20C2001DE602 /* Supporting Files */,
 				B732726E16AB20C2001DE602 /* Blockout */,
@@ -82,10 +86,10 @@
 		B732726E16AB20C2001DE602 /* Blockout */ = {
 			isa = PBXGroup;
 			children = (
+				B732727416AB20C2001DE602 /* main.m */,
 				B7ECFF5016AD422F00946E91 /* Blockout.xib */,
 				B732727A16AB20C2001DE602 /* AAppDelegate.h */,
 				B732727B16AB20C2001DE602 /* AAppDelegate.m */,
-				B732727416AB20C2001DE602 /* main.m */,
 				B732728516AB2507001DE602 /* ARenderView.h */,
 				B732728616AB2507001DE602 /* ARenderView.m */,
 			);
@@ -102,6 +106,15 @@
 			);
 			name = "Supporting Files";
 			path = Blockout;
+			sourceTree = "<group>";
+		};
+		B7ECFF5916AD4FBC00946E91 /* Paintings */ = {
+			isa = PBXGroup;
+			children = (
+				B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */,
+				B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */,
+			);
+			name = Paintings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +185,7 @@
 				B732727516AB20C2001DE602 /* main.m in Sources */,
 				B732727C16AB20C2001DE602 /* AAppDelegate.m in Sources */,
 				B732728716AB2507001DE602 /* ARenderView.m in Sources */,
+				B7ECFF5C16AD4FDD00946E91 /* ADrawBasics.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,13 +30,13 @@
 		NSOpenGLPFAAccelerated,
 		0
 	};
-	NSOpenGLPixelFormat* pixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes: attrs];
+	NSOpenGLPixelFormat* pixelFormat = [[[NSOpenGLPixelFormat alloc] initWithAttributes: attrs] autorelease];
+    NSOpenGLPixelFormat* pixelFormat2 = [ARenderView defaultPixelFormat];
+
     ARenderView* view = [[[ARenderView alloc] initWithFrame: _window.frame
                                                 pixelFormat: pixelFormat] autorelease];
-//                                                pixelFormat: [ARenderView defaultPixelFormat]] autorelease];
-	[pixelFormat release];
-	pixelFormat = nil;
     [_window setContentView:view];
+    [view initRender];
 }
 
 @end
