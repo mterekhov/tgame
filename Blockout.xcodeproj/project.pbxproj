@@ -61,8 +61,8 @@
 			children = (
 				B7ECFF5D16AD5F1800946E91 /* Game */,
 				B7ECFF5916AD4FBC00946E91 /* Paintings */,
-				B732726F16AB20C2001DE602 /* Supporting Files */,
 				B732726E16AB20C2001DE602 /* Blockout */,
+				B732726F16AB20C2001DE602 /* Supporting Files */,
 				B732726716AB20C2001DE602 /* Frameworks */,
 				B732726516AB20C2001DE602 /* Products */,
 			);
