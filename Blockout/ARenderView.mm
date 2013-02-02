@@ -49,6 +49,7 @@
 
     [self initContext:self.pixelFormat];
     [self initGL];
+    _animationInterval = 1.0f / 60.0f;
     [self startAnimation];
     
     _openGLInited = YES;

@@ -10,6 +10,8 @@
 		4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E516BD2F12008B1E74 /* ABlockout.cpp */; };
 		4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E816BD2F27008B1E74 /* ACrafter.cpp */; };
 		4C8000EE16BD2F27008B1E74 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */; };
+		4C8000F116BD3D35008B1E74 /* AWell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000EF16BD3D35008B1E74 /* AWell.cpp */; };
+		4C80010016BD4F81008B1E74 /* ARObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000FF16BD4F81008B1E74 /* ARObject.cpp */; };
 		B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732726816AB20C2001DE602 /* Cocoa.framework */; };
 		B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B732727116AB20C2001DE602 /* InfoPlist.strings */; };
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
@@ -28,6 +30,10 @@
 		4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ADrawBasics.cpp; path = Blockout/ADrawBasics.cpp; sourceTree = "<group>"; };
 		4C8000EB16BD2F27008B1E74 /* ADrawBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADrawBasics.h; path = Blockout/ADrawBasics.h; sourceTree = "<group>"; };
 		4C8000EC16BD2F27008B1E74 /* DrawTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawTypes.h; path = Blockout/DrawTypes.h; sourceTree = "<group>"; };
+		4C8000EF16BD3D35008B1E74 /* AWell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AWell.cpp; path = Blockout/AWell.cpp; sourceTree = "<group>"; };
+		4C8000F016BD3D35008B1E74 /* AWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWell.h; path = Blockout/AWell.h; sourceTree = "<group>"; };
+		4C8000F416BD43F7008B1E74 /* ARObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARObject.h; path = Blockout/ARObject.h; sourceTree = "<group>"; };
+		4C8000FF16BD4F81008B1E74 /* ARObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ARObject.cpp; path = Blockout/ARObject.cpp; sourceTree = "<group>"; };
 		B732726416AB20C2001DE602 /* Blockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732726816AB20C2001DE602 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B732726B16AB20C2001DE602 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -59,6 +65,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C8000F616BD43FD008B1E74 /* RenderObjects */ = {
+			isa = PBXGroup;
+			children = (
+				4C8000FF16BD4F81008B1E74 /* ARObject.cpp */,
+				4C8000F416BD43F7008B1E74 /* ARObject.h */,
+				4C8000EF16BD3D35008B1E74 /* AWell.cpp */,
+				4C8000F016BD3D35008B1E74 /* AWell.h */,
+			);
+			name = RenderObjects;
+			sourceTree = "<group>";
+		};
 		B732725916AB20C2001DE602 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +146,7 @@
 		B7ECFF5D16AD5F1800946E91 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4C8000F616BD43FD008B1E74 /* RenderObjects */,
 				4C8000E816BD2F27008B1E74 /* ACrafter.cpp */,
 				4C8000E916BD2F27008B1E74 /* ACrafter.h */,
 				4C8000E516BD2F12008B1E74 /* ABlockout.cpp */,
@@ -208,6 +226,8 @@
 				4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */,
 				4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */,
 				4C8000EE16BD2F27008B1E74 /* ADrawBasics.cpp in Sources */,
+				4C8000F116BD3D35008B1E74 /* AWell.cpp in Sources */,
+				4C80010016BD4F81008B1E74 /* ARObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

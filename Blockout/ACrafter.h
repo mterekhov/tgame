@@ -3,11 +3,30 @@
 
 //==============================================================================
 
+#include "ARObject.h"
+
+#include <list>
+
+//==============================================================================
+
+typedef std::list<ARObject*> TRObjectsList;
+typedef TRObjectsList::iterator TRObjectsListIter;
+typedef TRObjectsList::const_iterator TRObjectsListConstIter;
+
+//==============================================================================
+
 class ACrafter
 {
+private:
+    TRObjectsList _renderList;
+    
+    void createWell();
+    void addObjectForRender(ARObject* object);
+    void clearRenderList();
+    
 public:
     ACrafter();
-    ~ACrafter();
+    virtual ~ACrafter();
     
     void craft();
 };
