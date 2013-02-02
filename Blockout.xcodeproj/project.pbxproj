@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E516BD2F12008B1E74 /* ABlockout.cpp */; };
+		4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E816BD2F27008B1E74 /* ACrafter.cpp */; };
+		4C8000EE16BD2F27008B1E74 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */; };
 		B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732726816AB20C2001DE602 /* Cocoa.framework */; };
 		B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B732727116AB20C2001DE602 /* InfoPlist.strings */; };
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
@@ -15,11 +18,16 @@
 		B732728716AB2507001DE602 /* ARenderView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B732728616AB2507001DE602 /* ARenderView.mm */; };
 		B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7ECFF5016AD422F00946E91 /* Blockout.xib */; };
 		B7ECFF5516AD42C500946E91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ECFF5416AD42C500946E91 /* OpenGL.framework */; };
-		B7ECFF5C16AD4FDD00946E91 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */; };
-		B7ECFF6016AD5F2E00946E91 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ECFF5E16AD5F2E00946E91 /* ABlockout.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C8000E516BD2F12008B1E74 /* ABlockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlockout.cpp; path = Blockout/ABlockout.cpp; sourceTree = "<group>"; };
+		4C8000E616BD2F12008B1E74 /* ABlockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlockout.h; path = Blockout/ABlockout.h; sourceTree = "<group>"; };
+		4C8000E816BD2F27008B1E74 /* ACrafter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ACrafter.cpp; path = Blockout/ACrafter.cpp; sourceTree = "<group>"; };
+		4C8000E916BD2F27008B1E74 /* ACrafter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACrafter.h; path = Blockout/ACrafter.h; sourceTree = "<group>"; };
+		4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ADrawBasics.cpp; path = Blockout/ADrawBasics.cpp; sourceTree = "<group>"; };
+		4C8000EB16BD2F27008B1E74 /* ADrawBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADrawBasics.h; path = Blockout/ADrawBasics.h; sourceTree = "<group>"; };
+		4C8000EC16BD2F27008B1E74 /* DrawTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawTypes.h; path = Blockout/DrawTypes.h; sourceTree = "<group>"; };
 		B732726416AB20C2001DE602 /* Blockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732726816AB20C2001DE602 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B732726B16AB20C2001DE602 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -36,11 +44,6 @@
 		B732728616AB2507001DE602 /* ARenderView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ARenderView.mm; sourceTree = "<group>"; };
 		B7ECFF5116AD422F00946E91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Blockout.xib; sourceTree = "<group>"; };
 		B7ECFF5416AD42C500946E91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADrawBasics.cpp; sourceTree = "<group>"; };
-		B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADrawBasics.h; sourceTree = "<group>"; };
-		B7ECFF5E16AD5F2E00946E91 /* ABlockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ABlockout.cpp; sourceTree = "<group>"; };
-		B7ECFF5F16AD5F2E00946E91 /* ABlockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABlockout.h; sourceTree = "<group>"; };
-		B7ECFF6116AD68A000946E91 /* DrawTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +119,9 @@
 		B7ECFF5916AD4FBC00946E91 /* Paintings */ = {
 			isa = PBXGroup;
 			children = (
-				B7ECFF5A16AD4FDD00946E91 /* ADrawBasics.cpp */,
-				B7ECFF5B16AD4FDD00946E91 /* ADrawBasics.h */,
-				B7ECFF6116AD68A000946E91 /* DrawTypes.h */,
+				4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */,
+				4C8000EB16BD2F27008B1E74 /* ADrawBasics.h */,
+				4C8000EC16BD2F27008B1E74 /* DrawTypes.h */,
 			);
 			name = Paintings;
 			sourceTree = "<group>";
@@ -126,8 +129,10 @@
 		B7ECFF5D16AD5F1800946E91 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				B7ECFF5E16AD5F2E00946E91 /* ABlockout.cpp */,
-				B7ECFF5F16AD5F2E00946E91 /* ABlockout.h */,
+				4C8000E816BD2F27008B1E74 /* ACrafter.cpp */,
+				4C8000E916BD2F27008B1E74 /* ACrafter.h */,
+				4C8000E516BD2F12008B1E74 /* ABlockout.cpp */,
+				4C8000E616BD2F12008B1E74 /* ABlockout.h */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -200,8 +205,9 @@
 				B732727516AB20C2001DE602 /* main.m in Sources */,
 				B732727C16AB20C2001DE602 /* AAppDelegate.mm in Sources */,
 				B732728716AB2507001DE602 /* ARenderView.mm in Sources */,
-				B7ECFF5C16AD4FDD00946E91 /* ADrawBasics.cpp in Sources */,
-				B7ECFF6016AD5F2E00946E91 /* ABlockout.cpp in Sources */,
+				4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */,
+				4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */,
+				4C8000EE16BD2F27008B1E74 /* ADrawBasics.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

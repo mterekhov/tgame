@@ -1,6 +1,9 @@
 #include "ABlockout.h"
 #include "ADrawBasics.h"
 
+#include <stdio.h>
+#include <time.h>
+
 //==============================================================================
 
 ABlockout::ABlockout()
@@ -20,12 +23,13 @@ void ABlockout::render()
     //  draw without textures
     SPoint originPoint = {0.0f, 0.0f, 0.0f};
     
+    glPushMatrix();
     glTranslatef(0.0f, 5.0f, 0.0f);
     
     ADrawBasics::drawOrigin(originPoint);
     ADrawBasics::drawGrid(50.0f, 50.0f);
-
+    glPopMatrix();
     
-//    glTranslatef(0.0f, 5.0f, 0.0f);
-    //  draw with textures
+    _crafter.craft();
+    printf("%i rendering\n", time(0));
 }

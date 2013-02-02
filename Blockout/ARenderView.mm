@@ -7,13 +7,15 @@
 
 //==============================================================================
 
+#pragma mark - View lifecycle -
+
+//==============================================================================
+
 - (id)initWithFrame:(NSRect)frame pixelFormat:(NSOpenGLPixelFormat*)format
 {
     self = [super initWithFrame:frame pixelFormat:format];
     if (self == nil)
         return nil;
-    
-    _blockout = 0;
 
     return self;
 }
@@ -22,32 +24,43 @@
 
 - (void) dealloc
 {
-    if (_blockout)
-        delete _blockout;
-    
+	[self stopAnimation];
     [super dealloc];
 }
 
 //==============================================================================
 
+- (void) viewDidEndLiveResize
+{
+	[self stopAnimation];
+    [self updateScreenSize:self.frame.size.width screenHeight:self.frame.size.height];
+    [self startAnimation];
+}
+
+//==============================================================================
+
+#pragma mark - OpenGL setup -
+
+//==============================================================================
+
 - (void) initRender
 {
-    if (_blockout)
-    {
-        NSLog(@"second attempt to init render");
-        return;
-    }
-    
+    _openGLInited = NO;
+
     [self initContext:self.pixelFormat];
     [self initGL];
+    [self startAnimation];
     
-    _blockout = new ABlockout();
+    _openGLInited = YES;
 }
 
 //==============================================================================
 
 - (void) initContext:(NSOpenGLPixelFormat*)format
 {
+    if (_openGLInited == YES)
+        return;
+    
 	NSOpenGLContext* viewContext = [[NSOpenGLContext alloc] initWithFormat: format
                                                               shareContext: nil];
     [self setOpenGLContext: viewContext];
@@ -59,10 +72,29 @@
 
 - (void) initGL
 {
+    if (_openGLInited == YES)
+        return;
+    
+    [self updateScreenSize:self.bounds.size.width screenHeight:self.bounds.size.height];
+    
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glViewport(0.0f, 0.0f, self.bounds.size.width, self.bounds.size.height);
+    
+    glEnable(GL_DEPTH_TEST);
+	glClearDepth(1.0f);
+	glDepthFunc(GL_LESS);
+    
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_CULL_FACE);
+	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
+}
 
-    GLfloat aspect = self.bounds.size.width / self.bounds.size.height;
+//==============================================================================
+
+- (void) updateScreenSize:(GLfloat) screenWidth screenHeight: (GLfloat) screenHeight
+{
+    glViewport(0.0f, 0.0f, screenWidth, screenHeight);
+    
+    GLfloat aspect = screenWidth / screenHeight;
     GLfloat near = 0.1f;
     GLfloat far = 10000.0f;
     GLfloat fieldOfView = 45.0f;
@@ -76,32 +108,50 @@
     
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-
-    glEnable(GL_DEPTH_TEST);
-	glClearDepth(1.0f);
-	glDepthFunc(GL_LESS);
-
-	glEnable(GL_TEXTURE_2D);
-	glEnable(GL_CULL_FACE);
-	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
 }
 
 //==============================================================================
 
-- (void)drawRect:(NSRect)dirtyRect
+- (void) renderFrame
 {
-    if (_blockout == 0)
-    {
-        NSLog(@"render was not inited");
-        return;
-    }
-    
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glLoadIdentity();
     
-    _blockout->render();
+    _blockout.render();
 
 	[[NSOpenGLContext currentContext] flushBuffer];
+}
+
+//==============================================================================
+
+#pragma mark - Animation timer -
+
+//==============================================================================
+
+- (void)startAnimation
+{
+	_animationTimer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval target:self selector:@selector(renderFrame) userInfo:nil repeats:YES];
+	_animationStarted = [NSDate timeIntervalSinceReferenceDate];
+}
+
+//==============================================================================
+
+- (void)stopAnimation
+{
+	[_animationTimer invalidate];
+	_animationTimer = nil;
+}
+
+//==============================================================================
+
+- (void)setAnimationInterval:(NSTimeInterval)interval
+{
+	_animationInterval = interval;
+	
+	if (_animationTimer)
+    {
+		[self stopAnimation];
+		[self startAnimation];
+	}
 }
 
 //==============================================================================

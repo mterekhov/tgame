@@ -6,34 +6,6 @@ const GLfloat ADrawBasics::scale = 1.0f;
 
 //==============================================================================
 
-ADrawBasics* ADrawBasics::_basics;
-
-//==============================================================================
-
-ADrawBasics& ADrawBasics::instance()
-{
-    if (_basics == 0)
-    {
-        _basics = new ADrawBasics();
-    }
-    
-    return *_basics;
-}
-
-//==============================================================================
-
-ADrawBasics::ADrawBasics()
-{
-}
-
-//==============================================================================
-
-ADrawBasics::~ADrawBasics()
-{
-}
-
-//==============================================================================
-
 void ADrawBasics::drawCube(const GLfloat x, const GLfloat y, const GLfloat z)
 {
 }
