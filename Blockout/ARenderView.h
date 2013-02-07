@@ -1,5 +1,4 @@
 #import <Cocoa/Cocoa.h>
-#import <OpenGL/OpenGL.h>
 
 #import "ABlockout.h"
 

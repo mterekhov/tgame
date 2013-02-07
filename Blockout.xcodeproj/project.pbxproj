@@ -15,6 +15,7 @@
 		4CB4E65316BEA6F400CC9FA4 /* AVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */; };
 		4CC85D6A16C3FE5400B961AB /* AColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CC85D6816C3FE5400B961AB /* AColor.cpp */; };
 		4CC85D6D16C4027100B961AB /* AOpenGLState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */; };
+		4CC85D6F16C409A600B961AB /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CC85D6E16C409A600B961AB /* readme.txt */; };
 		B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732726816AB20C2001DE602 /* Cocoa.framework */; };
 		B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B732727116AB20C2001DE602 /* InfoPlist.strings */; };
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
@@ -43,6 +44,7 @@
 		4CC85D6916C3FE5400B961AB /* AColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AColor.h; path = Blockout/AColor.h; sourceTree = "<group>"; };
 		4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AOpenGLState.cpp; path = Blockout/AOpenGLState.cpp; sourceTree = "<group>"; };
 		4CC85D6C16C4027100B961AB /* AOpenGLState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOpenGLState.h; path = Blockout/AOpenGLState.h; sourceTree = "<group>"; };
+		4CC85D6E16C409A600B961AB /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		B732726416AB20C2001DE602 /* Blockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732726816AB20C2001DE602 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B732726B16AB20C2001DE602 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -137,6 +139,7 @@
 				B732727116AB20C2001DE602 /* InfoPlist.strings */,
 				B732727616AB20C2001DE602 /* Blockout-Prefix.pch */,
 				B732727716AB20C2001DE602 /* Credits.rtf */,
+				4CC85D6E16C409A600B961AB /* readme.txt */,
 			);
 			name = "Supporting Files";
 			path = Blockout;
@@ -225,6 +228,7 @@
 				B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */,
 				B732727916AB20C2001DE602 /* Credits.rtf in Resources */,
 				B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */,
+				4CC85D6F16C409A600B961AB /* readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

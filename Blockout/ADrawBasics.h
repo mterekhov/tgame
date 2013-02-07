@@ -3,9 +3,6 @@
 
 //==============================================================================
 
-#include <OpenGL/OpenGL.h>
-#include <OpenGL/gl.h>
-
 #include "DrawTypes.h"
 #include "AVector.h"
 

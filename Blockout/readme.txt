@@ -1,0 +1,1 @@
+- kill all the glColor calls except the management class
