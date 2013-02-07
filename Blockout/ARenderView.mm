@@ -1,5 +1,6 @@
 #import "ARenderView.h"
 #import "DrawTypes.h"
+#import "AOpenGLState.h"
 
 //==============================================================================
 
@@ -77,8 +78,9 @@
         return;
     
     [self updateScreenSize:self.bounds.size.width screenHeight:self.bounds.size.height];
-    
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+    //  call shared to create instance and init some OpenGL pars;
+    AOpenGLState::shared();
     
     glEnable(GL_DEPTH_TEST);
 	glClearDepth(1.0f);

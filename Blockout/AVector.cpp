@@ -1,10 +1,11 @@
 #include <math.h>
 
 #include "AVector.h"
+#include "DrawTypes.h"
 
 //==============================================================================
 
-AVector::AVector() : x(0), y(0), z(0)
+AVector::AVector() : x(0.0f), y(0.0f), z(0.0f)
 {
 }
 
@@ -34,7 +35,7 @@ AVector::~AVector()
 void AVector::normalize()
 {
     GLfloat len = x * x + y * y + z * z;
-    if (len != 0)
+    if (len < FLOAT_PRECISION)
     {
         x /= sqrtf(len);
         y /= sqrtf(len);
