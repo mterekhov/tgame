@@ -24,10 +24,12 @@ void ABlockout::render()
     SPoint originPoint = {0.0f, 0.0f, 0.0f};
     
     glPushMatrix();
-    glTranslatef(0.0f, -1.0f, 0.0f);
-//    ADrawBasics::drawOrigin(originPoint);
-//    ADrawBasics::drawGrid(50.0f, 50.0f);
-    glPopMatrix();
+    
+    ADrawBasics::installCamera(AVector(3.0f, 5.0f, 6.0f), AVector(0.0f, 0.0f, 0.0f), AVector(0.0f, 1.0f, 0.0f));
+    ADrawBasics::drawOrigin(originPoint);
+    ADrawBasics::drawGrid(50.0f, 50.0f);
     
     _crafter.craft();
+    
+    glPopMatrix();
 }

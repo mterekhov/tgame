@@ -1,5 +1,5 @@
-#ifndef Blockout_DrawTypes_h
-#define Blockout_DrawTypes_h
+#ifndef __Blockout__AVector__
+#define __Blockout__AVector__
 
 //==============================================================================
 
@@ -7,13 +7,16 @@
 
 //==============================================================================
 
-#define DEG_TO_RAD(deg)	((deg) * M_PI / 180.0f)
-#define RAD_TO_DEG(rad) ((rad) * 180.0f / M_PI)
-
-//==============================================================================
-
-struct SPoint
+class AVector
 {
+public:
+    AVector();
+    AVector(const GLfloat x, const GLfloat y, const GLfloat z);
+    AVector(const AVector& vector);
+    ~AVector();
+    
+    void normalize();
+
     GLfloat x;
     GLfloat y;
     GLfloat z;

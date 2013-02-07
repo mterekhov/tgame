@@ -87,6 +87,7 @@
 	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_CULL_FACE);
 	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
+    glEnableClientState(GL_VERTEX_ARRAY);
 }
 
 //==============================================================================
