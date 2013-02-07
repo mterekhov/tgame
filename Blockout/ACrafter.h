@@ -20,14 +20,14 @@ class ACrafter
 private:
     TRObjectsList _renderList;
     
-    void createWell();
-    void addObjectForRender(ARObject* object);
     void clearRenderList();
     
 public:
     ACrafter();
     virtual ~ACrafter();
     
+    void addObjectForRender(ARObject* object);
+
     void craft();
 };
 

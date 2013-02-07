@@ -5,6 +5,7 @@
 
 #include "DrawTypes.h"
 #include "ARObject.h"
+#include "AColor.h"
 
 //==============================================================================
 
@@ -19,7 +20,8 @@ public:
     GLfloat wellHeight;
     GLfloat wellDepth;
     GLfloat wellCellSize;
-
+    
+    AColor color;
 
     AWell();
     AWell(const GLfloat width, const GLfloat height, const GLfloat depth);
