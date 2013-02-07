@@ -1,5 +1,6 @@
 #include "ABlockout.h"
 #include "ADrawBasics.h"
+#include "AOpenGLState.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -20,10 +21,10 @@ ABlockout::~ABlockout()
 
 void ABlockout::render()
 {
-    //  draw without textures
+    AOpenGLState* oglState = AOpenGLState::shared();
     SPoint originPoint = {0.0f, 0.0f, 0.0f};
     
-    glPushMatrix();
+    oglState->pushMarices();
     
     ADrawBasics::installCamera(AVector(3.0f, 5.0f, 6.0f), AVector(0.0f, 0.0f, 0.0f), AVector(0.0f, 1.0f, 0.0f));
     ADrawBasics::drawOrigin(originPoint);
@@ -31,5 +32,5 @@ void ABlockout::render()
     
     _crafter.craft();
     
-    glPopMatrix();
+    oglState->popMarices();
 }

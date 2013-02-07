@@ -148,12 +148,14 @@
 		B7ECFF5916AD4FBC00946E91 /* Paintings */ = {
 			isa = PBXGroup;
 			children = (
+				4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */,
+				4C8000EB16BD2F27008B1E74 /* ADrawBasics.h */,
+				4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */,
+				4CC85D6C16C4027100B961AB /* AOpenGLState.h */,
 				4CC85D6816C3FE5400B961AB /* AColor.cpp */,
 				4CC85D6916C3FE5400B961AB /* AColor.h */,
 				4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */,
 				4CB4E65216BEA6F400CC9FA4 /* AVector.h */,
-				4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */,
-				4C8000EB16BD2F27008B1E74 /* ADrawBasics.h */,
 				4C8000EC16BD2F27008B1E74 /* DrawTypes.h */,
 			);
 			name = Paintings;
@@ -167,8 +169,6 @@
 				4C8000E916BD2F27008B1E74 /* ACrafter.h */,
 				4C8000E516BD2F12008B1E74 /* ABlockout.cpp */,
 				4C8000E616BD2F12008B1E74 /* ABlockout.h */,
-				4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */,
-				4CC85D6C16C4027100B961AB /* AOpenGLState.h */,
 			);
 			name = Game;
 			sourceTree = "<group>";

@@ -29,6 +29,13 @@ public:
     
     AColor drawColor() const;
     void drawColor(const AColor& color);
+
+    void frustumSetup(const GLfloat screenWidth, const GLfloat screenHeight);
+    
+    void pushMarices();
+    void popMarices();
+    
+    void clear(GLbitfield mask);
 };
 
 //==============================================================================

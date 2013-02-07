@@ -1,6 +1,5 @@
 #include "ADrawBasics.h"
-
-#include <math.h>
+#include "AOpenGLState.h"
 
 //==============================================================================
 
@@ -33,23 +32,26 @@ void ADrawBasics::drawLine(const SPoint& p1, const SPoint& p2)
 
 void ADrawBasics::drawOrigin(const SPoint& location)
 {
-    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
+    AOpenGLState* oglInstance = AOpenGLState::shared();
+    AColor color = oglInstance->drawColor();
+    
+    oglInstance->drawColor(AColor::redColor());
     SPoint tmpPoint = {location.x + scale, location.y, location.z};
     drawLine(location, tmpPoint);
     
-    glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
+    oglInstance->drawColor(AColor::greenColor());
     tmpPoint.x = location.x;
     tmpPoint.y = location.y + scale;
     tmpPoint.z = location.z;
     drawLine(location, tmpPoint);
     
-    glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
+    oglInstance->drawColor(AColor::blackColor());
     tmpPoint.x = location.x;
     tmpPoint.y = location.y;
     tmpPoint.z = location.z + scale;
     drawLine(location, tmpPoint);
     
-    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    oglInstance->drawColor(color);
 }
 
 //==============================================================================
