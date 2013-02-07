@@ -45,7 +45,7 @@ void ADrawBasics::drawOrigin(const SPoint& location)
     tmpPoint.z = location.z;
     drawLine(location, tmpPoint);
     
-    oglInstance->drawColor(AColor::blackColor());
+    oglInstance->drawColor(AColor::blueColor());
     tmpPoint.x = location.x;
     tmpPoint.y = location.y;
     tmpPoint.z = location.z + scale;
@@ -58,6 +58,10 @@ void ADrawBasics::drawOrigin(const SPoint& location)
 
 void ADrawBasics::drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber)
 {
+    AOpenGLState* oglInstance = AOpenGLState::shared();
+    AColor color = oglInstance->drawColor();
+
+    oglInstance->drawColor(AColor::whiteColor());
     for (GLfloat i = -50.0f; i < 50.0f; i+= 1.0f)
     {
         SPoint p1 = {-50.0f * scale, 0.0f, i * scale};
@@ -71,6 +75,8 @@ void ADrawBasics::drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber
         SPoint p2 = {i * scale, 0.0f, 50.0f * scale};
         ADrawBasics::drawLine(p1, p2);
     }
+
+    oglInstance->drawColor(color);
 }
 
 //==============================================================================
