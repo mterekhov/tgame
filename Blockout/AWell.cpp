@@ -6,13 +6,13 @@
 
 //==============================================================================
 
-AWell::AWell(const GLfloat width, const GLfloat height, const GLfloat depth) : ARObject(), wellWidth(width), wellHeight(height), wellDepth(depth), wellCellSize(2.0f)
+AWell::AWell(const GLfloat width, const GLfloat height, const GLfloat depth) : ARObject(), wellWidth(width), wellHeight(height), wellDepth(depth), wellCellSize(1.0f)
 {
 }
 
 //==============================================================================
 
-AWell::AWell() : ARObject(), wellWidth(0.0f), wellHeight(0.0f), wellDepth(0.0f), wellCellSize(2.0f)
+AWell::AWell() : ARObject(), wellWidth(0.0f), wellHeight(0.0f), wellDepth(0.0f), wellCellSize(1.0f)
 {
 }
 
@@ -37,7 +37,7 @@ void AWell::renderHull()
     
     AColor color = oglInstance->drawColor();
     
-    oglInstance->drawColor(AColor::redColor());
+    oglInstance->drawColor(AColor::greenColor());
     for (GLfloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
     {
         SPoint p1 = {0.0f,                     0.0f, i * wellCellSize};

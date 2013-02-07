@@ -8,7 +8,7 @@
 
 //==============================================================================
 
-ABlockout::ABlockout() : _wellWidth(10.0f), _wellHeight(10.0f), _wellDepth(25.0f)
+ABlockout::ABlockout() : _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f)
 {
     AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
     _crafter.addObjectForRender(well);
@@ -29,7 +29,9 @@ void ABlockout::render()
     
     oglState->pushMarices();
 
-    ADrawBasics::installCamera(AVector(10.0f, 50.0f, 5.0f), AVector(0.0f, 0.0f, 0.0f), AVector(0.0f, 1.0f, 0.0f));
+    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
+                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
+                               AVector(1.0f, 0.0f, 0.0f));
     ADrawBasics::drawOrigin(originPoint);
 //    ADrawBasics::drawGrid(50.0f, 50.0f);
 
