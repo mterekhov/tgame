@@ -2,6 +2,7 @@
 #include "ADrawBasics.h"
 #include "AOpenGLState.h"
 #include "AWell.h"
+#include "ABlockFactory.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -11,7 +12,10 @@
 ABlockout::ABlockout() : _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f)
 {
     AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
-    _crafter.addObjectForRender(well);
+//    _crafter.addObjectForRender(well);
+    ABlock* block = ABlockFactory::createFormation1();
+    block->color(AColor::redColor());
+    _crafter.addObjectForRender(block);
 }
 
 //==============================================================================
@@ -38,8 +42,8 @@ void ABlockout::render()
     ADrawBasics::drawOrigin(originPoint, 1.0f);
     ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
-//    _crafter.craft();
-    ADrawBasics::drawCarcasedCube(0, 0, 0, 2.0f);
+    _crafter.craft();
+//    ADrawBasics::drawCarcasedCube(1.0f, 0.0f, 0.0f, 1.0f);
     
     oglState->popMarices();
 }

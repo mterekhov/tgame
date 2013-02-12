@@ -16,7 +16,7 @@ enum EDataState
 
 //==============================================================================
 
-class AData
+class AFormation
 {
 private:
     unsigned int _width;
@@ -25,15 +25,16 @@ private:
     TData* _data;
 
 public:
-    AData(const unsigned int width, const unsigned int height, const unsigned int count);
-    ~AData();
+    AFormation(const unsigned int width, const unsigned int height, const unsigned int count);
+    ~AFormation();
     
     unsigned int height() const;
     unsigned int width() const;
     unsigned int levelsCount() const;
     TData item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const;
+    void item(const unsigned int row, const unsigned int column, const unsigned int levelIndex, const TData& value);
     
-    bool doesInbounds(const AData* data);
+    bool doesInbounds(const AFormation* data);
 };
 
 //==============================================================================

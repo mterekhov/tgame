@@ -4,7 +4,7 @@
 
 ALogic::ALogic(const unsigned int width, const unsigned int height, const unsigned int levelIndex)
 {
-    _data = new AData(width, height, levelIndex);
+    _data = new AFormation(width, height, levelIndex);
 }
 
 //==============================================================================
@@ -16,7 +16,7 @@ ALogic::~ALogic()
 
 //==============================================================================
 
-bool ALogic::collisions(const AData* forCompare, const APoint& pos)
+bool ALogic::collisions(const AFormation* forCompare, const APoint& pos)
 {
     if (!_data->doesInbounds(forCompare))
         return false;

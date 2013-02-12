@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C14891316C53ED10014683F /* AData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891116C53ED10014683F /* AData.cpp */; };
+		4C14891316C53ED10014683F /* AFormation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891116C53ED10014683F /* AFormation.cpp */; };
 		4C14891616C547130014683F /* ABlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891416C547130014683F /* ABlock.cpp */; };
+		4C52515D16CA88AC002A5B42 /* ABlockFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C52515B16CA88AC002A5B42 /* ABlockFactory.cpp */; };
 		4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E516BD2F12008B1E74 /* ABlockout.cpp */; };
 		4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E816BD2F27008B1E74 /* ACrafter.cpp */; };
 		4C8000EE16BD2F27008B1E74 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */; };
@@ -31,11 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C14891116C53ED10014683F /* AData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AData.cpp; path = Blockout/AData.cpp; sourceTree = "<group>"; };
-		4C14891216C53ED10014683F /* AData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AData.h; path = Blockout/AData.h; sourceTree = "<group>"; };
+		4C14891116C53ED10014683F /* AFormation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AFormation.cpp; path = Blockout/AFormation.cpp; sourceTree = "<group>"; };
+		4C14891216C53ED10014683F /* AFormation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFormation.h; path = Blockout/AFormation.h; sourceTree = "<group>"; };
 		4C14891416C547130014683F /* ABlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlock.cpp; path = Blockout/ABlock.cpp; sourceTree = "<group>"; };
 		4C14891516C547130014683F /* ABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlock.h; path = Blockout/ABlock.h; sourceTree = "<group>"; };
 		4C52515916CA7B1B002A5B42 /* BlockoutTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockoutTypes.h; path = Blockout/BlockoutTypes.h; sourceTree = "<group>"; };
+		4C52515B16CA88AC002A5B42 /* ABlockFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlockFactory.cpp; path = Blockout/ABlockFactory.cpp; sourceTree = "<group>"; };
+		4C52515C16CA88AC002A5B42 /* ABlockFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlockFactory.h; path = Blockout/ABlockFactory.h; sourceTree = "<group>"; };
 		4C8000E516BD2F12008B1E74 /* ABlockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlockout.cpp; path = Blockout/ABlockout.cpp; sourceTree = "<group>"; };
 		4C8000E616BD2F12008B1E74 /* ABlockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlockout.h; path = Blockout/ABlockout.h; sourceTree = "<group>"; };
 		4C8000E816BD2F27008B1E74 /* ACrafter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ACrafter.cpp; path = Blockout/ACrafter.cpp; sourceTree = "<group>"; };
@@ -89,6 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C52515A16CA8621002A5B42 /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				4C923D0316C444B0008EDA5C /* APoint.cpp */,
+				4C923D0416C444B0008EDA5C /* APoint.h */,
+				4CC85D6816C3FE5400B961AB /* AColor.cpp */,
+				4CC85D6916C3FE5400B961AB /* AColor.h */,
+				4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */,
+				4CB4E65216BEA6F400CC9FA4 /* AVector.h */,
+				4C8000EC16BD2F27008B1E74 /* DrawTypes.h */,
+			);
+			name = DataTypes;
+			sourceTree = "<group>";
+		};
 		4C8000F616BD43FD008B1E74 /* RenderObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +115,8 @@
 				4C8000F016BD3D35008B1E74 /* AWell.h */,
 				4C14891416C547130014683F /* ABlock.cpp */,
 				4C14891516C547130014683F /* ABlock.h */,
+				4C52515B16CA88AC002A5B42 /* ABlockFactory.cpp */,
+				4C52515C16CA88AC002A5B42 /* ABlockFactory.h */,
 			);
 			name = RenderObjects;
 			sourceTree = "<group>";
@@ -107,8 +126,8 @@
 			children = (
 				4C923D0616C45319008EDA5C /* ALogic.cpp */,
 				4C923D0716C45319008EDA5C /* ALogic.h */,
-				4C14891116C53ED10014683F /* AData.cpp */,
-				4C14891216C53ED10014683F /* AData.h */,
+				4C14891116C53ED10014683F /* AFormation.cpp */,
+				4C14891216C53ED10014683F /* AFormation.h */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -174,17 +193,11 @@
 		B7ECFF5916AD4FBC00946E91 /* Paintings */ = {
 			isa = PBXGroup;
 			children = (
-				4C923D0316C444B0008EDA5C /* APoint.cpp */,
-				4C923D0416C444B0008EDA5C /* APoint.h */,
+				4C52515A16CA8621002A5B42 /* DataTypes */,
 				4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */,
 				4C8000EB16BD2F27008B1E74 /* ADrawBasics.h */,
 				4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */,
 				4CC85D6C16C4027100B961AB /* AOpenGLState.h */,
-				4CC85D6816C3FE5400B961AB /* AColor.cpp */,
-				4CC85D6916C3FE5400B961AB /* AColor.h */,
-				4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */,
-				4CB4E65216BEA6F400CC9FA4 /* AVector.h */,
-				4C8000EC16BD2F27008B1E74 /* DrawTypes.h */,
 			);
 			name = Paintings;
 			sourceTree = "<group>";
@@ -282,8 +295,9 @@
 				4CC85D6D16C4027100B961AB /* AOpenGLState.cpp in Sources */,
 				4C923D0516C444B0008EDA5C /* APoint.cpp in Sources */,
 				4C923D0816C45319008EDA5C /* ALogic.cpp in Sources */,
-				4C14891316C53ED10014683F /* AData.cpp in Sources */,
+				4C14891316C53ED10014683F /* AFormation.cpp in Sources */,
 				4C14891616C547130014683F /* ABlock.cpp in Sources */,
+				4C52515D16CA88AC002A5B42 /* ABlockFactory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

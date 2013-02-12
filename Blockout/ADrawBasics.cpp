@@ -13,20 +13,20 @@ void ADrawBasics::drawCarcasedCube(const GLfloat x, const GLfloat y, const GLflo
     oglInstance->drawColor(AColor::greenColor());
     oglInstance->lineWidth(3.0f);
 
-    SPoint p1 = {0.0f,     0.0f, 0.0f};
-    SPoint p2 = {cubeSize, 0.0f, 0.0f};
-    SPoint p3 = {cubeSize, 0.0f, cubeSize};
-    SPoint p4 = {0.0f,     0.0f, cubeSize};
+    SPoint p1 = {x,            y, z};
+    SPoint p2 = {x + cubeSize, y, z};
+    SPoint p3 = {x + cubeSize, y, z + cubeSize};
+    SPoint p4 = {x,            y, z + cubeSize};
 
     ADrawBasics::drawLine(p1, p2);
     ADrawBasics::drawLine(p2, p3);
     ADrawBasics::drawLine(p3, p4);
     ADrawBasics::drawLine(p4, p1);
 
-    SPoint p5 = {0.0f,     cubeSize, 0.0f};
-    SPoint p6 = {cubeSize, cubeSize, 0.0f};
-    SPoint p7 = {cubeSize, cubeSize, cubeSize};
-    SPoint p8 = {0.0f,     cubeSize, cubeSize};
+    SPoint p5 = {x,            y + cubeSize, z};
+    SPoint p6 = {x + cubeSize, y + cubeSize, z};
+    SPoint p7 = {x + cubeSize, y + cubeSize, z + cubeSize};
+    SPoint p8 = {x,            y + cubeSize, z + cubeSize};
 
     ADrawBasics::drawLine(p5, p6);
     ADrawBasics::drawLine(p6, p7);

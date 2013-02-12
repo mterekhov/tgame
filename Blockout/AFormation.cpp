@@ -1,10 +1,10 @@
-#include "AData.h"
+#include "AFormation.h"
 
 #include <stdio.h>
 
 //==============================================================================
 
-AData::AData(const unsigned int width, const unsigned int height, const unsigned int count) : _width(width), _height(height), _levelsCount(count)
+AFormation::AFormation(const unsigned int width, const unsigned int height, const unsigned int count) : _width(width), _height(height), _levelsCount(count)
 {
     int sizer = width * height * count;
     _data = new TData[sizer];
@@ -12,35 +12,35 @@ AData::AData(const unsigned int width, const unsigned int height, const unsigned
 
 //==============================================================================
 
-AData::~AData()
+AFormation::~AFormation()
 {
     delete [] _data;
 }
 
 //==============================================================================
 
-unsigned int AData::height() const
+unsigned int AFormation::height() const
 {
     return _height;
 }
 
 //==============================================================================
 
-unsigned int AData::width() const
+unsigned int AFormation::width() const
 {
     return _width;
 }
 
 //==============================================================================
 
-unsigned int AData::levelsCount() const
+unsigned int AFormation::levelsCount() const
 {
     return _levelsCount;
 }
 
 //==============================================================================
 
-TData AData::item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const
+TData AFormation::item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const
 {
     if (!_data)
         return false;
@@ -60,7 +60,27 @@ TData AData::item(const unsigned int row, const unsigned int column, const unsig
 
 //==============================================================================
 
-bool AData::doesInbounds(const AData* data)
+void AFormation::item(const unsigned int row, const unsigned int column, const unsigned int levelIndex, const TData& value)
+{
+    if (!_data)
+        return;
+    
+    if (row > _height)
+        return;
+    
+    if (column > _width)
+        return;
+    
+    if (levelIndex > _levelsCount)
+        return;
+    
+    int skip = _width * _height * levelIndex;
+    _data[skip + row * _width + column] = value;
+}
+
+//==============================================================================
+
+bool AFormation::doesInbounds(const AFormation* data)
 {
     if (!data)
         return false;

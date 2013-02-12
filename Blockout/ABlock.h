@@ -4,20 +4,24 @@
 //==============================================================================
 
 #include "ARObject.h"
-#include "AData.h"
+#include "AFormation.h"
+#include "AColor.h"
 
 //==============================================================================
 
 class ABlock : public ARObject
 {
 private:
-    AData _data;
-    
+    AFormation _data;
+    AColor _color;
 public:
-    ABlock(const AData& data);
+    ABlock(const AFormation& data);
     ~ABlock();
     
     void renderObject();
+    
+    AColor color() const;
+    void color(const AColor& color);
 };
 
 //==============================================================================
