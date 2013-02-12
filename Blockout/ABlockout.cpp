@@ -33,14 +33,14 @@ void ABlockout::render()
     
     oglState->pushMarices();
 
-    ADrawBasics::installCamera(AVector(5, 3, 2),
-                               AVector(0,0,0),
-                               AVector(0.0f, 1.0f, 0.0f));
-//    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
-//                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
-//                               AVector(1.0f, 0.0f, 0.0f));
-    ADrawBasics::drawOrigin(originPoint, 1.0f);
-    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
+//    ADrawBasics::installCamera(AVector(5, 3, 2),
+//                               AVector(0,0,0),
+//                               AVector(0.0f, 1.0f, 0.0f));
+    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
+                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
+                               AVector(1.0f, 0.0f, 0.0f));
+//    ADrawBasics::drawOrigin(originPoint, 1.0f);
+//    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
     _crafter.craft();
 //    ADrawBasics::drawCarcasedCube(1.0f, 0.0f, 0.0f, 1.0f);

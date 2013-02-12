@@ -6,11 +6,7 @@
 void ADrawBasics::drawCarcasedCube(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat cubeSize)
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
-    
-    AColor color = oglInstance->drawColor();
     GLfloat lineWidth = oglInstance->lineWidth();
-    
-    oglInstance->drawColor(AColor::greenColor());
     oglInstance->lineWidth(3.0f);
 
     SPoint p1 = {x,            y, z};
@@ -38,7 +34,6 @@ void ADrawBasics::drawCarcasedCube(const GLfloat x, const GLfloat y, const GLflo
     ADrawBasics::drawLine(p7, p3);
     ADrawBasics::drawLine(p8, p4);
 
-    oglInstance->drawColor(color);
     oglInstance->lineWidth(lineWidth);
 }
 
