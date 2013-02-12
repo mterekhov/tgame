@@ -31,6 +31,7 @@ bool ALogic::collisions(const AData* forCompare, const APoint& pos)
 //                
 //                unsigned int x = ;
 //                unsigned int y = ;
+//                unsigned int z = ;
 //                bool second = _data->item();
 //                
 //                if (first == second)
@@ -38,6 +39,6 @@ bool ALogic::collisions(const AData* forCompare, const APoint& pos)
 //            }
 //        }
 //    }
-//    
+    
     return false;
 }

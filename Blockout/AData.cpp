@@ -4,7 +4,7 @@
 
 AData::AData(const unsigned int width, const unsigned int height, const unsigned int count) : _width(width), _height(height), _levelsCount(count)
 {
-    _data = new bool[width * height * count];
+    _data = new TData[width * height * count];
 }
 
 //==============================================================================
@@ -37,7 +37,7 @@ unsigned int AData::levelsCount() const
 
 //==============================================================================
 
-bool AData::item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const
+TData AData::item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const
 {
     if (!_data)
         return false;

@@ -3,12 +3,72 @@
 
 //==============================================================================
 
-const GLfloat ADrawBasics::scale = 1.0f;
-
-//==============================================================================
-
-void ADrawBasics::drawCube(const GLfloat x, const GLfloat y, const GLfloat z)
+void ADrawBasics::drawCube(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat cubeSize)
 {
+    AOpenGLState* oglInstance = AOpenGLState::shared();
+    
+    AColor color = oglInstance->drawColor();
+    
+    oglInstance->drawColor(AColor::greenColor());
+
+    SPoint p1 = {0};
+    SPoint p2 = {0};
+
+    p1 = {cubeSize, 0.0f, 0.0f};
+    p2 = {cubeSize, 0.0f, cubeSize};
+    ADrawBasics::drawLine(p1, p2);
+    
+    p1 = {cubeSize, 0.0f,     cubeSize};
+    p2 = {cubeSize, cubeSize, cubeSize};
+    ADrawBasics::drawLine(p1, p2);
+
+    p1 = {cubeSize, cubeSize, 0.0f};
+    p2 = {cubeSize, cubeSize, cubeSize};
+    ADrawBasics::drawLine(p1, p2);
+
+    p1 = {cubeSize, 0.0f,     0.0f};
+    p2 = {cubeSize, cubeSize, 0.0f};
+    ADrawBasics::drawLine(p1, p2);
+////////////////////////////////////////////////////////////////////////////////
+    p1 = {cubeSize, 0.0f, 0.0f};
+    p2 = {cubeSize, 0.0f, 0.0f};
+    ADrawBasics::drawLine(p1, p2);
+    
+    p1 = {cubeSize, 0.0f,     0.0f};
+    p2 = {cubeSize, cubeSize, 0.0f};
+    ADrawBasics::drawLine(p1, p2);
+
+    p1 = {cubeSize, cubeSize, 0.0f};
+    p2 = {cubeSize, cubeSize, 0.0f};
+    ADrawBasics::drawLine(p1, p2);
+
+    p1 = {cubeSize, 0.0f,     0.0f};
+    p2 = {cubeSize, cubeSize, 0.0f};
+    ADrawBasics::drawLine(p1, p2);
+////////////////////////////////////////////////////////////////////////////////
+
+//    p1 = {0.0f,     0.0f, cubeSize};
+//    p2 = {cubeSize, 0.0f, cubeSize};
+//    ADrawBasics::drawLine(p1, p2);
+
+//    p1 = {0.0f,     cubeSize, 0.0f};
+//    p2 = {cubeSize, cubeSize, 0.0f};
+//    ADrawBasics::drawLine(p1, p2);
+
+//    p1 = {0.0f,     cubeSize, cubeSize};
+//    p2 = {cubeSize, cubeSize, cubeSize};
+//    ADrawBasics::drawLine(p1, p2);
+//
+//    p1 = {0.0f, cubeSize, 0.0f};
+//    p2 = {0.0f, cubeSize, cubeSize};
+//    ADrawBasics::drawLine(p1, p2);
+//
+//    p1 = {0.0f, 0.0f,     cubeSize};
+//    p2 = {0.0f, cubeSize, cubeSize};
+//    ADrawBasics::drawLine(p1, p2);
+//
+
+    oglInstance->drawColor(color);
 }
 
 //==============================================================================
@@ -30,7 +90,7 @@ void ADrawBasics::drawLine(const SPoint& p1, const SPoint& p2)
 
 //==============================================================================
 
-void ADrawBasics::drawOrigin(const SPoint& location)
+void ADrawBasics::drawOrigin(const SPoint& location, const GLfloat scale)
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();
@@ -56,7 +116,7 @@ void ADrawBasics::drawOrigin(const SPoint& location)
 
 //==============================================================================
 
-void ADrawBasics::drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber)
+void ADrawBasics::drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber, const GLfloat scale)
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C14891316C53ED10014683F /* AData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891116C53ED10014683F /* AData.cpp */; };
+		4C14891616C547130014683F /* ABlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891416C547130014683F /* ABlock.cpp */; };
 		4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E516BD2F12008B1E74 /* ABlockout.cpp */; };
 		4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E816BD2F27008B1E74 /* ACrafter.cpp */; };
 		4C8000EE16BD2F27008B1E74 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */; };
@@ -32,6 +33,9 @@
 /* Begin PBXFileReference section */
 		4C14891116C53ED10014683F /* AData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AData.cpp; path = Blockout/AData.cpp; sourceTree = "<group>"; };
 		4C14891216C53ED10014683F /* AData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AData.h; path = Blockout/AData.h; sourceTree = "<group>"; };
+		4C14891416C547130014683F /* ABlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlock.cpp; path = Blockout/ABlock.cpp; sourceTree = "<group>"; };
+		4C14891516C547130014683F /* ABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlock.h; path = Blockout/ABlock.h; sourceTree = "<group>"; };
+		4C52515916CA7B1B002A5B42 /* BlockoutTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockoutTypes.h; path = Blockout/BlockoutTypes.h; sourceTree = "<group>"; };
 		4C8000E516BD2F12008B1E74 /* ABlockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlockout.cpp; path = Blockout/ABlockout.cpp; sourceTree = "<group>"; };
 		4C8000E616BD2F12008B1E74 /* ABlockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlockout.h; path = Blockout/ABlockout.h; sourceTree = "<group>"; };
 		4C8000E816BD2F27008B1E74 /* ACrafter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ACrafter.cpp; path = Blockout/ACrafter.cpp; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				4C8000F416BD43F7008B1E74 /* ARObject.h */,
 				4C8000EF16BD3D35008B1E74 /* AWell.cpp */,
 				4C8000F016BD3D35008B1E74 /* AWell.h */,
+				4C14891416C547130014683F /* ABlock.cpp */,
+				4C14891516C547130014683F /* ABlock.h */,
 			);
 			name = RenderObjects;
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 				4C8000E916BD2F27008B1E74 /* ACrafter.h */,
 				4C8000E516BD2F12008B1E74 /* ABlockout.cpp */,
 				4C8000E616BD2F12008B1E74 /* ABlockout.h */,
+				4C52515916CA7B1B002A5B42 /* BlockoutTypes.h */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -276,6 +283,7 @@
 				4C923D0516C444B0008EDA5C /* APoint.cpp in Sources */,
 				4C923D0816C45319008EDA5C /* ALogic.cpp in Sources */,
 				4C14891316C53ED10014683F /* AData.cpp in Sources */,
+				4C14891616C547130014683F /* ABlock.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

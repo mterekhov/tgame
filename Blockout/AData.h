@@ -3,13 +3,17 @@
 
 //==============================================================================
 
+#include "BlockoutTypes.h"
+
+//==============================================================================
+
 class AData
 {
 private:
     unsigned int _width;
     unsigned int _height;
     unsigned int _levelsCount;
-    bool* _data;
+    TData* _data;
 
 public:
     AData(const unsigned int width, const unsigned int height, const unsigned int count);
@@ -18,7 +22,7 @@ public:
     unsigned int height() const;
     unsigned int width() const;
     unsigned int levelsCount() const;
-    bool item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const;
+    TData item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const;
     
     bool doesInbounds(const AData* data);
 };
