@@ -25,7 +25,7 @@ void ABlock::renderObject()
             {
                 TData value = _data.item(i, j, l);
                 if (value)
-                    ADrawBasics::drawCube(i, l, j, 1.0f);
+                    ADrawBasics::drawCarcasedCube(i, l, j, 1.0f);
             }
         }
     }

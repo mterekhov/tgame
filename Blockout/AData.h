@@ -7,6 +7,15 @@
 
 //==============================================================================
 
+enum EDataState
+{
+    EDATASTATE_EMPTY,
+    EDATASTATE_RENDERABLE,
+    EDATASTATE_ROTATED
+};
+
+//==============================================================================
+
 class AData
 {
 private:

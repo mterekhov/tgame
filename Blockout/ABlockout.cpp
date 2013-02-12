@@ -39,7 +39,7 @@ void ABlockout::render()
     ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
 //    _crafter.craft();
-    ADrawBasics::drawCube(0, 0, 0, 2.0f);
+    ADrawBasics::drawCarcasedCube(0, 0, 0, 2.0f);
     
     oglState->popMarices();
 }

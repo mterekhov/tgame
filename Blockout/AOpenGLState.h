@@ -14,6 +14,7 @@ private:
     
     AColor _clearColor;
     AColor _drawColor;
+    GLfloat _lineWidth;
     
     void clearColorSetup(const AColor& color);
     void drawColorSetup(const AColor& color);
@@ -23,6 +24,9 @@ public:
     
     AOpenGLState();
     ~AOpenGLState();
+    
+    GLfloat lineWidth() const;
+    void lineWidth(const GLfloat width);
     
     AColor clearColor() const;
     void clearColor(const AColor& color);

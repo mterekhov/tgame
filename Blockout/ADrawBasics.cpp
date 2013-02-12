@@ -3,72 +3,43 @@
 
 //==============================================================================
 
-void ADrawBasics::drawCube(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat cubeSize)
+void ADrawBasics::drawCarcasedCube(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat cubeSize)
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     
     AColor color = oglInstance->drawColor();
+    GLfloat lineWidth = oglInstance->lineWidth();
     
     oglInstance->drawColor(AColor::greenColor());
+    oglInstance->lineWidth(3.0f);
 
-    SPoint p1 = {0};
-    SPoint p2 = {0};
+    SPoint p1 = {0.0f,     0.0f, 0.0f};
+    SPoint p2 = {cubeSize, 0.0f, 0.0f};
+    SPoint p3 = {cubeSize, 0.0f, cubeSize};
+    SPoint p4 = {0.0f,     0.0f, cubeSize};
 
-    p1 = {cubeSize, 0.0f, 0.0f};
-    p2 = {cubeSize, 0.0f, cubeSize};
     ADrawBasics::drawLine(p1, p2);
-    
-    p1 = {cubeSize, 0.0f,     cubeSize};
-    p2 = {cubeSize, cubeSize, cubeSize};
-    ADrawBasics::drawLine(p1, p2);
+    ADrawBasics::drawLine(p2, p3);
+    ADrawBasics::drawLine(p3, p4);
+    ADrawBasics::drawLine(p4, p1);
 
-    p1 = {cubeSize, cubeSize, 0.0f};
-    p2 = {cubeSize, cubeSize, cubeSize};
-    ADrawBasics::drawLine(p1, p2);
+    SPoint p5 = {0.0f,     cubeSize, 0.0f};
+    SPoint p6 = {cubeSize, cubeSize, 0.0f};
+    SPoint p7 = {cubeSize, cubeSize, cubeSize};
+    SPoint p8 = {0.0f,     cubeSize, cubeSize};
 
-    p1 = {cubeSize, 0.0f,     0.0f};
-    p2 = {cubeSize, cubeSize, 0.0f};
-    ADrawBasics::drawLine(p1, p2);
-////////////////////////////////////////////////////////////////////////////////
-    p1 = {cubeSize, 0.0f, 0.0f};
-    p2 = {cubeSize, 0.0f, 0.0f};
-    ADrawBasics::drawLine(p1, p2);
-    
-    p1 = {cubeSize, 0.0f,     0.0f};
-    p2 = {cubeSize, cubeSize, 0.0f};
-    ADrawBasics::drawLine(p1, p2);
+    ADrawBasics::drawLine(p5, p6);
+    ADrawBasics::drawLine(p6, p7);
+    ADrawBasics::drawLine(p7, p8);
+    ADrawBasics::drawLine(p8, p5);
 
-    p1 = {cubeSize, cubeSize, 0.0f};
-    p2 = {cubeSize, cubeSize, 0.0f};
-    ADrawBasics::drawLine(p1, p2);
-
-    p1 = {cubeSize, 0.0f,     0.0f};
-    p2 = {cubeSize, cubeSize, 0.0f};
-    ADrawBasics::drawLine(p1, p2);
-////////////////////////////////////////////////////////////////////////////////
-
-//    p1 = {0.0f,     0.0f, cubeSize};
-//    p2 = {cubeSize, 0.0f, cubeSize};
-//    ADrawBasics::drawLine(p1, p2);
-
-//    p1 = {0.0f,     cubeSize, 0.0f};
-//    p2 = {cubeSize, cubeSize, 0.0f};
-//    ADrawBasics::drawLine(p1, p2);
-
-//    p1 = {0.0f,     cubeSize, cubeSize};
-//    p2 = {cubeSize, cubeSize, cubeSize};
-//    ADrawBasics::drawLine(p1, p2);
-//
-//    p1 = {0.0f, cubeSize, 0.0f};
-//    p2 = {0.0f, cubeSize, cubeSize};
-//    ADrawBasics::drawLine(p1, p2);
-//
-//    p1 = {0.0f, 0.0f,     cubeSize};
-//    p2 = {0.0f, cubeSize, cubeSize};
-//    ADrawBasics::drawLine(p1, p2);
-//
+    ADrawBasics::drawLine(p5, p1);
+    ADrawBasics::drawLine(p6, p2);
+    ADrawBasics::drawLine(p7, p3);
+    ADrawBasics::drawLine(p8, p4);
 
     oglInstance->drawColor(color);
+    oglInstance->lineWidth(lineWidth);
 }
 
 //==============================================================================

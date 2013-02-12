@@ -1,10 +1,13 @@
 #include "AData.h"
 
+#include <stdio.h>
+
 //==============================================================================
 
 AData::AData(const unsigned int width, const unsigned int height, const unsigned int count) : _width(width), _height(height), _levelsCount(count)
 {
-    _data = new TData[width * height * count];
+    int sizer = width * height * count;
+    _data = new TData[sizer];
 }
 
 //==============================================================================

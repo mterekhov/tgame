@@ -21,7 +21,7 @@ AOpenGLState* AOpenGLState::shared()
 
 //==============================================================================
 
-AOpenGLState::AOpenGLState()
+AOpenGLState::AOpenGLState() : _lineWidth(1.0f)
 {
     drawColorSetup(_drawColor);
     clearColorSetup(_clearColor);
@@ -136,4 +136,19 @@ void AOpenGLState::popMarices()
 void AOpenGLState::clear(GLbitfield mask)
 {
     glClear(mask);
+}
+
+//==============================================================================
+
+GLfloat AOpenGLState::lineWidth() const
+{
+    return _lineWidth;
+}
+
+//==============================================================================
+
+void AOpenGLState::lineWidth(const GLfloat width)
+{
+    _lineWidth = width;
+    glLineWidth(width);
 }
