@@ -11,7 +11,7 @@
 class ABlockout
 {
 private:
-    void createWell();
+    void init();
 
     ACrafter _crafter;
     GLfloat _wellWidth;

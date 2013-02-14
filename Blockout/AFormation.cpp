@@ -1,6 +1,6 @@
 #include "AFormation.h"
 
-#include <stdio.h>
+#include <string.h>
 
 //==============================================================================
 
@@ -8,6 +8,16 @@ AFormation::AFormation(const unsigned int width, const unsigned int height, cons
 {
     int sizer = width * height * count;
     _data = new TData[sizer];
+    memset(_data, EDATASTATE_EMPTY, sizer * sizeof(TData));
+}
+
+//==============================================================================
+
+AFormation::AFormation(const AFormation& formation) : _width(formation.width()), _height(formation.height()), _levelsCount(formation.levelsCount())
+{
+    _data = new TData[_width * _height * _levelsCount];
+    int sizer = _width * _height * _levelsCount * sizeof(TData);
+    memcpy(_data, formation.data(), sizer);
 }
 
 //==============================================================================
@@ -40,7 +50,7 @@ unsigned int AFormation::levelsCount() const
 
 //==============================================================================
 
-TData AFormation::item(const unsigned int row, const unsigned int column, const unsigned int levelIndex) const
+TData AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex) const
 {
     if (!_data)
         return false;
@@ -60,7 +70,7 @@ TData AFormation::item(const unsigned int row, const unsigned int column, const 
 
 //==============================================================================
 
-void AFormation::item(const unsigned int row, const unsigned int column, const unsigned int levelIndex, const TData& value)
+void AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value)
 {
     if (!_data)
         return;
@@ -75,7 +85,9 @@ void AFormation::item(const unsigned int row, const unsigned int column, const u
         return;
     
     int skip = _width * _height * levelIndex;
-    _data[skip + row * _width + column] = value;
+    int index = skip + row * _width + column;
+
+    _data[index] = value;
 }
 
 //==============================================================================
@@ -91,6 +103,13 @@ bool AFormation::doesInbounds(const AFormation* data)
        return true;
     
     return false;
+}
+
+//==============================================================================
+
+const TData* AFormation::data() const
+{
+    return _data;
 }
 
 //==============================================================================

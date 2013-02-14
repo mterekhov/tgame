@@ -14,6 +14,8 @@ class ABlock : public ARObject
 private:
     AFormation _data;
     AColor _color;
+    GLfloat _size;
+    
 public:
     ABlock(const AFormation& data);
     ~ABlock();
@@ -22,6 +24,9 @@ public:
     
     AColor color() const;
     void color(const AColor& color);
+    
+    GLfloat size() const;
+    void size(const GLfloat sizer);
 };
 
 //==============================================================================

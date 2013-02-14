@@ -10,7 +10,7 @@ ABlock* ABlockFactory::createFormation1()
     formation.item(1, 0, 0, EDATASTATE_RENDERABLE);
     formation.item(1, 1, 0, EDATASTATE_RENDERABLE);
     formation.item(2, 1, 0, EDATASTATE_RENDERABLE);
-    
+
     ABlock* block = new ABlock(formation);
     return block;
 }
