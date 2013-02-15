@@ -3,7 +3,7 @@
 
 //==============================================================================
 
-#include "DrawTypes.h"
+#include "APoint.h"
 #include "AVector.h"
 
 //==============================================================================
@@ -12,11 +12,13 @@ class ADrawBasics
 {
 public:
     static void installCamera(const AVector& eyePosition3D, const AVector& center3D, const AVector& upVector3D);
-    static void drawLine(const SPoint& p1, const SPoint& p2);
+    static void drawLine(const APoint& p1, const APoint& p2);
+    static void drawTriangles(const APoint& p1, const APoint& p2, const APoint& p3);
 
-    static void drawCarcasedCube(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat cubeSize);
+    static void drawSolidCube(const APoint& pos, const GLfloat cubeSize);
+    static void drawCarcasedCube(const APoint& pos, const GLfloat cubeSize);
 
-    static void drawOrigin(const SPoint& location, const GLfloat scale);
+    static void drawOrigin(const APoint& location, const GLfloat scale);
     static void drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber, const GLfloat scale);
 };
 

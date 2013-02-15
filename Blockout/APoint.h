@@ -3,6 +3,7 @@
 
 //==============================================================================
 
+#include <list>
 #include "DrawTypes.h"
 
 //==============================================================================
@@ -19,6 +20,12 @@ public:
     GLfloat y;
     GLfloat z;
 };
+
+//==============================================================================
+
+typedef std::list<APoint*> TPointsList;
+typedef TPointsList::iterator TPointsListIter;
+typedef TPointsList::const_iterator TPointsListConstIter;
 
 //==============================================================================
 

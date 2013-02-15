@@ -3,22 +3,22 @@
 
 //==============================================================================
 
-void ADrawBasics::drawCarcasedCube(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat cubeSize)
+void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
 {
-    SPoint p1 = {x,            y, z};
-    SPoint p2 = {x + cubeSize, y, z};
-    SPoint p3 = {x + cubeSize, y, z + cubeSize};
-    SPoint p4 = {x,            y, z + cubeSize};
+    APoint p1 = location;
+    APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
+    APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
+    APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
 
     ADrawBasics::drawLine(p1, p2);
     ADrawBasics::drawLine(p2, p3);
     ADrawBasics::drawLine(p3, p4);
     ADrawBasics::drawLine(p4, p1);
 
-    SPoint p5 = {x,            y + cubeSize, z};
-    SPoint p6 = {x + cubeSize, y + cubeSize, z};
-    SPoint p7 = {x + cubeSize, y + cubeSize, z + cubeSize};
-    SPoint p8 = {x,            y + cubeSize, z + cubeSize};
+    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
+    APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
+    APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
+    APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
 
     ADrawBasics::drawLine(p5, p6);
     ADrawBasics::drawLine(p6, p7);
@@ -33,30 +33,77 @@ void ADrawBasics::drawCarcasedCube(const GLfloat x, const GLfloat y, const GLflo
 
 //==============================================================================
 
-void ADrawBasics::drawLine(const SPoint& p1, const SPoint& p2)
+void ADrawBasics::drawCarcasedCube(const APoint& location, const GLfloat cubeSize)
+{
+    APoint p1 = location;
+    APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
+    APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
+    APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
+
+    ADrawBasics::drawLine(p1, p2);
+    ADrawBasics::drawLine(p2, p3);
+    ADrawBasics::drawLine(p3, p4);
+    ADrawBasics::drawLine(p4, p1);
+
+    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
+    APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
+    APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
+    APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
+
+    ADrawBasics::drawLine(p5, p6);
+    ADrawBasics::drawLine(p6, p7);
+    ADrawBasics::drawLine(p7, p8);
+    ADrawBasics::drawLine(p8, p5);
+
+    ADrawBasics::drawLine(p5, p1);
+    ADrawBasics::drawLine(p6, p2);
+    ADrawBasics::drawLine(p7, p3);
+    ADrawBasics::drawLine(p8, p4);
+}
+
+//==============================================================================
+
+void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 {
     GLfloat line[6] = {0};
     line[0] = p1.x;
     line[1] = p1.y;
     line[2] = p1.z;
-    
+
     line[3] = p2.x;
     line[4] = p2.y;
     line[5] = p2.z;
-    
+
     glVertexPointer(3, GL_FLOAT, 0, line);
     glDrawArrays(GL_LINES, 0, 2);
 }
 
 //==============================================================================
 
-void ADrawBasics::drawOrigin(const SPoint& location, const GLfloat scale)
+void ADrawBasics::drawTriangles(const APoint& p1, const APoint& p2, const APoint& p3)
+{
+    GLfloat line[6] = {0};
+    line[0] = p1.x;
+    line[1] = p1.y;
+    line[2] = p1.z;
+
+    line[3] = p2.x;
+    line[4] = p2.y;
+    line[5] = p2.z;
+
+    glVertexPointer(3, GL_FLOAT, 0, line);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 2);
+}
+
+//==============================================================================
+
+void ADrawBasics::drawOrigin(const APoint& location, const GLfloat scale)
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();
     
     oglInstance->drawColor(AColor::redColor());
-    SPoint tmpPoint = {location.x + scale, location.y, location.z};
+    APoint tmpPoint = APoint(location.x + scale, location.y, location.z);
     drawLine(location, tmpPoint);
     
     oglInstance->drawColor(AColor::greenColor());
@@ -83,18 +130,10 @@ void ADrawBasics::drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber
 
     oglInstance->drawColor(AColor::whiteColor());
     for (GLfloat i = -50.0f; i < 50.0f; i+= 1.0f)
-    {
-        SPoint p1 = {-50.0f * scale, 0.0f, i * scale};
-        SPoint p2 = {50.0f * scale, 0.0f, i * scale};
-        ADrawBasics::drawLine(p1, p2);
-    }
-    
+        drawLine(APoint(-50.0f * scale, 0.0f, i * scale), APoint(50.0f * scale, 0.0f, i * scale));
+
     for (GLfloat i = -50.0f; i < 50.0f; i+= 1.0f)
-    {
-        SPoint p1 = {i * scale, 0.0f, -50.0f * scale};
-        SPoint p2 = {i * scale, 0.0f, 50.0f * scale};
-        ADrawBasics::drawLine(p1, p2);
-    }
+        drawLine(APoint(i * scale, 0.0f, -50.0f * scale), APoint(i * scale, 0.0f, 50.0f * scale));
 
     oglInstance->drawColor(color);
 }

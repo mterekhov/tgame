@@ -36,8 +36,7 @@ void ABlockout::init()
 void ABlockout::render()
 {
     AOpenGLState* oglState = AOpenGLState::shared();
-    SPoint originPoint = {0.0f, 0.0f, 0.0f};
-    
+
     oglState->pushMarices();
 
 //    ADrawBasics::installCamera(AVector(4, 3, 7),

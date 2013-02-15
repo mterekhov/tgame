@@ -1,1 +1,4 @@
-- kill all the glColor calls except the management class
+- draw triangles
+- draw solid cube
+- draw filled well
+- render list of tringles

@@ -39,82 +39,42 @@ void AWell::renderHull()
     
     oglInstance->drawColor(AColor::greenColor());
     for (GLfloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {0.0f,                     0.0f, i * wellCellSize};
-        SPoint p2 = {wellWidth * wellCellSize, 0.0f, i * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
-    
-    for (GLfloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {i * wellCellSize, 0.0f, 0.0f};
-        SPoint p2 = {i * wellCellSize, 0.0f, wellHeight * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
-    
-////////////////////////////////////////////////////////////////////////////////
+        ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * wellCellSize), APoint(wellWidth * wellCellSize, 0.0f, i * wellCellSize));
 
-    for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {0.0f,                     i * wellCellSize, 0.0f};
-        SPoint p2 = {wellWidth * wellCellSize, i * wellCellSize, 0.0f};
-        ADrawBasics::drawLine(p1, p2);
-    }
-    
     for (GLfloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {i * wellCellSize, 0.0f,                     0.0f};
-        SPoint p2 = {i * wellCellSize, wellDepth * wellCellSize, 0.0f};
-        ADrawBasics::drawLine(p1, p2);
-    }
+        ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, 0.0f), APoint(i * wellCellSize, 0.0f, wellHeight * wellCellSize));
 
 ////////////////////////////////////////////////////////////////////////////////
 
     for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {0.0f,                     i * wellCellSize, wellHeight * wellCellSize};
-        SPoint p2 = {wellWidth * wellCellSize, i * wellCellSize, wellHeight * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
-    
+        ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, 0.0f), APoint(wellWidth * wellCellSize, i * wellCellSize, 0.0f));
+
     for (GLfloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {i * wellCellSize, 0.0f,                     wellHeight * wellCellSize};
-        SPoint p2 = {i * wellCellSize, wellDepth * wellCellSize, wellHeight * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
+        ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, 0.0f), APoint(i * wellCellSize, wellDepth * wellCellSize, 0.0f));
 
 ////////////////////////////////////////////////////////////////////////////////
 
     for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {0.0f, i * wellCellSize,                     0.0f};
-        SPoint p2 = {0.0f, i * wellCellSize, wellHeight * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
-    
+        ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, wellHeight * wellCellSize), APoint(wellWidth * wellCellSize, i * wellCellSize, wellHeight * wellCellSize));
+
+    for (GLfloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, wellHeight * wellCellSize), APoint(i * wellCellSize, wellDepth * wellCellSize, wellHeight * wellCellSize));
+
+////////////////////////////////////////////////////////////////////////////////
+
+    for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, 0.0f), APoint(0.0f, i * wellCellSize, wellHeight * wellCellSize));
+
     for (GLfloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {0.0f, 0.0f,                     i * wellCellSize};
-        SPoint p2 = {0.0f, wellDepth * wellCellSize, i * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
+        ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * wellCellSize), APoint(0.0f, wellDepth * wellCellSize, i * wellCellSize));
 
 ////////////////////////////////////////////////////////////////////////////////
 
     for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {wellWidth * wellCellSize, i * wellCellSize, 0.0f};
-        SPoint p2 = {wellWidth * wellCellSize, i * wellCellSize, wellHeight * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
-    
+        ADrawBasics::drawLine(APoint(wellWidth * wellCellSize, i * wellCellSize, 0.0f), APoint(wellWidth * wellCellSize, i * wellCellSize, wellHeight * wellCellSize));
+
     for (GLfloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
-    {
-        SPoint p1 = {wellWidth * wellCellSize, 0.0f,                     i * wellCellSize};
-        SPoint p2 = {wellWidth * wellCellSize, wellDepth * wellCellSize, i * wellCellSize};
-        ADrawBasics::drawLine(p1, p2);
-    }
+        ADrawBasics::drawLine(APoint(wellWidth * wellCellSize, 0.0f, i * wellCellSize), APoint(wellWidth * wellCellSize, wellDepth * wellCellSize, i * wellCellSize));
 
     oglInstance->drawColor(color);
 }

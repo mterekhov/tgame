@@ -30,7 +30,7 @@ void ABlock::renderObject()
             {
                 TData value = _data.item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
-                    ADrawBasics::drawCarcasedCube(i, l, j, _size);
+                    ADrawBasics::drawCarcasedCube(APoint(i, l, j), _size);
             }
         }
     }
