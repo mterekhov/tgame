@@ -3,7 +3,7 @@
 
 //==============================================================================
 
-#include <list>
+#include <vector>
 #include "DrawTypes.h"
 
 //==============================================================================
@@ -23,9 +23,9 @@ public:
 
 //==============================================================================
 
-typedef std::list<APoint*> TPointsList;
-typedef TPointsList::iterator TPointsListIter;
-typedef TPointsList::const_iterator TPointsListConstIter;
+typedef std::vector<APoint> TPointsList;
+//typedef TPointsList::iterator TPointsListIter;
+//typedef TPointsList::const_iterator TPointsListConstIter;
 
 //==============================================================================
 

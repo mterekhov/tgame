@@ -5,30 +5,60 @@
 
 void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
 {
+    TPointsList points;
     APoint p1 = location;
     APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
     APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
     APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
-
-    ADrawBasics::drawLine(p1, p2);
-    ADrawBasics::drawLine(p2, p3);
-    ADrawBasics::drawLine(p3, p4);
-    ADrawBasics::drawLine(p4, p1);
 
     APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
     APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
     APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
     APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
 
-    ADrawBasics::drawLine(p5, p6);
-    ADrawBasics::drawLine(p6, p7);
-    ADrawBasics::drawLine(p7, p8);
-    ADrawBasics::drawLine(p8, p5);
+//    points.push_back(p1);
+//    points.push_back(p2);
+//    points.push_back(p4);
+//    points.push_back(p2);
+//    points.push_back(p3);
+//    points.push_back(p4);
 
-    ADrawBasics::drawLine(p5, p1);
-    ADrawBasics::drawLine(p6, p2);
-    ADrawBasics::drawLine(p7, p3);
-    ADrawBasics::drawLine(p8, p4);
+//    points.push_back(p5);
+//    points.push_back(p6);
+//    points.push_back(p8);
+//    points.push_back(p6);
+//    points.push_back(p7);
+//    points.push_back(p8);
+
+    points.push_back(p5);
+    points.push_back(p8);
+    points.push_back(p1);
+    points.push_back(p8);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p5);
+    points.push_back(p6);
+    points.push_back(p1);
+    points.push_back(p6);
+    points.push_back(p2);
+    points.push_back(p1);
+
+    points.push_back(p6);
+    points.push_back(p7);
+    points.push_back(p2);
+    points.push_back(p7);
+    points.push_back(p3);
+    points.push_back(p2);
+
+    points.push_back(p8);
+    points.push_back(p7);
+    points.push_back(p4);
+    points.push_back(p7);
+    points.push_back(p3);
+    points.push_back(p4);
+
+    ADrawBasics::drawTriangles(points);
 }
 
 //==============================================================================
@@ -80,19 +110,20 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 
 //==============================================================================
 
-void ADrawBasics::drawTriangles(const APoint& p1, const APoint& p2, const APoint& p3)
+void ADrawBasics::drawTriangles(const TPointsList& points)
 {
-    GLfloat line[6] = {0};
-    line[0] = p1.x;
-    line[1] = p1.y;
-    line[2] = p1.z;
-
-    line[3] = p2.x;
-    line[4] = p2.y;
-    line[5] = p2.z;
+    GLfloat* line = new GLfloat[3 * points.size()];
+    for (int i = 0; i < points.size(); i++)
+    {
+        line[3 * i] = points[i].x;
+        line[3 * i + 1] = points[i].y;
+        line[3 * i + 2] = points[i].z;
+    }
 
     glVertexPointer(3, GL_FLOAT, 0, line);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 2);
+//    glDrawArrays(GL_TRIANGLES, 0, 36 / 3);
+    glDrawArrays(GL_TRIANGLES, 0, points.size());
+    delete [] line;
 }
 
 //==============================================================================

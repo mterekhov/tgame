@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C14891316C53ED10014683F /* AFormation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891116C53ED10014683F /* AFormation.cpp */; };
 		4C14891616C547130014683F /* ABlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891416C547130014683F /* ABlock.cpp */; };
+		4C1D72D116CFA41000C2DFB7 /* ASolidBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D72CF16CFA41000C2DFB7 /* ASolidBlock.cpp */; };
 		4C52515D16CA88AC002A5B42 /* ABlockFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C52515B16CA88AC002A5B42 /* ABlockFactory.cpp */; };
 		4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E516BD2F12008B1E74 /* ABlockout.cpp */; };
 		4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E816BD2F27008B1E74 /* ACrafter.cpp */; };
@@ -21,6 +22,10 @@
 		4CC85D6A16C3FE5400B961AB /* AColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CC85D6816C3FE5400B961AB /* AColor.cpp */; };
 		4CC85D6D16C4027100B961AB /* AOpenGLState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */; };
 		4CC85D6F16C409A600B961AB /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CC85D6E16C409A600B961AB /* readme.txt */; };
+		4CEA40E016CFAFD500A678B5 /* ATexturedBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */; };
+		4CEA40E816CFB09700A678B5 /* aimage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E216CFB09700A678B5 /* aimage.cpp */; };
+		4CEA40E916CFB09700A678B5 /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E416CFB09700A678B5 /* atexture.cpp */; };
+		4CEA40EA16CFB09700A678B5 /* atga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E616CFB09700A678B5 /* atga.cpp */; };
 		B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732726816AB20C2001DE602 /* Cocoa.framework */; };
 		B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B732727116AB20C2001DE602 /* InfoPlist.strings */; };
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
@@ -36,6 +41,8 @@
 		4C14891216C53ED10014683F /* AFormation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFormation.h; path = Blockout/AFormation.h; sourceTree = "<group>"; };
 		4C14891416C547130014683F /* ABlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlock.cpp; path = Blockout/ABlock.cpp; sourceTree = "<group>"; };
 		4C14891516C547130014683F /* ABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlock.h; path = Blockout/ABlock.h; sourceTree = "<group>"; };
+		4C1D72CF16CFA41000C2DFB7 /* ASolidBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ASolidBlock.cpp; path = Blockout/ASolidBlock.cpp; sourceTree = "<group>"; };
+		4C1D72D016CFA41000C2DFB7 /* ASolidBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASolidBlock.h; path = Blockout/ASolidBlock.h; sourceTree = "<group>"; };
 		4C52515916CA7B1B002A5B42 /* BlockoutTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockoutTypes.h; path = Blockout/BlockoutTypes.h; sourceTree = "<group>"; };
 		4C52515B16CA88AC002A5B42 /* ABlockFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlockFactory.cpp; path = Blockout/ABlockFactory.cpp; sourceTree = "<group>"; };
 		4C52515C16CA88AC002A5B42 /* ABlockFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlockFactory.h; path = Blockout/ABlockFactory.h; sourceTree = "<group>"; };
@@ -61,6 +68,14 @@
 		4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AOpenGLState.cpp; path = Blockout/AOpenGLState.cpp; sourceTree = "<group>"; };
 		4CC85D6C16C4027100B961AB /* AOpenGLState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOpenGLState.h; path = Blockout/AOpenGLState.h; sourceTree = "<group>"; };
 		4CC85D6E16C409A600B961AB /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATexturedBlock.cpp; path = Blockout/ATexturedBlock.cpp; sourceTree = "<group>"; };
+		4CEA40DF16CFAFD500A678B5 /* ATexturedBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATexturedBlock.h; path = Blockout/ATexturedBlock.h; sourceTree = "<group>"; };
+		4CEA40E216CFB09700A678B5 /* aimage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimage.cpp; path = Blockout/aimage.cpp; sourceTree = "<group>"; };
+		4CEA40E316CFB09700A678B5 /* aimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aimage.h; path = Blockout/aimage.h; sourceTree = "<group>"; };
+		4CEA40E416CFB09700A678B5 /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexture.cpp; path = Blockout/atexture.cpp; sourceTree = "<group>"; };
+		4CEA40E516CFB09700A678B5 /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexture.h; path = Blockout/atexture.h; sourceTree = "<group>"; };
+		4CEA40E616CFB09700A678B5 /* atga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atga.cpp; path = Blockout/atga.cpp; sourceTree = "<group>"; };
+		4CEA40E716CFB09700A678B5 /* atga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atga.h; path = Blockout/atga.h; sourceTree = "<group>"; };
 		B732726416AB20C2001DE602 /* Blockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732726816AB20C2001DE602 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B732726B16AB20C2001DE602 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -109,6 +124,10 @@
 		4C8000F616BD43FD008B1E74 /* RenderObjects */ = {
 			isa = PBXGroup;
 			children = (
+				4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */,
+				4CEA40DF16CFAFD500A678B5 /* ATexturedBlock.h */,
+				4C1D72CF16CFA41000C2DFB7 /* ASolidBlock.cpp */,
+				4C1D72D016CFA41000C2DFB7 /* ASolidBlock.h */,
 				4C8000FF16BD4F81008B1E74 /* ARObject.cpp */,
 				4C8000F416BD43F7008B1E74 /* ARObject.h */,
 				4C8000EF16BD3D35008B1E74 /* AWell.cpp */,
@@ -130,6 +149,19 @@
 				4C14891216C53ED10014683F /* AFormation.h */,
 			);
 			name = Logic;
+			sourceTree = "<group>";
+		};
+		4CEA40E116CFB08400A678B5 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				4CEA40E216CFB09700A678B5 /* aimage.cpp */,
+				4CEA40E316CFB09700A678B5 /* aimage.h */,
+				4CEA40E616CFB09700A678B5 /* atga.cpp */,
+				4CEA40E716CFB09700A678B5 /* atga.h */,
+				4CEA40E416CFB09700A678B5 /* atexture.cpp */,
+				4CEA40E516CFB09700A678B5 /* atexture.h */,
+			);
+			name = Texture;
 			sourceTree = "<group>";
 		};
 		B732725916AB20C2001DE602 = {
@@ -205,6 +237,7 @@
 		B7ECFF5D16AD5F1800946E91 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4CEA40E116CFB08400A678B5 /* Texture */,
 				4C923D0916C45321008EDA5C /* Logic */,
 				4C8000F616BD43FD008B1E74 /* RenderObjects */,
 				4C8000E816BD2F27008B1E74 /* ACrafter.cpp */,
@@ -298,6 +331,11 @@
 				4C14891316C53ED10014683F /* AFormation.cpp in Sources */,
 				4C14891616C547130014683F /* ABlock.cpp in Sources */,
 				4C52515D16CA88AC002A5B42 /* ABlockFactory.cpp in Sources */,
+				4C1D72D116CFA41000C2DFB7 /* ASolidBlock.cpp in Sources */,
+				4CEA40E016CFAFD500A678B5 /* ATexturedBlock.cpp in Sources */,
+				4CEA40E816CFB09700A678B5 /* aimage.cpp in Sources */,
+				4CEA40E916CFB09700A678B5 /* atexture.cpp in Sources */,
+				4CEA40EA16CFB09700A678B5 /* atga.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

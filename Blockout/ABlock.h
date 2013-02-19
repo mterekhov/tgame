@@ -11,7 +11,7 @@
 
 class ABlock : public ARObject
 {
-private:
+protected:
     AFormation _data;
     AColor _color;
     GLfloat _size;
