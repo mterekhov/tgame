@@ -32,7 +32,6 @@ void ABlockout::init()
 }
 
 //==============================================================================
-
 void ABlockout::render()
 {
     AOpenGLState* oglState = AOpenGLState::shared();
