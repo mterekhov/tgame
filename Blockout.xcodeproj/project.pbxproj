@@ -19,6 +19,7 @@
 		4C923D0516C444B0008EDA5C /* APoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0316C444B0008EDA5C /* APoint.cpp */; };
 		4C923D0816C45319008EDA5C /* ALogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0616C45319008EDA5C /* ALogic.cpp */; };
 		4CAF5A5C16E6287200E04427 /* ATimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF5A5A16E6287200E04427 /* ATimer.cpp */; };
+		4CAF5A5F16E6374900E04427 /* AMacTimerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */; };
 		4CB4E65316BEA6F400CC9FA4 /* AVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */; };
 		4CC8218516D7A52A0090CE07 /* celtic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218216D7A52A0090CE07 /* celtic.png */; };
 		4CC8218616D7A52A0090CE07 /* marble.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218316D7A52A0090CE07 /* marble.png */; };
@@ -68,6 +69,8 @@
 		4C923D0716C45319008EDA5C /* ALogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALogic.h; path = Blockout/ALogic.h; sourceTree = "<group>"; };
 		4CAF5A5A16E6287200E04427 /* ATimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATimer.cpp; sourceTree = "<group>"; };
 		4CAF5A5B16E6287200E04427 /* ATimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATimer.h; sourceTree = "<group>"; };
+		4CAF5A5D16E6374900E04427 /* AMacTimerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMacTimerWrapper.h; path = Blockout/AMacTimerWrapper.h; sourceTree = "<group>"; };
+		4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AMacTimerWrapper.mm; path = Blockout/AMacTimerWrapper.mm; sourceTree = "<group>"; };
 		4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AVector.cpp; path = Blockout/AVector.cpp; sourceTree = "<group>"; };
 		4CB4E65216BEA6F400CC9FA4 /* AVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVector.h; path = Blockout/AVector.h; sourceTree = "<group>"; };
 		4CC8218216D7A52A0090CE07 /* celtic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtic.png; path = Blockout/resources/celtic.png; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 		4CC8218B16D7AE2D0090CE07 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF5A5D16E6374900E04427 /* AMacTimerWrapper.h */,
+				4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */,
 				4CC8218816D7ABC10090CE07 /* AMacTimer.mm */,
 				4CC8218916D7ABC10090CE07 /* AMacTimer.h */,
 				4CAF5A5A16E6287200E04427 /* ATimer.cpp */,
@@ -378,6 +383,7 @@
 				4CEA40EA16CFB09700A678B5 /* atga.cpp in Sources */,
 				4CC8218A16D7ABC10090CE07 /* AMacTimer.mm in Sources */,
 				4CAF5A5C16E6287200E04427 /* ATimer.cpp in Sources */,
+				4CAF5A5F16E6374900E04427 /* AMacTimerWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

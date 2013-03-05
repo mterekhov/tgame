@@ -14,6 +14,8 @@ public:
     virtual const bool isValid() const = 0;
     virtual const bool isRepeats() const = 0;
     virtual void* userData() = 0;
+    
+    virtual void fireObject() = 0;
 };
 
-#endif /* defined(__Blockout__ATimer__) */
+#endif

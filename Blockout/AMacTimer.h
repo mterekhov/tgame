@@ -6,6 +6,8 @@
 #include <time.h>
 #include <list>
 
+#import <Foundation/Foundation.h>
+
 #include "ATimer.h"
 #include "BlockoutTypes.h"
 #include "AFireObject.h"
@@ -20,6 +22,7 @@ private:
     bool _isRepeats;
     float _fireInterval;
     void* _usersData;
+    NSTimer* _timer;
 
 public:
     AMacTimer(const float interval, AFireObject* target, void* usersData, const bool repeats);
@@ -31,6 +34,8 @@ public:
     const bool isValid() const;
     const bool isRepeats() const;
     void* userData();
+    
+    void fireObject();
 };
 
 //==============================================================================
