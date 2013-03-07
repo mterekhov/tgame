@@ -56,7 +56,7 @@ void ADataLiner::pushNormalPointList(const TPointsList& pointsList)
 
 //==============================================================================
 
-EIntegrity ADataLiner::checkIntegrity()
+EIntegrity ADataLiner::checkIntegrity() const
 {
     EIntegrity result = EINTEGRITY_OK;
     
@@ -79,12 +79,14 @@ EIntegrity ADataLiner::checkIntegrity()
 
 //==============================================================================
 
-TUlong ADataLiner::pointsCount()
+TUlong ADataLiner::pointsCount() const
 {
     return numberOfFloatValues() / arrayStride();
 }
 
-TUlong ADataLiner::numberOfFloatValues()
+//==============================================================================
+
+TUlong ADataLiner::numberOfFloatValues() const
 {
     TUlong coordsSize = _coordsList.size();
     if (!coordsSize)
@@ -99,7 +101,7 @@ TUlong ADataLiner::numberOfFloatValues()
 
 //==============================================================================
 
-TUint ADataLiner::arrayStride()
+TUint ADataLiner::arrayStride() const
 {
     if (checkIntegrity() != EINTEGRITY_OK)
         return 0;
@@ -121,7 +123,7 @@ TUint ADataLiner::arrayStride()
 
 //==============================================================================
 
-bool ADataLiner::generateArray(GLfloat* resultArray)
+bool ADataLiner::generateArray(GLfloat* resultArray) const
 {
     if (!resultArray)
         return false;

@@ -1,6 +1,5 @@
 #include "ADrawBasics.h"
 #include "AOpenGLState.h"
-#include "ADataLiner.h"
 
 //==============================================================================
 
@@ -10,7 +9,6 @@
 
 void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
 {
-    TPointsList points;
     APoint p1 = location;
     APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
     APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
@@ -21,49 +19,50 @@ void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
     APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
     APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
 
-//    points.push_back(p1);
-//    points.push_back(p2);
-//    points.push_back(p4);
-//    points.push_back(p2);
-//    points.push_back(p3);
-//    points.push_back(p4);
+    ADataLiner dataLiner;
+    dataLiner.pushPoint(p1);
+    dataLiner.pushPoint(p2);
+    dataLiner.pushPoint(p4);
+    dataLiner.pushPoint(p2);
+    dataLiner.pushPoint(p3);
+    dataLiner.pushPoint(p4);
+    
+    dataLiner.pushPoint(p5);
+    dataLiner.pushPoint(p6);
+    dataLiner.pushPoint(p8);
+    dataLiner.pushPoint(p6);
+    dataLiner.pushPoint(p7);
+    dataLiner.pushPoint(p8);
+    
+    dataLiner.pushPoint(p5);
+    dataLiner.pushPoint(p8);
+    dataLiner.pushPoint(p1);
+    dataLiner.pushPoint(p8);
+    dataLiner.pushPoint(p4);
+    dataLiner.pushPoint(p1);
+    
+    dataLiner.pushPoint(p5);
+    dataLiner.pushPoint(p6);
+    dataLiner.pushPoint(p1);
+    dataLiner.pushPoint(p6);
+    dataLiner.pushPoint(p2);
+    dataLiner.pushPoint(p1);
 
-//    points.push_back(p5);
-//    points.push_back(p6);
-//    points.push_back(p8);
-//    points.push_back(p6);
-//    points.push_back(p7);
-//    points.push_back(p8);
+    dataLiner.pushPoint(p6);
+    dataLiner.pushPoint(p7);
+    dataLiner.pushPoint(p2);
+    dataLiner.pushPoint(p7);
+    dataLiner.pushPoint(p3);
+    dataLiner.pushPoint(p2);
 
-    points.push_back(p5);
-    points.push_back(p8);
-    points.push_back(p1);
-    points.push_back(p8);
-    points.push_back(p4);
-    points.push_back(p1);
+    dataLiner.pushPoint(p8);
+    dataLiner.pushPoint(p7);
+    dataLiner.pushPoint(p4);
+    dataLiner.pushPoint(p7);
+    dataLiner.pushPoint(p3);
+    dataLiner.pushPoint(p4);
 
-    points.push_back(p5);
-    points.push_back(p6);
-    points.push_back(p1);
-    points.push_back(p6);
-    points.push_back(p2);
-    points.push_back(p1);
-
-    points.push_back(p6);
-    points.push_back(p7);
-    points.push_back(p2);
-    points.push_back(p7);
-    points.push_back(p3);
-    points.push_back(p2);
-
-    points.push_back(p8);
-    points.push_back(p7);
-    points.push_back(p4);
-    points.push_back(p7);
-    points.push_back(p3);
-    points.push_back(p4);
-
-    ADrawBasics::drawTriangles(points);
+    ADrawBasics::drawTriangles(dataLiner);
 }
 
 //==============================================================================
@@ -115,10 +114,8 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 
 //==============================================================================
 
-void ADrawBasics::drawTriangles(const TPointsList& points)
+void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
 {
-    ADataLiner dataLiner;
-    dataLiner.pushCoordPointList(points);
     TUlong sizer = dataLiner.numberOfFloatValues();
     GLfloat* line = new GLfloat[sizer];
     memset(line, 0, sizer * sizeof(GLfloat));
