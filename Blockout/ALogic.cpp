@@ -2,24 +2,22 @@
 
 //==============================================================================
 
-ALogic::ALogic(const unsigned int width, const unsigned int height, const unsigned int levelIndex)
+ALogic::ALogic(const AFormation& initFormation) : _data(initFormation)
 {
-    _data = new AFormation(width, height, levelIndex);
 }
 
 //==============================================================================
 
 ALogic::~ALogic()
 {
-    delete _data;
 }
 
 //==============================================================================
 
 bool ALogic::collisions(const AFormation* forCompare, const APoint& pos)
 {
-    if (!_data->doesInbounds(forCompare))
-        return false;
+//    if (!_data->doesInbounds(forCompare))
+//        return false;
     
 //    for (int l = 0; l < forCompare->levelsCount(); l++)
 //    {
@@ -41,4 +39,10 @@ bool ALogic::collisions(const AFormation* forCompare, const APoint& pos)
 //    }
     
     return false;
+}
+
+//==============================================================================
+
+void ALogic::processLogic()
+{
 }

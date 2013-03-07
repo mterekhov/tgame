@@ -11,13 +11,15 @@
 class ALogic
 {
 private:
-    AFormation* _data;
+    AFormation _data;
     
 public:
-    ALogic(const unsigned int width, const unsigned int height, const unsigned int levelIndex);
+    ALogic(const AFormation& initFormation);
     ~ALogic();
     
     bool collisions(const AFormation* forCompare, const APoint& pos);
+    
+    void processLogic();
 };
 
 //==============================================================================

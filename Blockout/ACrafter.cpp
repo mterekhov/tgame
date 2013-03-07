@@ -50,7 +50,7 @@ void ACrafter::addObjectForRender(ARObject* object)
 
 //==============================================================================
 
-void ACrafter::craft()
+void ACrafter::processRender()
 {
     TRObjectsListIter iterBegin = _renderList.begin();
     TRObjectsListIter iterEnd = _renderList.end();

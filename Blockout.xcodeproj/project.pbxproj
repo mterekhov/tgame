@@ -18,7 +18,6 @@
 		4C80010016BD4F81008B1E74 /* ARObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000FF16BD4F81008B1E74 /* ARObject.cpp */; };
 		4C923D0516C444B0008EDA5C /* APoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0316C444B0008EDA5C /* APoint.cpp */; };
 		4C923D0816C45319008EDA5C /* ALogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0616C45319008EDA5C /* ALogic.cpp */; };
-		4CAF5A5C16E6287200E04427 /* ATimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF5A5A16E6287200E04427 /* ATimer.cpp */; };
 		4CAF5A5F16E6374900E04427 /* AMacTimerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */; };
 		4CB4E65316BEA6F400CC9FA4 /* AVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */; };
 		4CC8218516D7A52A0090CE07 /* celtic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218216D7A52A0090CE07 /* celtic.png */; };
@@ -28,6 +27,7 @@
 		4CC85D6A16C3FE5400B961AB /* AColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CC85D6816C3FE5400B961AB /* AColor.cpp */; };
 		4CC85D6D16C4027100B961AB /* AOpenGLState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */; };
 		4CC85D6F16C409A600B961AB /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CC85D6E16C409A600B961AB /* readme.txt */; };
+		4CD68F1A16E87F5D005FD197 /* ATimer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CD68F1916E87F5D005FD197 /* ATimer.mm */; };
 		4CEA40E016CFAFD500A678B5 /* ATexturedBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */; };
 		4CEA40E816CFB09700A678B5 /* aimage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E216CFB09700A678B5 /* aimage.cpp */; };
 		4CEA40E916CFB09700A678B5 /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E416CFB09700A678B5 /* atexture.cpp */; };
@@ -67,8 +67,6 @@
 		4C923D0416C444B0008EDA5C /* APoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APoint.h; path = Blockout/APoint.h; sourceTree = "<group>"; };
 		4C923D0616C45319008EDA5C /* ALogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ALogic.cpp; path = Blockout/ALogic.cpp; sourceTree = "<group>"; };
 		4C923D0716C45319008EDA5C /* ALogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALogic.h; path = Blockout/ALogic.h; sourceTree = "<group>"; };
-		4CAF5A5A16E6287200E04427 /* ATimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATimer.cpp; sourceTree = "<group>"; };
-		4CAF5A5B16E6287200E04427 /* ATimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATimer.h; sourceTree = "<group>"; };
 		4CAF5A5D16E6374900E04427 /* AMacTimerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMacTimerWrapper.h; path = Blockout/AMacTimerWrapper.h; sourceTree = "<group>"; };
 		4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AMacTimerWrapper.mm; path = Blockout/AMacTimerWrapper.mm; sourceTree = "<group>"; };
 		4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AVector.cpp; path = Blockout/AVector.cpp; sourceTree = "<group>"; };
@@ -84,6 +82,8 @@
 		4CC85D6B16C4027100B961AB /* AOpenGLState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AOpenGLState.cpp; path = Blockout/AOpenGLState.cpp; sourceTree = "<group>"; };
 		4CC85D6C16C4027100B961AB /* AOpenGLState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOpenGLState.h; path = Blockout/AOpenGLState.h; sourceTree = "<group>"; };
 		4CC85D6E16C409A600B961AB /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		4CD68F1816E87F5D005FD197 /* ATimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATimer.h; path = Blockout/ATimer.h; sourceTree = "<group>"; };
+		4CD68F1916E87F5D005FD197 /* ATimer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ATimer.mm; path = Blockout/ATimer.mm; sourceTree = "<group>"; };
 		4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATexturedBlock.cpp; path = Blockout/ATexturedBlock.cpp; sourceTree = "<group>"; };
 		4CEA40DF16CFAFD500A678B5 /* ATexturedBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATexturedBlock.h; path = Blockout/ATexturedBlock.h; sourceTree = "<group>"; };
 		4CEA40E216CFB09700A678B5 /* aimage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimage.cpp; path = Blockout/aimage.cpp; sourceTree = "<group>"; };
@@ -137,23 +137,14 @@
 			name = DataTypes;
 			sourceTree = "<group>";
 		};
-		4C8000F616BD43FD008B1E74 /* RenderObjects */ = {
+		4C8000F616BD43FD008B1E74 /* Render */ = {
 			isa = PBXGroup;
 			children = (
-				4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */,
-				4CEA40DF16CFAFD500A678B5 /* ATexturedBlock.h */,
-				4C1D72CF16CFA41000C2DFB7 /* ASolidBlock.cpp */,
-				4C1D72D016CFA41000C2DFB7 /* ASolidBlock.h */,
-				4C8000FF16BD4F81008B1E74 /* ARObject.cpp */,
-				4C8000F416BD43F7008B1E74 /* ARObject.h */,
-				4C8000EF16BD3D35008B1E74 /* AWell.cpp */,
-				4C8000F016BD3D35008B1E74 /* AWell.h */,
-				4C14891416C547130014683F /* ABlock.cpp */,
-				4C14891516C547130014683F /* ABlock.h */,
-				4C52515B16CA88AC002A5B42 /* ABlockFactory.cpp */,
-				4C52515C16CA88AC002A5B42 /* ABlockFactory.h */,
+				4CAF5A6016E647A600E04427 /* ObjectsToRender */,
+				4C8000E816BD2F27008B1E74 /* ACrafter.cpp */,
+				4C8000E916BD2F27008B1E74 /* ACrafter.h */,
 			);
-			name = RenderObjects;
+			name = Render;
 			sourceTree = "<group>";
 		};
 		4C923D0916C45321008EDA5C /* Logic */ = {
@@ -166,6 +157,33 @@
 				4C14891216C53ED10014683F /* AFormation.h */,
 			);
 			name = Logic;
+			sourceTree = "<group>";
+		};
+		4CAF5A6016E647A600E04427 /* ObjectsToRender */ = {
+			isa = PBXGroup;
+			children = (
+				4CAF5A6116E648A500E04427 /* Blocks */,
+				4C8000FF16BD4F81008B1E74 /* ARObject.cpp */,
+				4C8000F416BD43F7008B1E74 /* ARObject.h */,
+				4C8000EF16BD3D35008B1E74 /* AWell.cpp */,
+				4C8000F016BD3D35008B1E74 /* AWell.h */,
+				4C52515B16CA88AC002A5B42 /* ABlockFactory.cpp */,
+				4C52515C16CA88AC002A5B42 /* ABlockFactory.h */,
+			);
+			name = ObjectsToRender;
+			sourceTree = "<group>";
+		};
+		4CAF5A6116E648A500E04427 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */,
+				4CEA40DF16CFAFD500A678B5 /* ATexturedBlock.h */,
+				4C1D72CF16CFA41000C2DFB7 /* ASolidBlock.cpp */,
+				4C1D72D016CFA41000C2DFB7 /* ASolidBlock.h */,
+				4C14891416C547130014683F /* ABlock.cpp */,
+				4C14891516C547130014683F /* ABlock.h */,
+			);
+			name = Blocks;
 			sourceTree = "<group>";
 		};
 		4CC8217B16D7A3100090CE07 /* Resources */ = {
@@ -181,12 +199,12 @@
 		4CC8218B16D7AE2D0090CE07 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				4CD68F1816E87F5D005FD197 /* ATimer.h */,
+				4CD68F1916E87F5D005FD197 /* ATimer.mm */,
 				4CAF5A5D16E6374900E04427 /* AMacTimerWrapper.h */,
 				4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */,
 				4CC8218816D7ABC10090CE07 /* AMacTimer.mm */,
 				4CC8218916D7ABC10090CE07 /* AMacTimer.h */,
-				4CAF5A5A16E6287200E04427 /* ATimer.cpp */,
-				4CAF5A5B16E6287200E04427 /* ATimer.h */,
 				4CC8218C16D7AE490090CE07 /* AFireObject.h */,
 			);
 			name = Timer;
@@ -281,9 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				4C923D0916C45321008EDA5C /* Logic */,
-				4C8000F616BD43FD008B1E74 /* RenderObjects */,
-				4C8000E816BD2F27008B1E74 /* ACrafter.cpp */,
-				4C8000E916BD2F27008B1E74 /* ACrafter.h */,
+				4C8000F616BD43FD008B1E74 /* Render */,
 				4C8000E516BD2F12008B1E74 /* ABlockout.cpp */,
 				4C8000E616BD2F12008B1E74 /* ABlockout.h */,
 				4C52515916CA7B1B002A5B42 /* BlockoutTypes.h */,
@@ -382,8 +398,8 @@
 				4CEA40E916CFB09700A678B5 /* atexture.cpp in Sources */,
 				4CEA40EA16CFB09700A678B5 /* atga.cpp in Sources */,
 				4CC8218A16D7ABC10090CE07 /* AMacTimer.mm in Sources */,
-				4CAF5A5C16E6287200E04427 /* ATimer.cpp in Sources */,
 				4CAF5A5F16E6374900E04427 /* AMacTimerWrapper.mm in Sources */,
+				4CD68F1A16E87F5D005FD197 /* ATimer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

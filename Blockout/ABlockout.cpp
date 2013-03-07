@@ -9,7 +9,7 @@
 
 //==============================================================================
 
-ABlockout::ABlockout() : _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f)
+ABlockout::ABlockout() : _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f), _logic(AFormation(3.0f, 3.0f, 9.0f))
 {
     init();
 }
@@ -32,6 +32,7 @@ void ABlockout::init()
 }
 
 //==============================================================================
+
 void ABlockout::render()
 {
     AOpenGLState* oglState = AOpenGLState::shared();
@@ -39,7 +40,7 @@ void ABlockout::render()
     oglState->pushMarices();
 
     ADrawBasics::installCamera(AVector(4, -3, 7),
-                               AVector(0,0,0),
+                               AVector(0, 0, 0),
                                AVector(0.0f, 1.0f, 0.0f));
 //    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
 //                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
@@ -47,9 +48,17 @@ void ABlockout::render()
 //    ADrawBasics::drawOrigin(originPoint, 1.0f);
 //    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
-//    _crafter.craft();
+//    _crafter.processRender();
     glColor4f(1, 0, 0, 1);
     ADrawBasics::drawSolidCube(APoint(0.0f, 0.0f, 0.0f), 1.0f);
     
     oglState->popMarices();
+}
+
+//==============================================================================
+
+void ABlockout::processGameCycle()
+{
+    _logic.processLogic();
+    render();
 }

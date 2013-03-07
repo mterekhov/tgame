@@ -28,7 +28,7 @@ public:
     
     void addObjectForRender(ARObject* object);
 
-    void craft();
+    void processRender();
 };
 
 //==============================================================================
