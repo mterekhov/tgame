@@ -1,6 +1,7 @@
 #ifndef Blockout_BlockoutTypes_h
 #define Blockout_BlockoutTypes_h
 
+typedef unsigned long TUlong;
 typedef unsigned int TUint;
 typedef TUint TWidth;
 typedef TUint THeight;

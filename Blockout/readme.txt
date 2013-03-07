@@ -23,4 +23,4 @@ ui draw
 - start and end game statements
 - text render(texture map for numbers only)
 - table of records for current well width/height/depth/block type
-- menu records/new/quit(every menu item is a texture)
+- menu champions/new/quit(every menu item is a texture)
