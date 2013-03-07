@@ -79,7 +79,12 @@ EIntegrity ADataLiner::checkIntegrity()
 
 //==============================================================================
 
-TUlong ADataLiner::arrayElementsNumber()
+TUlong ADataLiner::pointsCount()
+{
+    return numberOfFloatValues() / arrayStride();
+}
+
+TUlong ADataLiner::numberOfFloatValues()
 {
     TUlong coordsSize = _coordsList.size();
     if (!coordsSize)
@@ -125,7 +130,7 @@ bool ADataLiner::generateArray(GLfloat* resultArray)
         return false;
     
     TUlong stride = arrayStride();
-    TUlong sizer = arrayElementsNumber();
+    TUlong sizer = numberOfFloatValues();
     if (!sizer)
         return false;
     

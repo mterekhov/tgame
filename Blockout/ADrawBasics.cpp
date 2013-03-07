@@ -1,5 +1,10 @@
 #include "ADrawBasics.h"
 #include "AOpenGLState.h"
+#include "ADataLiner.h"
+
+//==============================================================================
+
+#pragma mark - render basics -
 
 //==============================================================================
 
@@ -112,19 +117,25 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 
 void ADrawBasics::drawTriangles(const TPointsList& points)
 {
-    GLfloat* line = new GLfloat[3 * points.size()];
-    for (int i = 0; i < points.size(); i++)
-    {
-        line[3 * i] = points[i].x;
-        line[3 * i + 1] = points[i].y;
-        line[3 * i + 2] = points[i].z;
-    }
+    ADataLiner dataLiner;
+    dataLiner.pushCoordPointList(points);
+    TUlong sizer = dataLiner.numberOfFloatValues();
+    GLfloat* line = new GLfloat[sizer];
+    memset(line, 0, sizer * sizeof(GLfloat));
+
+    if (dataLiner.generateArray(line) == false)
+        return;
 
     glVertexPointer(3, GL_FLOAT, 0, line);
 //    glDrawArrays(GL_TRIANGLES, 0, 36 / 3);
-    glDrawArrays(GL_TRIANGLES, 0, points.size());
+    glDrawArrays(GL_TRIANGLES, 0, dataLiner.pointsCount());
+    
     delete [] line;
 }
+
+//==============================================================================
+
+#pragma mark - render some usefull stuff -
 
 //==============================================================================
 

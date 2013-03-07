@@ -35,8 +35,9 @@ public:
     void pushUVPointList(const TPoints2DList& pointsList);
     void pushNormalPointList(const TPointsList& pointsList);
     
-    TUlong arrayElementsNumber();
+    TUlong numberOfFloatValues();
     TUint arrayStride();
+    TUlong pointsCount();
 
     EIntegrity checkIntegrity();
     bool generateArray(GLfloat* resultArray);
