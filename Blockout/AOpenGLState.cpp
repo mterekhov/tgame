@@ -161,6 +161,7 @@ bool AOpenGLState::currentTexture(const ATexture& texture)
         return false;
     
     _currentTexture = texture;
+    texture.atBind();
 
     return true;
 }
@@ -176,7 +177,7 @@ ATexture AOpenGLState::currentTexture() const
 
 void AOpenGLState::clearCurrentTexture()
 {
-    glBindTexture(GL_TEXTURE_2D, 0);
+    _currentTexture.atUnBind();
     _currentTexture = ATexture();
 }
 
