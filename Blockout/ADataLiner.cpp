@@ -145,14 +145,20 @@ bool ADataLiner::generateArray(GLfloat* resultArray) const
         resultArray[stride * i + 1] = point.y;
         resultArray[stride * i + 2] = point.z;
 
-        APoint2D point2d = _uvList[i];
-        resultArray[stride * i + 3] = point2d.x;
-        resultArray[stride * i + 4] = point2d.y;
+        if (_uvList.size())
+        {
+            APoint2D point2d = _uvList[i];
+            resultArray[stride * i + 3] = point2d.x;
+            resultArray[stride * i + 4] = point2d.y;
+        }
         
-        point = _normalsList[i];
-        resultArray[stride * i + 5] = point.x;
-        resultArray[stride * i + 6] = point.y;
-        resultArray[stride * i + 7] = point.z;
+        if (_normalsList.size())
+        {
+            point = _normalsList[i];
+            resultArray[stride * i + 5] = point.x;
+            resultArray[stride * i + 6] = point.y;
+            resultArray[stride * i + 7] = point.z;
+        }
     }
     
     return true;
