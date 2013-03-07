@@ -30,7 +30,6 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f)
 	glClearDepth(1.0f);
 	glDepthFunc(GL_LESS);
     
-	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_CULL_FACE);
 	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
     glEnableClientState(GL_VERTEX_ARRAY);
@@ -129,6 +128,56 @@ void AOpenGLState::pushMarices()
 void AOpenGLState::popMarices()
 {
     glPopMatrix();
+}
+
+//==============================================================================
+
+void AOpenGLState::textureEnable()
+{
+    _textureEnabled = true;
+    glEnable(GL_TEXTURE_2D);
+}
+
+//==============================================================================
+
+void AOpenGLState::textureDisable()
+{
+    _textureEnabled = false;
+    glDisable(GL_TEXTURE_2D);
+}
+
+//==============================================================================
+
+bool AOpenGLState::textureEnabled() const
+{
+    return _textureEnabled;
+}
+
+//==============================================================================
+
+bool AOpenGLState::currentTexture(const ATexture& texture)
+{
+    if (_textureEnabled == false)
+        return false;
+    
+    _currentTexture = texture;
+
+    return true;
+}
+
+//==============================================================================
+
+ATexture AOpenGLState::currentTexture() const
+{
+    return _currentTexture;
+}
+
+//==============================================================================
+
+void AOpenGLState::clearCurrentTexture()
+{
+    glBindTexture(GL_TEXTURE_2D, 0);
+    _currentTexture = ATexture();
 }
 
 //==============================================================================

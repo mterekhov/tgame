@@ -4,6 +4,7 @@
 //==============================================================================
 
 #include "AColor.h"
+#include "atexture.h"
 
 //==============================================================================
 
@@ -12,9 +13,11 @@ class AOpenGLState
 private:
     static AOpenGLState* instance;
     
+    ATexture _currentTexture;
     AColor _clearColor;
     AColor _drawColor;
     GLfloat _lineWidth;
+    bool _textureEnabled;
     
     void clearColorSetup(const AColor& color);
     void drawColorSetup(const AColor& color);
@@ -39,7 +42,15 @@ public:
     void pushMarices();
     void popMarices();
     
+    void textureEnable();
+    void textureDisable();
+    bool textureEnabled() const;
+    
     void clear(GLbitfield mask);
+    
+    bool currentTexture(const ATexture& texture);
+    ATexture currentTexture() const;
+    void clearCurrentTexture();
 };
 
 //==============================================================================
