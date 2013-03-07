@@ -9,7 +9,7 @@
 
 //==============================================================================
 
-ABlockout::ABlockout() : _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f), _logic(AFormation(3.0f, 3.0f, 9.0f))
+ABlockout::ABlockout() : _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f)
 {
     init();
 }

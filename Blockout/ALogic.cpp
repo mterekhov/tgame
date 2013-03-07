@@ -2,7 +2,7 @@
 
 //==============================================================================
 
-ALogic::ALogic(const AFormation& initFormation) : _data(initFormation)
+ALogic::ALogic()
 {
 }
 

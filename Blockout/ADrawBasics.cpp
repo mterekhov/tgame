@@ -226,7 +226,7 @@ void ADrawBasics::installCamera(const AVector& eyePosition3D, const AVector& cen
         y[2] /= mag;
     }
 
-    #define M(row,col)  m[col*4+row]
+    #define M(row,col)  m[col * 4 + row]
     M(0, 0) = x[0];
     M(0, 1) = x[1];
     M(0, 2) = x[2];

@@ -10,11 +10,8 @@
 
 class ALogic
 {
-private:
-    AFormation _data;
-    
 public:
-    ALogic(const AFormation& initFormation);
+    ALogic();
     ~ALogic();
     
     bool collisions(const AFormation* forCompare, const APoint& pos);
