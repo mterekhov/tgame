@@ -1,5 +1,5 @@
-#ifndef __Blockout__APoint__
-#define __Blockout__APoint__
+#ifndef __Blockout__APoint2D__
+#define __Blockout__APoint2D__
 
 //==============================================================================
 
@@ -8,22 +8,21 @@
 
 //==============================================================================
 
-class APoint
+class APoint2D
 {
 public:
-    APoint();
-    APoint(const GLfloat x, const GLfloat y, const GLfloat z);
-    APoint(const APoint& point);
-    ~APoint();
+    APoint2D();
+    APoint2D(const GLfloat x, const GLfloat y);
+    APoint2D(const APoint2D& point);
+    ~APoint2D();
 
     GLfloat x;
     GLfloat y;
-    GLfloat z;
 };
 
 //==============================================================================
 
-typedef std::vector<APoint> TPointsList;
+typedef std::vector<APoint2D> TPointsList;
 
 //==============================================================================
 
