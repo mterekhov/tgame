@@ -37,7 +37,7 @@ public:
     
     TUlong numberOfFloatValues() const;
     TUint arrayStride() const;
-    TUlong pointsCount() const;
+    TUint pointsCount() const;
 
     EIntegrity checkIntegrity() const;
     bool generateArray(GLfloat* resultArray) const;

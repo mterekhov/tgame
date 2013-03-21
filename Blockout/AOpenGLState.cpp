@@ -30,9 +30,12 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f)
 	glClearDepth(1.0f);
 	glDepthFunc(GL_LESS);
     
+    textureEnable();
+    
 	glEnable(GL_CULL_FACE);
 	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
     glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 
 //==============================================================================
@@ -134,6 +137,9 @@ void AOpenGLState::popMarices()
 
 void AOpenGLState::textureEnable()
 {
+    if (_textureEnabled)
+        return;
+    
     _textureEnabled = true;
     glEnable(GL_TEXTURE_2D);
 }
@@ -142,6 +148,9 @@ void AOpenGLState::textureEnable()
 
 void AOpenGLState::textureDisable()
 {
+    if (!_textureEnabled)
+        return;
+    
     _textureEnabled = false;
     glDisable(GL_TEXTURE_2D);
 }
@@ -159,7 +168,7 @@ bool AOpenGLState::currentTexture(const ATexture& texture)
 {
     if (_textureEnabled == false)
         return false;
-    
+
     _currentTexture = texture;
     texture.atBind();
 

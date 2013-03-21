@@ -12,7 +12,7 @@ class ATexturedBlock : public ABlock
 {
 private:
     ATexture texture;
-    
+
 public:
     ATexturedBlock(const AFormation& data);
     ~ATexturedBlock();

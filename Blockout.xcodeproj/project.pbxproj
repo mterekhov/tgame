@@ -19,6 +19,7 @@
 		4C923D0516C444B0008EDA5C /* APoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0316C444B0008EDA5C /* APoint.cpp */; };
 		4C923D0816C45319008EDA5C /* ALogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0616C45319008EDA5C /* ALogic.cpp */; };
 		4CAF5A5F16E6374900E04427 /* AMacTimerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */; };
+		4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4CB3AF4216EB3C0B002DE363 /* celtic.tga */; };
 		4CB4E65316BEA6F400CC9FA4 /* AVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */; };
 		4CC8218516D7A52A0090CE07 /* celtic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218216D7A52A0090CE07 /* celtic.png */; };
 		4CC8218616D7A52A0090CE07 /* marble.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218316D7A52A0090CE07 /* marble.png */; };
@@ -71,6 +72,7 @@
 		4C923D0716C45319008EDA5C /* ALogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALogic.h; path = Blockout/ALogic.h; sourceTree = "<group>"; };
 		4CAF5A5D16E6374900E04427 /* AMacTimerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMacTimerWrapper.h; path = Blockout/AMacTimerWrapper.h; sourceTree = "<group>"; };
 		4CAF5A5E16E6374900E04427 /* AMacTimerWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AMacTimerWrapper.mm; path = Blockout/AMacTimerWrapper.mm; sourceTree = "<group>"; };
+		4CB3AF4216EB3C0B002DE363 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = Blockout/resources/celtic.tga; sourceTree = "<group>"; };
 		4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AVector.cpp; path = Blockout/AVector.cpp; sourceTree = "<group>"; };
 		4CB4E65216BEA6F400CC9FA4 /* AVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVector.h; path = Blockout/AVector.h; sourceTree = "<group>"; };
 		4CC8218216D7A52A0090CE07 /* celtic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtic.png; path = Blockout/resources/celtic.png; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		4CC8217B16D7A3100090CE07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CB3AF4216EB3C0B002DE363 /* celtic.tga */,
 				4CC8218216D7A52A0090CE07 /* celtic.png */,
 				4CC8218316D7A52A0090CE07 /* marble.png */,
 				4CC8218416D7A52A0090CE07 /* recycled.png */,
@@ -376,6 +379,7 @@
 				4CC8218516D7A52A0090CE07 /* celtic.png in Resources */,
 				4CC8218616D7A52A0090CE07 /* marble.png in Resources */,
 				4CC8218716D7A52A0090CE07 /* recycled.png in Resources */,
+				4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

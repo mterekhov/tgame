@@ -37,13 +37,22 @@ bool ATga::atReadHeaders(FILE* tga_file)
         return false;
 
     SFileHeader file_header = {0};
-    fread(&file_header, FILE_HEADER_SIZE, 1, tga_file);
+    fread(&file_header.identityLength, 1, 1, tga_file);
+    fread(&file_header.paleteType, 1, 1, tga_file);
+    fread(&file_header.imageType, 1, 1, tga_file);
 
     SPaletteHeader palette_header = {0};
-    fread(&palette_header, PALETTE_HEADER_SIZE, 1, tga_file);
+    fread(&palette_header.offset, 2, 1, tga_file);
+    fread(&palette_header.size, 2, 1, tga_file);
+    fread(&palette_header.bitpp, 1, 1, tga_file);
 
     SImageHeader image_header = {0};
-    fread(&image_header, IMAGE_HEADER_SIZE, 1, tga_file);
+    fread(&image_header.x_coord, 2, 1, tga_file);
+    fread(&image_header.y_coord, 2, 1, tga_file);
+    fread(&image_header.width, 2, 1, tga_file);
+    fread(&image_header.height, 2, 1, tga_file);
+    fread(&image_header.bitpp, 1, 1, tga_file);
+    fread(&image_header.image_descriptor, 1, 1, tga_file);
 
     if (file_header.identityLength)
     {

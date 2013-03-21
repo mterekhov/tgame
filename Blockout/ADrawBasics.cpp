@@ -7,61 +7,36 @@
 
 //==============================================================================
 
+void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, const ATexture& texture)
+{
+    TPointsList coordspoints = ADrawBasics::generateCoords(pos, cubeSize);
+    TPoints2DList uvpoints = ADrawBasics::generateUV(texture);
+    ADataLiner dataLiner;
+    dataLiner.pushCoordPointList(coordspoints);
+    dataLiner.pushUVPointList(uvpoints);
+
+    AOpenGLState* instance = AOpenGLState::shared();
+    
+    TUint sizer = dataLiner.numberOfFloatValues();
+    GLfloat* line = new GLfloat[sizer];
+    memset(line, 0, sizer * sizeof(GLfloat));
+    if (dataLiner.generateArray(line) == false)
+        return;
+
+    glTexCoordPointer(2, GL_FLOAT, dataLiner.arrayStride(), line);
+    instance->currentTexture(texture);
+    ADrawBasics::drawTriangles(dataLiner);
+    instance->clearCurrentTexture();
+}
+
+//==============================================================================
+
 void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
 {
-    APoint p1 = location;
-    APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
-    APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
-    APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
-
-    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
-    APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
-    APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
-    APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
-
+    TPointsList pointsList = ADrawBasics::generateCoords(location, cubeSize);
     ADataLiner dataLiner;
-    dataLiner.pushPoint(p1);
-    dataLiner.pushPoint(p2);
-    dataLiner.pushPoint(p4);
-    dataLiner.pushPoint(p2);
-    dataLiner.pushPoint(p3);
-    dataLiner.pushPoint(p4);
+    dataLiner.pushCoordPointList(pointsList);
     
-    dataLiner.pushPoint(p5);
-    dataLiner.pushPoint(p6);
-    dataLiner.pushPoint(p8);
-    dataLiner.pushPoint(p6);
-    dataLiner.pushPoint(p7);
-    dataLiner.pushPoint(p8);
-    
-    dataLiner.pushPoint(p5);
-    dataLiner.pushPoint(p8);
-    dataLiner.pushPoint(p1);
-    dataLiner.pushPoint(p8);
-    dataLiner.pushPoint(p4);
-    dataLiner.pushPoint(p1);
-    
-    dataLiner.pushPoint(p5);
-    dataLiner.pushPoint(p6);
-    dataLiner.pushPoint(p1);
-    dataLiner.pushPoint(p6);
-    dataLiner.pushPoint(p2);
-    dataLiner.pushPoint(p1);
-
-    dataLiner.pushPoint(p6);
-    dataLiner.pushPoint(p7);
-    dataLiner.pushPoint(p2);
-    dataLiner.pushPoint(p7);
-    dataLiner.pushPoint(p3);
-    dataLiner.pushPoint(p2);
-
-    dataLiner.pushPoint(p8);
-    dataLiner.pushPoint(p7);
-    dataLiner.pushPoint(p4);
-    dataLiner.pushPoint(p7);
-    dataLiner.pushPoint(p3);
-    dataLiner.pushPoint(p4);
-
     ADrawBasics::drawTriangles(dataLiner);
 }
 
@@ -114,20 +89,148 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 
 //==============================================================================
 
+void ADrawBasics::drawTriangles(const ADataLiner& dataLiner, const ATexture& texture)
+{
+    AOpenGLState* oglInstance = AOpenGLState::shared();
+    oglInstance->currentTexture(texture);
+    drawTriangles(dataLiner);
+}
+
+//==============================================================================
+
 void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
 {
-    TUlong sizer = dataLiner.numberOfFloatValues();
+    TUint sizer = dataLiner.numberOfFloatValues();
     GLfloat* line = new GLfloat[sizer];
     memset(line, 0, sizer * sizeof(GLfloat));
 
     if (dataLiner.generateArray(line) == false)
         return;
 
-    glVertexPointer(3, GL_FLOAT, 0, line);
-//    glDrawArrays(GL_TRIANGLES, 0, 36 / 3);
+    glVertexPointer(3, GL_FLOAT, dataLiner.arrayStride(), line);
     glDrawArrays(GL_TRIANGLES, 0, dataLiner.pointsCount());
     
     delete [] line;
+}
+
+//==============================================================================
+
+TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
+{
+    TPoints2DList points;
+    
+    GLfloat xaspect = static_cast<GLfloat>(tex.atImageWidth()) / static_cast<GLfloat>(tex.atWidth());
+    GLfloat yaspect = static_cast<GLfloat>(tex.atImageHeight()) / static_cast<GLfloat>(tex.atHeight());
+
+    APoint2D p1 = APoint2D(0, 0);
+    APoint2D p2 = APoint2D(0, yaspect);
+    APoint2D p3 = APoint2D(xaspect, yaspect);
+    APoint2D p4 = APoint2D(xaspect, 0);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+    
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    return points;
+}
+
+//==============================================================================
+
+TPointsList ADrawBasics::generateCoords(const APoint& location, const GLfloat cubeSize)
+{
+    APoint p1 = location;
+    APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
+    APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
+    APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
+
+    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
+    APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
+    APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
+    APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
+
+    TPointsList points;
+    
+    points.push_back(p1);
+    points.push_back(p2);
+    points.push_back(p4);
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p4);
+
+    points.push_back(p5);
+    points.push_back(p6);
+    points.push_back(p8);
+    points.push_back(p6);
+    points.push_back(p7);
+    points.push_back(p8);
+    
+    points.push_back(p5);
+    points.push_back(p8);
+    points.push_back(p1);
+    points.push_back(p8);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p5);
+    points.push_back(p6);
+    points.push_back(p1);
+    points.push_back(p6);
+    points.push_back(p2);
+    points.push_back(p1);
+
+    points.push_back(p6);
+    points.push_back(p7);
+    points.push_back(p2);
+    points.push_back(p7);
+    points.push_back(p3);
+    points.push_back(p2);
+
+    points.push_back(p8);
+    points.push_back(p7);
+    points.push_back(p4);
+    points.push_back(p7);
+    points.push_back(p3);
+    points.push_back(p4);
+
+    return points;
 }
 
 //==============================================================================

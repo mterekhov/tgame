@@ -79,7 +79,7 @@ EIntegrity ADataLiner::checkIntegrity() const
 
 //==============================================================================
 
-TUlong ADataLiner::pointsCount() const
+TUint ADataLiner::pointsCount() const
 {
     return numberOfFloatValues() / arrayStride();
 }

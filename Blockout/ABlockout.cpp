@@ -49,8 +49,10 @@ void ABlockout::render()
 //    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
 //    _crafter.processRender();
-    glColor4f(1, 0, 0, 1);
-    ADrawBasics::drawSolidCube(APoint(0.0f, 0.0f, 0.0f), 1.0f);
+
+    ATexture tex;
+    tex.atInit("/Volumes/development/source/blockout/blockout/Blockout/resources/celtic.tga");
+    ADrawBasics::drawTexturedCube(APoint(0.0f, 0.0f, 0.0f), 1.0f, tex);
     
     oglState->popMarices();
 }

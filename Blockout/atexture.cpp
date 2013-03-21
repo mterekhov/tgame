@@ -75,7 +75,8 @@ bool ATexture::atInit(AImage& image)
     }
     else
     {
-        glTexImage2D(GL_TEXTURE_2D, 0, m_type, m_width, m_height, 0, m_type, m_pixelSize, image.aiData());
+        const TData* data = image.aiData();
+        glTexImage2D(GL_TEXTURE_2D, 0, m_type, m_width, m_height, 0, m_type, m_pixelSize, data);
     }
         
     return true;
