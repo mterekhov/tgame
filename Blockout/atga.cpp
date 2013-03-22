@@ -2,7 +2,7 @@
 
 //=============================================================================
 
-ATga::ATga(const std::string& fileName, bool headersOnly) : AImage(fileName)
+ATga::ATga(const std::string& fileName, bool headersOnly) : AImage(fileName), m_identity(0)
 {
     FILE* tga_file = fopen(fileName.c_str(), "rb");
     if (!tga_file)

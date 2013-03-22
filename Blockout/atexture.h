@@ -94,6 +94,8 @@ private:
     /// Apply all the filter to current texture id
     void atDefineFilters();
     
+    void defineImageType(const int bytePP);
+    
     /// Find out the nearest power of 2 size for texture
     /// @param const TWidth - width of original image
     /// @param const THeight - height of original image

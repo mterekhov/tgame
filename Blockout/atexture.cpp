@@ -42,6 +42,23 @@ void ATexture::atDestroy()
 
 //=============================================================================
 
+void ATexture::defineImageType(const int bytePP)
+{
+    switch (bytePP)
+    {
+        case 3:
+            m_type = GL_RGB;
+        break;
+        
+        case 4:
+            m_type = GL_RGBA;
+        break;
+        
+    }
+}
+
+//=============================================================================
+
 bool ATexture::atInit(const std::string& fileName)
 {
     TUint dotPos = fileName.rfind(".");
@@ -61,6 +78,8 @@ bool ATexture::atInit(const std::string& fileName)
 
 bool ATexture::atInit(AImage& image)
 {
+    defineImageType(image.aiBytePerPixel());
+    
     //  extend image data up to nearest power of two
     atLocateSize(image.aiWidth(), image.aiHeight());    
     atBind();
