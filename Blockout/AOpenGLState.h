@@ -51,6 +51,8 @@ public:
     bool currentTexture(const ATexture& texture);
     ATexture currentTexture() const;
     void clearCurrentTexture();
+    
+    std::string lastError();
 };
 
 //==============================================================================

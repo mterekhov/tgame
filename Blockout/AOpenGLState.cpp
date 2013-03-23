@@ -211,3 +211,37 @@ void AOpenGLState::lineWidth(const GLfloat width)
     _lineWidth = width;
     glLineWidth(width);
 }
+
+//==============================================================================
+
+std::string AOpenGLState::lastError()
+{
+    std::string error = "unknown error";
+    
+    GLenum errorCode = glGetError();
+    switch (errorCode) {
+        case GL_NO_ERROR:
+            error = "ok";
+            break;
+        case GL_INVALID_ENUM:
+            error = "An unacceptable value is specified for an enumerated argument. The offending command is ignored, and has no other side effect than to set the error flag.";
+            break;
+        case GL_INVALID_VALUE:
+            error = "A numeric argument is out of range. The offending command is ignored, and has no other side effect than to set the error flag.";
+            break;
+        case GL_INVALID_OPERATION:
+            error = "The specified operation is not allowed in the current state. The offending command is ignored, and has no other side effect than to set the error flag.";
+            break;
+        case GL_STACK_OVERFLOW:
+            error = "This command would cause a stack overflow. The offending command is ignored, and has no other side effect than to set the error flag.";
+            break;
+        case GL_STACK_UNDERFLOW:
+            error = "This command would cause a stack underflow. The offending command is ignored, and has no other side effect than to set the error flag.";
+            break;
+        case GL_OUT_OF_MEMORY:
+            error = "There is not enough memory left to execute the command. The state of the GL is undefined, except for the state of the error flags, after this error is recorded.";
+            break;
+    }
+    
+    return error;
+}
