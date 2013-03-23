@@ -29,13 +29,10 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f)
     glEnable(GL_DEPTH_TEST);
 	glClearDepth(1.0f);
 	glDepthFunc(GL_LESS);
-    
-    textureEnable();
-    
+        
 	glEnable(GL_CULL_FACE);
 	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
     glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 
 //==============================================================================
@@ -142,6 +139,7 @@ void AOpenGLState::textureEnable()
     
     _textureEnabled = true;
     glEnable(GL_TEXTURE_2D);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 
 //==============================================================================
@@ -153,6 +151,7 @@ void AOpenGLState::textureDisable()
     
     _textureEnabled = false;
     glDisable(GL_TEXTURE_2D);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 
 //==============================================================================
