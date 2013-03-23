@@ -24,6 +24,15 @@ ATexture::ATexture(AImage& image) : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LIN
 
 //=============================================================================
 
+ATexture::ATexture(const std::string& str) : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFilter(GL_LINEAR),
+                                             m_pixelSize(GL_UNSIGNED_BYTE), m_width(0), m_height(0), m_repeat(true),
+                                             m_mipMaping(false), m_name("undefined"), m_imageWidth(0), m_imageHeight(0)
+{
+    glGenTextures(1, &m_id);
+    
+    atInit(str);
+}
+
 ATexture::~ATexture()
 {
     atDestroy();

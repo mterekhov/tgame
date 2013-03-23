@@ -23,6 +23,8 @@ public:
     /// @param const AImage& - image for initialization of texture
     ATexture(AImage& image);
     
+    ATexture(const std::string& str);
+    
     /// Default destructor
     ~ATexture();
     
