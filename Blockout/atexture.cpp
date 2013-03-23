@@ -224,20 +224,6 @@ void ATexture::atCorrectData(const AImage& image, TData* data)
             }
         }
     }
-    
-    switch (bytepp)
-    {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-            m_type = GL_RGB;
-        break;
-        
-        case 4:
-            m_type = GL_RGBA;
-        break;
-    }
 }
 
 //=============================================================================
