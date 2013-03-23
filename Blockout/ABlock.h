@@ -18,12 +18,14 @@ protected:
     
 public:
     ABlock(const AFormation& data);
-    ~ABlock();
+    virtual  ~ABlock();
     
-    void renderObject();
+    virtual void renderObject();
     
     AColor color() const;
     void color(const AColor& color);
+    
+    AFormation data() const;
     
     GLfloat size() const;
     void size(const GLfloat sizer);

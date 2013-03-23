@@ -11,7 +11,8 @@ class ASolidBlock : public ABlock
 {
 public:
     ASolidBlock(const AFormation& data);
-    ~ASolidBlock();
+    virtual ~ASolidBlock();
+    
     virtual void renderObject();
 };
 

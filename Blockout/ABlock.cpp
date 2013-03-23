@@ -64,3 +64,10 @@ void ABlock::size(const GLfloat sizer)
 {
     _size = sizer;
 }
+
+//==============================================================================
+
+AFormation ABlock::data() const
+{
+    return _data;
+}

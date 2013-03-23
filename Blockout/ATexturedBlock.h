@@ -11,11 +11,12 @@
 class ATexturedBlock : public ABlock
 {
 private:
-    ATexture texture;
+    ATexture _texture;
 
 public:
-    ATexturedBlock(const AFormation& data);
-    ~ATexturedBlock();
+    ATexturedBlock(const AFormation& data, const ATexture& tex);
+    virtual ~ATexturedBlock();
+    
     virtual void renderObject();
 };
 
