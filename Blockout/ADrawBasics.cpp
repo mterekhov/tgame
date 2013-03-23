@@ -23,8 +23,20 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, co
     if (dataLiner.generateArray(line) == false)
         return;
 
-    glTexCoordPointer(2, GL_FLOAT, dataLiner.arrayStride(), line);
+    for (int i = 0; i < dataLiner.pointsCount(); i++)
+    {
+        printf("xyz = %.3f\t%.3f\t%.3f\nuv = %.3f\t%.3f\n\n", line[dataLiner.arrayStride() * i],
+               line[dataLiner.arrayStride() * i + 1],
+               line[dataLiner.arrayStride() * i + 2],
+               line[dataLiner.arrayStride() * i + 3],
+               line[dataLiner.arrayStride() * i + 4]);
+    }
+    
     instance->currentTexture(texture);
+    GLfloat* texCoords = &line[3];
+    int stride = dataLiner.arrayStride();
+    glTexCoordPointer(2, GL_FLOAT, stride, texCoords);
+    
     ADrawBasics::drawTriangles(dataLiner);
     instance->clearCurrentTexture();
 }

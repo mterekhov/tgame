@@ -2,7 +2,9 @@
 #include "ADrawBasics.h"
 #include "AOpenGLState.h"
 #include "AWell.h"
-#include "ABlockFactory.h"
+#include "ATexturedBlock.h"
+#include "AFormationFactory.h"
+#include "atga.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -24,10 +26,11 @@ ABlockout::~ABlockout()
 
 void ABlockout::init()
 {
-    ABlock* block = ABlockFactory::createFormation1();
+    ATexture tex("/Users/admin/Documents/blockout/Blockout/resources/celtic.tga");
+    ATexturedBlock block(AFormationFactory::createFormation1(), tex);
     _crafter.addObjectForRender(block);
     
-    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
+    AWell well(_wellWidth, _wellHeight, _wellDepth);
     _crafter.addObjectForRender(well);
 }
 
@@ -39,20 +42,28 @@ void ABlockout::render()
 
     oglState->pushMarices();
 
-    ADrawBasics::installCamera(AVector(4, -3, 7),
+    ADrawBasics::installCamera(AVector(4, 3, 7),
                                AVector(0, 0, 0),
                                AVector(0.0f, 1.0f, 0.0f));
+    
 //    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
 //                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
 //                               AVector(1.0f, 0.0f, 0.0f));
-//    ADrawBasics::drawOrigin(originPoint, 1.0f);
+//    ADrawBasics::drawOrigin(APoint(0,0,0), 1.0f);
 //    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
 //    _crafter.processRender();
 
+    oglState->textureEnable();
     ATexture tex;
-    tex.atInit("/Volumes/development/source/blockout/blockout/Blockout/resources/celtic.tga");
+    tex.atInit("/Users/admin/Documents/blockout/Blockout/resources/celtic.tga");
+    oglState->currentTexture(tex);
+//    tex.atInit("/Volumes/development/source/blockout/blockout/Blockout/resources/celtic.tga");
     ADrawBasics::drawTexturedCube(APoint(0.0f, 0.0f, 0.0f), 1.0f, tex);
+    oglState->textureDisable();
+
+//    oglState->drawColor(AColor::redColor());
+//    ADrawBasics::drawCarcasedCube(APoint(0, 0, 0), 1);
     
     oglState->popMarices();
 }
