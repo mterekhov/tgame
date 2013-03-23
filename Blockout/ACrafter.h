@@ -9,7 +9,7 @@
 
 //==============================================================================
 
-typedef std::list<ARObject*> TRObjectsList;
+typedef std::list<ARObject> TRObjectsList;
 typedef TRObjectsList::iterator TRObjectsListIter;
 typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 
@@ -26,7 +26,7 @@ public:
     ACrafter();
     virtual ~ACrafter();
     
-    void addObjectForRender(ARObject* object);
+    void addObjectForRender(const ARObject& object);
 
     void processRender();
 };

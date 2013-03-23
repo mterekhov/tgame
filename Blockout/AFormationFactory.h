@@ -3,14 +3,14 @@
 
 //==============================================================================
 
-#include "ABlock.h"
+#include "AFormation.h"
 
 //==============================================================================
 
-class ABlockFactory
+class AFormationFactory
 {
 public:
-    static ABlock* createFormation1();
+    static AFormation createFormation1();
 };
 
 //==============================================================================

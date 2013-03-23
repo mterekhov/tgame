@@ -7,7 +7,7 @@ class ARObject
 {
 public:
     virtual ~ARObject();
-    virtual void renderObject() = 0;
+    virtual void renderObject();
 };
 
 //==============================================================================

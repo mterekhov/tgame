@@ -27,20 +27,18 @@ void ACrafter::clearRenderList()
 {
     if (!_renderList.size())
         return;
-    
-    TRObjectsListIter iterBegin = _renderList.begin();
-    TRObjectsListIter iterEnd = _renderList.end();
-    for (TRObjectsListIter iter = iterBegin; iter != iterEnd; iter++)
-        delete (*iter);
+
+    _renderList.clear();
+//    TRObjectsListIter iterBegin = _renderList.begin();
+//    TRObjectsListIter iterEnd = _renderList.end();
+//    for (TRObjectsListIter iter = iterBegin; iter != iterEnd; iter++)
+//        delete (*iter);
 }
 
 //==============================================================================
 
-void ACrafter::addObjectForRender(ARObject* object)
+void ACrafter::addObjectForRender(const ARObject& object)
 {
-    if (!object)
-        return;
-    
     _renderList.push_back(object);
 }
 
@@ -55,5 +53,5 @@ void ACrafter::processRender()
     TRObjectsListIter iterBegin = _renderList.begin();
     TRObjectsListIter iterEnd = _renderList.end();
     for (TRObjectsListIter iter = iterBegin; iter != iterEnd; iter++)
-        (*iter)->renderObject();
+        (*iter).renderObject();
 }
