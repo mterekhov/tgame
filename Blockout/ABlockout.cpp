@@ -29,10 +29,10 @@ void ABlockout::init()
 //    ATexture tex("/Users/admin/Documents/blockout/Blockout/resources/celtic.tga");
 //    ATexturedBlock block(AFormationFactory::createFormation1(), tex);
     
-    ASolidBlock block(AFormationFactory::createFormation1());
+    ASolidBlock* block = new ASolidBlock(AFormationFactory::createFormation1());
     _crafter.addObjectForRender(block);
     
-    AWell well(_wellWidth, _wellHeight, _wellDepth);
+    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
     _crafter.addObjectForRender(well);
 }
 
