@@ -20,7 +20,7 @@ public:
     ABlock(const AFormation& data);
     virtual  ~ABlock();
     
-    virtual void renderObject();
+    virtual void renderObject() const;
     
     AColor color() const;
     void color(const AColor& color);

@@ -14,7 +14,7 @@ ARObject::~ARObject()
 
 //==============================================================================
 
-void ARObject::renderObject()
+void ARObject::renderObject() const
 {
 }
 

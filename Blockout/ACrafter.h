@@ -18,9 +18,11 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 class ACrafter
 {
 private:
-    TRObjectsList _renderList;
+    TRObjectsList _texturedRenderList;
+    TRObjectsList _solidRenderList;
     
-    void clearRenderList();
+    void clearRenderLists();
+    void renderList(const TRObjectsList& renderList);
     
 public:
     ACrafter();

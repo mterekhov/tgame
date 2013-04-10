@@ -17,7 +17,7 @@ ATexturedBlock::~ATexturedBlock()
 
 //==============================================================================
 
-void ATexturedBlock::renderObject()
+void ATexturedBlock::renderObject() const
 {
     for (int l = 0; l < _data.levelsCount(); l++)
     {

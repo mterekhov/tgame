@@ -12,8 +12,8 @@
 class AWell : public ARObject
 {
 private:
-    void renderHull();
-    void renderContent();
+    void renderHull() const;
+    void renderContent() const;
 
 public:
     GLfloat wellWidth;
@@ -25,9 +25,9 @@ public:
 
     AWell();
     AWell(const GLfloat width, const GLfloat height, const GLfloat depth);
-    ~AWell();
+    virtual ~AWell();
 
-    void renderObject();
+    virtual void renderObject() const;
 };
 
 //==============================================================================

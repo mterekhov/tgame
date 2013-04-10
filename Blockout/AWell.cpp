@@ -25,13 +25,13 @@ AWell::~AWell()
 
 //==============================================================================
 
-void AWell::renderContent()
+void AWell::renderContent() const
 {
 }
 
 //==============================================================================
 
-void AWell::renderHull()
+void AWell::renderHull() const
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     
@@ -81,7 +81,7 @@ void AWell::renderHull()
 
 //==============================================================================
 
-void AWell::renderObject()
+void AWell::renderObject() const
 {
     renderHull();
     renderContent();

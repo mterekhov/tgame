@@ -16,7 +16,7 @@ ABlock::~ABlock()
 
 //==============================================================================
 
-void ABlock::renderObject()
+void ABlock::renderObject() const
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();
