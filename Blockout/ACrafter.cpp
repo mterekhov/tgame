@@ -35,7 +35,10 @@ void ACrafter::clearRenderLists()
 void ACrafter::clearList(TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
+    {
+        printf("ACrafter::clearList: failed to clear empty list\n");
         return;
+    }
     
     TRObjectsListConstIter iterBegin = renderList.begin();
     TRObjectsListConstIter iterEnd = renderList.end();
@@ -50,7 +53,10 @@ void ACrafter::clearList(TRObjectsList& renderList)
 void ACrafter::addObjectForRender(ARObject* object)
 {
     if (object == 0)
+    {
+        printf("ACrafter::addObjectForRender: failed to add render object because it is empty\n");
         return;
+    }
     
     switch (object->objectType())
     {
@@ -76,7 +82,7 @@ void ACrafter::processRender()
 
     //  Draw solid list
     AColor previousColor = oglState->drawColor();
-    TRObjectsList& listToRender = _solidRenderList;
+    TRObjectsList listToRender = _solidRenderList;
     renderList(listToRender);
     oglState->drawColor(previousColor);
 
@@ -92,7 +98,10 @@ void ACrafter::processRender()
 void ACrafter::renderList(const TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
+    {
+        printf("ACrafter::renderList: render list is empty\n");
         return;
+    }
     
     TRObjectsListConstIter iterBegin = renderList.begin();
     TRObjectsListConstIter iterEnd = renderList.end();

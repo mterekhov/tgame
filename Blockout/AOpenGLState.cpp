@@ -135,7 +135,10 @@ void AOpenGLState::popMarices()
 void AOpenGLState::textureEnable()
 {
     if (_textureEnabled)
+    {
+        printf("AOpenGLState::textureDisable: textures already enabled\n");
         return;
+    }
     
     _textureEnabled = true;
     glEnable(GL_TEXTURE_2D);
@@ -147,7 +150,10 @@ void AOpenGLState::textureEnable()
 void AOpenGLState::textureDisable()
 {
     if (!_textureEnabled)
+    {
+        printf("AOpenGLState::textureDisable: textures already disabled\n");
         return;
+    }
     
     _textureEnabled = false;
     glDisable(GL_TEXTURE_2D);

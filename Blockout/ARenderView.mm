@@ -61,8 +61,11 @@
 - (void) initContext:(NSOpenGLPixelFormat*)format
 {
     if (_openGLInited == YES)
+    {
+        NSLog(@"ARenderView::initContext: OpenGL already inited\n");
         return;
-    
+    }
+
 	NSOpenGLContext* viewContext = [[NSOpenGLContext alloc] initWithFormat: format
                                                               shareContext: nil];
     [self setOpenGLContext: viewContext];
@@ -75,7 +78,10 @@
 - (void) initGL
 {
     if (_openGLInited == YES)
+    {
+        NSLog(@"ARenderView::initGL: OpenGL already inited\n");
         return;
+    }
     
     [self updateScreenSize:self.bounds.size.width screenHeight:self.bounds.size.height];
 

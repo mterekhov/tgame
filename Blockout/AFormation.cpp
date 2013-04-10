@@ -1,6 +1,7 @@
 #include "AFormation.h"
 
 #include <string.h>
+#include <stdio.h>
 
 //==============================================================================
 
@@ -73,16 +74,28 @@ TData AFormation::item(const unsigned int column, const unsigned int row, const 
 void AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value)
 {
     if (!_data)
+    {
+        printf("AFormation::item: formation data is empty\n");
         return;
+    }
     
     if (row > _height)
+    {
+        printf("AFormation::item: out of formation height\n");
         return;
+    }
     
     if (column > _width)
+    {
+        printf("AFormation::item: out of formation width\n");
         return;
+    }
     
     if (levelIndex > _levelsCount)
+    {
+        printf("AFormation::item: out of formation levels\n");
         return;
+    }
     
     int skip = _width * _height * levelIndex;
     int index = skip + row * _width + column;

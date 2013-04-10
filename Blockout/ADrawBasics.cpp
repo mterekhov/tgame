@@ -18,7 +18,10 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, co
     GLfloat* line = new GLfloat[sizer];
     memset(line, 0, sizer * sizeof(GLfloat));
     if (dataLiner.generateArray(line) == false)
+    {
+        printf("ADrawBasics::drawTexturedCube: failed to generate array of vertexes\n");
         return;
+    }
 
     //    for (int i = 0; i < dataLiner.pointsCount(); i++)
 //    {
@@ -105,7 +108,10 @@ void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
     memset(line, 0, sizer * sizeof(GLfloat));
 
     if (dataLiner.generateArray(line) == false)
+    {
+        printf("ADrawBasics::drawTriangles: failed to generate array of vertexes\n");
         return;
+    }
 
     glVertexPointer(3, GL_FLOAT, dataLiner.arrayStride(), line);
     glDrawArrays(GL_TRIANGLES, 0, dataLiner.pointsCount());

@@ -32,8 +32,8 @@ void ABlockout::init()
     ASolidBlock* block = new ASolidBlock(AFormationFactory::createFormation1());
     _crafter.addObjectForRender(block);
     
-    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
-    _crafter.addObjectForRender(well);
+//    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
+//    _crafter.addObjectForRender(well);
 }
 
 //==============================================================================
@@ -51,8 +51,8 @@ void ABlockout::render()
 //    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
 //                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
 //                               AVector(1.0f, 0.0f, 0.0f));
-    ADrawBasics::drawOrigin(APoint(0,0,0), 1.0f);
-    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
+//    ADrawBasics::drawOrigin(APoint(0,0,0), 1.0f);
+//    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
     _crafter.processRender();
 
