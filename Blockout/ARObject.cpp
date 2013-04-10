@@ -2,6 +2,12 @@
 
 //==============================================================================
 
+ARObject::ARObject() : _objectType(OBJECTTYPE_SOLID)
+{
+}
+
+//==============================================================================
+
 ARObject::~ARObject()
 {
 }
@@ -10,4 +16,11 @@ ARObject::~ARObject()
 
 void ARObject::renderObject()
 {
+}
+
+//==============================================================================
+
+EObjectType ARObject::objectType() const
+{
+    return _objectType;
 }

@@ -6,6 +6,7 @@
 
 ATexturedBlock::ATexturedBlock(const AFormation& data, const ATexture& tex) : ABlock(data), _texture(tex)
 {
+    _objectType = OBJECTTYPE_TEXTURED;
 }
 
 //==============================================================================
