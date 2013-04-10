@@ -14,30 +14,27 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, co
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(coordspoints);
     dataLiner.pushUVPointList(uvpoints);
-
-    AOpenGLState* instance = AOpenGLState::shared();
-    
     TUint sizer = dataLiner.numberOfFloatValues();
     GLfloat* line = new GLfloat[sizer];
     memset(line, 0, sizer * sizeof(GLfloat));
     if (dataLiner.generateArray(line) == false)
         return;
 
-    for (int i = 0; i < dataLiner.pointsCount(); i++)
-    {
-        printf("xyz = %.3f\t%.3f\t%.3f\nuv = %.3f\t%.3f\n\n", line[dataLiner.arrayStride() * i],
-               line[dataLiner.arrayStride() * i + 1],
-               line[dataLiner.arrayStride() * i + 2],
-               line[dataLiner.arrayStride() * i + 3],
-               line[dataLiner.arrayStride() * i + 4]);
-    }
+    //    for (int i = 0; i < dataLiner.pointsCount(); i++)
+//    {
+//        printf("xyz = %.3f\t%.3f\t%.3f\nuv = %.3f\t%.3f\n\n", line[dataLiner.arrayStride() * i],
+//               line[dataLiner.arrayStride() * i + 1],
+//               line[dataLiner.arrayStride() * i + 2],
+//               line[dataLiner.arrayStride() * i + 3],
+//               line[dataLiner.arrayStride() * i + 4]);
+//    }
     
+    AOpenGLState* instance = AOpenGLState::shared();
     instance->currentTexture(texture);
-    GLfloat* texCoords = &line[3];
-    int stride = dataLiner.arrayStride();
-    glTexCoordPointer(2, GL_FLOAT, stride, texCoords);
     
+    glTexCoordPointer(2, GL_FLOAT, dataLiner.arrayStride(), &line[3]);
     ADrawBasics::drawTriangles(dataLiner);
+    
     instance->clearCurrentTexture();
 }
 
@@ -97,15 +94,6 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 
     glVertexPointer(3, GL_FLOAT, 0, line);
     glDrawArrays(GL_LINES, 0, 2);
-}
-
-//==============================================================================
-
-void ADrawBasics::drawTriangles(const ADataLiner& dataLiner, const ATexture& texture)
-{
-    AOpenGLState* oglInstance = AOpenGLState::shared();
-    oglInstance->currentTexture(texture);
-    drawTriangles(dataLiner);
 }
 
 //==============================================================================

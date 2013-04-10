@@ -20,7 +20,6 @@ AWell::AWell() : ARObject(), wellWidth(0.0f), wellHeight(0.0f), wellDepth(0.0f),
 
 AWell::~AWell()
 {
-    ARObject::~ARObject();
 }
 
 //==============================================================================

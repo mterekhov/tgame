@@ -29,8 +29,8 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f)
     glEnable(GL_DEPTH_TEST);
 	glClearDepth(1.0f);
 	glDepthFunc(GL_LESS);
-        
-	glEnable(GL_CULL_FACE);
+
+//	glEnable(GL_CULL_FACE);
 	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
     glEnableClientState(GL_VERTEX_ARRAY);
 }

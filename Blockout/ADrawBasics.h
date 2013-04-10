@@ -18,7 +18,6 @@ private:
     static TPointsList generateCoords(const APoint& location, const GLfloat cubeSize);
     
     static void drawTriangles(const ADataLiner& dataLiner);
-    static void drawTriangles(const ADataLiner& dataLiner, const ATexture& texture);
 
 public:
     static void installCamera(const AVector& eyePosition3D, const AVector& center3D, const AVector& upVector3D);

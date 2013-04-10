@@ -1,5 +1,5 @@
-#ifndef ASolidBlock_H
-#define ASolidBlock_H
+#ifndef ATexturedBlock_H
+#define ATexturedBlock_H
 
 //==============================================================================
 
@@ -22,4 +22,4 @@ public:
 
 //==============================================================================
 
-#endif // ASolidBlock_H
+#endif // ATexturedBlock_H

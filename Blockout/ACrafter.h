@@ -29,7 +29,6 @@ public:
     virtual ~ACrafter();
     
     void addObjectForRender(const ARObject& object);
-
     void processRender();
 };
 
