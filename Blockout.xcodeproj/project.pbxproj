@@ -157,6 +157,8 @@
 			children = (
 				4C923D0616C45319008EDA5C /* ALogic.cpp */,
 				4C923D0716C45319008EDA5C /* ALogic.h */,
+				4C52515B16CA88AC002A5B42 /* AFormationFactory.cpp */,
+				4C52515C16CA88AC002A5B42 /* AFormationFactory.h */,
 				4C14891116C53ED10014683F /* AFormation.cpp */,
 				4C14891216C53ED10014683F /* AFormation.h */,
 			);
@@ -171,8 +173,6 @@
 				4C8000F416BD43F7008B1E74 /* ARObject.h */,
 				4C8000EF16BD3D35008B1E74 /* AWell.cpp */,
 				4C8000F016BD3D35008B1E74 /* AWell.h */,
-				4C52515B16CA88AC002A5B42 /* AFormationFactory.cpp */,
-				4C52515C16CA88AC002A5B42 /* AFormationFactory.h */,
 			);
 			name = ObjectsToRender;
 			sourceTree = "<group>";
