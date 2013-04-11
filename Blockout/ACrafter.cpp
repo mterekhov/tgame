@@ -27,26 +27,28 @@ ACrafter::~ACrafter()
 
 void ACrafter::clearRenderLists()
 {
-    clearList(_solidRenderList);
-    clearList(_texturedRenderList);
+    if (!clearList(_solidRenderList))
+        loger("failed to clear solid objects list");
+
+    if (!clearList(_texturedRenderList))
+        loger("failed to clear textured objects list");
 }
 
 //==============================================================================
 
-void ACrafter::clearList(TRObjectsList& renderList)
+bool ACrafter::clearList(TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
-    {
-        loger("failed to clear empty list");
-        return;
-    }
-    
+        return false;
+
     TRObjectsListConstIter iterBegin = renderList.begin();
     TRObjectsListConstIter iterEnd = renderList.end();
     for (TRObjectsListConstIter iter = iterBegin; iter != iterEnd; iter++)
         delete (*iter);
     
     renderList.clear();
+    
+    return true;
 }
 
 //==============================================================================

@@ -21,7 +21,7 @@ private:
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
     
-    void clearList(TRObjectsList& renderList);
+    bool clearList(TRObjectsList& renderList);
     void clearRenderLists();
     void renderList(const TRObjectsList& renderList);
     
