@@ -1,5 +1,6 @@
 #include "ACrafter.h"
 #include "AOpenGLState.h"
+#include "BlockoutDebug.h"
 
 //==============================================================================
 
@@ -57,6 +58,8 @@ void ACrafter::addObjectForRender(ARObject* object)
         printf("ACrafter::addObjectForRender: failed to add render object because it is empty\n");
         return;
     }
+    
+    loger("testing log out %s", "<with in>");
     
     switch (object->objectType())
     {

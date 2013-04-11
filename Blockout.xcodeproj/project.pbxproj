@@ -510,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_LOG = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Blockout/Blockout-Prefix.pch";
 				INFOPLIST_FILE = "Blockout/Blockout-Info.plist";
@@ -522,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_LOG = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Blockout/Blockout-Prefix.pch";
 				INFOPLIST_FILE = "Blockout/Blockout-Info.plist";
