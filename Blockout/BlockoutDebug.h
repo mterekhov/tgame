@@ -5,10 +5,10 @@
 
 #ifdef DEBUG_LOG
 
-#define loger(format, ...)\
-printf("%s >> %s %s: ", __FILE__, __func__, __LINE__);\
-printf(__VA_ARGS__);\
-printf("\n");
+#define loger(...)\
+    printf("%s line %d: ", __PRETTY_FUNCTION__, __LINE__);\
+    printf(__VA_ARGS__);\
+    printf("\n");
 
 #endif
 
