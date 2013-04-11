@@ -1,5 +1,5 @@
-#ifndef __Blockout__ACrafter__
-#define __Blockout__ACrafter__
+#ifndef ENGINE_ACRAFTER_H
+#define ENGINE_ACRAFTER_H
 
 //==============================================================================
 

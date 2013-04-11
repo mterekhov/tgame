@@ -1,5 +1,5 @@
-#ifndef __Blockout__AVector__
-#define __Blockout__AVector__
+#ifndef ENGINE_AVECTOR_H
+#define ENGINE_AVECTOR_H
 
 //==============================================================================
 

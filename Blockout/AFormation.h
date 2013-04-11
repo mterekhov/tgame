@@ -1,5 +1,5 @@
-#ifndef __Blockout__AData__
-#define __Blockout__AData__
+#ifndef ENGINE_ADATA_H
+#define ENGINE_ADATA_H
 
 //==============================================================================
 

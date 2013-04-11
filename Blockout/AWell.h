@@ -1,5 +1,5 @@
-#ifndef __Blockout__AWell__
-#define __Blockout__AWell__
+#ifndef ENGINE_AWELL_H
+#define ENGINE_AWELL_H
 
 //==============================================================================
 

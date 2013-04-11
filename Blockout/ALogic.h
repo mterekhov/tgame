@@ -1,5 +1,5 @@
-#ifndef __Blockout__ALogic__
-#define __Blockout__ALogic__
+#ifndef ENGINE_ALOGIC_H
+#define ENGINE_ALOGIC_H
 
 //==============================================================================
 

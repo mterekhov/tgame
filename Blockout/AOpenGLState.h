@@ -1,5 +1,5 @@
-#ifndef __Blockout__AOpenGLState__
-#define __Blockout__AOpenGLState__
+#ifndef ENGINE_AOPENGLSTATE_H
+#define ENGINE_AOPENGLSTATE_H
 
 //==============================================================================
 

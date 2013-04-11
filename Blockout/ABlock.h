@@ -1,5 +1,5 @@
-#ifndef __Blockout__ABlock__
-#define __Blockout__ABlock__
+#ifndef ENGINE_ABLOCK_H
+#define ENGINE_ABLOCK_H
 
 //==============================================================================
 

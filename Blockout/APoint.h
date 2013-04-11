@@ -1,5 +1,5 @@
-#ifndef __Blockout__APoint__
-#define __Blockout__APoint__
+#ifndef ENGINE_APOINT_H
+#define ENGINE_APOINT_H
 
 //==============================================================================
 

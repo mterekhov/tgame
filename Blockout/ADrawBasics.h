@@ -1,5 +1,5 @@
-#ifndef __Blockout__ADrawBasics__
-#define __Blockout__ADrawBasics__
+#ifndef ENGINE_ADRAWBASICS_H
+#define ENGINE_ADRAWBASICS_H
 
 //==============================================================================
 

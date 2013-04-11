@@ -1,5 +1,5 @@
-#ifndef __Blockout__AFormationFactory__
-#define __Blockout__AFormationFactory__
+#ifndef ENGINE_AFORMATIONFACTORY_H
+#define ENGINE_AFORMATIONFACTORY_H
 
 //==============================================================================
 

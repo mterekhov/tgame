@@ -1,5 +1,5 @@
-#ifndef __Blockout__BlockoutDebug__
-#define __Blockout__BlockoutDebug__
+#ifndef ENGINE_ABLOCKOUTDEBUG_H
+#define ENGINE_ABLOCKOUTDEBUG_H
 
 #include <iostream>
 

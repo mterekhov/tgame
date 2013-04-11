@@ -1,5 +1,5 @@
-#ifndef __Blockout__ADataLiner__
-#define __Blockout__ADataLiner__
+#ifndef ENGINE_ADATALINER_H
+#define ENGINE_ADATALINER_H
 
 #include "APoint.h"
 #include "APoint2D.h"

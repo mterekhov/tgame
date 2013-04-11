@@ -1,5 +1,5 @@
-#ifndef __Blockout__ABlockout__
-#define __Blockout__ABlockout__
+#ifndef ENGINE_ABLOCKOUT_H
+#define ENGINE_ABLOCKOUT_H
 
 //==============================================================================
 
@@ -30,4 +30,4 @@ public:
 
 //==============================================================================
 
-#endif /* defined(__Blockout__ABlockout__) */
+#endif

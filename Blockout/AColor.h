@@ -1,5 +1,5 @@
-#ifndef __Blockout__AColor__
-#define __Blockout__AColor__
+#ifndef ENGINE_ACOLOR_H
+#define ENGINE_ACOLOR_H
 
 //==============================================================================
 

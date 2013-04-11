@@ -1,5 +1,5 @@
-#ifndef __Blockout__ARObject__
-#define __Blockout__ARObject__
+#ifndef ENGINE_AROBJECT_H
+#define ENGINE_AROBJECT_H
 
 //==============================================================================
 
