@@ -55,16 +55,16 @@ unsigned int AFormation::levelsCount() const
 TData AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex) const
 {
     if (!_data)
-        return false;
+        return 0;
     
     if (row > _height)
-        return false;
+        return 0;
     
     if (column > _width)
-        return false;
+        return 0;
     
     if (levelIndex > _levelsCount)
-        return false;
+        return 0;
     
     int skip = _width * _height * levelIndex;
     return _data[skip + row * _width + column];
