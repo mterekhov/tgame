@@ -1,4 +1,5 @@
 #include "AOpenGLState.h"
+#include "BlockoutDebug.h"
 
 //==============================================================================
 
@@ -136,7 +137,7 @@ void AOpenGLState::textureEnable()
 {
     if (_textureEnabled)
     {
-        printf("AOpenGLState::textureDisable: textures already enabled\n");
+        loger("textures already enabled");
         return;
     }
     
@@ -151,7 +152,7 @@ void AOpenGLState::textureDisable()
 {
     if (!_textureEnabled)
     {
-        printf("AOpenGLState::textureDisable: textures already disabled\n");
+        loger("textures already disabled");
         return;
     }
     

@@ -1,5 +1,6 @@
 #include "ADrawBasics.h"
 #include "AOpenGLState.h"
+#include "BlockoutDebug.h"
 
 //==============================================================================
 
@@ -19,13 +20,13 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, co
     memset(line, 0, sizer * sizeof(GLfloat));
     if (dataLiner.generateArray(line) == false)
     {
-        printf("ADrawBasics::drawTexturedCube: failed to generate array of vertexes\n");
+        loger("failed to generate array of vertexes");
         return;
     }
 
     //    for (int i = 0; i < dataLiner.pointsCount(); i++)
 //    {
-//        printf("xyz = %.3f\t%.3f\t%.3f\nuv = %.3f\t%.3f\n\n", line[dataLiner.arrayStride() * i],
+//        loger("xyz = %.3f\t%.3f\t%.3f\nuv = %.3f\t%.3f", line[dataLiner.arrayStride() * i],
 //               line[dataLiner.arrayStride() * i + 1],
 //               line[dataLiner.arrayStride() * i + 2],
 //               line[dataLiner.arrayStride() * i + 3],
@@ -109,7 +110,7 @@ void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
 
     if (dataLiner.generateArray(line) == false)
     {
-        printf("ADrawBasics::drawTriangles: failed to generate array of vertexes\n");
+        loger("failed to generate array of vertexes");
         return;
     }
 

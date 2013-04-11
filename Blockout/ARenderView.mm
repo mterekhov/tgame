@@ -62,7 +62,7 @@
 {
     if (_openGLInited == YES)
     {
-        NSLog(@"ARenderView::initContext: OpenGL already inited\n");
+        NSLog(@"ARenderView::initContext: OpenGL already inited");
         return;
     }
 
@@ -79,7 +79,7 @@
 {
     if (_openGLInited == YES)
     {
-        NSLog(@"ARenderView::initGL: OpenGL already inited\n");
+        NSLog(@"ARenderView::initGL: OpenGL already inited");
         return;
     }
     

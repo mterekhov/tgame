@@ -1,4 +1,5 @@
 #include "AFormation.h"
+#include "BlockoutDebug.h"
 
 #include <string.h>
 #include <stdio.h>
@@ -75,25 +76,25 @@ void AFormation::item(const unsigned int column, const unsigned int row, const u
 {
     if (!_data)
     {
-        printf("AFormation::item: formation data is empty\n");
+        loger("formation data is empty");
         return;
     }
     
     if (row > _height)
     {
-        printf("AFormation::item: out of formation height\n");
+        loger("out of formation height");
         return;
     }
     
     if (column > _width)
     {
-        printf("AFormation::item: out of formation width\n");
+        loger("out of formation width");
         return;
     }
     
     if (levelIndex > _levelsCount)
     {
-        printf("AFormation::item: out of formation levels\n");
+        loger("out of formation levels");
         return;
     }
     

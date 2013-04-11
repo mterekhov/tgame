@@ -37,7 +37,7 @@ void ACrafter::clearList(TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
     {
-        printf("ACrafter::clearList: failed to clear empty list\n");
+        loger("failed to clear empty list");
         return;
     }
     
@@ -55,11 +55,11 @@ void ACrafter::addObjectForRender(ARObject* object)
 {
     if (object == 0)
     {
-        printf("ACrafter::addObjectForRender: failed to add render object because it is empty\n");
+        loger("failed to add render object because it is empty");
         return;
     }
     
-    loger("testing log out %s", "<with in>");
+    loger("testing %s log out", "<with in>");
     
     switch (object->objectType())
     {
@@ -102,7 +102,7 @@ void ACrafter::renderList(const TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
     {
-        printf("ACrafter::renderList: render list is empty\n");
+        loger("render list is empty");
         return;
     }
     
