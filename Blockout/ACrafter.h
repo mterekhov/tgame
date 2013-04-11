@@ -29,7 +29,7 @@ public:
     ACrafter();
     virtual ~ACrafter();
     
-    void addObjectForRender(ARObject* object);
+    bool addObjectForRender(ARObject* object);
     void processRender();
 };
 

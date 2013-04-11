@@ -5,6 +5,7 @@
 #include "ATexturedBlock.h"
 #include "ASolidBlock.h"
 #include "AFormationFactory.h"
+#include "BlockoutDebug.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -30,7 +31,8 @@ void ABlockout::init()
 //    ATexturedBlock block(AFormationFactory::createFormation1(), tex);
     
     ASolidBlock* block = new ASolidBlock(AFormationFactory::createFormation1());
-    _crafter.addObjectForRender(block);
+    if (!_crafter.addObjectForRender(block))
+        loger("failed to add render object because it is empty");
     
 //    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
 //    _crafter.addObjectForRender(well);

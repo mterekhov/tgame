@@ -53,15 +53,10 @@ bool ACrafter::clearList(TRObjectsList& renderList)
 
 //==============================================================================
 
-void ACrafter::addObjectForRender(ARObject* object)
+bool ACrafter::addObjectForRender(ARObject* object)
 {
     if (object == 0)
-    {
-        loger("failed to add render object because it is empty");
-        return;
-    }
-    
-    loger("testing %s log out", "<with in>");
+        return false;
     
     switch (object->objectType())
     {
@@ -73,6 +68,8 @@ void ACrafter::addObjectForRender(ARObject* object)
             _texturedRenderList.push_back(object);
         break;
     }
+    
+    return true;
 }
 
 //==============================================================================
@@ -103,11 +100,8 @@ void ACrafter::processRender()
 void ACrafter::renderList(const TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
-    {
-        loger("render list is empty");
         return;
-    }
-    
+
     TRObjectsListConstIter iterBegin = renderList.begin();
     TRObjectsListConstIter iterEnd = renderList.end();
     for (TRObjectsListConstIter iter = iterBegin; iter != iterEnd; iter++)
