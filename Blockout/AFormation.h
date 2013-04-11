@@ -19,22 +19,22 @@ enum EDataState
 class AFormation
 {
 private:
-    unsigned int _width;
-    unsigned int _height;
-    unsigned int _levelsCount;
+    TUint _width;
+    TUint _height;
+    TUint _levelsCount;
     TData* _data;
 
 public:
-    AFormation(const unsigned int width, const unsigned int height, const unsigned int count);
+    AFormation(const TUint width, const TUint height, const TUint count);
     AFormation(const AFormation& formation);
     ~AFormation();
     
     const TData* data() const;
-    unsigned int height() const;
-    unsigned int width() const;
-    unsigned int levelsCount() const;
-    TData item(const unsigned int column, const unsigned int row, const unsigned int levelIndex) const;
-    bool item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value);
+    TUint height() const;
+    TUint width() const;
+    TUint levelsCount() const;
+    TData item(const TUint column, const TUint row, const TUint levelIndex) const;
+    bool item(const TUint column, const TUint row, const TUint levelIndex, const TData& value);
     
     bool doesInbounds(const AFormation* data);
 };

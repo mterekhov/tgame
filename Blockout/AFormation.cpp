@@ -6,7 +6,7 @@
 
 //==============================================================================
 
-AFormation::AFormation(const unsigned int width, const unsigned int height, const unsigned int count) : _width(width), _height(height), _levelsCount(count)
+AFormation::AFormation(const TUint width, const TUint height, const TUint count) : _width(width), _height(height), _levelsCount(count)
 {
     int sizer = width * height * count;
     _data = new TData[sizer];
@@ -31,28 +31,28 @@ AFormation::~AFormation()
 
 //==============================================================================
 
-unsigned int AFormation::height() const
+TUint AFormation::height() const
 {
     return _height;
 }
 
 //==============================================================================
 
-unsigned int AFormation::width() const
+TUint AFormation::width() const
 {
     return _width;
 }
 
 //==============================================================================
 
-unsigned int AFormation::levelsCount() const
+TUint AFormation::levelsCount() const
 {
     return _levelsCount;
 }
 
 //==============================================================================
 
-TData AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex) const
+TData AFormation::item(const TUint column, const TUint row, const TUint levelIndex) const
 {
     if (!_data)
         return 0;
@@ -72,7 +72,7 @@ TData AFormation::item(const unsigned int column, const unsigned int row, const 
 
 //==============================================================================
 
-bool AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value)
+bool AFormation::item(const TUint column, const TUint row, const TUint levelIndex, const TData& value)
 {
     if (!_data)
         return false;
