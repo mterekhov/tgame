@@ -34,7 +34,7 @@ public:
     unsigned int width() const;
     unsigned int levelsCount() const;
     TData item(const unsigned int column, const unsigned int row, const unsigned int levelIndex) const;
-    void item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value);
+    bool item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value);
     
     bool doesInbounds(const AFormation* data);
 };

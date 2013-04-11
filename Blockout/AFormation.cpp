@@ -72,36 +72,26 @@ TData AFormation::item(const unsigned int column, const unsigned int row, const 
 
 //==============================================================================
 
-void AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value)
+bool AFormation::item(const unsigned int column, const unsigned int row, const unsigned int levelIndex, const TData& value)
 {
     if (!_data)
-    {
-        loger("formation data is empty");
-        return;
-    }
-    
+        return false;
+
     if (row > _height)
-    {
-        loger("out of formation height");
-        return;
-    }
-    
+        return false;
+
     if (column > _width)
-    {
-        loger("out of formation width");
-        return;
-    }
-    
+        return false;
+
     if (levelIndex > _levelsCount)
-    {
-        loger("out of formation levels");
-        return;
-    }
-    
+        return false;
+
     int skip = _width * _height * levelIndex;
     int index = skip + row * _width + column;
 
     _data[index] = value;
+    
+    return true;
 }
 
 //==============================================================================
