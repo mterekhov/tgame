@@ -28,10 +28,14 @@ ACrafter::~ACrafter()
 void ACrafter::clearRenderLists()
 {
     if (!clearList(_solidRenderList))
+    {
         loger("failed to clear solid objects list");
+    }
 
     if (!clearList(_texturedRenderList))
+    {
         loger("failed to clear textured objects list");
+    }
 }
 
 //==============================================================================
@@ -55,7 +59,7 @@ bool ACrafter::clearList(TRObjectsList& renderList)
 
 bool ACrafter::addObjectForRender(ARObject* object)
 {
-    if (object == 0)
+        if (object == 0)
         return false;
     
     switch (object->objectType())

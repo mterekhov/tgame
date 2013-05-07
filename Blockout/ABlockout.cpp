@@ -31,8 +31,11 @@ void ABlockout::init()
 //    ATexturedBlock block(AFormationFactory::createFormation1(), tex);
     
     ASolidBlock* block = new ASolidBlock(AFormationFactory::createFormation1());
-    if (!_crafter.addObjectForRender(block))
+    bool res = _crafter.addObjectForRender(block);
+    if (!res)
+    {
         loger("failed to add render object because it is empty");
+    }
     
 //    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
 //    _crafter.addObjectForRender(well);
