@@ -99,7 +99,7 @@
 
 //==============================================================================
 
-- (void) renderFrame
+- (void) renderGame
 {
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -117,7 +117,7 @@
 
 - (void)startAnimation
 {
-	_animationTimer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval target:self selector:@selector(renderFrame) userInfo:nil repeats:YES];
+	_animationTimer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval target:self selector:@selector(renderGame) userInfo:nil repeats:YES];
 	_animationStarted = [NSDate timeIntervalSinceReferenceDate];
 }
 
