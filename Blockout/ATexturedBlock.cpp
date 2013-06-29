@@ -27,8 +27,7 @@ void ATexturedBlock::renderObject() const
             {
                 TData value = _data.item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
-                    ADrawBasics::drawSolidCube(APoint(i, l, j), _size);
-//                ADrawBasics::drawTexturedCube(APoint(i, l, j), _size, _texture);
+                    ADrawBasics::drawTexturedCube(APoint(i, l, j), _size, _texture);
             }
         }
     }

@@ -59,7 +59,7 @@ bool ACrafter::clearList(TRObjectsList& renderList)
 
 bool ACrafter::addObjectForRender(ARObject* object)
 {
-        if (object == 0)
+    if (object == 0)
         return false;
     
     switch (object->objectType())
@@ -71,6 +71,9 @@ bool ACrafter::addObjectForRender(ARObject* object)
         case OBJECTTYPE_TEXTURED:
             _texturedRenderList.push_back(object);
         break;
+        
+        default:
+            return false;
     }
     
     return true;

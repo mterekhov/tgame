@@ -142,6 +142,17 @@
 			name = DataTypes;
 			sourceTree = "<group>";
 		};
+		4C531EAE177F010600B33D01 /* Formation */ = {
+			isa = PBXGroup;
+			children = (
+				4C52515B16CA88AC002A5B42 /* AFormationFactory.cpp */,
+				4C52515C16CA88AC002A5B42 /* AFormationFactory.h */,
+				4C14891116C53ED10014683F /* AFormation.cpp */,
+				4C14891216C53ED10014683F /* AFormation.h */,
+			);
+			name = Formation;
+			sourceTree = "<group>";
+		};
 		4C8000F616BD43FD008B1E74 /* Render */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,10 +168,6 @@
 			children = (
 				4C923D0616C45319008EDA5C /* ALogic.cpp */,
 				4C923D0716C45319008EDA5C /* ALogic.h */,
-				4C52515B16CA88AC002A5B42 /* AFormationFactory.cpp */,
-				4C52515C16CA88AC002A5B42 /* AFormationFactory.h */,
-				4C14891116C53ED10014683F /* AFormation.cpp */,
-				4C14891216C53ED10014683F /* AFormation.h */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -218,8 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				B7ECFF5D16AD5F1800946E91 /* Game */,
-				B7ECFF5916AD4FBC00946E91 /* Paintings */,
-				B732726E16AB20C2001DE602 /* Blockout */,
+				B732726E16AB20C2001DE602 /* Application */,
 				B732726F16AB20C2001DE602 /* Supporting Files */,
 				4CC8217B16D7A3100090CE07 /* Resources */,
 				B732726716AB20C2001DE602 /* Frameworks */,
@@ -247,7 +253,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B732726E16AB20C2001DE602 /* Blockout */ = {
+		B732726E16AB20C2001DE602 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				B732727416AB20C2001DE602 /* main.m */,
@@ -257,6 +263,7 @@
 				B732728516AB2507001DE602 /* ARenderView.h */,
 				B732728616AB2507001DE602 /* ARenderView.mm */,
 			);
+			name = Application;
 			path = Blockout;
 			sourceTree = "<group>";
 		};
@@ -276,6 +283,7 @@
 		B7ECFF5916AD4FBC00946E91 /* Paintings */ = {
 			isa = PBXGroup;
 			children = (
+				4C531EAE177F010600B33D01 /* Formation */,
 				4CEA40E116CFB08400A678B5 /* Texture */,
 				4C52515A16CA8621002A5B42 /* DataTypes */,
 				4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */,
@@ -289,6 +297,7 @@
 		B7ECFF5D16AD5F1800946E91 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				B7ECFF5916AD4FBC00946E91 /* Paintings */,
 				4C923D0916C45321008EDA5C /* Logic */,
 				4C8000F616BD43FD008B1E74 /* Render */,
 				4C8000E516BD2F12008B1E74 /* ABlockout.cpp */,
