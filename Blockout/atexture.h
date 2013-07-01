@@ -21,26 +21,15 @@ public:
 
     /// Constructor
     /// @param const AImage& - image for initialization of texture
-    ATexture(AImage& image);
-    
-    /// Copy constructor
-    /// @param const AImage& - image for initialization of texture
-    ATexture(const ATexture& image);
-    
-    ATexture(const std::string& str);
+    ATexture(const AImage& image);
     
     /// Default destructor
     ~ATexture();
     
     /// Initialize texture
-    /// @param const std::string& - file name of image in tga format
-    /// @return bool - true if everything is ok, otherwise false
-    bool atInit(const std::string& fileName);
-    
-    /// Initialize texture
     /// @param AImage& - init texture with image
     /// @return bool - true if everything is ok, otherwise false
-    bool atInit(AImage& image);
+    bool atInit(const AImage& image);
     
     /// Bind texture
     void atBind() const;
@@ -67,6 +56,8 @@ public:
     /// Get type of texture
     /// @return const GLenum - type of texture. Means GL_RGBA, GL_RGB or GL_BGR
     const TUint atType() const;
+    
+    const std::string& atName() const;
 
     /// Setup minification filter
     /// @param const TUint - minification filter

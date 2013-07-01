@@ -10,7 +10,7 @@
 
 //==============================================================================
 
-typedef std::map<std::string, ATexture> TTexturesList;
+typedef std::map<std::string, ATexture*> TTexturesList;
 typedef TTexturesList::iterator TTexturesListIter;
 typedef TTexturesList::const_iterator TTexturesListConstIter;
 
@@ -21,11 +21,13 @@ class ATextureManager
 private:
     TTexturesList m_textureList;
 
+    bool atClearAllTextures(TTexturesList& textureList);
+
 public:
     ATextureManager();
     ~ATextureManager();
     
-    ATexture* atCreateTexture(const std::string& textureFileName);
+    ATexture* atCreateTextureFromTGA(const std::string& filePath);
 };
 
 //==============================================================================

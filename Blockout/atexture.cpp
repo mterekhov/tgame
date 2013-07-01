@@ -14,15 +14,7 @@ ATexture::ATexture() : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFi
 
 //=============================================================================
 
-ATexture::ATexture(const ATexture& image) : m_id(image.m_id), m_type(image.m_type), m_minFilter(image.m_minFilter), m_magFilter(image.m_magFilter),
-                       m_pixelSize(image.m_pixelSize), m_width(image.m_width), m_height(image.m_height), m_repeat(image.m_repeat),
-                       m_mipMaping(image.m_mipMaping), m_name("undefined"), m_imageWidth(image.m_imageWidth), m_imageHeight(image.m_imageHeight)
-{
-}
-
-//=============================================================================
-
-ATexture::ATexture(AImage& image) : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFilter(GL_LINEAR),
+ATexture::ATexture(const AImage& image) : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFilter(GL_LINEAR),
                        m_pixelSize(GL_UNSIGNED_BYTE), m_width(0), m_height(0), m_repeat(true),
                        m_mipMaping(false), m_name("undefined"), m_imageWidth(0), m_imageHeight(0)
 {
@@ -31,15 +23,6 @@ ATexture::ATexture(AImage& image) : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LIN
 }
 
 //=============================================================================
-
-ATexture::ATexture(const std::string& str) : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFilter(GL_LINEAR),
-                                             m_pixelSize(GL_UNSIGNED_BYTE), m_width(0), m_height(0), m_repeat(true),
-                                             m_mipMaping(false), m_name("undefined"), m_imageWidth(0), m_imageHeight(0)
-{
-    glGenTextures(1, &m_id);
-    
-    atInit(str);
-}
 
 ATexture::~ATexture()
 {
@@ -76,24 +59,7 @@ void ATexture::defineImageType(const int bytePP)
 
 //=============================================================================
 
-bool ATexture::atInit(const std::string& fileName)
-{
-    TUint dotPos = fileName.rfind(".");
-    std::string ext = &fileName[++dotPos];
-    
-    bool res = true;
-    if (ext == "tga")
-        res = atInitFromTga(fileName);
-        
-    if (!res)
-        return false;
-
-    return true;    
-}
-
-//=============================================================================
-
-bool ATexture::atInit(AImage& image)
+bool ATexture::atInit(const AImage& image)
 {
     defineImageType(image.aiBytePerPixel());
     
@@ -115,18 +81,6 @@ bool ATexture::atInit(AImage& image)
         glTexImage2D(GL_TEXTURE_2D, 0, m_type, m_width, m_height, 0, m_type, m_pixelSize, data);
     }
         
-    return true;
-}
-
-//=============================================================================
-
-bool ATexture::atInitFromTga(const std::string& fileName)
-{
-    ATga tga(fileName);
-
-    if (!atInit(tga))
-        return false;
-    
     return true;
 }
 
@@ -248,6 +202,11 @@ void ATexture::atCorrectData(const AImage& image, TData* data)
 const GLenum ATexture::atType() const
 {
     return m_type;
+}
+
+const std::string& ATexture::atName() const
+{
+    return m_name;
 }
 
 //=============================================================================

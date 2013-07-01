@@ -2,9 +2,15 @@
 
 //=============================================================================
 
-ATga::ATga(const std::string& fileName, bool headersOnly) : m_identity(0), m_image(0)
+ATga::ATga(const std::string& filePath, bool headersOnly) : m_identity(0), m_image(0)
 {
-    FILE* tga_file = fopen(fileName.c_str(), "rb");
+    TUint dotPos = filePath.rfind(".");
+    std::string ext = &filePath[++dotPos];
+
+    if (ext != "tga")
+        throw;
+
+    FILE* tga_file = fopen(filePath.c_str(), "rb");
     if (!tga_file)
         throw;
 
@@ -32,6 +38,8 @@ ATga::ATga(const std::string& fileName, bool headersOnly) : m_identity(0), m_ima
 
     fclose(tga_file);
 
+    dotPos = filePath.rfind("/");
+    std::string fileName = &filePath[++dotPos];
     m_image = new AImage(fileName, data, tgaHeader.imageHeader.width, tgaHeader.imageHeader.height, tgaHeader.imageHeader.bitpp);
     
     if (data)
@@ -155,15 +163,31 @@ bool ATga::atFlipOver(TData* data, const STGAHeader& tgaHeader)
 
 //=============================================================================
 
-bool ATga::atSave(const std::string& fileName)
+STGAHeader ATga::atCreateTGAHeader(const AImage& image)
 {
-    TData* data = m_pData;
-	if (!data)
-		return false;
+    STGAHeader header = {0};
+    
+    header.imageHeader.bitpp = image.aiBitPerPixel();
+    header.imageHeader.width = image.aiWidth();
+    header.imageHeader.height = image.aiHeight();
+
+    return header;
+}
+
+//=============================================================================
+
+bool ATga::atSave(const std::string& filePath, const AImage& image)
+{
+    STGAHeader header = atCreateTGAHeader(image);
+
+    TUint sizer = header.imageHeader.width * header.imageHeader.height * header.imageHeader.bitpp / 8;
+    TData* data = new TData[sizer];
+    memset(data, 0, sizer);
+    memcpy(data, image.aiData(), sizer);
 
     TData byte_1 = 0;
     TUShort byte_2 = 0;
-    FILE* filo = fopen(fileName.c_str(), "wb");
+    FILE* filo = fopen(filePath.c_str(), "wb");
     if (!filo)
         return false;
 
@@ -178,29 +202,26 @@ bool ATga::atSave(const std::string& fileName)
     fwrite(&byte_2, 2, 1, filo); //  x coord
     fwrite(&byte_2, 2, 1, filo); //  y coord
 
-    byte_2 = m_width;
+    byte_2 = image.aiWidth();
     fwrite(&byte_2, 2, 1, filo); //  image width
-    byte_2 = m_height;
+    byte_2 = image.aiHeight();
     fwrite(&byte_2, 2, 1, filo); //  image height
 
-    byte_1 = m_bitPerPixel;
+    byte_1 = image.aiBitPerPixel();
     fwrite(&byte_1, 1, 1, filo); //  byte per pixel
     byte_1 = 0;
     fwrite(&byte_1, 1, 1, filo); //  image property
-
-    if (!aiRGB2BGR())
+    
+    if (!atRGB2BGR(data, header))
         return false;
-    if (!aiFlipOver())
-        return false;
-
-    if (fwrite(data, m_bytePerPixel * m_width * m_height, 1, filo) != 1) //  image data
+    
+    if (!atFlipOver(data, header))
         return false;
 
-    if (!aiFlipOver())
-        return false;
-    if (!aiRGB2BGR())
+    if (fwrite(data, sizer, 1, filo) != 1) //  image data
         return false;
 
+    delete [] data;
     fclose(filo);
 
 	return true;

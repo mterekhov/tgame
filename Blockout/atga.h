@@ -132,19 +132,12 @@ enum EImageType
 class ATga
 {
 public:
-    /// Constructor
-    /// @param const std::string& - file name of tga image
-    /// @param bool - should we read all the image data or only it's header
-    /// @return const std::string& - relative file name
-	ATga(const std::string& filename, bool headersOnly = false);
+	ATga(const std::string& filePath, bool headersOnly = false);
 
     /// Default destructor
 	virtual ~ATga();
 
-    /// Save current image data into file
-    /// @param const std::string& - full path to file to save to
-    /// @return bool - true if everything is ok, otherwise false
-    bool atSave(const std::string& fileName);
+    bool atSave(const std::string& fileName, const AImage& image);
 
     const AImage* atImage() const;
 
@@ -162,6 +155,8 @@ private:
     
     bool atFlipOver(TData* data, const STGAHeader& tgaHeader);
     bool atRGB2BGR(TData* data, const STGAHeader& tgaHeader);
+    
+    STGAHeader atCreateTGAHeader(const AImage& image);
 };
 
 //=============================================================================
