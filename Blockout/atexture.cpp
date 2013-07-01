@@ -1,5 +1,5 @@
-#include "atexture.h"
-#include "atga.h"
+#include "ATexture.h"
+#include "ATga.h"
 
 #include <OpenGL/gl.h>
 
@@ -10,6 +10,14 @@ ATexture::ATexture() : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFi
                        m_mipMaping(false), m_name("undefined"), m_imageWidth(0), m_imageHeight(0)
 {
     glGenTextures(1, &m_id);
+}
+
+//=============================================================================
+
+ATexture::ATexture(const ATexture& image) : m_id(image.m_id), m_type(image.m_type), m_minFilter(image.m_minFilter), m_magFilter(image.m_magFilter),
+                       m_pixelSize(image.m_pixelSize), m_width(image.m_width), m_height(image.m_height), m_repeat(image.m_repeat),
+                       m_mipMaping(image.m_mipMaping), m_name("undefined"), m_imageWidth(image.m_imageWidth), m_imageHeight(image.m_imageHeight)
+{
 }
 
 //=============================================================================

@@ -1,11 +1,11 @@
-#ifndef SPCBAIKAL_ATGA_H
-#define SPCBAIKAL_ATGA_H
+#ifndef ENGINE_ATGA_H
+#define ENGINE_ATGA_H
 
 //=============================================================================
 
 #include <stdio.h>
 
-#include "aimage.h"
+#include "AImage.h"
 
 //=============================================================================
 
@@ -77,6 +77,13 @@ struct SImageHeader
     TData image_descriptor;
 };
 
+struct STGAHeader
+{
+    SFileHeader fileHeader;
+    SImageHeader imageHeader;
+    SPaletteHeader paletteHeader;
+};
+
 //=============================================================================
 
 /// Size of SFileHeader structure in bytes
@@ -122,7 +129,7 @@ enum EImageType
     @class ATga
     API to work with TGA files format
 */
-class ATga : public AImage
+class ATga
 {
 public:
     /// Constructor
@@ -139,24 +146,24 @@ public:
     /// @return bool - true if everything is ok, otherwise false
     bool atSave(const std::string& fileName);
 
+    const AImage* atImage() const;
+
 private:
+    AImage* m_image;
+
     /// Comments in tga file. Usually it is absent
 	TData* m_identity;
 
-    /// Read image data
-    /// @param FILE* - pointer to an open for binary reading file
-    /// @return bool - true if everything is ok, otherwise false
-	bool atReadData(FILE* tga_file);
-
-    /// Read all the image headers
-    /// @param FILE* - pointer to an open for binary reading file
-    /// @return bool - true if everything is ok, otherwise false
-	bool atReadHeaders(FILE* tga_file);
+    bool atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader);
+    bool atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader);
     
     /// Destroy all the data
 	void atClearData();
+    
+    bool atFlipOver(TData* data, const STGAHeader& tgaHeader);
+    bool atRGB2BGR(TData* data, const STGAHeader& tgaHeader);
 };
 
 //=============================================================================
 
-#endif  //  SPCBAIKAL_ATGA_H
+#endif  //  ENGINE_ATGA_H

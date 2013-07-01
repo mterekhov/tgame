@@ -11,7 +11,11 @@
 		4C14891616C547130014683F /* ABlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C14891416C547130014683F /* ABlock.cpp */; };
 		4C1D72D116CFA41000C2DFB7 /* ASolidBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D72CF16CFA41000C2DFB7 /* ASolidBlock.cpp */; };
 		4C52515D16CA88AC002A5B42 /* AFormationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C52515B16CA88AC002A5B42 /* AFormationFactory.cpp */; };
+		4C531EB1177F141700B33D01 /* ATextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C531EAF177F141700B33D01 /* ATextureManager.cpp */; };
 		4C6FB0031716B1DB004F5E0E /* BlockoutDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FB0011716B1DB004F5E0E /* BlockoutDebug.cpp */; };
+		4C77501B1781B1DB00B2BE5B /* AImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C7750191781B1DB00B2BE5B /* AImage.cpp */; };
+		4C7750201781B2FA00B2BE5B /* ATexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C77501C1781B2FA00B2BE5B /* ATexture.cpp */; };
+		4C7750211781B2FA00B2BE5B /* ATga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C77501E1781B2FA00B2BE5B /* ATga.cpp */; };
 		4C8000E716BD2F12008B1E74 /* ABlockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E516BD2F12008B1E74 /* ABlockout.cpp */; };
 		4C8000ED16BD2F27008B1E74 /* ACrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000E816BD2F27008B1E74 /* ACrafter.cpp */; };
 		4C8000EE16BD2F27008B1E74 /* ADrawBasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */; };
@@ -30,9 +34,6 @@
 		4CD68F1D16E89787005FD197 /* APoint2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CD68F1B16E89787005FD197 /* APoint2D.cpp */; };
 		4CD68F2016E8C592005FD197 /* ADataLiner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CD68F1E16E8C592005FD197 /* ADataLiner.cpp */; };
 		4CEA40E016CFAFD500A678B5 /* ATexturedBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */; };
-		4CEA40E816CFB09700A678B5 /* aimage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E216CFB09700A678B5 /* aimage.cpp */; };
-		4CEA40E916CFB09700A678B5 /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E416CFB09700A678B5 /* atexture.cpp */; };
-		4CEA40EA16CFB09700A678B5 /* atga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA40E616CFB09700A678B5 /* atga.cpp */; };
 		B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732726816AB20C2001DE602 /* Cocoa.framework */; };
 		B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B732727116AB20C2001DE602 /* InfoPlist.strings */; };
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
@@ -53,8 +54,16 @@
 		4C52515916CA7B1B002A5B42 /* BlockoutTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockoutTypes.h; path = Blockout/BlockoutTypes.h; sourceTree = "<group>"; };
 		4C52515B16CA88AC002A5B42 /* AFormationFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AFormationFactory.cpp; path = Blockout/AFormationFactory.cpp; sourceTree = "<group>"; };
 		4C52515C16CA88AC002A5B42 /* AFormationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFormationFactory.h; path = Blockout/AFormationFactory.h; sourceTree = "<group>"; };
+		4C531EAF177F141700B33D01 /* ATextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATextureManager.cpp; path = Blockout/ATextureManager.cpp; sourceTree = "<group>"; };
+		4C531EB0177F141700B33D01 /* ATextureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATextureManager.h; path = Blockout/ATextureManager.h; sourceTree = "<group>"; };
 		4C6FB0011716B1DB004F5E0E /* BlockoutDebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlockoutDebug.cpp; path = Blockout/BlockoutDebug.cpp; sourceTree = "<group>"; };
 		4C6FB0021716B1DB004F5E0E /* BlockoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockoutDebug.h; path = Blockout/BlockoutDebug.h; sourceTree = "<group>"; };
+		4C7750191781B1DB00B2BE5B /* AImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AImage.cpp; path = Blockout/AImage.cpp; sourceTree = "<group>"; };
+		4C77501A1781B1DB00B2BE5B /* AImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AImage.h; path = Blockout/AImage.h; sourceTree = "<group>"; };
+		4C77501C1781B2FA00B2BE5B /* ATexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATexture.cpp; path = Blockout/ATexture.cpp; sourceTree = "<group>"; };
+		4C77501D1781B2FA00B2BE5B /* ATexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATexture.h; path = Blockout/ATexture.h; sourceTree = "<group>"; };
+		4C77501E1781B2FA00B2BE5B /* ATga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATga.cpp; path = Blockout/ATga.cpp; sourceTree = "<group>"; };
+		4C77501F1781B2FA00B2BE5B /* ATga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATga.h; path = Blockout/ATga.h; sourceTree = "<group>"; };
 		4C8000E516BD2F12008B1E74 /* ABlockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlockout.cpp; path = Blockout/ABlockout.cpp; sourceTree = "<group>"; };
 		4C8000E616BD2F12008B1E74 /* ABlockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlockout.h; path = Blockout/ABlockout.h; sourceTree = "<group>"; };
 		4C8000E816BD2F27008B1E74 /* ACrafter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ACrafter.cpp; path = Blockout/ACrafter.cpp; sourceTree = "<group>"; };
@@ -87,12 +96,6 @@
 		4CD68F1F16E8C592005FD197 /* ADataLiner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADataLiner.h; path = Blockout/ADataLiner.h; sourceTree = "<group>"; };
 		4CEA40DE16CFAFD500A678B5 /* ATexturedBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATexturedBlock.cpp; path = Blockout/ATexturedBlock.cpp; sourceTree = "<group>"; };
 		4CEA40DF16CFAFD500A678B5 /* ATexturedBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATexturedBlock.h; path = Blockout/ATexturedBlock.h; sourceTree = "<group>"; };
-		4CEA40E216CFB09700A678B5 /* aimage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimage.cpp; path = Blockout/aimage.cpp; sourceTree = "<group>"; };
-		4CEA40E316CFB09700A678B5 /* aimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aimage.h; path = Blockout/aimage.h; sourceTree = "<group>"; };
-		4CEA40E416CFB09700A678B5 /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexture.cpp; path = Blockout/atexture.cpp; sourceTree = "<group>"; };
-		4CEA40E516CFB09700A678B5 /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexture.h; path = Blockout/atexture.h; sourceTree = "<group>"; };
-		4CEA40E616CFB09700A678B5 /* atga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atga.cpp; path = Blockout/atga.cpp; sourceTree = "<group>"; };
-		4CEA40E716CFB09700A678B5 /* atga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atga.h; path = Blockout/atga.h; sourceTree = "<group>"; };
 		B732726416AB20C2001DE602 /* Blockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732726816AB20C2001DE602 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B732726B16AB20C2001DE602 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -211,12 +214,14 @@
 		4CEA40E116CFB08400A678B5 /* Texture */ = {
 			isa = PBXGroup;
 			children = (
-				4CEA40E216CFB09700A678B5 /* aimage.cpp */,
-				4CEA40E316CFB09700A678B5 /* aimage.h */,
-				4CEA40E616CFB09700A678B5 /* atga.cpp */,
-				4CEA40E716CFB09700A678B5 /* atga.h */,
-				4CEA40E416CFB09700A678B5 /* atexture.cpp */,
-				4CEA40E516CFB09700A678B5 /* atexture.h */,
+				4C77501C1781B2FA00B2BE5B /* ATexture.cpp */,
+				4C77501D1781B2FA00B2BE5B /* ATexture.h */,
+				4C77501E1781B2FA00B2BE5B /* ATga.cpp */,
+				4C77501F1781B2FA00B2BE5B /* ATga.h */,
+				4C7750191781B1DB00B2BE5B /* AImage.cpp */,
+				4C77501A1781B1DB00B2BE5B /* AImage.h */,
+				4C531EAF177F141700B33D01 /* ATextureManager.cpp */,
+				4C531EB0177F141700B33D01 /* ATextureManager.h */,
 			);
 			name = Texture;
 			sourceTree = "<group>";
@@ -397,12 +402,13 @@
 				4C52515D16CA88AC002A5B42 /* AFormationFactory.cpp in Sources */,
 				4C1D72D116CFA41000C2DFB7 /* ASolidBlock.cpp in Sources */,
 				4CEA40E016CFAFD500A678B5 /* ATexturedBlock.cpp in Sources */,
-				4CEA40E816CFB09700A678B5 /* aimage.cpp in Sources */,
-				4CEA40E916CFB09700A678B5 /* atexture.cpp in Sources */,
-				4CEA40EA16CFB09700A678B5 /* atga.cpp in Sources */,
 				4CD68F1D16E89787005FD197 /* APoint2D.cpp in Sources */,
 				4CD68F2016E8C592005FD197 /* ADataLiner.cpp in Sources */,
 				4C6FB0031716B1DB004F5E0E /* BlockoutDebug.cpp in Sources */,
+				4C531EB1177F141700B33D01 /* ATextureManager.cpp in Sources */,
+				4C77501B1781B1DB00B2BE5B /* AImage.cpp in Sources */,
+				4C7750201781B2FA00B2BE5B /* ATexture.cpp in Sources */,
+				4C7750211781B2FA00B2BE5B /* ATga.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,11 @@
-#ifndef SPCBAIKAL_ATEXTURE_H
-#define SPCBAIKAL_ATEXTURE_H
+#ifndef ENGINE_ATEXTURE_H
+#define ENGINE_ATEXTURE_H
 
 //=============================================================================
 
 #include <string>
 
-#include "aimage.h"
+#include "AImage.h"
 
 //=============================================================================
 
@@ -22,6 +22,10 @@ public:
     /// Constructor
     /// @param const AImage& - image for initialization of texture
     ATexture(AImage& image);
+    
+    /// Copy constructor
+    /// @param const AImage& - image for initialization of texture
+    ATexture(const ATexture& image);
     
     ATexture(const std::string& str);
     
@@ -147,4 +151,4 @@ private:
 
 //=============================================================================
 
-#endif  //  SPCBAIKAL_ATEXTURE_H
+#endif  //  ENGINE_ATEXTURE_H

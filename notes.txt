@@ -4,3 +4,29 @@ ABlockout
 	ACrafter
 	
 AFormationFactory
+
+ARenderView has timer which launches the renderGame method
+На каждый кубик с текстурой или залитый цветом создается отдельно свой буфер и в него
+хуячаться координаты, потом буфер вливается в видео память и потом этот буфер отрисовывается
+
+В оперативе создается массив с координатами который скармливается функции OpenGL для
+отрисовки
+
+Создать в будущем оптимизацию чтобы конкатенировать все кубики для отрисокви в один видео
+буфер - толкать его в видеопамять и рисовать все скопом
+
+//========================================================================================
+//
+//	All resources must be created and loaded through managers!!!
+//	You can find resources only using managers
+//
+//========================================================================================
+
+
+AImage - stores RGBA/RGB image in 32-bit/24-bit format in usual RAM. Width, height,
+format, and data pointer.
+
+ATGA - only reads TGA format and stores AImage class object
+
+ATexture - using ATGA and AImage creates OpenGL texture. Stores height, width, format and
+texture id - NO IMAGE DATA stores!!!
