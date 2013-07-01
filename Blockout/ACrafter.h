@@ -4,6 +4,7 @@
 //==============================================================================
 
 #include "ARObject.h"
+#include "ATextureManager.h"
 
 #include <list>
 
@@ -26,6 +27,8 @@ private:
     void renderList(const TRObjectsList& renderList);
     
 public:
+    ATextureManager textureManager;
+
     ACrafter();
     virtual ~ACrafter();
     

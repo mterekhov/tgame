@@ -48,22 +48,22 @@ public:
     
 protected:
     /// Smart pointer to image data container
-    TData* m_pData;
+    TData* _pData;
     
     /// Image width
-    TWidth m_width;
+    TWidth _width;
     
     /// Image height
-    THeight m_height;
+    THeight _height;
     
     /// Image bytes per pixel
-    TBytepp m_bytePerPixel;
+    TBytepp _bytePerPixel;
     
     /// Image bit per pixel
-    TBitpp m_bitPerPixel;
+    TBitpp _bitPerPixel;
     
     /// Image name
-    std::string m_name;
+    std::string _name;
 };
 
 //=============================================================================

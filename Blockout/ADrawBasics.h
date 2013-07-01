@@ -23,7 +23,7 @@ public:
     static void installCamera(const AVector& eyePosition3D, const AVector& center3D, const AVector& upVector3D);
     static void drawLine(const APoint& p1, const APoint& p2);
 
-    static void drawTexturedCube(const APoint& pos, const GLfloat cubeSize, const ATexture& texture);
+    static void drawTexturedCube(const APoint& pos, const GLfloat cubeSize, ATexture& texture);
     static void drawSolidCube(const APoint& pos, const GLfloat cubeSize);
     static void drawCarcasedCube(const APoint& pos, const GLfloat cubeSize);
 

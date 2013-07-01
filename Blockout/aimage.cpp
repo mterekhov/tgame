@@ -3,64 +3,64 @@
 //=============================================================================
 
 AImage::AImage(const std::string& imageName, TData* data, const TWidth width,
-            const THeight height, const TBitpp bitpp) : m_name(imageName),
-                                            m_width(width), m_height(height),
-                                            m_bitPerPixel(bitpp), m_bytePerPixel(bitpp / 8)
+            const THeight height, const TBitpp bitpp) : _name(imageName),
+                                            _width(width), _height(height),
+                                            _bitPerPixel(bitpp), _bytePerPixel(bitpp / 8)
 {
     TUint sizer = width * height * bitpp / 8;
-    m_pData = new TData[sizer];
-    memset(m_pData, 0, sizer);
+    _pData = new TData[sizer];
+    memset(_pData, 0, sizer);
     
-    memcpy(m_pData, data, sizer);
+    memcpy(_pData, data, sizer);
 }
 
 //=============================================================================
 
 AImage::~AImage()
 {
-    delete [] m_pData;
+    delete [] _pData;
 }
 
 //=============================================================================
 
 const TData* AImage::aiData() const
 {
-    return m_pData;
+    return _pData;
 }
 
 //=============================================================================
 
 const TWidth AImage::aiWidth() const
 {
-    return m_width;
+    return _width;
 }
 
 //=============================================================================
 
 const THeight AImage::aiHeight() const
 {
-    return m_height;
+    return _height;
 }
 
 //=============================================================================
 
 const TBytepp AImage::aiBytePerPixel() const
 {
-    return m_bytePerPixel;
+    return _bytePerPixel;
 }
 
 //=============================================================================
 
 const TBitpp AImage::aiBitPerPixel() const
 {
-    return m_bitPerPixel;
+    return _bitPerPixel;
 }
 
 //=============================================================================
 
 const std::string& AImage::aiName() const
 {
-    return m_name;
+    return _name;
 }
 
 //=============================================================================

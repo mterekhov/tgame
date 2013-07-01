@@ -2,7 +2,7 @@
 
 //=============================================================================
 
-ATga::ATga(const std::string& filePath, bool headersOnly) : m_identity(0), m_image(0)
+ATga::ATga(const std::string& filePath, bool headersOnly) : _identity(0), _image(0)
 {
     TUint dotPos = filePath.rfind(".");
     std::string ext = &filePath[++dotPos];
@@ -40,7 +40,7 @@ ATga::ATga(const std::string& filePath, bool headersOnly) : m_identity(0), m_ima
 
     dotPos = filePath.rfind("/");
     std::string fileName = &filePath[++dotPos];
-    m_image = new AImage(fileName, data, tgaHeader.imageHeader.width, tgaHeader.imageHeader.height, tgaHeader.imageHeader.bitpp);
+    _image = new AImage(fileName, data, tgaHeader.imageHeader.width, tgaHeader.imageHeader.height, tgaHeader.imageHeader.bitpp);
     
     if (data)
         delete [] data;
@@ -50,18 +50,18 @@ ATga::ATga(const std::string& filePath, bool headersOnly) : m_identity(0), m_ima
 
 ATga::~ATga()
 {
-    if (m_identity)
-        delete [] m_identity;
+    if (_identity)
+        delete [] _identity;
     
-    if (m_image)
-        delete m_image;
+    if (_image)
+        delete _image;
 }
 
 //=============================================================================
 
 const AImage* ATga::atImage() const
 {
-    return m_image;
+    return _image;
 }
 
 //=============================================================================
@@ -88,8 +88,8 @@ bool ATga::atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader)
 
     if (tgaHeader.fileHeader.identityLength)
     {
-        m_identity = new TData[tgaHeader.fileHeader.identityLength];
-        fread(m_identity, sizeof(TData), tgaHeader.fileHeader.identityLength, tga_file);
+        _identity = new TData[tgaHeader.fileHeader.identityLength];
+        fread(_identity, sizeof(TData), tgaHeader.fileHeader.identityLength, tga_file);
     }
 
     return true;

@@ -1,5 +1,6 @@
 #include "AOpenGLState.h"
 #include "BlockoutDebug.h"
+#include "ATextureManager.h"
 
 //==============================================================================
 
@@ -22,7 +23,7 @@ AOpenGLState* AOpenGLState::shared()
 
 //==============================================================================
 
-AOpenGLState::AOpenGLState() : _lineWidth(1.0f)
+AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _currentTexture(ATextureManager::zeroTexture)
 {
     drawColorSetup(_drawColor);
     clearColorSetup(_clearColor);
@@ -37,7 +38,6 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f)
 }
 
 //==============================================================================
-
 
 AOpenGLState::~AOpenGLState()
 {
@@ -170,7 +170,7 @@ bool AOpenGLState::textureEnabled() const
 
 //==============================================================================
 
-bool AOpenGLState::currentTexture(const ATexture& texture)
+bool AOpenGLState::currentTexture(ATexture& texture)
 {
     if (_textureEnabled == false)
         return false;
@@ -183,7 +183,7 @@ bool AOpenGLState::currentTexture(const ATexture& texture)
 
 //==============================================================================
 
-ATexture AOpenGLState::currentTexture() const
+const ATexture& AOpenGLState::currentTexture() const
 {
     return _currentTexture;
 }
@@ -193,7 +193,7 @@ ATexture AOpenGLState::currentTexture() const
 void AOpenGLState::clearCurrentTexture()
 {
     _currentTexture.atUnBind();
-    _currentTexture = ATexture();
+    _currentTexture = ATextureManager::zeroTexture;
 }
 
 //==============================================================================

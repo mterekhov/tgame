@@ -142,10 +142,10 @@ public:
     const AImage* atImage() const;
 
 private:
-    AImage* m_image;
+    AImage* _image;
 
     /// Comments in tga file. Usually it is absent
-	TData* m_identity;
+	TData* _identity;
 
     bool atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader);
     bool atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader);

@@ -5,20 +5,25 @@
 
 //=============================================================================
 
-ATexture::ATexture() : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFilter(GL_LINEAR),
-                       m_pixelSize(GL_UNSIGNED_BYTE), m_width(0), m_height(0), m_repeat(true),
-                       m_mipMaping(false), m_name("undefined"), m_imageWidth(0), m_imageHeight(0)
+ATexture::ATexture() : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter(GL_LINEAR),
+                       _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
+                       _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
-    glGenTextures(1, &m_id);
 }
 
 //=============================================================================
 
-ATexture::ATexture(const AImage& image) : m_id(0), m_type(GL_RGBA), m_minFilter(GL_LINEAR), m_magFilter(GL_LINEAR),
-                       m_pixelSize(GL_UNSIGNED_BYTE), m_width(0), m_height(0), m_repeat(true),
-                       m_mipMaping(false), m_name("undefined"), m_imageWidth(0), m_imageHeight(0)
+ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter(GL_LINEAR),
+                       _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
+                       _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
-    glGenTextures(1, &m_id);
+    GLenum err =  glGetError();
+    glEnable(GL_TEXTURE_2D);
+
+    err =  glGetError();
+    glGenTextures(1, &_id);
+    err =  glGetError();
+
     atInit(image);
 }
 
@@ -33,10 +38,10 @@ ATexture::~ATexture()
 
 void ATexture::atDestroy()
 {
-    if (m_id)
+    if (_id)
     {
-        glDeleteTextures(1, &m_id);
-        m_id = 0;
+        glDeleteTextures(1, &_id);
+        _id = 0;
     }
 }
 
@@ -47,11 +52,11 @@ void ATexture::defineImageType(const int bytePP)
     switch (bytePP)
     {
         case 3:
-            m_type = GL_RGB;
+            _type = GL_RGB;
         break;
         
         case 4:
-            m_type = GL_RGBA;
+            _type = GL_RGBA;
         break;
         
     }
@@ -67,18 +72,18 @@ bool ATexture::atInit(const AImage& image)
     atLocateSize(image.aiWidth(), image.aiHeight());    
     atBind();
     atDefineFilters();
-    m_name = image.aiName();
+    _name = image.aiName();
 
-    if ((m_width != image.aiWidth()) || (m_height != image.aiHeight()))
+    if ((_width != image.aiWidth()) || (_height != image.aiHeight()))
     {
-        TData* data = new TData[m_width * m_height * image.aiBytePerPixel()];
+        TData* data = new TData[_width * _height * image.aiBytePerPixel()];
         atCorrectData(image, data);
-        glTexImage2D(GL_TEXTURE_2D, 0, m_type, m_width, m_height, 0, m_type, m_pixelSize, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
     }
     else
     {
         const TData* data = image.aiData();
-        glTexImage2D(GL_TEXTURE_2D, 0, m_type, m_width, m_height, 0, m_type, m_pixelSize, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
     }
         
     return true;
@@ -88,7 +93,7 @@ bool ATexture::atInit(const AImage& image)
 
 void ATexture::atDefineFilters()
 {
-    if (!m_repeat)
+    if (!_repeat)
     {
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
@@ -99,9 +104,9 @@ void ATexture::atDefineFilters()
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     }
 
-    glTexParameterf(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, m_mipMaping);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, m_minFilter);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, m_magFilter);
+    glTexParameterf(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, _mipMaping);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _minFilter);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, _magFilter);
 }
     
 //=============================================================================
@@ -123,18 +128,18 @@ void ATexture::atLocateSize(const TWidth width, const THeight height)
         correctWidth = correctWidth << 1;
     };
     
-    m_imageWidth = width;
-    m_imageHeight = height;
+    _imageWidth = width;
+    _imageHeight = height;
     
-    m_height = correctHeight;
-    m_width = correctWidth;
+    _height = correctHeight;
+    _width = correctWidth;
 }
 
 //=============================================================================
 
 void ATexture::atBind() const
 {
-    glBindTexture(GL_TEXTURE_2D, m_id);
+    glBindTexture(GL_TEXTURE_2D, _id);
 }
 
 //=============================================================================
@@ -148,28 +153,28 @@ void ATexture::atUnBind() const
 
 const TWidth ATexture::atImageWidth() const
 {
-    return m_imageWidth;
+    return _imageWidth;
 }
 
 //=============================================================================
 
 const THeight ATexture::atImageHeight() const
 {
-    return m_imageHeight;
+    return _imageHeight;
 }
     
 //=============================================================================
 
 const TWidth ATexture::atWidth() const
 {
-    return m_width;
+    return _width;
 }
 
 //=============================================================================
 
 const THeight ATexture::atHeight() const
 {
-    return m_height;
+    return _height;
 }
     
 //=============================================================================
@@ -179,18 +184,18 @@ void ATexture::atCorrectData(const AImage& image, TData* data)
     const TData* originalData = image.aiData();
     TUShort bytepp = image.aiBytePerPixel();
     
-    for (TUint i = 0; i < m_height; i++)
+    for (TUint i = 0; i < _height; i++)
     {
-        for (TUint j = 0; j < m_width; j++)
+        for (TUint j = 0; j < _width; j++)
         {
-            TUint index = bytepp * (m_width * i + j);
-            if ((j >= m_imageWidth) || (i >= m_imageHeight))
+            TUint index = bytepp * (_width * i + j);
+            if ((j >= _imageWidth) || (i >= _imageHeight))
             {
                 memset(&data[index], 0, bytepp);
             }
             else
             {
-                TUint index2 = bytepp * (m_imageWidth * i + j);
+                TUint index2 = bytepp * (_imageWidth * i + j);
                 memcpy(&data[index], &originalData[index2], bytepp);
             }
         }
@@ -201,45 +206,45 @@ void ATexture::atCorrectData(const AImage& image, TData* data)
 
 const GLenum ATexture::atType() const
 {
-    return m_type;
+    return _type;
 }
 
 const std::string& ATexture::atName() const
 {
-    return m_name;
+    return _name;
 }
 
 //=============================================================================
 
 void ATexture::atMinFilter(const GLuint min)
 {
-    m_minFilter = min;
+    _minFilter = min;
 }
 
 //=============================================================================
 
 void ATexture::atMagFilter(const GLuint mag)
 {
-    m_magFilter = mag;
+    _magFilter = mag;
 }
 
 //=============================================================================
 
 void ATexture::atRepeat(const bool r)
 {
-    m_repeat = r;
+    _repeat = r;
 }
 
 //=============================================================================
 
 void ATexture::atMipMapping(const bool m)
 {
-    m_mipMaping = m;
+    _mipMaping = m;
 }
 
 //=============================================================================
 
 void ATexture::atName(const std::string& name)
 {
-    m_name = name;
+    _name = name;
 }

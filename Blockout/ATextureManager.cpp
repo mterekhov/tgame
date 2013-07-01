@@ -1,5 +1,10 @@
 #include "ATextureManager.h"
 #include "ATga.h"
+#include "AOpenGLState.h"
+
+//==============================================================================
+
+const ATexture ATextureManager::zeroTexture;
 
 //==============================================================================
 
@@ -11,34 +16,19 @@ ATextureManager::ATextureManager()
 
 ATextureManager::~ATextureManager()
 {
-    atClearAllTextures(m_textureList);
 }
 
 //==============================================================================
 
-ATexture* ATextureManager::atCreateTextureFromTGA(const std::string& filePath)
+ATexture& ATextureManager::atCreateTextureFromTGA(const std::string& filePath)
 {
     ATga tgaFile(filePath);
     
-    ATexture* newTexture = new ATexture(*tgaFile.atImage());
-    m_textureList[newTexture->atName()] = newTexture;
+    AOpenGLState* oglState = AOpenGLState::shared();
+    oglState->textureEnable();
     
-    return newTexture;
-}
-
-//==============================================================================
-
-bool ATextureManager::atClearAllTextures(TTexturesList& textureList)
-{
-    if (textureList.size() == 0)
-        return false;
-
-    TTexturesListConstIter iterBegin = textureList.begin();
-    TTexturesListConstIter iterEnd = textureList.end();
-    for (TTexturesListConstIter iter = iterBegin; iter != iterEnd; iter++)
-        delete (iter->second);
+    ATexture newTexture(*tgaFile.atImage());
+    _textureList[newTexture.atName()] = newTexture;
     
-    textureList.clear();
-    
-    return true;
+    return _textureList[newTexture.atName()];
 }

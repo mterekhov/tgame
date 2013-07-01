@@ -48,8 +48,8 @@ public:
     
     void clear(GLbitfield mask);
     
-    bool currentTexture(const ATexture& texture);
-    ATexture currentTexture() const;
+    bool currentTexture(ATexture& texture);
+    const ATexture& currentTexture() const;
     void clearCurrentTexture();
     
     std::string lastError();

@@ -104,40 +104,40 @@ private:
     void atCorrectData(const AImage& image, TData* data);
 
     /// Texture name
-    std::string m_name;
+    std::string _name;
     
     /// Texture id
-    TUint m_id;
+    TUint _id;
     
     /// Texture type(in case of color scheme)
-    TUint m_type;
+    TUint _type;
     
     /// Number of bytes per pixel component
-    TUint m_pixelSize;
+    TUint _pixelSize;
     
     /// Texture width
-    TWidth m_width;             //  texture width(usualy pow of 2)
+    TWidth _width;             //  texture width(usualy pow of 2)
     
     /// Texture height
-    THeight m_height;           //  texture height(usualy pow of 2)
+    THeight _height;           //  texture height(usualy pow of 2)
     
     /// Original image width
-    TWidth m_imageWidth;        //  width of source image
+    TWidth _imageWidth;        //  width of source image
     
     /// Original image height
-    THeight m_imageHeight;      //  height of source image
+    THeight _imageHeight;      //  height of source image
 
     /// Minification filter
-    TUint m_minFilter;
+    TUint _minFilter;
     
     /// Magnification filter
-    TUint m_magFilter;
+    TUint _magFilter;
     
     /// Tile parameter
-    bool m_repeat;
+    bool _repeat;
     
     /// Mipmap generation parameter
-    bool m_mipMaping;
+    bool _mipMaping;
 };
 
 //=============================================================================
