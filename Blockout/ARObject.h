@@ -18,6 +18,7 @@ protected:
     
 public:
     ARObject();
+    ARObject(const ARObject& object);
     virtual ~ARObject();
     virtual void renderObject() const;
     EObjectType objectType() const;
