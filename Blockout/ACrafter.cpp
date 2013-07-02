@@ -21,6 +21,20 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
+#pragma mark - blocks creation -
+
+//==============================================================================
+
+ATexturedBlock* ACrafter::acCreateTexturedBlock(const AFormation& formation, const ATexture& texture)
+{
+    ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
+    addObjectForRender(newBlock);
+    
+    return newBlock;
+}
+
+//==============================================================================
+
 #pragma mark - render list management -
 
 //==============================================================================

@@ -3,7 +3,9 @@
 
 //==============================================================================
 
-#include "ARObject.h"
+#include "ATexturedBlock.h"
+#include "ASolidBlock.h"
+#include "ABlock.h"
 #include "ATextureManager.h"
 
 #include <list>
@@ -34,6 +36,8 @@ public:
     
     bool addObjectForRender(ARObject* object);
     void processRender();
+    
+    ATexturedBlock* acCreateTexturedBlock(const AFormation& formation, const ATexture& texture);
 };
 
 //==============================================================================
