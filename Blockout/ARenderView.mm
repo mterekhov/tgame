@@ -26,6 +26,9 @@
 - (void) dealloc
 {
 	[self stopAnimation];
+    
+    delete _blockout;
+    
     [super dealloc];
 }
 
@@ -50,6 +53,9 @@
 
     [self initContext:self.pixelFormat];
     [self initGL];
+    
+    _blockout = new ABlockout();
+    
     _animationInterval = 1.0f / 60.0f;
     [self startAnimation];
     
@@ -104,7 +110,7 @@
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    _blockout.processGameCycle();
+    _blockout->processGameCycle();
 
 	[[NSOpenGLContext currentContext] flushBuffer];
 }

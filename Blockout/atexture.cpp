@@ -17,13 +17,7 @@ ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_
                        _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
-    GLenum err =  glGetError();
-    glEnable(GL_TEXTURE_2D);
-
-    err =  glGetError();
     glGenTextures(1, &_id);
-    err =  glGetError();
-
     atInit(image);
 }
 
