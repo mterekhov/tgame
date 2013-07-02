@@ -51,10 +51,10 @@ TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
     GLfloat xaspect = static_cast<GLfloat>(tex.atImageWidth()) / static_cast<GLfloat>(tex.atWidth());
     GLfloat yaspect = static_cast<GLfloat>(tex.atImageHeight()) / static_cast<GLfloat>(tex.atHeight());
 
-    APoint2D p1 = APoint2D(0, 0);
-    APoint2D p2 = APoint2D(0, yaspect);
+    APoint2D p1 = APoint2D(0.0f, 0.0f);
+    APoint2D p2 = APoint2D(0.0f, yaspect);
     APoint2D p3 = APoint2D(xaspect, yaspect);
-    APoint2D p4 = APoint2D(xaspect, 0);
+    APoint2D p4 = APoint2D(xaspect, 0.0f);
 
     points.push_back(p2);
     points.push_back(p3);
