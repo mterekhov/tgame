@@ -21,7 +21,7 @@ public:
     ABlock(const ABlock& block);
     virtual  ~ABlock();
     
-    virtual void renderObject() const;
+    virtual void renderObject();
     
     AColor color() const;
     void color(const AColor& color);

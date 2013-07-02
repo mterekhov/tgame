@@ -13,7 +13,7 @@ public:
     ASolidBlock(const AFormation& data);
     virtual ~ASolidBlock();
     
-    virtual void renderObject() const;
+    virtual void renderObject();
 };
 
 //==============================================================================

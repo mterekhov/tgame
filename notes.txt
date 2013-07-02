@@ -22,7 +22,6 @@ ARenderView has timer which launches the renderGame method
 //
 //========================================================================================
 
-
 AImage - stores RGBA/RGB image in 32-bit/24-bit format in usual RAM. Width, height,
 format, and data pointer. It is stand alone class you should manually control it's
 creation and deletion
@@ -31,3 +30,16 @@ ATGA - only reads TGA format and stores AImage class object pointer.
 
 ATexture - using ATGA and AImage creates OpenGL texture. Stores height, width, format and
 texture id - NO IMAGE DATA stores!!!
+
+//========================================================================================
+//
+//	Все что кассается объектов которые мы собираемся рисовать в сцене должно быть
+//	создано из кучи с помощью new и рулиться ACrafter'ом. Ибо если кругом будет юзаться
+//	ссылка то придется все время дергать конструктор копирования!!! А так мы кругом
+//	перебрасываем несчастные 4 байта указателя.
+//
+//	Второе вытекающее последствие этот тот факт что дабы хранить и контролировать указатель
+//	на свежесозданный блок придется сразу же его заносить в соотв. очередь отрисовки
+//
+//========================================================================================
+

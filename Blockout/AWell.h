@@ -27,7 +27,7 @@ public:
     AWell(const GLfloat width, const GLfloat height, const GLfloat depth);
     virtual ~AWell();
 
-    virtual void renderObject() const;
+    virtual void renderObject();
 };
 
 //==============================================================================

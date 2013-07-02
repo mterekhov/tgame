@@ -20,7 +20,7 @@ public:
     ARObject();
     ARObject(const ARObject& object);
     virtual ~ARObject();
-    virtual void renderObject() const;
+    virtual void renderObject();
     EObjectType objectType() const;
 };
 

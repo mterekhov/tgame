@@ -16,7 +16,7 @@ ASolidBlock::~ASolidBlock()
 
 //==============================================================================
 
-void ASolidBlock::renderObject() const
+void ASolidBlock::renderObject()
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();

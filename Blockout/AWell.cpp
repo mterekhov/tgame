@@ -80,7 +80,7 @@ void AWell::renderHull() const
 
 //==============================================================================
 
-void AWell::renderObject() const
+void AWell::renderObject()
 {
     renderHull();
     renderContent();
