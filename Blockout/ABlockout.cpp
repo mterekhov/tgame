@@ -27,16 +27,11 @@ ABlockout::~ABlockout()
 
 void ABlockout::init()
 {
-//    ATexture tex("/Users/admin/Documents/blockout/Blockout/resources/celtic.tga");
-//    ATexturedBlock block(AFormationFactory::createFormation1(), tex);
-    
-    ASolidBlock* block = new ASolidBlock(AFormationFactory::createFormation1());
-    bool res = _crafter.addObjectForRender(block);
-    if (!res)
-    {
-        loger("failed to add render object because it is empty");
-    }
-    
+    ATexture tex = _crafter.textureManager.atCreateTextureFromTGA("/Volumes/development/source/blockout/Blockout/resources/celtic.tga");
+//    _crafter.acCreateTexturedBlock(AFormationFactory::createFormation1(), tex);
+//    _crafter.acCreateSolidBlock(AFormationFactory::createFormation1());
+    _crafter.acCreateBlock(AFormationFactory::createFormation1());
+
 //    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
 //    _crafter.addObjectForRender(well);
 }
@@ -49,7 +44,7 @@ void ABlockout::render()
 
     oglState->pushMarices();
 
-    ADrawBasics::installCamera(AVector(4, 3, 7),
+    ADrawBasics::installCamera(AVector(4, 5, 7),
                                AVector(0, 0, 0),
                                AVector(0.0f, 1.0f, 0.0f));
     
