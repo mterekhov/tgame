@@ -37,7 +37,7 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, AT
     instance->currentTexture(texture);
     
     glTexCoordPointer(2, GL_FLOAT, 3, &line[3]);
-    ADrawBasics::drawTriangles(dataLiner);
+    ADrawBasics::drawTriangles(line, dataLiner.pointsCount());
     
     instance->clearCurrentTexture();
 }
@@ -108,33 +108,25 @@ void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
     TPointsList pointsList = ADrawBasics::generateCoords(location, cubeSize);
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(pointsList);
-    
-    ADrawBasics::drawTriangles(dataLiner);
-}
-
-//==============================================================================
-
-void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
-{
     TUint sizer = dataLiner.numberOfFloatValues();
     GLfloat* line = new GLfloat[sizer];
     memset(line, 0, sizer * sizeof(GLfloat));
-
     if (dataLiner.generateArray(line) == false)
     {
         loger("failed to generate array of vertexes");
         return;
     }
-
-    loger("==================================");
-    for (int i = 0; i < sizer; i+=3)
-    {
-        loger("%i. %.3f\t%.3f\t%.3f", i / 3 + 1, line[i], line[i + 1], line[i + 2]);
-    }
     
+    ADrawBasics::drawTriangles(line, dataLiner.pointsCount());
+}
+
+//==============================================================================
+
+void ADrawBasics::drawTriangles(const GLfloat* line,  const TUint count)
+{
     glVertexPointer(3, GL_FLOAT, 0, line);
 //    glVertexPointer(3, GL_FLOAT, dataLiner.arrayStride(), line);
-    glDrawArrays(GL_TRIANGLES, 5, dataLiner.pointsCount());
+    glDrawArrays(GL_TRIANGLES, 5, count);
     
     delete [] line;
 }
