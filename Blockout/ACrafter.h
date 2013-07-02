@@ -27,6 +27,7 @@ private:
     bool clearList(TRObjectsList& renderList);
     void clearRenderLists();
     void renderList(const TRObjectsList& renderList);
+    bool addObjectForRender(ARObject* object);
     
 public:
     ATextureManager textureManager;
@@ -34,10 +35,11 @@ public:
     ACrafter();
     virtual ~ACrafter();
     
-    bool addObjectForRender(ARObject* object);
     void processRender();
     
     ATexturedBlock* acCreateTexturedBlock(const AFormation& formation, const ATexture& texture);
+    ASolidBlock* acCreateSolidBlock(const AFormation& formation);
+    ABlock* acCreateBlock(const AFormation& formation);
 };
 
 //==============================================================================

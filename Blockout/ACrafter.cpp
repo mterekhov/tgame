@@ -25,6 +25,26 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
+ASolidBlock* ACrafter::acCreateSolidBlock(const AFormation& formation)
+{
+    ASolidBlock* newBlock = new ASolidBlock(formation);
+    addObjectForRender(newBlock);
+    
+    return newBlock;
+}
+
+//==============================================================================
+
+ABlock* ACrafter::acCreateBlock(const AFormation& formation)
+{
+    ABlock* newBlock = new ABlock(formation);
+    addObjectForRender(newBlock);
+    
+    return newBlock;
+}
+
+//==============================================================================
+
 ATexturedBlock* ACrafter::acCreateTexturedBlock(const AFormation& formation, const ATexture& texture)
 {
     ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
