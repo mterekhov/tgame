@@ -10,6 +10,13 @@ ABlock::ABlock(const AFormation& data) : _data(data), _color(AColor::redColor())
 
 //==============================================================================
 
+ABlock::ABlock(const ABlock& block) : ARObject(block), _data(block._data), _color(block._color),
+                                        _size(block._size)
+{
+}
+
+//==============================================================================
+
 ABlock::~ABlock()
 {
 }

@@ -18,6 +18,7 @@ protected:
     
 public:
     ABlock(const AFormation& data);
+    ABlock(const ABlock& block);
     virtual  ~ABlock();
     
     virtual void renderObject() const;
