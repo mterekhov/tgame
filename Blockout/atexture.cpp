@@ -13,6 +13,16 @@ ATexture::ATexture() : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter
 
 //=============================================================================
 
+ATexture::ATexture(const ATexture& tex) : _id(tex._id), _type(tex._type), _minFilter(tex._minFilter),
+                                        _magFilter(tex._magFilter), _pixelSize(tex._pixelSize),
+                                        _width(tex._width), _height(tex._height), _repeat(tex._repeat),
+                                        _mipMaping(tex._mipMaping), _name(tex._name), _imageWidth(tex._imageWidth),
+                                        _imageHeight(tex._imageHeight)
+{
+}
+
+//=============================================================================
+
 ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_LINEAR), _magFilter(GL_LINEAR),
                        _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)

@@ -18,6 +18,8 @@ class ATexture
 public:
     /// Default Constructor
     ATexture();
+    
+    ATexture(const ATexture& tex);
 
     /// Constructor
     /// @param const AImage& - image for initialization of texture
