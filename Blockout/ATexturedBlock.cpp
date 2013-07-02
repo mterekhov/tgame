@@ -11,6 +11,12 @@ ATexturedBlock::ATexturedBlock(const AFormation& data, const ATexture& tex) : AB
 
 //==============================================================================
 
+ATexturedBlock::ATexturedBlock(const ATexturedBlock& block) : ABlock(block), _texture(block._texture)
+{
+}
+
+//==============================================================================
+
 ATexturedBlock::~ATexturedBlock()
 {
 }

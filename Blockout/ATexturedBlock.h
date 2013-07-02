@@ -15,6 +15,7 @@ private:
 
 public:
     ATexturedBlock(const AFormation& data, const ATexture& tex);
+    ATexturedBlock(const ATexturedBlock& block);
     virtual ~ATexturedBlock();
     
     virtual void renderObject();
