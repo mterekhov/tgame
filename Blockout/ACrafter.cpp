@@ -35,9 +35,9 @@ ASolidBlock* ACrafter::acCreateSolidBlock(const AFormation& formation)
 
 //==============================================================================
 
-ABlock* ACrafter::acCreateBlock(const AFormation& formation)
+AColoredBlock* ACrafter::acCreateColoredBlock(const AFormation& formation)
 {
-    ABlock* newBlock = new ABlock(formation);
+    AColoredBlock* newBlock = new AColoredBlock(formation);
     addObjectForRender(newBlock);
     
     return newBlock;

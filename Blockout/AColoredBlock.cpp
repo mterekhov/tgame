@@ -1,28 +1,28 @@
-#include "ASolidBlock.h"
-#include "AOpenGLState.h"
+#include "AColoredBlock.h"
 #include "ADrawBasics.h"
+#include "AOpenGLState.h"
 
 //==============================================================================
 
-ASolidBlock::ASolidBlock(const AFormation& data) : AColoredBlock(data)
+AColoredBlock::AColoredBlock(const AFormation& data) : ABlock(data), _color(AColor::redColor())
 {
 }
 
 //==============================================================================
 
-ASolidBlock::ASolidBlock(const ASolidBlock& block) : AColoredBlock(block)
+AColoredBlock::AColoredBlock(const AColoredBlock& block) : ABlock(block), _color(block._color)
 {
 }
 
 //==============================================================================
 
-ASolidBlock::~ASolidBlock()
+AColoredBlock::~AColoredBlock()
 {
 }
 
 //==============================================================================
 
-void ASolidBlock::renderObject()
+void AColoredBlock::renderObject()
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();
@@ -36,9 +36,23 @@ void ASolidBlock::renderObject()
             {
                 TData value = _data.item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
-                    ADrawBasics::drawSolidCube(APoint(i, l, j), _size);
+                    ADrawBasics::drawCarcasedCube(APoint(i, l, j), _size);
             }
         }
     }
     oglInstance->drawColor(color);
+}
+
+//==============================================================================
+
+AColor AColoredBlock::color() const
+{
+    return _color;
+}
+
+//==============================================================================
+
+void AColoredBlock::color(const AColor& color)
+{
+    _color = color;
 }

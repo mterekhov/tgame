@@ -13,18 +13,12 @@ class ABlock : public ARObject
 {
 protected:
     AFormation _data;
-    AColor _color;
     GLfloat _size;
     
 public:
     ABlock(const AFormation& data);
     ABlock(const ABlock& block);
-    virtual  ~ABlock();
-    
-    virtual void renderObject();
-    
-    AColor color() const;
-    void color(const AColor& color);
+    virtual ~ABlock();
     
     AFormation data() const;
     

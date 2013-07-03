@@ -36,7 +36,7 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, AT
     AOpenGLState* instance = AOpenGLState::shared();
     instance->currentTexture(texture);
     
-    glTexCoordPointer(2, GL_FLOAT, 3, &line[3]);
+    glTexCoordPointer(2, GL_FLOAT, 5, &line[3]);
     ADrawBasics::drawTriangles(line, dataLiner.pointsCount());
     
     instance->clearCurrentTexture();
@@ -124,7 +124,7 @@ void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
 
 void ADrawBasics::drawTriangles(const GLfloat* line,  const TUint count)
 {
-    glVertexPointer(3, GL_FLOAT, 0, line);
+    glVertexPointer(3, GL_FLOAT, 5, line);
 //    glVertexPointer(3, GL_FLOAT, dataLiner.arrayStride(), line);
     glDrawArrays(GL_TRIANGLES, 5, count);
     

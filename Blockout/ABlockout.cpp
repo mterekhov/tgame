@@ -30,7 +30,7 @@ void ABlockout::init()
     ATexture tex = _crafter.textureManager.atCreateTextureFromTGA("/Volumes/development/source/blockout/Blockout/resources/celtic.tga");
 //    _crafter.acCreateTexturedBlock(AFormationFactory::createFormation1(), tex);
 //    _crafter.acCreateSolidBlock(AFormationFactory::createFormation1());
-    _crafter.acCreateBlock(AFormationFactory::createFormation1());
+    _crafter.acCreateColoredBlock(AFormationFactory::createFormation1());
 
 //    AWell* well = new AWell(_wellWidth, _wellHeight, _wellDepth);
 //    _crafter.addObjectForRender(well);

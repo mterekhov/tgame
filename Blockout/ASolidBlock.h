@@ -3,14 +3,15 @@
 
 //==============================================================================
 
-#include "ABlock.h"
+#include "AColoredBlock.h"
 
 //==============================================================================
 
-class ASolidBlock : public ABlock
+class ASolidBlock : public AColoredBlock
 {
 public:
     ASolidBlock(const AFormation& data);
+    ASolidBlock(const ASolidBlock& block);
     virtual ~ASolidBlock();
     
     virtual void renderObject();

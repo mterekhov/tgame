@@ -39,7 +39,7 @@ public:
     
     ATexturedBlock* acCreateTexturedBlock(const AFormation& formation, const ATexture& texture);
     ASolidBlock* acCreateSolidBlock(const AFormation& formation);
-    ABlock* acCreateBlock(const AFormation& formation);
+    AColoredBlock* acCreateColoredBlock(const AFormation& formation);
 };
 
 //==============================================================================

@@ -23,6 +23,7 @@
 		4C80010016BD4F81008B1E74 /* ARObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C8000FF16BD4F81008B1E74 /* ARObject.cpp */; };
 		4C923D0516C444B0008EDA5C /* APoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0316C444B0008EDA5C /* APoint.cpp */; };
 		4C923D0816C45319008EDA5C /* ALogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C923D0616C45319008EDA5C /* ALogic.cpp */; };
+		4CA88CED178470EB002C2963 /* AColoredBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA88CEB178470EB002C2963 /* AColoredBlock.cpp */; };
 		4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4CB3AF4216EB3C0B002DE363 /* celtic.tga */; };
 		4CB4E65316BEA6F400CC9FA4 /* AVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */; };
 		4CC8218516D7A52A0090CE07 /* celtic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218216D7A52A0090CE07 /* celtic.png */; };
@@ -79,6 +80,8 @@
 		4C923D0416C444B0008EDA5C /* APoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APoint.h; path = Blockout/APoint.h; sourceTree = "<group>"; };
 		4C923D0616C45319008EDA5C /* ALogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ALogic.cpp; path = Blockout/ALogic.cpp; sourceTree = "<group>"; };
 		4C923D0716C45319008EDA5C /* ALogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALogic.h; path = Blockout/ALogic.h; sourceTree = "<group>"; };
+		4CA88CEB178470EB002C2963 /* AColoredBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AColoredBlock.cpp; path = Blockout/AColoredBlock.cpp; sourceTree = "<group>"; };
+		4CA88CEC178470EB002C2963 /* AColoredBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AColoredBlock.h; path = Blockout/AColoredBlock.h; sourceTree = "<group>"; };
 		4CB3AF4216EB3C0B002DE363 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = Blockout/resources/celtic.tga; sourceTree = "<group>"; };
 		4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AVector.cpp; path = Blockout/AVector.cpp; sourceTree = "<group>"; };
 		4CB4E65216BEA6F400CC9FA4 /* AVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVector.h; path = Blockout/AVector.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				4CEA40DF16CFAFD500A678B5 /* ATexturedBlock.h */,
 				4C1D72CF16CFA41000C2DFB7 /* ASolidBlock.cpp */,
 				4C1D72D016CFA41000C2DFB7 /* ASolidBlock.h */,
+				4CA88CEB178470EB002C2963 /* AColoredBlock.cpp */,
+				4CA88CEC178470EB002C2963 /* AColoredBlock.h */,
 				4C14891416C547130014683F /* ABlock.cpp */,
 				4C14891516C547130014683F /* ABlock.h */,
 			);
@@ -409,6 +414,7 @@
 				4C77501B1781B1DB00B2BE5B /* AImage.cpp in Sources */,
 				4C7750201781B2FA00B2BE5B /* ATexture.cpp in Sources */,
 				4C7750211781B2FA00B2BE5B /* ATga.cpp in Sources */,
+				4CA88CED178470EB002C2963 /* AColoredBlock.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
