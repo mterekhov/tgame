@@ -1,5 +1,5 @@
-#ifndef ASolidBlock_H
-#define ASolidBlock_H
+#ifndef ENGINE_ASOLIDBLOCK_H
+#define ENGINE_ASOLIDBLOCK_H
 
 //==============================================================================
 
@@ -18,4 +18,4 @@ public:
 
 //==============================================================================
 
-#endif // ASolidBlock_H
+#endif // ENGINE_ASOLIDBLOCK_H

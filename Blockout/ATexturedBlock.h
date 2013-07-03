@@ -1,5 +1,5 @@
-#ifndef ATexturedBlock_H
-#define ATexturedBlock_H
+#ifndef ENGINE_ATEXTUREDBLOCK_H
+#define ENGINE_ATEXTUREDBLOCK_H
 
 //==============================================================================
 
@@ -23,4 +23,4 @@ public:
 
 //==============================================================================
 
-#endif // ATexturedBlock_H
+#endif // ENGINE_ATEXTUREDBLOCK_H

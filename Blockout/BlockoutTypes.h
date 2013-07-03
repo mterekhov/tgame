@@ -1,5 +1,5 @@
-#ifndef Blockout_BlockoutTypes_h
-#define Blockout_BlockoutTypes_h
+#ifndef ENGINE_BLOCKOUTTYPES_H
+#define ENGINE_BLOCKOUTTYPES_H
 
 typedef unsigned long TUlong;
 typedef unsigned int TUint;

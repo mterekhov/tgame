@@ -1,5 +1,5 @@
-#ifndef Blockout_DrawTypes_h
-#define Blockout_DrawTypes_h
+#ifndef ENGINE_DRAWTYPES_H
+#define ENGINE_DRAWTYPES_H
 
 //==============================================================================
 
