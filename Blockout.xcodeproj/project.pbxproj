@@ -164,9 +164,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */,
 				4C84B4471824F06000EFD26A /* libtgame.a in Frameworks */,
 				B7ECFF5516AD42C500946E91 /* OpenGL.framework in Frameworks */,
-				B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,9 +204,9 @@
 		4C8000F616BD43FD008B1E74 /* Render */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF5A6016E647A600E04427 /* ObjectsToRender */,
 				4C84B3F31824EEE800EFD26A /* ACrafter.cpp */,
 				4C84B3F41824EEE800EFD26A /* ACrafter.h */,
-				4CAF5A6016E647A600E04427 /* ObjectsToRender */,
 			);
 			name = Render;
 			sourceTree = "<group>";
@@ -223,11 +223,11 @@
 		4CAF5A6016E647A600E04427 /* ObjectsToRender */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF5A6116E648A500E04427 /* Blocks */,
 				4C84B4051824EEE800EFD26A /* ARObject.cpp */,
 				4C84B4061824EEE800EFD26A /* ARObject.h */,
 				4C84B4131824EEE800EFD26A /* AWell.cpp */,
 				4C84B4141824EEE800EFD26A /* AWell.h */,
-				4CAF5A6116E648A500E04427 /* Blocks */,
 			);
 			name = ObjectsToRender;
 			sourceTree = "<group>";
@@ -250,8 +250,8 @@
 		4CC8217B16D7A3100090CE07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4CB3AF4216EB3C0B002DE363 /* celtic.tga */,
 				4CC8218216D7A52A0090CE07 /* celtic.png */,
+				4CB3AF4216EB3C0B002DE363 /* celtic.tga */,
 				4CC8218316D7A52A0090CE07 /* marble.png */,
 				4CC8218416D7A52A0090CE07 /* recycled.png */,
 			);
@@ -276,17 +276,12 @@
 		B732725916AB20C2001DE602 = {
 			isa = PBXGroup;
 			children = (
-				B7ECFF5D16AD5F1800946E91 /* TGame */,
-				4C84B3ED1824EEE800EFD26A /* ABlockout.cpp */,
-				4C84B3EE1824EEE800EFD26A /* ABlockout.h */,
-				4C84B4151824EEE800EFD26A /* BlockoutDebug.cpp */,
-				4C84B4161824EEE800EFD26A /* BlockoutDebug.h */,
-				4C84B4171824EEE800EFD26A /* BlockoutTypes.h */,
 				B732726E16AB20C2001DE602 /* Application */,
-				B732726F16AB20C2001DE602 /* Supporting Files */,
-				4CC8217B16D7A3100090CE07 /* Resources */,
 				B732726716AB20C2001DE602 /* Frameworks */,
 				B732726516AB20C2001DE602 /* Products */,
+				4CC8217B16D7A3100090CE07 /* Resources */,
+				B732726F16AB20C2001DE602 /* Supporting Files */,
+				B7ECFF5D16AD5F1800946E91 /* TGame */,
 			);
 			sourceTree = "<group>";
 		};
@@ -302,11 +297,11 @@
 		B732726716AB20C2001DE602 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B7ECFF5416AD42C500946E91 /* OpenGL.framework */,
 				B732726B16AB20C2001DE602 /* AppKit.framework */,
+				B732726816AB20C2001DE602 /* Cocoa.framework */,
 				B732726C16AB20C2001DE602 /* CoreData.framework */,
 				B732726D16AB20C2001DE602 /* Foundation.framework */,
-				B732726816AB20C2001DE602 /* Cocoa.framework */,
+				B7ECFF5416AD42C500946E91 /* OpenGL.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,12 +309,12 @@
 		B732726E16AB20C2001DE602 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				B732727416AB20C2001DE602 /* main.m */,
-				B7ECFF5016AD422F00946E91 /* Blockout.xib */,
 				B732727A16AB20C2001DE602 /* AAppDelegate.h */,
 				B732727B16AB20C2001DE602 /* AAppDelegate.mm */,
 				B732728516AB2507001DE602 /* ARenderView.h */,
 				B732728616AB2507001DE602 /* ARenderView.mm */,
+				B7ECFF5016AD422F00946E91 /* Blockout.xib */,
+				B732727416AB20C2001DE602 /* main.m */,
 			);
 			name = Application;
 			path = Blockout;
@@ -329,9 +324,9 @@
 			isa = PBXGroup;
 			children = (
 				B732727016AB20C2001DE602 /* Blockout-Info.plist */,
-				B732727116AB20C2001DE602 /* InfoPlist.strings */,
 				B732727616AB20C2001DE602 /* Blockout-Prefix.pch */,
 				B732727716AB20C2001DE602 /* Credits.rtf */,
+				B732727116AB20C2001DE602 /* InfoPlist.strings */,
 				4CC85D6E16C409A600B961AB /* readme.txt */,
 			);
 			name = "Supporting Files";
@@ -341,9 +336,9 @@
 		B7ECFF5916AD4FBC00946E91 /* Paintings */ = {
 			isa = PBXGroup;
 			children = (
+				4C52515A16CA8621002A5B42 /* DataTypes */,
 				4C531EAE177F010600B33D01 /* Formation */,
 				4CEA40E116CFB08400A678B5 /* Texture */,
-				4C52515A16CA8621002A5B42 /* DataTypes */,
 				4C84B3F71824EEE800EFD26A /* ADrawBasics.cpp */,
 				4C84B3F81824EEE800EFD26A /* ADrawBasics.h */,
 				4C84B3FD1824EEE800EFD26A /* AOpenGLState.cpp */,
@@ -355,9 +350,14 @@
 		B7ECFF5D16AD5F1800946E91 /* TGame */ = {
 			isa = PBXGroup;
 			children = (
-				B7ECFF5916AD4FBC00946E91 /* Paintings */,
 				4C923D0916C45321008EDA5C /* Logic */,
+				B7ECFF5916AD4FBC00946E91 /* Paintings */,
 				4C8000F616BD43FD008B1E74 /* Render */,
+				4C84B3ED1824EEE800EFD26A /* ABlockout.cpp */,
+				4C84B3EE1824EEE800EFD26A /* ABlockout.h */,
+				4C84B4151824EEE800EFD26A /* BlockoutDebug.cpp */,
+				4C84B4161824EEE800EFD26A /* BlockoutDebug.h */,
+				4C84B4171824EEE800EFD26A /* BlockoutTypes.h */,
 			);
 			name = TGame;
 			sourceTree = "<group>";
@@ -369,30 +369,30 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C84B4291824EEE800EFD26A /* ALogic.h in Headers */,
-				4C84B38E1824EEB300EFD26A /* AFormation.h in Headers */,
-				4C84B4371824EEE800EFD26A /* ATexture.h in Headers */,
-				4C84B4251824EEE800EFD26A /* ADrawBasics.h in Headers */,
-				4C84B4351824EEE800EFD26A /* ASolidBlock.h in Headers */,
-				4C84B4411824EEE800EFD26A /* AWell.h in Headers */,
-				4C84B4271824EEE800EFD26A /* AImage.h in Headers */,
-				4C84B4211824EEE800EFD26A /* ACrafter.h in Headers */,
+				4C84B4191824EEE800EFD26A /* ABlock.h in Headers */,
 				4C84B41B1824EEE800EFD26A /* ABlockout.h in Headers */,
-				4C84B3901824EEB300EFD26A /* AFormationFactory.h in Headers */,
-				4C84B42B1824EEE800EFD26A /* AOpenGLState.h in Headers */,
+				4C84B41D1824EEE800EFD26A /* AColor.h in Headers */,
 				4C84B41F1824EEE800EFD26A /* AColoredBlock.h in Headers */,
+				4C84B4211824EEE800EFD26A /* ACrafter.h in Headers */,
+				4C84B4231824EEE800EFD26A /* ADataLiner.h in Headers */,
+				4C84B4251824EEE800EFD26A /* ADrawBasics.h in Headers */,
+				4C84B38E1824EEB300EFD26A /* AFormation.h in Headers */,
+				4C84B3901824EEB300EFD26A /* AFormationFactory.h in Headers */,
+				4C84B4271824EEE800EFD26A /* AImage.h in Headers */,
+				4C84B4291824EEE800EFD26A /* ALogic.h in Headers */,
+				4C84B42B1824EEE800EFD26A /* AOpenGLState.h in Headers */,
+				4C84B42D1824EEE800EFD26A /* APoint.h in Headers */,
+				4C84B42F1824EEE800EFD26A /* APoint2D.h in Headers */,
+				4C84B4331824EEE800EFD26A /* ARObject.h in Headers */,
+				4C84B4351824EEE800EFD26A /* ASolidBlock.h in Headers */,
+				4C84B4371824EEE800EFD26A /* ATexture.h in Headers */,
+				4C84B4391824EEE800EFD26A /* ATexturedBlock.h in Headers */,
 				4C84B43B1824EEE800EFD26A /* ATextureManager.h in Headers */,
 				4C84B43D1824EEE800EFD26A /* ATga.h in Headers */,
-				4C84B4331824EEE800EFD26A /* ARObject.h in Headers */,
-				4C84B4191824EEE800EFD26A /* ABlock.h in Headers */,
-				4C84B41D1824EEE800EFD26A /* AColor.h in Headers */,
-				4C84B4441824EEE800EFD26A /* BlockoutTypes.h in Headers */,
-				4C84B42F1824EEE800EFD26A /* APoint2D.h in Headers */,
-				4C84B42D1824EEE800EFD26A /* APoint.h in Headers */,
 				4C84B43F1824EEE800EFD26A /* AVector.h in Headers */,
-				4C84B4391824EEE800EFD26A /* ATexturedBlock.h in Headers */,
-				4C84B4231824EEE800EFD26A /* ADataLiner.h in Headers */,
+				4C84B4411824EEE800EFD26A /* AWell.h in Headers */,
 				4C84B4431824EEE800EFD26A /* BlockoutDebug.h in Headers */,
+				4C84B4441824EEE800EFD26A /* BlockoutTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,14 +467,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */,
-				B732727916AB20C2001DE602 /* Credits.rtf in Resources */,
 				B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */,
-				4CC85D6F16C409A600B961AB /* readme.txt in Resources */,
 				4CC8218516D7A52A0090CE07 /* celtic.png in Resources */,
-				4CC8218616D7A52A0090CE07 /* marble.png in Resources */,
-				4CC8218716D7A52A0090CE07 /* recycled.png in Resources */,
 				4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */,
+				B732727916AB20C2001DE602 /* Credits.rtf in Resources */,
+				B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */,
+				4CC8218616D7A52A0090CE07 /* marble.png in Resources */,
+				4CC85D6F16C409A600B961AB /* readme.txt in Resources */,
+				4CC8218716D7A52A0090CE07 /* recycled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,29 +485,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C84B4241824EEE800EFD26A /* ADrawBasics.cpp in Sources */,
-				4C84B41E1824EEE800EFD26A /* AColoredBlock.cpp in Sources */,
-				4C84B38F1824EEB300EFD26A /* AFormationFactory.cpp in Sources */,
-				4C84B38D1824EEB300EFD26A /* AFormation.cpp in Sources */,
-				4C84B43E1824EEE800EFD26A /* AVector.cpp in Sources */,
-				4C84B42E1824EEE800EFD26A /* APoint2D.cpp in Sources */,
-				4C84B4401824EEE800EFD26A /* AWell.cpp in Sources */,
-				4C84B42A1824EEE800EFD26A /* AOpenGLState.cpp in Sources */,
-				4C84B41A1824EEE800EFD26A /* ABlockout.cpp in Sources */,
-				4C84B4321824EEE800EFD26A /* ARObject.cpp in Sources */,
-				4C84B4261824EEE800EFD26A /* AImage.cpp in Sources */,
-				4C84B4221824EEE800EFD26A /* ADataLiner.cpp in Sources */,
-				4C84B4341824EEE800EFD26A /* ASolidBlock.cpp in Sources */,
-				4C84B4281824EEE800EFD26A /* ALogic.cpp in Sources */,
-				4C84B4201824EEE800EFD26A /* ACrafter.cpp in Sources */,
-				4C84B42C1824EEE800EFD26A /* APoint.cpp in Sources */,
-				4C84B43C1824EEE800EFD26A /* ATga.cpp in Sources */,
-				4C84B41C1824EEE800EFD26A /* AColor.cpp in Sources */,
-				4C84B4381824EEE800EFD26A /* ATexturedBlock.cpp in Sources */,
-				4C84B4421824EEE800EFD26A /* BlockoutDebug.cpp in Sources */,
-				4C84B43A1824EEE800EFD26A /* ATextureManager.cpp in Sources */,
 				4C84B4181824EEE800EFD26A /* ABlock.cpp in Sources */,
+				4C84B41A1824EEE800EFD26A /* ABlockout.cpp in Sources */,
+				4C84B41C1824EEE800EFD26A /* AColor.cpp in Sources */,
+				4C84B41E1824EEE800EFD26A /* AColoredBlock.cpp in Sources */,
+				4C84B4201824EEE800EFD26A /* ACrafter.cpp in Sources */,
+				4C84B4221824EEE800EFD26A /* ADataLiner.cpp in Sources */,
+				4C84B4241824EEE800EFD26A /* ADrawBasics.cpp in Sources */,
+				4C84B38D1824EEB300EFD26A /* AFormation.cpp in Sources */,
+				4C84B38F1824EEB300EFD26A /* AFormationFactory.cpp in Sources */,
+				4C84B4261824EEE800EFD26A /* AImage.cpp in Sources */,
+				4C84B4281824EEE800EFD26A /* ALogic.cpp in Sources */,
+				4C84B42A1824EEE800EFD26A /* AOpenGLState.cpp in Sources */,
+				4C84B42C1824EEE800EFD26A /* APoint.cpp in Sources */,
+				4C84B42E1824EEE800EFD26A /* APoint2D.cpp in Sources */,
+				4C84B4321824EEE800EFD26A /* ARObject.cpp in Sources */,
+				4C84B4341824EEE800EFD26A /* ASolidBlock.cpp in Sources */,
 				4C84B4361824EEE800EFD26A /* ATexture.cpp in Sources */,
+				4C84B4381824EEE800EFD26A /* ATexturedBlock.cpp in Sources */,
+				4C84B43A1824EEE800EFD26A /* ATextureManager.cpp in Sources */,
+				4C84B43C1824EEE800EFD26A /* ATga.cpp in Sources */,
+				4C84B43E1824EEE800EFD26A /* AVector.cpp in Sources */,
+				4C84B4401824EEE800EFD26A /* AWell.cpp in Sources */,
+				4C84B4421824EEE800EFD26A /* BlockoutDebug.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,9 +515,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B732727516AB20C2001DE602 /* main.m in Sources */,
 				B732727C16AB20C2001DE602 /* AAppDelegate.mm in Sources */,
 				B732728716AB2507001DE602 /* ARenderView.mm in Sources */,
+				B732727516AB20C2001DE602 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
