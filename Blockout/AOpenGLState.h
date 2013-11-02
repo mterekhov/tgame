@@ -17,7 +17,7 @@ private:
     AColor _clearColor;
     AColor _drawColor;
     TFloat _lineWidth;
-    bool _textureEnabled;
+    TBool _textureEnabled;
     
     void clearColorSetup(const AColor& color);
     void drawColorSetup(const AColor& color);
@@ -44,11 +44,11 @@ public:
     
     void textureEnable();
     void textureDisable();
-    bool textureEnabled() const;
+    TBool textureEnabled() const;
     
     void clear(GLbitfield mask);
     
-    bool currentTexture(ATexture& texture);
+    TBool currentTexture(ATexture& texture);
     const ATexture& currentTexture() const;
     void clearCurrentTexture();
     

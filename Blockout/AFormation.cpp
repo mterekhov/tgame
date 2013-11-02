@@ -72,7 +72,7 @@ TData AFormation::item(const TUint column, const TUint row, const TUint levelInd
 
 //==============================================================================
 
-bool AFormation::item(const TUint column, const TUint row, const TUint levelIndex, const TData& value)
+TBool AFormation::item(const TUint column, const TUint row, const TUint levelIndex, const TData& value)
 {
     if (!_data)
         return false;
@@ -96,7 +96,7 @@ bool AFormation::item(const TUint column, const TUint row, const TUint levelInde
 
 //==============================================================================
 
-bool AFormation::doesInbounds(const AFormation* data)
+TBool AFormation::doesInbounds(const AFormation* data)
 {
     if (!data)
         return false;

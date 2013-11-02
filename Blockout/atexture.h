@@ -30,8 +30,8 @@ public:
     
     /// Initialize texture
     /// @param AImage& - init texture with image
-    /// @return bool - true if everything is ok, otherwise false
-    bool atInit(const AImage& image);
+    /// @return TBool - true if everything is ok, otherwise false
+    TBool atInit(const AImage& image);
     
     /// Bind texture
     void atBind() const;
@@ -70,12 +70,12 @@ public:
     void atMagFilter(const TUint mag);
     
     /// Setup tile parameter
-    /// @param const bool - should we tile all the surface with this texture
-    void atRepeat(const bool r);
+    /// @param const TBool - should we tile all the surface with this texture
+    void atRepeat(const TBool r);
     
     /// Setup mipmap generation
-    /// @param const bool - should we generate mip map levels for this texture 
-    void atMipMapping(const bool m);
+    /// @param const TBool - should we generate mip map levels for this texture 
+    void atMipMapping(const TBool m);
     
     /// Setup texture name
     /// @param const std::string& - name for the texture
@@ -87,8 +87,8 @@ private:
     
     /// Init texture from tga file
     /// @param const std::string& - relative file name of tga image
-    /// @return bool - true if everything is ok, otherwise false
-    bool atInitFromTga(const std::string& fileName);
+    /// @return TBool - true if everything is ok, otherwise false
+    TBool atInitFromTga(const std::string& fileName);
     
     /// Apply all the filter to current texture id
     void atDefineFilters();
@@ -136,10 +136,10 @@ private:
     TUint _magFilter;
     
     /// Tile parameter
-    bool _repeat;
+    TBool _repeat;
     
     /// Mipmap generation parameter
-    bool _mipMaping;
+    TBool _mipMaping;
 };
 
 //=============================================================================

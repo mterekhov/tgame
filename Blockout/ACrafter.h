@@ -24,10 +24,10 @@ private:
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
     
-    bool clearList(TRObjectsList& renderList);
+    TBool clearList(TRObjectsList& renderList);
     void clearRenderLists();
     void renderList(const TRObjectsList& renderList);
-    bool addObjectForRender(ARObject* object);
+    TBool addObjectForRender(ARObject* object);
     
 public:
     ATextureManager textureManager;

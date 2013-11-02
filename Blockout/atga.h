@@ -132,12 +132,12 @@ enum EImageType
 class ATga
 {
 public:
-	ATga(const std::string& filePath, bool headersOnly = false);
+	ATga(const std::string& filePath, TBool headersOnly = false);
 
     /// Default destructor
 	virtual ~ATga();
 
-    bool atSave(const std::string& fileName, const AImage& image);
+    TBool atSave(const std::string& fileName, const AImage& image);
 
     const AImage* atImage() const;
 
@@ -147,14 +147,14 @@ private:
     /// Comments in tga file. Usually it is absent
 	TData* _identity;
 
-    bool atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader);
-    bool atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader);
+    TBool atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader);
+    TBool atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader);
     
     /// Destroy all the data
 	void atClearData();
     
-    bool atFlipOver(TData* data, const STGAHeader& tgaHeader);
-    bool atRGB2BGR(TData* data, const STGAHeader& tgaHeader);
+    TBool atFlipOver(TData* data, const STGAHeader& tgaHeader);
+    TBool atRGB2BGR(TData* data, const STGAHeader& tgaHeader);
     
     STGAHeader atCreateTGAHeader(const AImage& image);
 };

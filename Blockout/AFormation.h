@@ -34,9 +34,9 @@ public:
     TUint width() const;
     TUint levelsCount() const;
     TData item(const TUint column, const TUint row, const TUint levelIndex) const;
-    bool item(const TUint column, const TUint row, const TUint levelIndex, const TData& value);
+    TBool item(const TUint column, const TUint row, const TUint levelIndex, const TData& value);
     
-    bool doesInbounds(const AFormation* data);
+    TBool doesInbounds(const AFormation* data);
 };
 
 //==============================================================================

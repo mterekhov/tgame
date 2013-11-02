@@ -163,14 +163,14 @@ void AOpenGLState::textureDisable()
 
 //==============================================================================
 
-bool AOpenGLState::textureEnabled() const
+TBool AOpenGLState::textureEnabled() const
 {
     return _textureEnabled;
 }
 
 //==============================================================================
 
-bool AOpenGLState::currentTexture(ATexture& texture)
+TBool AOpenGLState::currentTexture(ATexture& texture)
 {
     if (_textureEnabled == false)
         return false;

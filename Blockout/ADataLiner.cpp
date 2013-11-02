@@ -123,7 +123,7 @@ TUint ADataLiner::arrayStride() const
 
 //==============================================================================
 
-bool ADataLiner::generateArray(TFloat* resultArray) const
+TBool ADataLiner::generateArray(TFloat* resultArray) const
 {
     if (!resultArray)
         return false;

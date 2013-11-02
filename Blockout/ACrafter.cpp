@@ -74,7 +74,7 @@ void ACrafter::clearRenderLists()
 
 //==============================================================================
 
-bool ACrafter::clearList(TRObjectsList& renderList)
+TBool ACrafter::clearList(TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
         return false;
@@ -91,7 +91,7 @@ bool ACrafter::clearList(TRObjectsList& renderList)
 
 //==============================================================================
 
-bool ACrafter::addObjectForRender(ARObject* object)
+TBool ACrafter::addObjectForRender(ARObject* object)
 {
     if (object == 0)
         return false;

@@ -25,6 +25,7 @@ typedef unsigned char TData;
 typedef unsigned short int TUShort;
 
 typedef GLfloat TFloat;
+typedef bool TBool;
 
 //==============================================================================
 

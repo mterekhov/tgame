@@ -21,7 +21,7 @@ class ATextureManager
 private:
     TTexturesList _textureList;
 
-    bool atClearAllTextures(TTexturesList& textureList);
+    TBool atClearAllTextures(TTexturesList& textureList);
 
 public:
     static const ATexture zeroTexture;

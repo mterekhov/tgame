@@ -2,7 +2,7 @@
 
 //=============================================================================
 
-ATga::ATga(const std::string& filePath, bool headersOnly) : _identity(0), _image(0)
+ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _image(0)
 {
     TUint dotPos = filePath.rfind(".");
     std::string ext = &filePath[++dotPos];
@@ -66,7 +66,7 @@ const AImage* ATga::atImage() const
 
 //=============================================================================
 
-bool ATga::atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader)
+TBool ATga::atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader)
 {
     if (!tga_file)
         return false;
@@ -97,7 +97,7 @@ bool ATga::atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader)
 
 //=============================================================================
 
-bool ATga::atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader)
+TBool ATga::atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader)
 {
     if (!tga_file)
         return false;
@@ -115,7 +115,7 @@ bool ATga::atReadData(TData* data, FILE* tga_file, const TUint data_size, const 
 
 //=============================================================================
 
-bool ATga::atRGB2BGR(TData* data, const STGAHeader& tgaHeader)
+TBool ATga::atRGB2BGR(TData* data, const STGAHeader& tgaHeader)
 {
     TData* tmpData = data;
     if (!tmpData)
@@ -138,7 +138,7 @@ bool ATga::atRGB2BGR(TData* data, const STGAHeader& tgaHeader)
 
 //=============================================================================
 
-bool ATga::atFlipOver(TData* data, const STGAHeader& tgaHeader)
+TBool ATga::atFlipOver(TData* data, const STGAHeader& tgaHeader)
 {
     TData* tmpData = data;
     if (!tmpData)
@@ -176,7 +176,7 @@ STGAHeader ATga::atCreateTGAHeader(const AImage& image)
 
 //=============================================================================
 
-bool ATga::atSave(const std::string& filePath, const AImage& image)
+TBool ATga::atSave(const std::string& filePath, const AImage& image)
 {
     STGAHeader header = atCreateTGAHeader(image);
 

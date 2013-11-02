@@ -39,7 +39,7 @@ public:
     TUint pointsCount() const;
 
     EIntegrity checkIntegrity() const;
-    bool generateArray(TFloat* resultArray) const;
+    TBool generateArray(TFloat* resultArray) const;
 };
 
 //==============================================================================

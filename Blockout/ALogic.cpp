@@ -14,7 +14,7 @@ ALogic::~ALogic()
 
 //==============================================================================
 
-bool ALogic::collisions(const AFormation* forCompare, const APoint& pos)
+TBool ALogic::collisions(const AFormation* forCompare, const APoint& pos)
 {
 //    if (!_data->doesInbounds(forCompare))
 //        return false;
@@ -25,12 +25,12 @@ bool ALogic::collisions(const AFormation* forCompare, const APoint& pos)
 //        {
 //            for (int j = 0; j < forCompare->width(); j++)
 //            {
-//                bool first = forCompare->item(i, j, l);
+//                TBool first = forCompare->item(i, j, l);
 //                
 //                unsigned int x = ;
 //                unsigned int y = ;
 //                unsigned int z = ;
-//                bool second = _data->item();
+//                TBool second = _data->item();
 //                
 //                if (first == second)
 //                    return true;

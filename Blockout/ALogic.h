@@ -14,7 +14,7 @@ public:
     ALogic();
     ~ALogic();
     
-    bool collisions(const AFormation* forCompare, const APoint& pos);
+    TBool collisions(const AFormation* forCompare, const APoint& pos);
     
     void processLogic();
 };

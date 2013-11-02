@@ -68,7 +68,7 @@ void ATexture::defineImageType(const int bytePP)
 
 //=============================================================================
 
-bool ATexture::atInit(const AImage& image)
+TBool ATexture::atInit(const AImage& image)
 {
     defineImageType(image.aiBytePerPixel());
     
@@ -234,14 +234,14 @@ void ATexture::atMagFilter(const GLuint mag)
 
 //=============================================================================
 
-void ATexture::atRepeat(const bool r)
+void ATexture::atRepeat(const TBool r)
 {
     _repeat = r;
 }
 
 //=============================================================================
 
-void ATexture::atMipMapping(const bool m)
+void ATexture::atMipMapping(const TBool m)
 {
     _mipMaping = m;
 }
