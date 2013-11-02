@@ -71,8 +71,8 @@
         return;
     }
 
-	NSOpenGLContext* viewContext = [[NSOpenGLContext alloc] initWithFormat: format
-                                                              shareContext: nil];
+	NSOpenGLContext* viewContext = [[[NSOpenGLContext alloc] initWithFormat: format
+                                                              shareContext: nil] autorelease];
     [self setOpenGLContext: viewContext];
     [viewContext makeCurrentContext];
     [viewContext setView: self];

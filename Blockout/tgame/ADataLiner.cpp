@@ -81,7 +81,11 @@ EIntegrity ADataLiner::checkIntegrity() const
 
 TUint ADataLiner::pointsCount() const
 {
-    return numberOfFloatValues() / arrayStride();
+    TUint strider = arrayStride();
+    if (strider)
+        return numberOfFloatValues() / strider;
+    
+    return 0;
 }
 
 //==============================================================================

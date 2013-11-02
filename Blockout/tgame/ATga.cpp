@@ -156,7 +156,7 @@ TBool ATga::atFlipOver(TData* data, const STGAHeader& tgaHeader)
         memcpy(&tmpData[index2], tmp, bytepp * tgaHeader.imageHeader.width);
     }
 
-    delete tmp;
+    delete [] tmp;
 
     return true;
 }
