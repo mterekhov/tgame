@@ -71,7 +71,6 @@
 		4C8000E916BD2F27008B1E74 /* ACrafter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACrafter.h; path = Blockout/ACrafter.h; sourceTree = "<group>"; };
 		4C8000EA16BD2F27008B1E74 /* ADrawBasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ADrawBasics.cpp; path = Blockout/ADrawBasics.cpp; sourceTree = "<group>"; };
 		4C8000EB16BD2F27008B1E74 /* ADrawBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADrawBasics.h; path = Blockout/ADrawBasics.h; sourceTree = "<group>"; };
-		4C8000EC16BD2F27008B1E74 /* DrawTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawTypes.h; path = Blockout/DrawTypes.h; sourceTree = "<group>"; };
 		4C8000EF16BD3D35008B1E74 /* AWell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AWell.cpp; path = Blockout/AWell.cpp; sourceTree = "<group>"; };
 		4C8000F016BD3D35008B1E74 /* AWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWell.h; path = Blockout/AWell.h; sourceTree = "<group>"; };
 		4C8000F416BD43F7008B1E74 /* ARObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARObject.h; path = Blockout/ARObject.h; sourceTree = "<group>"; };
@@ -143,7 +142,6 @@
 				4CC85D6916C3FE5400B961AB /* AColor.h */,
 				4CB4E65116BEA6F400CC9FA4 /* AVector.cpp */,
 				4CB4E65216BEA6F400CC9FA4 /* AVector.h */,
-				4C8000EC16BD2F27008B1E74 /* DrawTypes.h */,
 			);
 			name = DataTypes;
 			sourceTree = "<group>";

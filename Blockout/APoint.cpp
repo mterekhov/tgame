@@ -1,5 +1,4 @@
 #include "APoint.h"
-#include "DrawTypes.h"
 
 //==============================================================================
 
@@ -9,7 +8,7 @@ APoint::APoint() : x(0.0f), y(0.0f), z(0.0f)
 
 //==============================================================================
 
-APoint::APoint(const GLfloat x, const GLfloat y, const GLfloat z) : x(x), y(y), z(z)
+APoint::APoint(const TFloat x, const TFloat y, const TFloat z) : x(x), y(y), z(z)
 {
 }
 

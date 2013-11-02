@@ -123,7 +123,7 @@ TUint ADataLiner::arrayStride() const
 
 //==============================================================================
 
-bool ADataLiner::generateArray(GLfloat* resultArray) const
+bool ADataLiner::generateArray(TFloat* resultArray) const
 {
     if (!resultArray)
         return false;
@@ -136,7 +136,7 @@ bool ADataLiner::generateArray(GLfloat* resultArray) const
     if (!sizer)
         return false;
     
-    memset(resultArray, 0, sizer * sizeof(GLfloat));
+    memset(resultArray, 0, sizer * sizeof(TFloat));
     
     for (TUint i = 0; i < _coordsList.size(); i++)
     {

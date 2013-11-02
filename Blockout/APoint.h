@@ -4,7 +4,7 @@
 //==============================================================================
 
 #include <vector>
-#include "DrawTypes.h"
+#include "BlockoutTypes.h"
 
 //==============================================================================
 
@@ -12,13 +12,13 @@ class APoint
 {
 public:
     APoint();
-    APoint(const GLfloat x, const GLfloat y, const GLfloat z);
+    APoint(const TFloat x, const TFloat y, const TFloat z);
     APoint(const APoint& point);
     ~APoint();
 
-    GLfloat x;
-    GLfloat y;
-    GLfloat z;
+    TFloat x;
+    TFloat y;
+    TFloat z;
 };
 
 //==============================================================================

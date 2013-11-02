@@ -3,7 +3,7 @@
 
 //==============================================================================
 
-#include "DrawTypes.h"
+#include "BlockoutTypes.h"
 
 //==============================================================================
 
@@ -17,16 +17,16 @@ public:
     static AColor blueColor();
 
     AColor();
-    AColor(const GLfloat _red, const GLfloat _green, const GLfloat _blue, const GLfloat _alpha);
+    AColor(const TFloat _red, const TFloat _green, const TFloat _blue, const TFloat _alpha);
     AColor(const AColor& color);
     ~AColor();
     
     void normalize();
 
-    GLfloat red;
-    GLfloat green;
-    GLfloat blue;
-    GLfloat alpha;
+    TFloat red;
+    TFloat green;
+    TFloat blue;
+    TFloat alpha;
 };
 
 //==============================================================================

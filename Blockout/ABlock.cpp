@@ -23,14 +23,14 @@ ABlock::~ABlock()
 
 //==============================================================================
 
-GLfloat ABlock::size() const
+TFloat ABlock::size() const
 {
     return _size;
 }
 
 //==============================================================================
 
-void ABlock::size(const GLfloat sizer)
+void ABlock::size(const TFloat sizer)
 {
     _size = sizer;
 }

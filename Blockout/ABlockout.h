@@ -17,9 +17,9 @@ private:
 
     ACrafter _crafter;
     ALogic _logic;
-    GLfloat _wellWidth;
-    GLfloat _wellHeight;
-    GLfloat _wellDepth;
+    TFloat _wellWidth;
+    TFloat _wellHeight;
+    TFloat _wellDepth;
     
 public:
     ABlockout();

@@ -16,7 +16,7 @@ private:
     ATexture _currentTexture;
     AColor _clearColor;
     AColor _drawColor;
-    GLfloat _lineWidth;
+    TFloat _lineWidth;
     bool _textureEnabled;
     
     void clearColorSetup(const AColor& color);
@@ -28,8 +28,8 @@ public:
     AOpenGLState();
     ~AOpenGLState();
     
-    GLfloat lineWidth() const;
-    void lineWidth(const GLfloat width);
+    TFloat lineWidth() const;
+    void lineWidth(const TFloat width);
     
     AColor clearColor() const;
     void clearColor(const AColor& color);
@@ -37,7 +37,7 @@ public:
     AColor drawColor() const;
     void drawColor(const AColor& color);
 
-    void frustumSetup(const GLfloat screenWidth, const GLfloat screenHeight);
+    void frustumSetup(const TFloat screenWidth, const TFloat screenHeight);
     
     void pushMarices();
     void popMarices();

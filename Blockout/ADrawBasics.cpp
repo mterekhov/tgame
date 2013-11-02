@@ -8,7 +8,7 @@
 
 //==============================================================================
 
-void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, ATexture& texture)
+void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATexture& texture)
 {
     TPointsList coordspoints = ADrawBasics::generateCoords(pos, cubeSize);
     TPoints2DList uvpoints = ADrawBasics::generateUV(texture);
@@ -16,8 +16,8 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const GLfloat cubeSize, AT
     dataLiner.pushCoordPointList(coordspoints);
     dataLiner.pushUVPointList(uvpoints);
     TUint sizer = dataLiner.numberOfFloatValues();
-    GLfloat* line = new GLfloat[sizer];
-    memset(line, 0, sizer * sizeof(GLfloat));
+    TFloat* line = new TFloat[sizer];
+    memset(line, 0, sizer * sizeof(TFloat));
     if (dataLiner.generateArray(line) == false)
     {
         loger("failed to generate array of vertexes");
@@ -48,8 +48,8 @@ TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
 {
     TPoints2DList points;
     
-    GLfloat xaspect = static_cast<GLfloat>(tex.atImageWidth()) / static_cast<GLfloat>(tex.atWidth());
-    GLfloat yaspect = static_cast<GLfloat>(tex.atImageHeight()) / static_cast<GLfloat>(tex.atHeight());
+    TFloat xaspect = static_cast<TFloat>(tex.atImageWidth()) / static_cast<TFloat>(tex.atWidth());
+    TFloat yaspect = static_cast<TFloat>(tex.atImageHeight()) / static_cast<TFloat>(tex.atHeight());
 
     APoint2D p1 = APoint2D(0.0f, 0.0f);
     APoint2D p2 = APoint2D(0.0f, yaspect);
@@ -103,7 +103,7 @@ TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
 
 //==============================================================================
 
-void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
+void ADrawBasics::drawSolidCube(const APoint& location, const TFloat cubeSize)
 {
     TPointsList pointsList = ADrawBasics::generateCoords(location, cubeSize);
     ADataLiner dataLiner;
@@ -117,8 +117,8 @@ void ADrawBasics::drawSolidCube(const APoint& location, const GLfloat cubeSize)
 void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
 {
     TUint sizer = dataLiner.numberOfFloatValues();
-    GLfloat* line = new GLfloat[sizer];
-    memset(line, 0, sizer * sizeof(GLfloat));
+    TFloat* line = new TFloat[sizer];
+    memset(line, 0, sizer * sizeof(TFloat));
     if (dataLiner.generateArray(line) == false)
     {
         loger("failed to generate array of vertexes");
@@ -133,7 +133,7 @@ void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
 
 //==============================================================================
 
-TPointsList ADrawBasics::generateCoords(const APoint& location, const GLfloat cubeSize)
+TPointsList ADrawBasics::generateCoords(const APoint& location, const TFloat cubeSize)
 {
     APoint p1 = location;
     APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
@@ -198,7 +198,7 @@ TPointsList ADrawBasics::generateCoords(const APoint& location, const GLfloat cu
 
 //==============================================================================
 
-void ADrawBasics::drawCarcasedCube(const APoint& location, const GLfloat cubeSize)
+void ADrawBasics::drawCarcasedCube(const APoint& location, const TFloat cubeSize)
 {
     APoint p1 = location;
     APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
@@ -230,7 +230,7 @@ void ADrawBasics::drawCarcasedCube(const APoint& location, const GLfloat cubeSiz
 
 void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 {
-    GLfloat line[6] = {0};
+    TFloat line[6] = {0};
     line[0] = p1.x;
     line[1] = p1.y;
     line[2] = p1.z;
@@ -249,7 +249,7 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
 
 //==============================================================================
 
-void ADrawBasics::drawOrigin(const APoint& location, const GLfloat scale)
+void ADrawBasics::drawOrigin(const APoint& location, const TFloat scale)
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();
@@ -275,16 +275,16 @@ void ADrawBasics::drawOrigin(const APoint& location, const GLfloat scale)
 
 //==============================================================================
 
-void ADrawBasics::drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber, const GLfloat scale)
+void ADrawBasics::drawGrid(const TFloat rowsNumber, const TFloat columnsNumber, const TFloat scale)
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     AColor color = oglInstance->drawColor();
 
     oglInstance->drawColor(AColor::whiteColor());
-    for (GLfloat i = -50.0f; i < 50.0f; i+= 1.0f)
+    for (TFloat i = -50.0f; i < 50.0f; i+= 1.0f)
         drawLine(APoint(-50.0f * scale, 0.0f, i * scale), APoint(50.0f * scale, 0.0f, i * scale));
 
-    for (GLfloat i = -50.0f; i < 50.0f; i+= 1.0f)
+    for (TFloat i = -50.0f; i < 50.0f; i+= 1.0f)
         drawLine(APoint(i * scale, 0.0f, -50.0f * scale), APoint(i * scale, 0.0f, 50.0f * scale));
 
     oglInstance->drawColor(color);
@@ -294,11 +294,11 @@ void ADrawBasics::drawGrid(const GLfloat rowsNumber, const GLfloat columnsNumber
 
 void ADrawBasics::installCamera(const AVector& eyePosition3D, const AVector& center3D, const AVector& upVector3D)
 {
-    GLfloat m[16] = {0.0f};
-    GLfloat x[3] = {0.0f};
-    GLfloat y[3] = {0.0f};
-    GLfloat z[3] = {0.0f};
-    GLfloat mag = 0.0f;
+    TFloat m[16] = {0.0f};
+    TFloat x[3] = {0.0f};
+    TFloat y[3] = {0.0f};
+    TFloat z[3] = {0.0f};
+    TFloat mag = 0.0f;
 
     /* Make rotation matrix */
 

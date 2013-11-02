@@ -13,7 +13,7 @@ class ABlock : public ARObject
 {
 protected:
     AFormation _data;
-    GLfloat _size;
+    TFloat _size;
     
 public:
     ABlock(const AFormation& data);
@@ -22,8 +22,8 @@ public:
     
     AFormation data() const;
     
-    GLfloat size() const;
-    void size(const GLfloat sizer);
+    TFloat size() const;
+    void size(const TFloat sizer);
 };
 
 //==============================================================================

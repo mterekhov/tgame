@@ -1,5 +1,4 @@
 #import "ARenderView.h"
-#import "DrawTypes.h"
 #import "AOpenGLState.h"
 
 //==============================================================================
@@ -97,7 +96,7 @@
 
 //==============================================================================
 
-- (void) updateScreenSize:(GLfloat) screenWidth screenHeight: (GLfloat) screenHeight
+- (void) updateScreenSize:(TFloat) screenWidth screenHeight: (TFloat) screenHeight
 {
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->frustumSetup(screenWidth, screenHeight);

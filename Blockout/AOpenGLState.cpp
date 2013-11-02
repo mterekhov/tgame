@@ -97,17 +97,17 @@ void AOpenGLState::clearColorSetup(const AColor& color)
 
 //==============================================================================
 
-void AOpenGLState::frustumSetup(const GLfloat screenWidth, const GLfloat screenHeight)
+void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHeight)
 {
     glViewport(0.0f, 0.0f, screenWidth, screenHeight);
     
-    GLfloat aspect = screenWidth / screenHeight;
-    GLfloat near = 0.1f;
-    GLfloat far = 10000.0f;
-    GLfloat fieldOfView = 45.0f;
-    GLfloat size = near * tanf(DEG_TO_RAD(fieldOfView) / 2.0f);
-    GLfloat width = size;
-    GLfloat height = size / aspect;
+    TFloat aspect = screenWidth / screenHeight;
+    TFloat near = 0.1f;
+    TFloat far = 10000.0f;
+    TFloat fieldOfView = 45.0f;
+    TFloat size = near * tanf(DEG_TO_RAD(fieldOfView) / 2.0f);
+    TFloat width = size;
+    TFloat height = size / aspect;
     
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -205,14 +205,14 @@ void AOpenGLState::clear(GLbitfield mask)
 
 //==============================================================================
 
-GLfloat AOpenGLState::lineWidth() const
+TFloat AOpenGLState::lineWidth() const
 {
     return _lineWidth;
 }
 
 //==============================================================================
 
-void AOpenGLState::lineWidth(const GLfloat width)
+void AOpenGLState::lineWidth(const TFloat width)
 {
     _lineWidth = width;
     glLineWidth(width);

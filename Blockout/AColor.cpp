@@ -43,7 +43,7 @@ AColor::AColor() : red(0.0f), green(0.0f), blue(0.0f), alpha(1.0f)
 
 //==============================================================================
 
-AColor::AColor(const GLfloat _red, const GLfloat _green, const GLfloat _blue, const GLfloat _alpha) : red(_red), green(_green), blue(_blue), alpha(_alpha)
+AColor::AColor(const TFloat _red, const TFloat _green, const TFloat _blue, const TFloat _alpha) : red(_red), green(_green), blue(_blue), alpha(_alpha)
 {
 }
 

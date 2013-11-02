@@ -6,7 +6,7 @@
 
 //==============================================================================
 
-AWell::AWell(const GLfloat width, const GLfloat height, const GLfloat depth) : ARObject(), wellWidth(width), wellHeight(height), wellDepth(depth), wellCellSize(1.0f)
+AWell::AWell(const TFloat width, const TFloat height, const TFloat depth) : ARObject(), wellWidth(width), wellHeight(height), wellDepth(depth), wellCellSize(1.0f)
 {
 }
 
@@ -37,42 +37,42 @@ void AWell::renderHull() const
     AColor color = oglInstance->drawColor();
     
     oglInstance->drawColor(AColor::greenColor());
-    for (GLfloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * wellCellSize), APoint(wellWidth * wellCellSize, 0.0f, i * wellCellSize));
 
-    for (GLfloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, 0.0f), APoint(i * wellCellSize, 0.0f, wellHeight * wellCellSize));
 
 ////////////////////////////////////////////////////////////////////////////////
 
-    for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, 0.0f), APoint(wellWidth * wellCellSize, i * wellCellSize, 0.0f));
 
-    for (GLfloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, 0.0f), APoint(i * wellCellSize, wellDepth * wellCellSize, 0.0f));
 
 ////////////////////////////////////////////////////////////////////////////////
 
-    for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, wellHeight * wellCellSize), APoint(wellWidth * wellCellSize, i * wellCellSize, wellHeight * wellCellSize));
 
-    for (GLfloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, wellHeight * wellCellSize), APoint(i * wellCellSize, wellDepth * wellCellSize, wellHeight * wellCellSize));
 
 ////////////////////////////////////////////////////////////////////////////////
 
-    for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, 0.0f), APoint(0.0f, i * wellCellSize, wellHeight * wellCellSize));
 
-    for (GLfloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * wellCellSize), APoint(0.0f, wellDepth * wellCellSize, i * wellCellSize));
 
 ////////////////////////////////////////////////////////////////////////////////
 
-    for (GLfloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(wellWidth * wellCellSize, i * wellCellSize, 0.0f), APoint(wellWidth * wellCellSize, i * wellCellSize, wellHeight * wellCellSize));
 
-    for (GLfloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
+    for (TFloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
         ADrawBasics::drawLine(APoint(wellWidth * wellCellSize, 0.0f, i * wellCellSize), APoint(wellWidth * wellCellSize, wellDepth * wellCellSize, i * wellCellSize));
 
     oglInstance->drawColor(color);

@@ -3,7 +3,6 @@
 
 #include "APoint.h"
 #include "APoint2D.h"
-#include "DrawTypes.h"
 #include "BlockoutTypes.h"
 
 //==============================================================================
@@ -40,7 +39,7 @@ public:
     TUint pointsCount() const;
 
     EIntegrity checkIntegrity() const;
-    bool generateArray(GLfloat* resultArray) const;
+    bool generateArray(TFloat* resultArray) const;
 };
 
 //==============================================================================

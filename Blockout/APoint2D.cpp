@@ -1,5 +1,4 @@
 #include "APoint2D.h"
-#include "DrawTypes.h"
 
 //==============================================================================
 
@@ -9,7 +8,7 @@ APoint2D::APoint2D() : x(0.0f), y(0.0f)
 
 //==============================================================================
 
-APoint2D::APoint2D(const GLfloat x, const GLfloat y) : x(x), y(y)
+APoint2D::APoint2D(const TFloat x, const TFloat y) : x(x), y(y)
 {
 }
 

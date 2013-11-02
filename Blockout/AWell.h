@@ -3,7 +3,6 @@
 
 //==============================================================================
 
-#include "DrawTypes.h"
 #include "ARObject.h"
 #include "AColor.h"
 
@@ -16,15 +15,15 @@ private:
     void renderContent() const;
 
 public:
-    GLfloat wellWidth;
-    GLfloat wellHeight;
-    GLfloat wellDepth;
-    GLfloat wellCellSize;
+    TFloat wellWidth;
+    TFloat wellHeight;
+    TFloat wellDepth;
+    TFloat wellCellSize;
     
     AColor color;
 
     AWell();
-    AWell(const GLfloat width, const GLfloat height, const GLfloat depth);
+    AWell(const TFloat width, const TFloat height, const TFloat depth);
     virtual ~AWell();
 
     virtual void renderObject();

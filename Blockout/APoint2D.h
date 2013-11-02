@@ -4,7 +4,7 @@
 //==============================================================================
 
 #include <vector>
-#include "DrawTypes.h"
+#include "BlockoutTypes.h"
 
 //==============================================================================
 
@@ -12,12 +12,12 @@ class APoint2D
 {
 public:
     APoint2D();
-    APoint2D(const GLfloat x, const GLfloat y);
+    APoint2D(const TFloat x, const TFloat y);
     APoint2D(const APoint2D& point);
     ~APoint2D();
 
-    GLfloat x;
-    GLfloat y;
+    TFloat x;
+    TFloat y;
 };
 
 //==============================================================================

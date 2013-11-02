@@ -3,7 +3,7 @@
 
 //==============================================================================
 
-#include "DrawTypes.h"
+#include "BlockoutTypes.h"
 
 //==============================================================================
 
@@ -11,15 +11,15 @@ class AVector
 {
 public:
     AVector();
-    AVector(const GLfloat x, const GLfloat y, const GLfloat z);
+    AVector(const TFloat x, const TFloat y, const TFloat z);
     AVector(const AVector& vector);
     ~AVector();
     
     void normalize();
 
-    GLfloat x;
-    GLfloat y;
-    GLfloat z;
+    TFloat x;
+    TFloat y;
+    TFloat z;
 };
 
 //==============================================================================
