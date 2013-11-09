@@ -91,7 +91,7 @@
     [self updateScreenSize:self.bounds.size.width screenHeight:self.bounds.size.height];
 
     //  call shared to create instance and init some OpenGL pars;
-    AOpenGLState::shared();
+    AOpenGLState::create();
 }
 
 //==============================================================================

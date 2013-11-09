@@ -23,6 +23,7 @@ private:
     void drawColorSetup(const AColor& color);
     
 public:
+    static void create();
     static AOpenGLState* shared();
     
     AOpenGLState();

@@ -276,12 +276,12 @@
 		B732725916AB20C2001DE602 = {
 			isa = PBXGroup;
 			children = (
+				4CC8217B16D7A3100090CE07 /* Resources */,
+				B7ECFF5D16AD5F1800946E91 /* TGame */,
 				B732726E16AB20C2001DE602 /* Application */,
 				B732726716AB20C2001DE602 /* Frameworks */,
 				B732726516AB20C2001DE602 /* Products */,
-				4CC8217B16D7A3100090CE07 /* Resources */,
 				B732726F16AB20C2001DE602 /* Supporting Files */,
-				B7ECFF5D16AD5F1800946E91 /* TGame */,
 			);
 			sourceTree = "<group>";
 		};

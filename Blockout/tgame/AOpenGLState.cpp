@@ -12,6 +12,13 @@ AOpenGLState* AOpenGLState::instance = 0;
 
 //==============================================================================
 
+void AOpenGLState::create()
+{
+    AOpenGLState::shared();
+}
+
+//==============================================================================
+
 AOpenGLState* AOpenGLState::shared()
 {
     if (instance)
