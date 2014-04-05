@@ -24,8 +24,11 @@ private:
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
     
+    void clearAllLists();
+    void clearTextureList();
+    void clearRenderList();
     TBool clearList(TRObjectsList& renderList);
-    void clearRenderLists();
+    
     void renderList(const TRObjectsList& renderList);
     TBool addObjectForRender(ARObject* object);
     

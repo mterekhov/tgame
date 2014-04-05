@@ -59,13 +59,27 @@ ATexturedBlock* ACrafter::acCreateTexturedBlock(const AFormation& formation, con
 
 //==============================================================================
 
-void ACrafter::clearRenderLists()
+void ACrafter::clearAllLists()
+{
+    clearRenderList();
+    clearTextureList();
+}
+
+//==============================================================================
+
+void ACrafter::clearRenderList()
 {
     if (!clearList(_solidRenderList))
     {
         loger("failed to clear solid objects list");
     }
+}
 
+//==============================================================================
+
+
+void ACrafter::clearTextureList()
+{
     if (!clearList(_texturedRenderList))
     {
         loger("failed to clear textured objects list");
