@@ -6,9 +6,15 @@
 
 //==============================================================================
 
+AFormation::AFormation() : _width(0), _height(0), _levelsCount(0), _data(0)
+{
+}
+
+//==============================================================================
+
 AFormation::AFormation(const TUint width, const TUint height, const TUint count) : _width(width), _height(height), _levelsCount(count)
 {
-    int sizer = width * height * count;
+    TUint sizer = width * height * count;
     _data = new TData[sizer];
     memset(_data, EDATASTATE_EMPTY, sizer * sizeof(TData));
 }
@@ -18,7 +24,7 @@ AFormation::AFormation(const TUint width, const TUint height, const TUint count)
 AFormation::AFormation(const AFormation& formation) : _width(formation.width()), _height(formation.height()), _levelsCount(formation.levelsCount())
 {
     _data = new TData[_width * _height * _levelsCount];
-    int sizer = _width * _height * _levelsCount * sizeof(TData);
+    TUint sizer = _width * _height * _levelsCount * sizeof(TData);
     memcpy(_data, formation.data(), sizer);
 }
 
@@ -48,6 +54,13 @@ TUint AFormation::width() const
 TUint AFormation::levelsCount() const
 {
     return _levelsCount;
+}
+
+//==============================================================================
+
+const TData* AFormation::data() const
+{
+    return _data;
 }
 
 //==============================================================================
@@ -108,12 +121,3 @@ TBool AFormation::doesInbounds(const AFormation* data)
     
     return false;
 }
-
-//==============================================================================
-
-const TData* AFormation::data() const
-{
-    return _data;
-}
-
-//==============================================================================

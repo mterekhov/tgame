@@ -25,6 +25,7 @@ private:
     TData* _data;
 
 public:
+    AFormation();
     AFormation(const TUint width, const TUint height, const TUint count);
     AFormation(const AFormation& formation);
     ~AFormation();
