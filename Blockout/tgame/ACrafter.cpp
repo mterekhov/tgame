@@ -16,7 +16,7 @@ ACrafter::ACrafter()
 
 ACrafter::~ACrafter()
 {
-    clearRenderLists();
+    clearAllLists();
 }
 
 //==============================================================================
