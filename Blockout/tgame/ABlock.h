@@ -21,9 +21,7 @@ public:
     virtual ~ABlock();
     
     AFormation data() const;
-    
     TFloat size() const;
-    void size(const TFloat sizer);
 };
 
 //==============================================================================
