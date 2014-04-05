@@ -21,11 +21,25 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
+#pragma mark - create well -
+
+//==============================================================================
+
+AWell* ACrafter::createWell(const TFloat width, const TFloat height, const TFloat depth)
+{
+    AWell* well = new AWell(width, height, depth);
+    addObjectForRender(well);
+    
+    return well;
+}
+
+//==============================================================================
+
 #pragma mark - blocks creation -
 
 //==============================================================================
 
-ASolidBlock* ACrafter::acCreateSolidBlock(const AFormation& formation)
+ASolidBlock* ACrafter::createSolidBlock(const AFormation& formation)
 {
     ASolidBlock* newBlock = new ASolidBlock(formation);
     addObjectForRender(newBlock);
@@ -35,7 +49,7 @@ ASolidBlock* ACrafter::acCreateSolidBlock(const AFormation& formation)
 
 //==============================================================================
 
-AColoredBlock* ACrafter::acCreateColoredBlock(const AFormation& formation)
+AColoredBlock* ACrafter::createColoredBlock(const AFormation& formation)
 {
     AColoredBlock* newBlock = new AColoredBlock(formation);
     addObjectForRender(newBlock);
@@ -45,7 +59,7 @@ AColoredBlock* ACrafter::acCreateColoredBlock(const AFormation& formation)
 
 //==============================================================================
 
-ATexturedBlock* ACrafter::acCreateTexturedBlock(const AFormation& formation, const ATexture& texture)
+ATexturedBlock* ACrafter::createTexturedBlock(const AFormation& formation, const ATexture& texture)
 {
     ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
     addObjectForRender(newBlock);

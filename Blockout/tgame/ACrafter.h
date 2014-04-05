@@ -7,6 +7,7 @@
 #include "ASolidBlock.h"
 #include "ABlock.h"
 #include "ATextureManager.h"
+#include "AWell.h"
 
 #include <list>
 
@@ -40,9 +41,10 @@ public:
     
     void processRender();
     
-    ATexturedBlock* acCreateTexturedBlock(const AFormation& formation, const ATexture& texture);
-    ASolidBlock* acCreateSolidBlock(const AFormation& formation);
-    AColoredBlock* acCreateColoredBlock(const AFormation& formation);
+    AWell* createWell(const TFloat width, const TFloat height, const TFloat depth);
+    ATexturedBlock* createTexturedBlock(const AFormation& formation, const ATexture& texture);
+    ASolidBlock* createSolidBlock(const AFormation& formation);
+    AColoredBlock* createColoredBlock(const AFormation& formation);
 };
 
 //==============================================================================
