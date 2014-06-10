@@ -1,4 +1,5 @@
 #include "ATexture.h"
+#include "AOpenGLState.h"
 #include "ATga.h"
 
 #include <OpenGL/gl.h>
@@ -27,7 +28,7 @@ ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_
                        _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
-    glGenTextures(1, &_id);
+    glGenTextures(1, &public_id);
     atInit(image);
 }
 
@@ -108,9 +109,11 @@ void ATexture::atDefineFilters()
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     }
 
-    glTexParameterf(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, _mipMaping);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _minFilter);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, _magFilter);
+//  This parameteer is deprecated but should be used in version lower then OpenGL 3.0
+//  in all upper versions should be used glGenerateMipmap​().
+//    glTexParameterf(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, _mipMaping);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _minFilter);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, _magFilter);
 }
     
 //=============================================================================
@@ -143,7 +146,7 @@ void ATexture::atLocateSize(const TWidth width, const THeight height)
 
 void ATexture::atBind() const
 {
-    glBindTexture(GL_TEXTURE_2D, _id);
+    glBindTexture(GL_TEXTURE_2D, public_id);
 }
 
 //=============================================================================

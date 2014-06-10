@@ -15,7 +15,7 @@
 //==============================================================================
 
 typedef unsigned long TUlong;
-typedef unsigned int TUint;
+typedef GLuint TUint;
 typedef TUint TWidth;
 typedef TUint THeight;
 typedef TUint TBytepp;

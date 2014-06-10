@@ -3,6 +3,7 @@
 - draw solid cube
 - draw textured cube
 - draw partically filled well
+- wrap tgame code in namespace
 
 General purposes
 - draw filled well

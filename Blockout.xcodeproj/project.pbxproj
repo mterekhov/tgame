@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C7C09DB194726640081B310 /* notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C09DA194726640081B310 /* notes.txt */; };
 		4C84B38D1824EEB300EFD26A /* AFormation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C84B3891824EEB300EFD26A /* AFormation.cpp */; };
 		4C84B38E1824EEB300EFD26A /* AFormation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C84B38A1824EEB300EFD26A /* AFormation.h */; };
 		4C84B38F1824EEB300EFD26A /* AFormationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C84B38B1824EEB300EFD26A /* AFormationFactory.cpp */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C7C09DA194726640081B310 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
 		4C84B3851824EE8500EFD26A /* libtgame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtgame.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C84B3891824EEB300EFD26A /* AFormation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AFormation.cpp; path = Blockout/tgame/AFormation.cpp; sourceTree = "<group>"; };
 		4C84B38A1824EEB300EFD26A /* AFormation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFormation.h; path = Blockout/tgame/AFormation.h; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 		4CC8218216D7A52A0090CE07 /* celtic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtic.png; path = Blockout/resources/celtic.png; sourceTree = "<group>"; };
 		4CC8218316D7A52A0090CE07 /* marble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marble.png; path = Blockout/resources/marble.png; sourceTree = "<group>"; };
 		4CC8218416D7A52A0090CE07 /* recycled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recycled.png; path = Blockout/resources/recycled.png; sourceTree = "<group>"; };
-		4CC85D6E16C409A600B961AB /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		4CC85D6E16C409A600B961AB /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.txt; path = Blockout/readme.txt; sourceTree = "<group>"; };
 		B732726416AB20C2001DE602 /* Blockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732726816AB20C2001DE602 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B732726B16AB20C2001DE602 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -276,9 +278,11 @@
 		B732725916AB20C2001DE602 = {
 			isa = PBXGroup;
 			children = (
-				4CC8217B16D7A3100090CE07 /* Resources */,
+				4C7C09DA194726640081B310 /* notes.txt */,
+				4CC85D6E16C409A600B961AB /* readme.txt */,
 				B7ECFF5D16AD5F1800946E91 /* TGame */,
 				B732726E16AB20C2001DE602 /* Application */,
+				4CC8217B16D7A3100090CE07 /* Resources */,
 				B732726716AB20C2001DE602 /* Frameworks */,
 				B732726516AB20C2001DE602 /* Products */,
 				B732726F16AB20C2001DE602 /* Supporting Files */,
@@ -327,7 +331,6 @@
 				B732727616AB20C2001DE602 /* Blockout-Prefix.pch */,
 				B732727716AB20C2001DE602 /* Credits.rtf */,
 				B732727116AB20C2001DE602 /* InfoPlist.strings */,
-				4CC85D6E16C409A600B961AB /* readme.txt */,
 			);
 			name = "Supporting Files";
 			path = Blockout;
@@ -467,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7C09DB194726640081B310 /* notes.txt in Resources */,
 				B7ECFF5216AD422F00946E91 /* Blockout.xib in Resources */,
 				4CC8218516D7A52A0090CE07 /* celtic.png in Resources */,
 				4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */,
