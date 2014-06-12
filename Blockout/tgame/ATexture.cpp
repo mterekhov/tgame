@@ -1,8 +1,7 @@
 #include "ATexture.h"
 #include "AOpenGLState.h"
 #include "ATga.h"
-
-#include <OpenGL/gl.h>
+#include "AOGLWrapper.h"
 
 //=============================================================================
 
@@ -33,7 +32,7 @@ ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_
                        _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
-    glGenTextures(1, &_id);
+    AOGLWrapper::oglGenTextures(1, &_id);
     init(image);
 }
 

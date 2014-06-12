@@ -32,10 +32,10 @@ public:
     static void oglPopMatrix();
     static void oglDisable(TEnum cap);
     static void oglDisableClientState(TEnum array);
-//extern void glDisableClientState (GLenum array);
-//extern void glClear (GLbitfield mask);
-//extern void glLineWidth (GLfloat width);
-//extern void glGenTextures (GLsizei n, GLuint *textures);
+    static void oglClear(TBitfield mask);
+    static void oglLineWidth(TFloat width);
+    static void oglGenTextures(TSize n, TUint* textures);
+    static void oglDeleteTextures(TSize n, const TUint* textures);
 //extern void glDeleteTextures (GLsizei n, const GLuint *textures);
 //extern void glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels);
 //extern void glTexParameterf (GLenum target, GLenum pname, GLfloat param);
@@ -59,6 +59,10 @@ public:
 //extern void glPushMatrix (void);
 //extern void glPopMatrix (void);
 //extern void glDisable (GLenum cap);
+//extern void glDisableClientState (GLenum array);
+//extern void glClear (GLbitfield mask);
+//extern void glLineWidth (GLfloat width);
+//extern void glGenTextures (GLsizei n, GLuint *textures);
 //==============================================================================
 
 }   //  namespace spcTGame

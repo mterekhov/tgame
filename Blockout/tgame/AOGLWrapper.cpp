@@ -126,4 +126,32 @@ void AOGLWrapper::oglDisableClientState(TEnum array)
 
 //==============================================================================
 
+void AOGLWrapper::oglClear(TBitfield mask)
+{
+    glClear(mask);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglLineWidth(TFloat width)
+{
+    glLineWidth(width);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglGenTextures(TSize n, TUint* textures)
+{
+    glGenTextures(n, textures);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglDeleteTextures(TSize n, const TUint* textures)
+{
+    glDeleteTextures(n, textures);
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

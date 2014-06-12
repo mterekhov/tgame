@@ -213,7 +213,7 @@ void AOpenGLState::clearCurrentTexture()
 
 void AOpenGLState::clear(GLbitfield mask)
 {
-    glClear(mask);
+    AOGLWrapper::oglClear(mask);
 }
 
 //==============================================================================
@@ -228,7 +228,7 @@ TFloat AOpenGLState::lineWidth() const
 void AOpenGLState::lineWidth(const TFloat width)
 {
     _lineWidth = width;
-    glLineWidth(width);
+    AOGLWrapper::oglLineWidth(width);
 }
 
 //==============================================================================

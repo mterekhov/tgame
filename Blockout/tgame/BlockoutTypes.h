@@ -29,6 +29,7 @@ typedef GLdouble TDouble;
 typedef GLenum TEnum;
 typedef GLsizei TSize;
 typedef GLvoid TVoid;
+typedef GLbitfield TBitfield;
 
 typedef TUint TWidth;
 typedef TUint THeight;
