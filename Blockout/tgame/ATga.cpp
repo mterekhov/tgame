@@ -20,7 +20,7 @@ ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _imag
         throw;
 
     STGAHeader tgaHeader = {0};
-    if (!atReadHeaders(tga_file, tgaHeader))
+    if (!readHeaders(tga_file, tgaHeader))
         throw;
 
     TData* data = 0;
@@ -37,7 +37,7 @@ ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _imag
         TUint data_size = tgaHeader.imageHeader.width * tgaHeader.imageHeader.height * bytepp;
         data = new TData[data_size];
         memset(data, 0, data_size);
-        if (!atReadData(data, tga_file, data_size, tgaHeader))
+        if (!readData(data, tga_file, data_size, tgaHeader))
             throw;
     }
 
@@ -64,14 +64,14 @@ ATga::~ATga()
 
 //=============================================================================
 
-const AImage* ATga::atImage() const
+const AImage* ATga::image() const
 {
     return _image;
 }
 
 //=============================================================================
 
-TBool ATga::atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader)
+TBool ATga::readHeaders(FILE* tga_file, STGAHeader& tgaHeader)
 {
     if (!tga_file)
         return false;
@@ -102,17 +102,17 @@ TBool ATga::atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader)
 
 //=============================================================================
 
-TBool ATga::atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader)
+TBool ATga::readData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader)
 {
     if (!tga_file)
         return false;
 
     fread(data, sizeof(TData), data_size, tga_file);
     
-    if (!atRGB2BGR(data, tgaHeader))
+    if (!RGB2BGR(data, tgaHeader))
         return false;
     
-    if (!atFlipOver(data, tgaHeader))
+    if (!flipOver(data, tgaHeader))
         return false;
 
     return true;
@@ -120,7 +120,7 @@ TBool ATga::atReadData(TData* data, FILE* tga_file, const TUint data_size, const
 
 //=============================================================================
 
-TBool ATga::atRGB2BGR(TData* data, const STGAHeader& tgaHeader)
+TBool ATga::RGB2BGR(TData* data, const STGAHeader& tgaHeader)
 {
     TData* tmpData = data;
     if (!tmpData)
@@ -143,7 +143,7 @@ TBool ATga::atRGB2BGR(TData* data, const STGAHeader& tgaHeader)
 
 //=============================================================================
 
-TBool ATga::atFlipOver(TData* data, const STGAHeader& tgaHeader)
+TBool ATga::flipOver(TData* data, const STGAHeader& tgaHeader)
 {
     TData* tmpData = data;
     if (!tmpData)
@@ -168,27 +168,27 @@ TBool ATga::atFlipOver(TData* data, const STGAHeader& tgaHeader)
 
 //=============================================================================
 
-STGAHeader ATga::atCreateTGAHeader(const AImage& image)
+STGAHeader ATga::createTGAHeader(const AImage& image)
 {
     STGAHeader header = {0};
     
-    header.imageHeader.bitpp = image.aiBitPerPixel();
-    header.imageHeader.width = image.aiWidth();
-    header.imageHeader.height = image.aiHeight();
+    header.imageHeader.bitpp = image.bitPerPixel();
+    header.imageHeader.width = image.width();
+    header.imageHeader.height = image.height();
 
     return header;
 }
 
 //=============================================================================
 
-TBool ATga::atSave(const std::string& filePath, const AImage& image)
+TBool ATga::save(const std::string& filePath, const AImage& image)
 {
-    STGAHeader header = atCreateTGAHeader(image);
+    STGAHeader header = createTGAHeader(image);
 
     TUint sizer = header.imageHeader.width * header.imageHeader.height * header.imageHeader.bitpp / 8;
     TData* data = new TData[sizer];
     memset(data, 0, sizer);
-    memcpy(data, image.aiData(), sizer);
+    memcpy(data, image.data(), sizer);
 
     TData byte_1 = 0;
     TUShort byte_2 = 0;
@@ -207,20 +207,20 @@ TBool ATga::atSave(const std::string& filePath, const AImage& image)
     fwrite(&byte_2, 2, 1, filo); //  x coord
     fwrite(&byte_2, 2, 1, filo); //  y coord
 
-    byte_2 = image.aiWidth();
+    byte_2 = image.width();
     fwrite(&byte_2, 2, 1, filo); //  image width
-    byte_2 = image.aiHeight();
+    byte_2 = image.height();
     fwrite(&byte_2, 2, 1, filo); //  image height
 
-    byte_1 = image.aiBitPerPixel();
+    byte_1 = image.bitPerPixel();
     fwrite(&byte_1, 1, 1, filo); //  byte per pixel
     byte_1 = 0;
     fwrite(&byte_1, 1, 1, filo); //  image property
     
-    if (!atRGB2BGR(data, header))
+    if (!RGB2BGR(data, header))
         return false;
     
-    if (!atFlipOver(data, header))
+    if (!flipOver(data, header))
         return false;
 
     if (fwrite(data, sizer, 1, filo) != 1) //  image data

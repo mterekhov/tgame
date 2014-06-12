@@ -36,81 +36,80 @@ public:
     /// Initialize texture
     /// @param AImage& - init texture with image
     /// @return TBool - true if everything is ok, otherwise false
-    TBool atInit(const AImage& image);
+    TBool init(const AImage& image);
     
     /// Bind texture
-    void atBind() const;
+    void bind() const;
     
     /// Unbin texture
-    void atUnBind() const;
+    void unBind() const;
     
     /// Get image width
     /// @return const TWidth - width of original image from tga file
-    const TWidth atImageWidth() const;
+    const TWidth imageWidth() const;
 
     /// Get image height
     /// @return const THeight - height of original image from tga file
-    const THeight atImageHeight() const;    
+    const THeight imageHeight() const;
 
     /// Get texture width
     /// @return const TWidth - width of texture
-    const TWidth atWidth() const;
+    const TWidth width() const;
 
     /// Get texture height
     /// @return const THeight - height of texture
-    const THeight atHeight() const;
+    const THeight height() const;
     
     /// Get type of texture
     /// @return const GLenum - type of texture. Means GL_RGBA, GL_RGB or GL_BGR
-    const TUint atType() const;
+    const TUint type() const;
     
-    const std::string& atName() const;
+    const std::string& name() const;
 
     /// Setup minification filter
     /// @param const TUint - minification filter
-    void atMinFilter(const TUint min);
+    void minFilter(const TUint min);
 
     /// Setup magnification filter
     /// @param const TUint - magnification filter
-    void atMagFilter(const TUint mag);
+    void magFilter(const TUint mag);
     
     /// Setup tile parameter
     /// @param const TBool - should we tile all the surface with this texture
-    void atRepeat(const TBool r);
+    void repeat(const TBool r);
     
     /// Setup mipmap generation
     /// @param const TBool - should we generate mip map levels for this texture 
-    void atMipMapping(const TBool m);
+    void mipMapping(const TBool m);
     
     /// Setup texture name
     /// @param const std::string& - name for the texture
-    void atName(const std::string& name);
-
-    /// Texture id
-    TUint public_id;
-private:
+    void name(const std::string& name);
+    
     /// Destroy all thge data in textyure object
-    void atDestroy();
+    void destroy();
+
+private:
     
     /// Init texture from tga file
     /// @param const std::string& - relative file name of tga image
     /// @return TBool - true if everything is ok, otherwise false
-    TBool atInitFromTga(const std::string& fileName);
+    TBool initFromTga(const std::string& fileName);
     
     /// Apply all the filter to current texture id
-    void atDefineFilters();
+    void defineFilters();
     
     void defineImageType(const int bytePP);
     
     /// Find out the nearest power of 2 size for texture
     /// @param const TWidth - width of original image
     /// @param const THeight - height of original image
-    void atLocateSize(const TWidth width, const THeight height);
+    void locateSize(const TWidth width, const THeight height);
     
     /// Correct data due to texture sizes
     /// @param const AImage& - image to correct
     /// @param Tubyte* - pointer where the final data will be stored
-    void atCorrectData(const AImage& image, TData* data);
+    void correctData(const AImage& image, TData* data);
 
     /// Texture name
     std::string _name;

@@ -32,7 +32,7 @@ ABlockout::~ABlockout()
 
 void ABlockout::init()
 {
-    ATexture tex = _crafter.textureManager.atCreateTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/celtic.tga");
+    ATexture tex = _crafter.textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/celtic.tga");
     _crafter.createTexturedBlock(AFormationFactory::createFormation1(), tex);
 //    _crafter.createSolidBlock(AFormationFactory::createFormation1());
 

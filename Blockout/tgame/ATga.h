@@ -142,9 +142,9 @@ public:
     /// Default destructor
 	virtual ~ATga();
 
-    TBool atSave(const std::string& fileName, const AImage& image);
+    TBool save(const std::string& fileName, const AImage& image);
 
-    const AImage* atImage() const;
+    const AImage* image() const;
 
 private:
     AImage* _image;
@@ -152,16 +152,16 @@ private:
     /// Comments in tga file. Usually it is absent
 	TData* _identity;
 
-    TBool atReadHeaders(FILE* tga_file, STGAHeader& tgaHeader);
-    TBool atReadData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader);
+    TBool readHeaders(FILE* tga_file, STGAHeader& tgaHeader);
+    TBool readData(TData* data, FILE* tga_file, const TUint data_size, const STGAHeader& tgaHeader);
     
     /// Destroy all the data
-	void atClearData();
+	void clearData();
     
-    TBool atFlipOver(TData* data, const STGAHeader& tgaHeader);
-    TBool atRGB2BGR(TData* data, const STGAHeader& tgaHeader);
+    TBool flipOver(TData* data, const STGAHeader& tgaHeader);
+    TBool RGB2BGR(TData* data, const STGAHeader& tgaHeader);
     
-    STGAHeader atCreateTGAHeader(const AImage& image);
+    STGAHeader createTGAHeader(const AImage& image);
 };
 
 //=============================================================================

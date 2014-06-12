@@ -34,7 +34,7 @@ ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
     glGenTextures(1, &_id);
-    atInit(image);
+    init(image);
 }
 
 //=============================================================================
@@ -45,7 +45,7 @@ ATexture::~ATexture()
 
 //=============================================================================
 
-void ATexture::atDestroy()
+void ATexture::destroy()
 {
     if (_id)
     {
@@ -73,25 +73,25 @@ void ATexture::defineImageType(const int bytePP)
 
 //=============================================================================
 
-TBool ATexture::atInit(const AImage& image)
+TBool ATexture::init(const AImage& image)
 {
-    defineImageType(image.aiBytePerPixel());
+    defineImageType(image.bytePerPixel());
     
     //  extend image data up to nearest power of two
-    atLocateSize(image.aiWidth(), image.aiHeight());    
-    atBind();
-    atDefineFilters();
-    _name = image.aiName();
+    locateSize(image.width(), image.height());
+    bind();
+    defineFilters();
+    _name = image.name();
 
-    if ((_width != image.aiWidth()) || (_height != image.aiHeight()))
+    if ((_width != image.width()) || (_height != image.height()))
     {
-        TData* data = new TData[_width * _height * image.aiBytePerPixel()];
-        atCorrectData(image, data);
+        TData* data = new TData[_width * _height * image.bytePerPixel()];
+        correctData(image, data);
         glTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
     }
     else
     {
-        const TData* data = image.aiData();
+        const TData* data = image.data();
         glTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
     }
         
@@ -100,7 +100,7 @@ TBool ATexture::atInit(const AImage& image)
 
 //=============================================================================
 
-void ATexture::atDefineFilters()
+void ATexture::defineFilters()
 {
     if (!_repeat)
     {
@@ -122,7 +122,7 @@ void ATexture::atDefineFilters()
     
 //=============================================================================
 
-void ATexture::atLocateSize(const TWidth width, const THeight height)
+void ATexture::locateSize(const TWidth width, const THeight height)
 {
     THeight correctHeight = 1;
     TWidth correctWidth = 1;
@@ -148,52 +148,52 @@ void ATexture::atLocateSize(const TWidth width, const THeight height)
 
 //=============================================================================
 
-void ATexture::atBind() const
+void ATexture::bind() const
 {
     glBindTexture(GL_TEXTURE_2D, _id);
 }
 
 //=============================================================================
 
-void ATexture::atUnBind() const
+void ATexture::unBind() const
 {
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 //=============================================================================
 
-const TWidth ATexture::atImageWidth() const
+const TWidth ATexture::imageWidth() const
 {
     return _imageWidth;
 }
 
 //=============================================================================
 
-const THeight ATexture::atImageHeight() const
+const THeight ATexture::imageHeight() const
 {
     return _imageHeight;
 }
     
 //=============================================================================
 
-const TWidth ATexture::atWidth() const
+const TWidth ATexture::width() const
 {
     return _width;
 }
 
 //=============================================================================
 
-const THeight ATexture::atHeight() const
+const THeight ATexture::height() const
 {
     return _height;
 }
     
 //=============================================================================
 
-void ATexture::atCorrectData(const AImage& image, TData* data)
+void ATexture::correctData(const AImage& image, TData* data)
 {
-    const TData* originalData = image.aiData();
-    TUShort bytepp = image.aiBytePerPixel();
+    const TData* originalData = image.data();
+    TUShort bytepp = image.bytePerPixel();
     
     for (TUint i = 0; i < _height; i++)
     {
@@ -215,47 +215,49 @@ void ATexture::atCorrectData(const AImage& image, TData* data)
 
 //=============================================================================
 
-const GLenum ATexture::atType() const
+const GLenum ATexture::type() const
 {
     return _type;
 }
 
-const std::string& ATexture::atName() const
+//=============================================================================
+
+const std::string& ATexture::name() const
 {
     return _name;
 }
 
 //=============================================================================
 
-void ATexture::atMinFilter(const GLuint min)
+void ATexture::minFilter(const GLuint min)
 {
     _minFilter = min;
 }
 
 //=============================================================================
 
-void ATexture::atMagFilter(const GLuint mag)
+void ATexture::magFilter(const GLuint mag)
 {
     _magFilter = mag;
 }
 
 //=============================================================================
 
-void ATexture::atRepeat(const TBool r)
+void ATexture::repeat(const TBool r)
 {
     _repeat = r;
 }
 
 //=============================================================================
 
-void ATexture::atMipMapping(const TBool m)
+void ATexture::mipMapping(const TBool m)
 {
     _mipMaping = m;
 }
 
 //=============================================================================
 
-void ATexture::atName(const std::string& name)
+void ATexture::name(const std::string& name)
 {
     _name = name;
 }

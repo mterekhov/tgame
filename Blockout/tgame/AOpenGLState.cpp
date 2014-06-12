@@ -188,7 +188,7 @@ TBool AOpenGLState::currentTexture(ATexture& texture)
         return false;
 
     _currentTexture = texture;
-    texture.atBind();
+    texture.bind();
 
     return true;
 }
@@ -204,7 +204,7 @@ const ATexture& AOpenGLState::currentTexture() const
 
 void AOpenGLState::clearCurrentTexture()
 {
-    _currentTexture.atUnBind();
+    _currentTexture.unBind();
     _currentTexture = ATextureManager::zeroTexture;
 }
 

@@ -28,42 +28,42 @@ AImage::~AImage()
 
 //=============================================================================
 
-const TData* AImage::aiData() const
+const TData* AImage::data() const
 {
     return _pData;
 }
 
 //=============================================================================
 
-const TWidth AImage::aiWidth() const
+const TWidth AImage::width() const
 {
     return _width;
 }
 
 //=============================================================================
 
-const THeight AImage::aiHeight() const
+const THeight AImage::height() const
 {
     return _height;
 }
 
 //=============================================================================
 
-const TBytepp AImage::aiBytePerPixel() const
+const TBytepp AImage::bytePerPixel() const
 {
     return _bytePerPixel;
 }
 
 //=============================================================================
 
-const TBitpp AImage::aiBitPerPixel() const
+const TBitpp AImage::bitPerPixel() const
 {
     return _bitPerPixel;
 }
 
 //=============================================================================
 
-const std::string& AImage::aiName() const
+const std::string& AImage::name() const
 {
     return _name;
 }

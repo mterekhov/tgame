@@ -26,7 +26,7 @@ class ATextureManager
 private:
     TTexturesList _textureList;
 
-    TBool atClearAllTextures(TTexturesList& textureList);
+    TBool clearAllTextures(TTexturesList& textureList);
 
 public:
     static const ATexture zeroTexture;
@@ -34,7 +34,7 @@ public:
     ATextureManager();
     ~ATextureManager();
     
-    ATexture& atCreateTextureFromTGA(const std::string& filePath);
+    ATexture& createTextureFromTGA(const std::string& filePath);
 };
 
 //==============================================================================
