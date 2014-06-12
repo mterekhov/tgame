@@ -134,7 +134,7 @@ void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
     }
 
     AOGLWrapper::oglVertexPointer(3, GL_FLOAT, 0, line);
-    glDrawArrays(GL_TRIANGLES, 0, dataLiner.pointsCount());
+    AOGLWrapper::oglDrawArrays(GL_TRIANGLES, 0, dataLiner.pointsCount());
     
     delete [] line;
 }
@@ -248,7 +248,7 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
     line[5] = p2.z;
 
     AOGLWrapper::oglVertexPointer(3, GL_FLOAT, 0, line);
-    glDrawArrays(GL_LINES, 0, 2);
+    AOGLWrapper::oglDrawArrays(GL_LINES, 0, 2);
 }
 
 //==============================================================================
@@ -373,10 +373,10 @@ void ADrawBasics::installCamera(const AVector& eyePosition3D, const AVector& cen
     M(3, 2) = 0.0f;
     M(3, 3) = 1.0f;
     #undef M
-    glMultMatrixf(m);
+    AOGLWrapper::oglMultMatrixf(m);
 
     /* Translate Eye to Origin */
-    glTranslatef(-eyePosition3D.x, -eyePosition3D.y, -eyePosition3D.z);
+    AOGLWrapper::oglTranslatef(-eyePosition3D.x, -eyePosition3D.y, -eyePosition3D.z);
 }
 
 //==============================================================================

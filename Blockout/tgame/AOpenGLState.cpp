@@ -1,6 +1,7 @@
 #include "AOpenGLState.h"
 #include "BlockoutDebug.h"
 #include "ATextureManager.h"
+#include "AOGLWrapper.h"
 
 //==============================================================================
 
@@ -40,11 +41,11 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _curren
     drawColorSetup(_drawColor);
     clearColorSetup(_clearColor);
 
-    glEnable(GL_DEPTH_TEST);
+    AOGLWrapper::oglEnable(GL_DEPTH_TEST);
 	glClearDepth(1.0f);
 	glDepthFunc(GL_LESS);
 
-//	glEnable(GL_CULL_FACE);
+//	AOGLWrapper::oglEnable(GL_CULL_FACE);
 	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
     glEnableClientState(GL_VERTEX_ARRAY);
 }
@@ -154,7 +155,7 @@ void AOpenGLState::textureEnable()
     }
     
     _textureEnabled = true;
-    glEnable(GL_TEXTURE_2D);
+    AOGLWrapper::oglEnable(GL_TEXTURE_2D);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 

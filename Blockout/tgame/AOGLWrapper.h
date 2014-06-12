@@ -15,13 +15,12 @@ namespace spcTGame
 class AOGLWrapper
 {
 public:
-    static void oglTexCoordPointer (TInt size, TEnum type, TSize stride, const TVoid* pointer);
-    static void oglVertexPointer (TInt size, TEnum type, TSize stride, const TVoid* pointer);
-//extern void glTexCoordPointer (GLint size, GLenum type, GLsizei stride, const GLvoid *pointer);
-//extern void glVertexPointer   (GLint size, GLenum type, GLsizei stride, const GLvoid *pointer);
-//extern void glDrawArrays (GLenum mode, GLint first, GLsizei count);
-//extern void glMultMatrixf (const GLfloat *m);
-//extern void glTranslatef (GLfloat x, GLfloat y, GLfloat z);
+    static void oglTexCoordPointer(TInt size, TEnum type, TSize stride, const TVoid* pointer);
+    static void oglVertexPointer(TInt size, TEnum type, TSize stride, const TVoid* pointer);
+    static void oglDrawArrays(TEnum mode, TInt first, TSize count);
+    static void oglMultMatrixf(const TFloat* m);
+    static void oglTranslatef(TFloat x, TFloat y, TFloat z);
+    static void oglEnable(TEnum cap);
 //extern void glEnable (GLenum cap);
 //extern void glEnableClientState (GLenum array);
 //extern void glColor4f (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
@@ -36,14 +35,19 @@ public:
 //extern void glDisableClientState (GLenum array);
 //extern void glClear (GLbitfield mask);
 //extern void glLineWidth (GLfloat width);
-//extern GLenum glGetError (void);
 //extern void glGenTextures (GLsizei n, GLuint *textures);
 //extern void glDeleteTextures (GLsizei n, const GLuint *textures);
 //extern void glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels);
 //extern void glTexParameterf (GLenum target, GLenum pname, GLfloat param);
 //extern void glBindTexture (GLenum target, GLuint texture);
+//extern GLenum glGetError (void);
 };
 
+//extern void glTexCoordPointer (GLint size, GLenum type, GLsizei stride, const GLvoid *pointer);
+//extern void glVertexPointer   (GLint size, GLenum type, GLsizei stride, const GLvoid *pointer);
+//extern void glDrawArrays (GLenum mode, GLint first, GLsizei count);
+//extern void glMultMatrixf (const GLfloat *m);
+//extern void glTranslatef (GLfloat x, GLfloat y, GLfloat z);
 //==============================================================================
 
 }   //  namespace spcTGame
