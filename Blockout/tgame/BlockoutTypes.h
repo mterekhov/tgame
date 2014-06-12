@@ -24,6 +24,7 @@ typedef TUint TWidth;
 typedef TUint THeight;
 typedef TUint TBytepp;
 typedef TUint TBitpp;
+typedef GLint TInt;
 
 typedef GLubyte TData;
 typedef GLushort TUShort;

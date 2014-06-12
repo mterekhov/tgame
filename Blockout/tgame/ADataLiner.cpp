@@ -65,16 +65,16 @@ EIntegrity ADataLiner::checkIntegrity() const
 {
     EIntegrity result = EINTEGRITY_OK;
     
-    TUint coordsSize = _coordsList.size();
+    TUint coordsSize = static_cast<TUint>(_coordsList.size());
     if (!coordsSize)
         return EINTEGRITY_OK;
     
-    TUint uvSize = _uvList.size();
+    TUint uvSize = static_cast<TUint>(_uvList.size());
     if (uvSize)
         if (coordsSize != uvSize)
             return EINTEGRITY_INCONSISTENT;
     
-    TUint normalsSize = _normalsList.size();
+    TUint normalsSize = static_cast<TUint>(_normalsList.size());
     if (normalsSize)
         if (coordsSize != normalsSize)
             return EINTEGRITY_INCONSISTENT;
@@ -97,12 +97,12 @@ TUint ADataLiner::pointsCount() const
 
 TUint ADataLiner::numberOfFloatValues() const
 {
-    TUint coordsSize = _coordsList.size();
+    TUint coordsSize = static_cast<TUint>(_coordsList.size());
     if (!coordsSize)
         return 0;
     
-    TUint uvSize = _uvList.size();
-    TUint normalsSize = _normalsList.size();
+    TUint uvSize = static_cast<TUint>(_uvList.size());
+    TUint normalsSize = static_cast<TUint>(_normalsList.size());
     TUint sizer = 3 * coordsSize + 2 * uvSize + 3 * normalsSize;
     
     return sizer;

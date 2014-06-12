@@ -24,17 +24,17 @@ TBool ALogic::collisions(const AFormation* forCompare, const APoint& pos)
 //    if (!_data->doesInbounds(forCompare))
 //        return false;
     
-//    for (int l = 0; l < forCompare->levelsCount(); l++)
+//    for (TInt l = 0; l < forCompare->levelsCount(); l++)
 //    {
-//        for (int i = 0; i < forCompare->height(); i++)
+//        for (TInt i = 0; i < forCompare->height(); i++)
 //        {
-//            for (int j = 0; j < forCompare->width(); j++)
+//            for (TInt j = 0; j < forCompare->width(); j++)
 //            {
 //                TBool first = forCompare->item(i, j, l);
 //                
-//                unsigned int x = ;
-//                unsigned int y = ;
-//                unsigned int z = ;
+//                TUint x = ;
+//                TUint y = ;
+//                TUint z = ;
 //                TBool second = _data->item();
 //                
 //                if (first == second)

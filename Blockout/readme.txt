@@ -8,7 +8,6 @@
 ================================================================================
 CURRENT TASKS
 ================================================================================
-- remove prefixes from methods
 - wrap all types of OGL into custom types
 - wrap all OGL calls into custom wrapper
 
