@@ -237,7 +237,7 @@ std::string AOpenGLState::lastError()
 {
     std::string error = "unknown error";
     
-    TEnum errorCode = glGetError();
+    TEnum errorCode = AOGLWrapper::oglGetError();
     switch (errorCode) {
         case GL_NO_ERROR:
             error = "ok";

@@ -48,7 +48,7 @@ void ATexture::destroy()
 {
     if (_id)
     {
-        glDeleteTextures(1, &_id);
+        AOGLWrapper::oglDeleteTextures(1, &_id);
         _id = 0;
     }
 }
@@ -86,12 +86,12 @@ TBool ATexture::init(const AImage& image)
     {
         TData* data = new TData[_width * _height * image.bytePerPixel()];
         correctData(image, data);
-        glTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
+        AOGLWrapper::oglTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
     }
     else
     {
         const TData* data = image.data();
-        glTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
+        AOGLWrapper::oglTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
     }
         
     return true;
@@ -103,20 +103,20 @@ void ATexture::defineFilters()
 {
     if (!_repeat)
     {
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     }
     else
     {
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     }
 
 //  This parameteer is deprecated but should be used in version lower then OpenGL 3.0
 //  in all upper versions should be used glGenerateMipmap​().
-//    glTexParameterf(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, _mipMaping);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _minFilter);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, _magFilter);
+//    AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, _mipMaping);
+    AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _minFilter);
+    AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, _magFilter);
 }
     
 //=============================================================================
@@ -149,14 +149,14 @@ void ATexture::locateSize(const TWidth width, const THeight height)
 
 void ATexture::bind() const
 {
-    glBindTexture(GL_TEXTURE_2D, _id);
+    AOGLWrapper::oglBindTexture(GL_TEXTURE_2D, _id);
 }
 
 //=============================================================================
 
 void ATexture::unBind() const
 {
-    glBindTexture(GL_TEXTURE_2D, 0);
+    AOGLWrapper::oglBindTexture(GL_TEXTURE_2D, 0);
 }
 
 //=============================================================================

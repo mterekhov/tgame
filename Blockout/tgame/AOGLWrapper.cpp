@@ -154,4 +154,32 @@ void AOGLWrapper::oglDeleteTextures(TSize n, const TUint* textures)
 
 //==============================================================================
 
+void AOGLWrapper::oglTexImage2D(TEnum target, TInt level, TInt internalformat, TSize width, TSize height, TInt border, TEnum format, TEnum type, const TVoid* pixels)
+{
+    glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglTexParameterf(TEnum target, TEnum pname, TFloat param)
+{
+    glTexParameterf(target, pname, param);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglBindTexture(TEnum target, TUint texture)
+{
+    glBindTexture(target, texture);
+}
+
+//==============================================================================
+
+TEnum AOGLWrapper::oglGetError()
+{
+    return glGetError();
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame
