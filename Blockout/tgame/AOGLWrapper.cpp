@@ -98,4 +98,32 @@ void AOGLWrapper::oglFrustum(TDouble left, TDouble right, TDouble bottom, TDoubl
 
 //==============================================================================
 
+void AOGLWrapper::oglPushMatrix()
+{
+    glPushMatrix();
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglPopMatrix()
+{
+    glPopMatrix();
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglDisable(TEnum cap)
+{
+    glDisable(cap);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglDisableClientState(TEnum array)
+{
+    glDisableClientState(array);
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

@@ -134,14 +134,14 @@ void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHei
 
 void AOpenGLState::pushMarices()
 {
-    glPushMatrix();
+    AOGLWrapper::oglPushMatrix();
 }
 
 //==============================================================================
 
 void AOpenGLState::popMarices()
 {
-    glPopMatrix();
+    AOGLWrapper::oglPopMatrix();
 }
 
 //==============================================================================
@@ -170,8 +170,8 @@ void AOpenGLState::textureDisable()
     }
     
     _textureEnabled = false;
-    glDisable(GL_TEXTURE_2D);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    AOGLWrapper::oglDisable(GL_TEXTURE_2D);
+    AOGLWrapper::oglDisableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 
 //==============================================================================

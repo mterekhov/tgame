@@ -28,9 +28,10 @@ public:
     static void oglMatrixMode(TEnum mode);
     static void oglLoadIdentity();
     static void oglFrustum(TDouble left, TDouble right, TDouble bottom, TDouble top, TDouble zNear, TDouble zFar);
-//extern void glPushMatrix (void);
-//extern void glPopMatrix (void);
-//extern void glDisable (GLenum cap);
+    static void oglPushMatrix();
+    static void oglPopMatrix();
+    static void oglDisable(TEnum cap);
+    static void oglDisableClientState(TEnum array);
 //extern void glDisableClientState (GLenum array);
 //extern void glClear (GLbitfield mask);
 //extern void glLineWidth (GLfloat width);
@@ -55,6 +56,9 @@ public:
 //extern void glMatrixMode (GLenum mode);
 //extern void glLoadIdentity (void);
 //extern void glFrustum (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
+//extern void glPushMatrix (void);
+//extern void glPopMatrix (void);
+//extern void glDisable (GLenum cap);
 //==============================================================================
 
 }   //  namespace spcTGame
