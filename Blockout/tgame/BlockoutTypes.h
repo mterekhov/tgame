@@ -20,9 +20,8 @@ typedef TUint THeight;
 typedef TUint TBytepp;
 typedef TUint TBitpp;
 
-typedef unsigned char TData;
-typedef unsigned short int TUShort;
-
+typedef GLubyte TData;
+typedef GLushort TUShort;
 typedef GLfloat TFloat;
 typedef bool TBool;
 
