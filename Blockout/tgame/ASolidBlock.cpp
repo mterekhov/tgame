@@ -4,6 +4,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 ASolidBlock::ASolidBlock(const AFormation& data) : AColoredBlock(data)
 {
 }
@@ -42,3 +47,7 @@ void ASolidBlock::renderObject()
     }
     oglInstance->drawColor(color);
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

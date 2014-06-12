@@ -4,6 +4,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 #pragma mark - init -
 
 //==============================================================================
@@ -176,3 +181,7 @@ void ACrafter::renderList(const TRObjectsList& renderList)
     for (TRObjectsListConstIter iter = iterBegin; iter != iterEnd; iter++)
         (*iter)->renderObject();
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

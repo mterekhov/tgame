@@ -4,6 +4,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 const ATexture ATextureManager::zeroTexture;
 
 //==============================================================================
@@ -34,3 +39,7 @@ ATexture& ATextureManager::atCreateTextureFromTGA(const std::string& filePath)
 
     return _textureList[newTexture.atName()];
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

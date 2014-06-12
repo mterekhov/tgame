@@ -4,6 +4,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 #pragma mark - beta -
 
 //==============================================================================
@@ -372,3 +377,7 @@ void ADrawBasics::installCamera(const AVector& eyePosition3D, const AVector& cen
     /* Translate Eye to Origin */
     glTranslatef(-eyePosition3D.x, -eyePosition3D.y, -eyePosition3D.z);
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

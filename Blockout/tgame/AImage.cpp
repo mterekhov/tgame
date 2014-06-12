@@ -2,6 +2,11 @@
 
 //=============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 AImage::AImage(const std::string& imageName, TData* data, const TWidth width,
             const THeight height, const TBitpp bitpp) : _name(imageName),
                                             _width(width), _height(height),
@@ -65,3 +70,4 @@ const std::string& AImage::aiName() const
 
 //=============================================================================
 
+}   //  namespace spcTGame

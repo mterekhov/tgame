@@ -4,6 +4,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 AColoredBlock::AColoredBlock(const AFormation& data) : ABlock(data), _color(AColor::redColor())
 {
 }
@@ -56,3 +61,7 @@ void AColoredBlock::color(const AColor& color)
 {
     _color = color;
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

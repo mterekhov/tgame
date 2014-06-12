@@ -13,6 +13,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+
 typedef std::list<ARObject*> TRObjectsList;
 typedef TRObjectsList::iterator TRObjectsListIter;
 typedef TRObjectsList::const_iterator TRObjectsListConstIter;
@@ -49,4 +54,8 @@ public:
 
 //==============================================================================
 
+}   //  namespace spcTGame
+
+//==============================================================================
+    
 #endif

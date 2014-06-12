@@ -10,6 +10,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 typedef std::map<std::string, ATexture> TTexturesList;
 typedef TTexturesList::iterator TTexturesListIter;
 typedef TTexturesList::const_iterator TTexturesListConstIter;
@@ -34,4 +39,8 @@ public:
 
 //==============================================================================
 
+}   //  namespace spcTGame
+    
+//==============================================================================
+    
 #endif

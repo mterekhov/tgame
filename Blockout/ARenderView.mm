@@ -89,16 +89,16 @@
     [self updateScreenSize:self.bounds.size.width screenHeight:self.bounds.size.height];
 
     //  call shared to create instance and init some OpenGL pars;
-    AOpenGLState::create();
+    spcTGame::AOpenGLState::create();
     
-    _blockout = new ABlockout();
+    _blockout = new spcTGame::ABlockout();
 }
 
 //==============================================================================
 
-- (void) updateScreenSize:(TFloat) screenWidth screenHeight: (TFloat) screenHeight
+- (void) updateScreenSize:(spcTGame::TDouble) screenWidth screenHeight: (spcTGame::TDouble) screenHeight
 {
-    AOpenGLState* oglState = AOpenGLState::shared();
+    spcTGame::AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
     oglState->frustumSetup(screenWidth, screenHeight);
 }
 
@@ -106,7 +106,7 @@
 
 - (void) renderGame
 {
-    AOpenGLState* oglState = AOpenGLState::shared();
+    spcTGame::AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
     oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     _blockout->processGameCycle();

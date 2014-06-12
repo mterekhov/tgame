@@ -14,6 +14,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+
+//==============================================================================
+
 typedef GLuint TUint;
 typedef TUint TWidth;
 typedef TUint THeight;
@@ -23,8 +28,13 @@ typedef TUint TBitpp;
 typedef GLubyte TData;
 typedef GLushort TUShort;
 typedef GLfloat TFloat;
+typedef GLdouble TDouble;
 typedef bool TBool;
 
+//==============================================================================
+    
+}   //  namespace spcTGame
+    
 //==============================================================================
 
 #endif

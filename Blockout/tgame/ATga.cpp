@@ -2,6 +2,11 @@
 
 //=============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _image(0)
 {
     TUint dotPos = filePath.rfind(".");
@@ -226,3 +231,7 @@ TBool ATga::atSave(const std::string& filePath, const AImage& image)
 
 	return true;
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

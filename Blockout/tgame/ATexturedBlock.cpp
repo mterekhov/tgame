@@ -4,6 +4,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 ATexturedBlock::ATexturedBlock(const AFormation& data, const ATexture& tex) : ABlock(data), _texture(tex)
 {
     _objectType = OBJECTTYPE_TEXTURED;
@@ -38,3 +43,7 @@ void ATexturedBlock::renderObject()
         }
     }
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

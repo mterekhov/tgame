@@ -7,7 +7,7 @@
 @interface ARenderView : NSOpenGLView
 {
 @private
-    ABlockout* _blockout;
+    spcTGame::ABlockout* _blockout;
     
 	NSTimer* _animationTimer;
 	NSTimeInterval _animationInterval;

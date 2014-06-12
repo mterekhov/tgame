@@ -6,6 +6,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 AFormation::AFormation() : _width(0), _height(0), _levelsCount(0), _data(0)
 {
 }
@@ -121,3 +126,7 @@ TBool AFormation::doesInbounds(const AFormation* data)
     
     return false;
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame

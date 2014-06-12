@@ -2,6 +2,11 @@
 
 //==============================================================================
 
+namespace spcTGame
+{
+    
+//==============================================================================
+    
 AFormation AFormationFactory::createFormation1()
 {
     AFormation formation(3, 2, 1);
@@ -26,3 +31,7 @@ AFormation AFormationFactory::nullFormation()
 {
     return AFormation();
 }
+
+//==============================================================================
+    
+}   //  namespace spcTGame
