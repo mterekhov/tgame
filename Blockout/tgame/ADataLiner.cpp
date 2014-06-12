@@ -60,16 +60,16 @@ EIntegrity ADataLiner::checkIntegrity() const
 {
     EIntegrity result = EINTEGRITY_OK;
     
-    TUlong coordsSize = _coordsList.size();
+    TUint coordsSize = _coordsList.size();
     if (!coordsSize)
         return EINTEGRITY_OK;
     
-    TUlong uvSize = _uvList.size();
+    TUint uvSize = _uvList.size();
     if (uvSize)
         if (coordsSize != uvSize)
             return EINTEGRITY_INCONSISTENT;
     
-    TUlong normalsSize = _normalsList.size();
+    TUint normalsSize = _normalsList.size();
     if (normalsSize)
         if (coordsSize != normalsSize)
             return EINTEGRITY_INCONSISTENT;
@@ -90,15 +90,15 @@ TUint ADataLiner::pointsCount() const
 
 //==============================================================================
 
-TUlong ADataLiner::numberOfFloatValues() const
+TUint ADataLiner::numberOfFloatValues() const
 {
-    TUlong coordsSize = _coordsList.size();
+    TUint coordsSize = _coordsList.size();
     if (!coordsSize)
         return 0;
     
-    TUlong uvSize = _uvList.size();
-    TUlong normalsSize = _normalsList.size();
-    TUlong sizer = 3 * coordsSize + 2 * uvSize + 3 * normalsSize;
+    TUint uvSize = _uvList.size();
+    TUint normalsSize = _normalsList.size();
+    TUint sizer = 3 * coordsSize + 2 * uvSize + 3 * normalsSize;
     
     return sizer;
 }
@@ -135,8 +135,8 @@ TBool ADataLiner::generateArray(TFloat* resultArray) const
     if (checkIntegrity() != EINTEGRITY_OK)
         return false;
     
-    TUlong stride = arrayStride();
-    TUlong sizer = numberOfFloatValues();
+    TUint stride = arrayStride();
+    TUint sizer = numberOfFloatValues();
     if (!sizer)
         return false;
     

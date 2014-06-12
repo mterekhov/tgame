@@ -3,7 +3,18 @@
 - draw solid cube
 - draw textured cube
 - draw partically filled well
+
+
+================================================================================
+CURRENT TASKS
+================================================================================
+- wrap all types of OGL into custom types
+- wrap all OGL calls into custom wrapper
 - wrap tgame code in namespace
+
+================================================================================
+ROAD MAP
+================================================================================
 
 General purposes
 - draw filled well
@@ -24,4 +35,4 @@ ui draw
 - start and end game statements
 - text render(texture map for numbers only)
 - table of records for current well width/height/depth/block type
-- menu champions/new/quit(every menu item is a texture)
+- menu score/new/quit(every menu item is a texture)

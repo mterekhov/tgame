@@ -34,7 +34,7 @@ public:
     void pushUVPointList(const TPoints2DList& pointsList);
     void pushNormalPointList(const TPointsList& pointsList);
     
-    TUlong numberOfFloatValues() const;
+    TUint numberOfFloatValues() const;
     TUint arrayStride() const;
     TUint pointsCount() const;
 
