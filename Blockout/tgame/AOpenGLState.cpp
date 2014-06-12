@@ -47,7 +47,7 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _curren
 
 //	AOGLWrapper::oglEnable(GL_CULL_FACE);
 	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
-    glEnableClientState(GL_VERTEX_ARRAY);
+    AOGLWrapper::oglEnableClientState(GL_VERTEX_ARRAY);
 }
 
 //==============================================================================
@@ -98,21 +98,21 @@ void AOpenGLState::drawColor(const AColor& color)
 
 void AOpenGLState::drawColorSetup(const AColor& color)
 {
-    glColor4f(color.red, color.green, color.blue, color.alpha);
+    AOGLWrapper::oglColor4f(color.red, color.green, color.blue, color.alpha);
 }
 
 //==============================================================================
 
 void AOpenGLState::clearColorSetup(const AColor& color)
 {
-    glClearColor(color.red, color.green, color.blue, color.alpha);
+    AOGLWrapper::oglClearColor(color.red, color.green, color.blue, color.alpha);
 }
 
 //==============================================================================
 
 void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHeight)
 {
-    glViewport(0.0f, 0.0f, screenWidth, screenHeight);
+    AOGLWrapper::oglViewport(0.0f, 0.0f, screenWidth, screenHeight);
     
     TFloat aspect = screenWidth / screenHeight;
     TFloat near = 0.1f;
@@ -122,12 +122,12 @@ void AOpenGLState::frustumSetup(const TFloat screenWidth, const TFloat screenHei
     TFloat width = size;
     TFloat height = size / aspect;
     
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glFrustum(-width, width, -height, height, near, far);
+    AOGLWrapper::oglMatrixMode(GL_PROJECTION);
+    AOGLWrapper::oglLoadIdentity();
+    AOGLWrapper::oglFrustum(-width, width, -height, height, near, far);
     
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
+    AOGLWrapper::oglMatrixMode(GL_MODELVIEW);
+    AOGLWrapper::oglLoadIdentity();
 }
 
 //==============================================================================
@@ -156,7 +156,7 @@ void AOpenGLState::textureEnable()
     
     _textureEnabled = true;
     AOGLWrapper::oglEnable(GL_TEXTURE_2D);
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    AOGLWrapper::oglEnableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 
 //==============================================================================
