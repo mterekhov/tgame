@@ -28,7 +28,7 @@ ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_
                        _pixelSize(GL_UNSIGNED_BYTE), _width(0), _height(0), _repeat(true),
                        _mipMaping(false), _name("undefined"), _imageWidth(0), _imageHeight(0)
 {
-    glGenTextures(1, &public_id);
+    glGenTextures(1, &_id);
     atInit(image);
 }
 
@@ -36,7 +36,6 @@ ATexture::ATexture(const AImage& image) : _id(0), _type(GL_RGBA), _minFilter(GL_
 
 ATexture::~ATexture()
 {
-    atDestroy();
 }
 
 //=============================================================================
@@ -146,7 +145,7 @@ void ATexture::atLocateSize(const TWidth width, const THeight height)
 
 void ATexture::atBind() const
 {
-    glBindTexture(GL_TEXTURE_2D, public_id);
+    glBindTexture(GL_TEXTURE_2D, _id);
 }
 
 //=============================================================================

@@ -28,11 +28,11 @@ ABlockout::~ABlockout()
 void ABlockout::init()
 {
     ATexture tex = _crafter.textureManager.atCreateTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/celtic.tga");
-//    _crafter.createTexturedBlock(AFormationFactory::createFormation1(), tex);
+    _crafter.createTexturedBlock(AFormationFactory::createFormation1(), tex);
 //    _crafter.createSolidBlock(AFormationFactory::createFormation1());
 
 //    _crafter.createColoredBlock(AFormationFactory::createFormation1());
-//    _crafter.createWell(_wellWidth, _wellHeight, _wellDepth);
+    _crafter.createWell(_wellWidth, _wellHeight, _wellDepth);
 }
 
 //==============================================================================
