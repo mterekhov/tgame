@@ -1,5 +1,5 @@
-#ifndef ENGINE_APOINT_H
-#define ENGINE_APOINT_H
+#ifndef SPCTGAME_APOINT_H
+#define SPCTGAME_APOINT_H
 
 //==============================================================================
 

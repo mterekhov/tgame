@@ -1,5 +1,5 @@
-#ifndef ENGINE_ADRAWBASICS_H
-#define ENGINE_ADRAWBASICS_H
+#ifndef SPCTGAME_ADRAWBASICS_H
+#define SPCTGAME_ADRAWBASICS_H
 
 //==============================================================================
 

@@ -1,6 +1,7 @@
 #include "ADrawBasics.h"
 #include "AOpenGLState.h"
 #include "BlockoutDebug.h"
+#include "AOGLWrapper.h"
 
 //==============================================================================
 
@@ -42,7 +43,7 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATe
     AOpenGLState* instance = AOpenGLState::shared();
     instance->currentTexture(texture);
 
-    glTexCoordPointer(2, GL_FLOAT, 5, &line[3]);
+    AOGLWrapper::oglTexCoordPointer(2, GL_FLOAT, 5, &line[3]);
     ADrawBasics::drawTriangles(dataLiner);
 //    ADrawBasics::drawTriangles(line, dataLiner.pointsCount());
     
@@ -132,7 +133,7 @@ void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
         return;
     }
 
-    glVertexPointer(3, GL_FLOAT, 0, line);
+    AOGLWrapper::oglVertexPointer(3, GL_FLOAT, 0, line);
     glDrawArrays(GL_TRIANGLES, 0, dataLiner.pointsCount());
     
     delete [] line;
@@ -246,7 +247,7 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
     line[4] = p2.y;
     line[5] = p2.z;
 
-    glVertexPointer(3, GL_FLOAT, 0, line);
+    AOGLWrapper::oglVertexPointer(3, GL_FLOAT, 0, line);
     glDrawArrays(GL_LINES, 0, 2);
 }
 

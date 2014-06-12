@@ -1,5 +1,5 @@
-#ifndef ENGINE_ADATALINER_H
-#define ENGINE_ADATALINER_H
+#ifndef SPCTGAME_ADATALINER_H
+#define SPCTGAME_ADATALINER_H
 
 #include "APoint.h"
 #include "APoint2D.h"

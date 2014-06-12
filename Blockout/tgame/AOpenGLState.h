@@ -1,5 +1,5 @@
-#ifndef ENGINE_AOPENGLSTATE_H
-#define ENGINE_AOPENGLSTATE_H
+#ifndef SPCTGAME_AOPENGLSTATE_H
+#define SPCTGAME_AOPENGLSTATE_H
 
 //==============================================================================
 

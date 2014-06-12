@@ -1,5 +1,5 @@
-#ifndef ENGINE_ATEXTUREDBLOCK_H
-#define ENGINE_ATEXTUREDBLOCK_H
+#ifndef SPCTGAME_ATEXTUREDBLOCK_H
+#define SPCTGAME_ATEXTUREDBLOCK_H
 
 //==============================================================================
 
@@ -32,4 +32,4 @@ public:
     
 //==============================================================================
     
-#endif // ENGINE_ATEXTUREDBLOCK_H
+#endif // SPCTGAME_ATEXTUREDBLOCK_H

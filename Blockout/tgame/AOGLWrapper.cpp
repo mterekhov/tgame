@@ -1,9 +1,4 @@
-#ifndef SPCTGAME_AFORMATIONFACTORY_H
-#define SPCTGAME_AFORMATIONFACTORY_H
-
-//==============================================================================
-
-#include "AFormation.h"
+#include "AOGLWrapper.h"
 
 //==============================================================================
 
@@ -11,18 +6,19 @@ namespace spcTGame
 {
     
 //==============================================================================
-    
-class AFormationFactory
+
+void AOGLWrapper::oglTexCoordPointer(TInt size, TEnum type, TSize stride, const TVoid* pointer)
 {
-public:
-    static AFormation createFormation1();
-    static AFormation nullFormation();
-};
-
-//==============================================================================
-
-}   //  namespace spcTGame
+    glTexCoordPointer(size, type, stride, pointer);
+}
 
 //==============================================================================
     
-#endif
+void AOGLWrapper::oglVertexPointer(TInt size, TEnum type, TSize stride, const TVoid* pointer)
+{
+    glVertexPointer(size, type, stride, pointer);
+}
+
+//==============================================================================
+    
+}   //  namespace spcTGame

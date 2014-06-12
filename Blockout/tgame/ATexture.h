@@ -1,5 +1,5 @@
-#ifndef ENGINE_ATEXTURE_H
-#define ENGINE_ATEXTURE_H
+#ifndef SPCTGAME_ATEXTURE_H
+#define SPCTGAME_ATEXTURE_H
 
 //=============================================================================
 
@@ -154,4 +154,4 @@ private:
 
 //==============================================================================
     
-#endif  //  ENGINE_ATEXTURE_H
+#endif  //  SPCTGAME_ATEXTURE_H

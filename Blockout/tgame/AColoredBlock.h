@@ -1,5 +1,5 @@
-#ifndef ENGINE_ACOLOREDBLOCK_H
-#define ENGINE_ACOLOREDBLOCK_H
+#ifndef SPCTGAME_ACOLOREDBLOCK_H
+#define SPCTGAME_ACOLOREDBLOCK_H
 
 //==============================================================================
 
@@ -36,4 +36,4 @@ public:
     
 //==============================================================================
     
-#endif  //  ENGINE_ACOLOREDBLOCK_H
+#endif  //  SPCTGAME_ACOLOREDBLOCK_H

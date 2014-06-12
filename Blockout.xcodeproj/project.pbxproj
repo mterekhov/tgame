@@ -57,6 +57,8 @@
 		4C84B4441824EEE800EFD26A /* BlockoutTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C84B4171824EEE800EFD26A /* BlockoutTypes.h */; };
 		4C84B4471824F06000EFD26A /* libtgame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C84B3851824EE8500EFD26A /* libtgame.a */; };
 		4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4CB3AF4216EB3C0B002DE363 /* celtic.tga */; };
+		4CBCB19A1949D81400576081 /* AOGLWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCB1981949D81400576081 /* AOGLWrapper.cpp */; };
+		4CBCB19B1949D81400576081 /* AOGLWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBCB1991949D81400576081 /* AOGLWrapper.h */; };
 		4CC8218516D7A52A0090CE07 /* celtic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218216D7A52A0090CE07 /* celtic.png */; };
 		4CC8218616D7A52A0090CE07 /* marble.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218316D7A52A0090CE07 /* marble.png */; };
 		4CC8218716D7A52A0090CE07 /* recycled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218416D7A52A0090CE07 /* recycled.png */; };
@@ -132,6 +134,8 @@
 		4C84B4161824EEE800EFD26A /* BlockoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockoutDebug.h; path = Blockout/tgame/BlockoutDebug.h; sourceTree = "<group>"; };
 		4C84B4171824EEE800EFD26A /* BlockoutTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockoutTypes.h; path = Blockout/tgame/BlockoutTypes.h; sourceTree = "<group>"; };
 		4CB3AF4216EB3C0B002DE363 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = Blockout/resources/celtic.tga; sourceTree = "<group>"; };
+		4CBCB1981949D81400576081 /* AOGLWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AOGLWrapper.cpp; path = Blockout/tgame/AOGLWrapper.cpp; sourceTree = "<group>"; };
+		4CBCB1991949D81400576081 /* AOGLWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOGLWrapper.h; path = Blockout/tgame/AOGLWrapper.h; sourceTree = "<group>"; };
 		4CC8218216D7A52A0090CE07 /* celtic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtic.png; path = Blockout/resources/celtic.png; sourceTree = "<group>"; };
 		4CC8218316D7A52A0090CE07 /* marble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marble.png; path = Blockout/resources/marble.png; sourceTree = "<group>"; };
 		4CC8218416D7A52A0090CE07 /* recycled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recycled.png; path = Blockout/resources/recycled.png; sourceTree = "<group>"; };
@@ -249,6 +253,17 @@
 			name = Blocks;
 			sourceTree = "<group>";
 		};
+		4CBCB19C1949D9D200576081 /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				4C84B3FD1824EEE800EFD26A /* AOpenGLState.cpp */,
+				4C84B3FE1824EEE800EFD26A /* AOpenGLState.h */,
+				4CBCB1981949D81400576081 /* AOGLWrapper.cpp */,
+				4CBCB1991949D81400576081 /* AOGLWrapper.h */,
+			);
+			name = OpenGL;
+			sourceTree = "<group>";
+		};
 		4CC8217B16D7A3100090CE07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,8 +359,6 @@
 				4CEA40E116CFB08400A678B5 /* Texture */,
 				4C84B3F71824EEE800EFD26A /* ADrawBasics.cpp */,
 				4C84B3F81824EEE800EFD26A /* ADrawBasics.h */,
-				4C84B3FD1824EEE800EFD26A /* AOpenGLState.cpp */,
-				4C84B3FE1824EEE800EFD26A /* AOpenGLState.h */,
 			);
 			name = Paintings;
 			sourceTree = "<group>";
@@ -353,6 +366,7 @@
 		B7ECFF5D16AD5F1800946E91 /* TGame */ = {
 			isa = PBXGroup;
 			children = (
+				4CBCB19C1949D9D200576081 /* OpenGL */,
 				4C923D0916C45321008EDA5C /* Logic */,
 				B7ECFF5916AD4FBC00946E91 /* Paintings */,
 				4C8000F616BD43FD008B1E74 /* Render */,
@@ -379,6 +393,7 @@
 				4C84B4211824EEE800EFD26A /* ACrafter.h in Headers */,
 				4C84B4231824EEE800EFD26A /* ADataLiner.h in Headers */,
 				4C84B4251824EEE800EFD26A /* ADrawBasics.h in Headers */,
+				4CBCB19B1949D81400576081 /* AOGLWrapper.h in Headers */,
 				4C84B38E1824EEB300EFD26A /* AFormation.h in Headers */,
 				4C84B3901824EEB300EFD26A /* AFormationFactory.h in Headers */,
 				4C84B4271824EEE800EFD26A /* AImage.h in Headers */,
@@ -501,6 +516,7 @@
 				4C84B4261824EEE800EFD26A /* AImage.cpp in Sources */,
 				4C84B4281824EEE800EFD26A /* ALogic.cpp in Sources */,
 				4C84B42A1824EEE800EFD26A /* AOpenGLState.cpp in Sources */,
+				4CBCB19A1949D81400576081 /* AOGLWrapper.cpp in Sources */,
 				4C84B42C1824EEE800EFD26A /* APoint.cpp in Sources */,
 				4C84B42E1824EEE800EFD26A /* APoint2D.cpp in Sources */,
 				4C84B4321824EEE800EFD26A /* ARObject.cpp in Sources */,

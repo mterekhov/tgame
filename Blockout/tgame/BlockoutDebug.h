@@ -1,5 +1,5 @@
-#ifndef ENGINE_ABLOCKOUTDEBUG_H
-#define ENGINE_ABLOCKOUTDEBUG_H
+#ifndef SPCTGAME_ABLOCKOUTDEBUG_H
+#define SPCTGAME_ABLOCKOUTDEBUG_H
 
 //==============================================================================
 

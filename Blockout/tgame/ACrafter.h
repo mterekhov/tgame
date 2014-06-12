@@ -1,5 +1,5 @@
-#ifndef ENGINE_ACRAFTER_H
-#define ENGINE_ACRAFTER_H
+#ifndef SPCTGAME_ACRAFTER_H
+#define SPCTGAME_ACRAFTER_H
 
 //==============================================================================
 

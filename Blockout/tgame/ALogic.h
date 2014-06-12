@@ -1,5 +1,5 @@
-#ifndef ENGINE_ALOGIC_H
-#define ENGINE_ALOGIC_H
+#ifndef SPCTGAME_ALOGIC_H
+#define SPCTGAME_ALOGIC_H
 
 //==============================================================================
 

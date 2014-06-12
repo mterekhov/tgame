@@ -1,5 +1,5 @@
-#ifndef ENGINE_ASOLIDBLOCK_H
-#define ENGINE_ASOLIDBLOCK_H
+#ifndef SPCTGAME_ASOLIDBLOCK_H
+#define SPCTGAME_ASOLIDBLOCK_H
 
 //==============================================================================
 
@@ -28,4 +28,4 @@ public:
     
 //==============================================================================
     
-#endif // ENGINE_ASOLIDBLOCK_H
+#endif // SPCTGAME_ASOLIDBLOCK_H

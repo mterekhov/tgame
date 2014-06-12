@@ -1,5 +1,5 @@
-#ifndef ENGINE_ABLOCK_H
-#define ENGINE_ABLOCK_H
+#ifndef SPCTGAME_ABLOCK_H
+#define SPCTGAME_ABLOCK_H
 
 //==============================================================================
 

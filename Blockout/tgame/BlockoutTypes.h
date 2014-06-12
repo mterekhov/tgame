@@ -1,10 +1,11 @@
-#ifndef ENGINE_BLOCKOUTTYPES_H
-#define ENGINE_BLOCKOUTTYPES_H
+#ifndef SPCTGAME_BLOCKOUTTYPES_H
+#define SPCTGAME_BLOCKOUTTYPES_H
 
 //==============================================================================
 
 #include <OpenGL/gl.h>
 #include <math.h>
+#import <string>
 
 //==============================================================================
 
@@ -20,17 +21,21 @@ namespace spcTGame
 //==============================================================================
 
 typedef GLuint TUint;
-typedef TUint TWidth;
-typedef TUint THeight;
-typedef TUint TBytepp;
-typedef TUint TBitpp;
 typedef GLint TInt;
-
 typedef GLubyte TData;
 typedef GLushort TUShort;
 typedef GLfloat TFloat;
 typedef GLdouble TDouble;
+typedef GLenum TEnum;
+typedef GLsizei TSize;
+typedef GLvoid TVoid;
+
+typedef TUint TWidth;
+typedef TUint THeight;
+typedef TUint TBytepp;
+typedef TUint TBitpp;
 typedef bool TBool;
+typedef std::string TString;
 
 //==============================================================================
     
@@ -38,4 +43,4 @@ typedef bool TBool;
     
 //==============================================================================
 
-#endif
+#endif  //  SPCTGAME_BLOCKOUTTYPES_H

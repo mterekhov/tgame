@@ -1,5 +1,5 @@
-#ifndef ENGINE_AIMAGE_H
-#define ENGINE_AIMAGE_H
+#ifndef SPCTGAME_AIMAGE_H
+#define SPCTGAME_AIMAGE_H
 
 //=============================================================================
 
@@ -77,4 +77,4 @@ protected:
     
 //==============================================================================
     
-#endif  //  ENGINE_AIMAGE_H
+#endif  //  SPCTGAME_AIMAGE_H

@@ -1,5 +1,5 @@
-#ifndef ENGINE_ACOLOR_H
-#define ENGINE_ACOLOR_H
+#ifndef SPCTGAME_ACOLOR_H
+#define SPCTGAME_ACOLOR_H
 
 //==============================================================================
 

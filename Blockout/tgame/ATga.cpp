@@ -9,7 +9,7 @@ namespace spcTGame
     
 ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _image(0)
 {
-    TUint dotPos = filePath.rfind(".");
+    TUint dotPos = static_cast<TUint>(filePath.rfind("."));
     std::string ext = &filePath[++dotPos];
 
     if (ext != "tga")
@@ -43,7 +43,7 @@ ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _imag
 
     fclose(tga_file);
 
-    dotPos = filePath.rfind("/");
+    dotPos = static_cast<TUint>(filePath.rfind("/"));
     std::string fileName = &filePath[++dotPos];
     _image = new AImage(fileName, data, tgaHeader.imageHeader.width, tgaHeader.imageHeader.height, tgaHeader.imageHeader.bitpp);
     

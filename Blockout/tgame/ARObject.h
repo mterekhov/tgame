@@ -1,5 +1,5 @@
-#ifndef ENGINE_AROBJECT_H
-#define ENGINE_AROBJECT_H
+#ifndef SPCTGAME_AROBJECT_H
+#define SPCTGAME_AROBJECT_H
 
 //==============================================================================
 

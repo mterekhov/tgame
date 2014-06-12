@@ -1,5 +1,5 @@
-#ifndef ENGINE_ATEXTUREMANAGER_H
-#define ENGINE_ATEXTUREMANAGER_H
+#ifndef SPCTGAME_ATEXTUREMANAGER_H
+#define SPCTGAME_ATEXTUREMANAGER_H
 
 //==============================================================================
 

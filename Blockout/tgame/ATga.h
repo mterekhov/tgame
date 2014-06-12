@@ -1,5 +1,5 @@
-#ifndef ENGINE_ATGA_H
-#define ENGINE_ATGA_H
+#ifndef SPCTGAME_ATGA_H
+#define SPCTGAME_ATGA_H
 
 //=============================================================================
 
@@ -170,4 +170,4 @@ private:
     
 //==============================================================================
     
-#endif  //  ENGINE_ATGA_H
+#endif  //  SPCTGAME_ATGA_H

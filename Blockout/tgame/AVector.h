@@ -1,5 +1,5 @@
-#ifndef ENGINE_AVECTOR_H
-#define ENGINE_AVECTOR_H
+#ifndef SPCTGAME_AVECTOR_H
+#define SPCTGAME_AVECTOR_H
 
 //==============================================================================
 

@@ -1,5 +1,5 @@
-#ifndef ENGINE_AWELL_H
-#define ENGINE_AWELL_H
+#ifndef SPCTGAME_AWELL_H
+#define SPCTGAME_AWELL_H
 
 //==============================================================================
 
