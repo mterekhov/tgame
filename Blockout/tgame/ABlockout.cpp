@@ -27,10 +27,11 @@ ABlockout::~ABlockout()
 
 void ABlockout::init()
 {
-    ATexture tex = _crafter.textureManager.atCreateTextureFromTGA("/Users/michael/Development/source/blockout/Blockout/resources/celtic.tga");
-//    _crafter.acCreateTexturedBlock(AFormationFactory::createFormation1(), tex);
-    _crafter.createSolidBlock(AFormationFactory::createFormation1());
-    _crafter.createColoredBlock(AFormationFactory::createFormation1());
+    ATexture tex = _crafter.textureManager.atCreateTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/celtic.tga");
+    _crafter.createTexturedBlock(AFormationFactory::createFormation1(), tex);
+//    _crafter.createSolidBlock(AFormationFactory::createFormation1());
+
+//    _crafter.createColoredBlock(AFormationFactory::createFormation1());
     _crafter.createWell(_wellWidth, _wellHeight, _wellDepth);
 }
 
@@ -42,13 +43,14 @@ void ABlockout::render()
 
     oglState->pushMarices();
 
-//    ADrawBasics::installCamera(AVector(4, 5, 7),
-//                               AVector(0, 0, 0),
-//                               AVector(0.0f, 1.0f, 0.0f));
+    ADrawBasics::installCamera(AVector(4, 5, 7),
+                               AVector(0, 0, 0),
+                               AVector(0.0f, 1.0f, 0.0f));
     
-    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
-                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
-                               AVector(1.0f, 0.0f, 0.0f));
+//    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
+//                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
+//                               AVector(1.0f, 0.0f, 0.0f));
+
 //    ADrawBasics::drawOrigin(APoint(0,0,0), 1.0f);
 //    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 

@@ -53,8 +53,6 @@
     [self initContext:self.pixelFormat];
     [self initGL];
     
-    _blockout = new ABlockout();
-    
     _animationInterval = 1.0f / 60.0f;
     [self startAnimation];
     
@@ -92,6 +90,8 @@
 
     //  call shared to create instance and init some OpenGL pars;
     AOpenGLState::create();
+    
+    _blockout = new ABlockout();
 }
 
 //==============================================================================
@@ -122,7 +122,11 @@
 
 - (void)startAnimation
 {
-	_animationTimer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval target:self selector:@selector(renderGame) userInfo:nil repeats:YES];
+	_animationTimer = [NSTimer scheduledTimerWithTimeInterval: _animationInterval
+                                                       target: self
+                                                     selector: @selector(renderGame)
+                                                     userInfo: nil
+                                                      repeats: YES];
 	_animationStarted = [NSDate timeIntervalSinceReferenceDate];
 }
 

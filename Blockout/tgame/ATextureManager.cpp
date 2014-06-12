@@ -29,6 +29,8 @@ ATexture& ATextureManager::atCreateTextureFromTGA(const std::string& filePath)
     
     ATexture newTexture(*tgaFile.atImage());
     _textureList[newTexture.atName()] = newTexture;
-    
+
+    oglState->textureDisable();
+
     return _textureList[newTexture.atName()];
 }

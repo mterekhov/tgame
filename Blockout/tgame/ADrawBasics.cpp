@@ -18,6 +18,7 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATe
     TUint sizer = dataLiner.numberOfFloatValues();
     TFloat* line = new TFloat[sizer];
     memset(line, 0, sizer * sizeof(TFloat));
+    
     if (dataLiner.generateArray(line) == false)
     {
         loger("failed to generate array of vertexes");
@@ -35,8 +36,9 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATe
     
     AOpenGLState* instance = AOpenGLState::shared();
     instance->currentTexture(texture);
-    
+
     glTexCoordPointer(2, GL_FLOAT, 5, &line[3]);
+    ADrawBasics::drawTriangles(dataLiner);
 //    ADrawBasics::drawTriangles(line, dataLiner.pointsCount());
     
     instance->clearCurrentTexture();

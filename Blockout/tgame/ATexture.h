@@ -81,6 +81,8 @@ public:
     /// @param const std::string& - name for the texture
     void atName(const std::string& name);
 
+    /// Texture id
+    TUint public_id;
 private:
     /// Destroy all thge data in textyure object
     void atDestroy();
