@@ -137,12 +137,12 @@ enum EImageType
 class ATga
 {
 public:
-	ATga(const std::string& filePath, TBool headersOnly = false);
+	ATga(const TString& filePath, TBool headersOnly = false);
 
     /// Default destructor
 	virtual ~ATga();
 
-    TBool save(const std::string& fileName, const AImage& image);
+    TBool save(const TString& fileName, const AImage& image);
 
     const AImage* image() const;
 

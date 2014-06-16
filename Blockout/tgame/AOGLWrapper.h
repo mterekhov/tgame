@@ -40,33 +40,8 @@ public:
     static void oglTexParameterf(TEnum target, TEnum pname, TFloat param);
     static void oglBindTexture(TEnum target, TUint texture);
     static TEnum oglGetError();
-//extern GLenum glGetError (void);
 };
 
-//extern void glTexCoordPointer (GLint size, GLenum type, GLsizei stride, const GLvoid *pointer);
-//extern void glVertexPointer   (GLint size, GLenum type, GLsizei stride, const GLvoid *pointer);
-//extern void glDrawArrays (GLenum mode, GLint first, GLsizei count);
-//extern void glMultMatrixf (const GLfloat *m);
-//extern void glTranslatef (GLfloat x, GLfloat y, GLfloat z);
-//extern void glEnable (GLenum cap);
-//extern void glEnableClientState (GLenum array);
-//extern void glColor4f (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
-//extern void glClearColor (GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha);
-//extern void glViewport (GLint x, GLint y, GLsizei width, GLsizei height);
-//extern void glMatrixMode (GLenum mode);
-//extern void glLoadIdentity (void);
-//extern void glFrustum (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
-//extern void glPushMatrix (void);
-//extern void glPopMatrix (void);
-//extern void glDisable (GLenum cap);
-//extern void glDisableClientState (GLenum array);
-//extern void glClear (GLbitfield mask);
-//extern void glLineWidth (GLfloat width);
-//extern void glGenTextures (GLsizei n, GLuint *textures);
-//extern void glDeleteTextures (GLsizei n, const GLuint *textures);
-//extern void glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels);
-//extern void glTexParameterf (GLenum target, GLenum pname, GLfloat param);
-//extern void glBindTexture (GLenum target, GLuint texture);
 //==============================================================================
 
 }   //  namespace spcTGame

@@ -21,7 +21,7 @@ namespace spcTGame
 class AImage
 {
 public:
-    AImage(const std::string& imageName, TData* data, const TWidth width,
+    AImage(const TString& imageName, TData* data, const TWidth width,
             const THeight height, const TBitpp bitpp);
     
     /// default destructor
@@ -48,8 +48,8 @@ public:
     const TBitpp bitPerPixel() const;
 
     /// Get image name
-    /// @return const std::string& - image name. Does not change class object
-    const std::string& name() const;
+    /// @return const TString& - image name. Does not change class object
+    const TString& name() const;
     
 protected:
     /// Smart pointer to image data container
@@ -68,7 +68,7 @@ protected:
     TBitpp _bitPerPixel;
     
     /// Image name
-    std::string _name;
+    TString _name;
 };
 
 //=============================================================================

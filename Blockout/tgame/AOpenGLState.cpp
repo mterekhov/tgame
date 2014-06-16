@@ -233,9 +233,9 @@ void AOpenGLState::lineWidth(const TFloat width)
 
 //==============================================================================
 
-std::string AOpenGLState::lastError()
+TString AOpenGLState::lastError()
 {
-    std::string error = "unknown error";
+    TString error = "unknown error";
     
     TEnum errorCode = AOGLWrapper::oglGetError();
     switch (errorCode) {

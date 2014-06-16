@@ -64,7 +64,7 @@ public:
     /// @return const GLenum - type of texture. Means GL_RGBA, GL_RGB or GL_BGR
     const TUint type() const;
     
-    const std::string& name() const;
+    const TString& name() const;
 
     /// Setup minification filter
     /// @param const TUint - minification filter
@@ -83,8 +83,8 @@ public:
     void mipMapping(const TBool m);
     
     /// Setup texture name
-    /// @param const std::string& - name for the texture
-    void name(const std::string& name);
+    /// @param const TString& - name for the texture
+    void name(const TString& name);
     
     /// Destroy all thge data in textyure object
     void destroy();
@@ -92,9 +92,9 @@ public:
 private:
     
     /// Init texture from tga file
-    /// @param const std::string& - relative file name of tga image
+    /// @param const TString& - relative file name of tga image
     /// @return TBool - true if everything is ok, otherwise false
-    TBool initFromTga(const std::string& fileName);
+    TBool initFromTga(const TString& fileName);
     
     /// Apply all the filter to current texture id
     void defineFilters();
@@ -112,7 +112,7 @@ private:
     void correctData(const AImage& image, TData* data);
 
     /// Texture name
-    std::string _name;
+    TString _name;
     
     /// Texture id
     TUint _id;

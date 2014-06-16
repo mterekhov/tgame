@@ -221,7 +221,7 @@ const GLenum ATexture::type() const
 
 //=============================================================================
 
-const std::string& ATexture::name() const
+const TString& ATexture::name() const
 {
     return _name;
 }
@@ -256,7 +256,7 @@ void ATexture::mipMapping(const TBool m)
 
 //=============================================================================
 
-void ATexture::name(const std::string& name)
+void ATexture::name(const TString& name)
 {
     _name = name;
 }

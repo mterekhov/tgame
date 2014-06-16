@@ -8,8 +8,6 @@
 ================================================================================
 CURRENT TASKS
 ================================================================================
-- wrap all OGL calls into custom wrapper
-- make filenames in lower case
 - correct //    #ifndef SPCTGAME_AOPENGLSTATE_H and its finis comment at the end of header file
 
 ================================================================================

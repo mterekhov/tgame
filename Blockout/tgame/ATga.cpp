@@ -7,10 +7,10 @@ namespace spcTGame
     
 //==============================================================================
     
-ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _image(0)
+ATga::ATga(const TString& filePath, TBool headersOnly) : _identity(0), _image(0)
 {
     TUint dotPos = static_cast<TUint>(filePath.rfind("."));
-    std::string ext = &filePath[++dotPos];
+    TString ext = &filePath[++dotPos];
 
     if (ext != "tga")
         throw;
@@ -44,7 +44,7 @@ ATga::ATga(const std::string& filePath, TBool headersOnly) : _identity(0), _imag
     fclose(tga_file);
 
     dotPos = static_cast<TUint>(filePath.rfind("/"));
-    std::string fileName = &filePath[++dotPos];
+    TString fileName = &filePath[++dotPos];
     _image = new AImage(fileName, data, tgaHeader.imageHeader.width, tgaHeader.imageHeader.height, tgaHeader.imageHeader.bitpp);
     
     if (data)
@@ -181,7 +181,7 @@ STGAHeader ATga::createTGAHeader(const AImage& image)
 
 //=============================================================================
 
-TBool ATga::save(const std::string& filePath, const AImage& image)
+TBool ATga::save(const TString& filePath, const AImage& image)
 {
     STGAHeader header = createTGAHeader(image);
 

@@ -15,7 +15,7 @@ namespace spcTGame
     
 //==============================================================================
     
-typedef std::map<std::string, ATexture> TTexturesList;
+typedef std::map<TString, ATexture> TTexturesList;
 typedef TTexturesList::iterator TTexturesListIter;
 typedef TTexturesList::const_iterator TTexturesListConstIter;
 
@@ -34,7 +34,7 @@ public:
     ATextureManager();
     ~ATextureManager();
     
-    ATexture& createTextureFromTGA(const std::string& filePath);
+    ATexture& createTextureFromTGA(const TString& filePath);
 };
 
 //==============================================================================

@@ -25,7 +25,7 @@ ATextureManager::~ATextureManager()
 
 //==============================================================================
 
-ATexture& ATextureManager::createTextureFromTGA(const std::string& filePath)
+ATexture& ATextureManager::createTextureFromTGA(const TString& filePath)
 {
     ATga tgaFile(filePath);
     
