@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ADATA_H
-#define SPCTGAME_ADATA_H
+#ifndef SPCTGAME_AFORMATION_H
+#define SPCTGAME_AFORMATION_H
 
 //==============================================================================
 
