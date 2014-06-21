@@ -1,6 +1,6 @@
-#include "ABlock.h"
-#include "ADrawBasics.h"
-#include "AOpenGLState.h"
+#include "ablock.h"
+#include "adrawbasics.h"
+#include "aopenglstate.h"
 
 //==============================================================================
 

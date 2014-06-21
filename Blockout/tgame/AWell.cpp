@@ -1,8 +1,8 @@
-#include "AWell.h"
-#include "ADrawBasics.h"
-#import "AOpenGLState.h"
-
 #include <stdio.h>
+
+#include "awell.h"
+#include "adrawbasics.h"
+#import "aopenglstate.h"
 
 //==============================================================================
 

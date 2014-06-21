@@ -1,7 +1,7 @@
-#include "ADrawBasics.h"
-#include "AOpenGLState.h"
-#include "BlockoutDebug.h"
-#include "AOGLWrapper.h"
+#include "adrawbasics.h"
+#include "aopenglstate.h"
+#include "blockoutdebug.h"
+#include "aoglwrapper.h"
 
 //==============================================================================
 

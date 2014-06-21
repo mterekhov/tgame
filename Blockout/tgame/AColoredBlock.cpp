@@ -1,6 +1,6 @@
-#include "AColoredBlock.h"
-#include "ADrawBasics.h"
-#include "AOpenGLState.h"
+#include "acoloredblock.h"
+#include "adrawbasics.h"
+#include "aopenglstate.h"
 
 //==============================================================================
 

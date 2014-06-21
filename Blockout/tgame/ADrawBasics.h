@@ -3,11 +3,11 @@
 
 //==============================================================================
 
-#include "APoint.h"
-#include "AVector.h"
-#include "ADataLiner.h"
+#include "apoint.h"
+#include "avector.h"
+#include "adataliner.h"
 #include "atexture.h"
-#include "APoint2D.h"
+#include "apoint2d.h"
 
 //==============================================================================
 

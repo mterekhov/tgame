@@ -3,9 +3,9 @@
 
 //==============================================================================
 
-#include "ACrafter.h"
-#include "ALogic.h"
-#include "AColor.h"
+#include "acrafter.h"
+#include "alogic.h"
+#include "acolor.h"
 
 //==============================================================================
 

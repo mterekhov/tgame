@@ -3,13 +3,13 @@
 
 //==============================================================================
 
-#include "ATexturedBlock.h"
-#include "ASolidBlock.h"
-#include "ABlock.h"
-#include "ATextureManager.h"
-#include "AWell.h"
-
 #include <list>
+
+#include "atexturedblock.h"
+#include "asolidblock.h"
+#include "ablock.h"
+#include "atexturemanager.h"
+#include "awell.h"
 
 //==============================================================================
 

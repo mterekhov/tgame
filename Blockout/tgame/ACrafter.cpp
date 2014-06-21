@@ -1,6 +1,6 @@
-#include "ACrafter.h"
-#include "AOpenGLState.h"
-#include "BlockoutDebug.h"
+#include "acrafter.h"
+#include "aopenglstate.h"
+#include "blockoutdebug.h"
 #include "aoglwrapper.h"
 
 //==============================================================================

@@ -1,7 +1,7 @@
-#include "AOpenGLState.h"
-#include "BlockoutDebug.h"
-#include "ATextureManager.h"
-#include "AOGLWrapper.h"
+#include "aopenglstate.h"
+#include "blockoutdebug.h"
+#include "atexturemanager.h"
+#include "aoglwrapper.h"
 
 //==============================================================================
 

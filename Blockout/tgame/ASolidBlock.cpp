@@ -1,6 +1,6 @@
-#include "ASolidBlock.h"
-#include "AOpenGLState.h"
-#include "ADrawBasics.h"
+#include "asolidblock.h"
+#include "aopenglstate.h"
+#include "adrawbasics.h"
 
 //==============================================================================
 

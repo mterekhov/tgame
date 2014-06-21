@@ -1,15 +1,15 @@
-#include "ABlockout.h"
-#include "ADrawBasics.h"
-#include "AOpenGLState.h"
-#include "AWell.h"
-#include "ATexturedBlock.h"
-#include "ASolidBlock.h"
-#include "AFormationFactory.h"
-#include "BlockoutDebug.h"
-#include "aoglwrapper.h"
-
 #include <stdio.h>
 #include <time.h>
+
+#include "ablockout.h"
+#include "adrawbasics.h"
+#include "aopenglstate.h"
+#include "awell.h"
+#include "atexturedblock.h"
+#include "asolidblock.h"
+#include "aformationfactory.h"
+#include "blockoutdebug.h"
+#include "aoglwrapper.h"
 
 //==============================================================================
 

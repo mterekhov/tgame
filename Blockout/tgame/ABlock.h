@@ -3,9 +3,9 @@
 
 //==============================================================================
 
-#include "ARObject.h"
-#include "AFormation.h"
-#include "AColor.h"
+#include "arobject.h"
+#include "aformation.h"
+#include "acolor.h"
 
 //==============================================================================
 

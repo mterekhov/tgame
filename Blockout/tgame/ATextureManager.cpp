@@ -1,6 +1,6 @@
-#include "ATextureManager.h"
-#include "ATga.h"
-#include "AOpenGLState.h"
+#include "atexturemanager.h"
+#include "atga.h"
+#include "aopenglstate.h"
 
 //==============================================================================
 

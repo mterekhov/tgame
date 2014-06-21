@@ -3,9 +3,9 @@
 
 //==============================================================================
 
-#include "APoint.h"
-#include "APoint2D.h"
-#include "BlockoutTypes.h"
+#include "apoint.h"
+#include "apoint2d.h"
+#include "blockouttypes.h"
 
 //==============================================================================
 

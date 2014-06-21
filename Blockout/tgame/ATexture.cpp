@@ -1,7 +1,7 @@
-#include "ATexture.h"
-#include "AOpenGLState.h"
-#include "ATga.h"
-#include "AOGLWrapper.h"
+#include "atexture.h"
+#include "aopenglstate.h"
+#include "atga.h"
+#include "aoglwrapper.h"
 
 //=============================================================================
 

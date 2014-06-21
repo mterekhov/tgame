@@ -1,6 +1,6 @@
-#include "ATexturedBlock.h"
-#include "AOpenGLState.h"
-#include "ADrawBasics.h"
+#include "atexturedblock.h"
+#include "aopenglstate.h"
+#include "adrawbasics.h"
 
 //==============================================================================
 

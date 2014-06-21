@@ -1,4 +1,4 @@
-#include "AFormationFactory.h"
+#include "aformationfactory.h"
 
 //==============================================================================
 

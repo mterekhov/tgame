@@ -1,8 +1,8 @@
-#include "AFormation.h"
-#include "BlockoutDebug.h"
-
 #include <string.h>
 #include <stdio.h>
+
+#include "aformation.h"
+#include "blockoutdebug.h"
 
 //==============================================================================
 

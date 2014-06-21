@@ -3,9 +3,9 @@
 
 //==============================================================================
 
-#include "ABlock.h"
-#include "AFormation.h"
-#include "AColor.h"
+#include "ablock.h"
+#include "aformation.h"
+#include "acolor.h"
 
 //==============================================================================
 
