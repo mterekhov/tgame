@@ -347,18 +347,18 @@ TPointsList ADrawBasics::generateCoords(const APoint& location, const TFloat cub
     points.push_back(p4);
 
     points.push_back(p5);
-    points.push_back(p6);
     points.push_back(p8);
     points.push_back(p6);
+    points.push_back(p6);
+    points.push_back(p8);
     points.push_back(p7);
-    points.push_back(p8);
     
     points.push_back(p5);
-    points.push_back(p8);
     points.push_back(p1);
     points.push_back(p8);
+    points.push_back(p8);
+    points.push_back(p1);
     points.push_back(p4);
-    points.push_back(p1);
 
     points.push_back(p5);
     points.push_back(p6);
@@ -375,11 +375,11 @@ TPointsList ADrawBasics::generateCoords(const APoint& location, const TFloat cub
     points.push_back(p2);
 
     points.push_back(p8);
-    points.push_back(p7);
     points.push_back(p4);
     points.push_back(p7);
+    points.push_back(p7);
+    points.push_back(p4);
     points.push_back(p3);
-    points.push_back(p4);
 
     return points;
 }
