@@ -1,7 +1,9 @@
 ================================================================================
 CURRENT TASKS
 ================================================================================
-- correct //    #ifndef SPCTGAME_AOPENGLSTATE_H and its finis comment at the end of header file
+- check new and delete pairs to avoid memory leaks
+- keyboard events translations
+- сделать все через одни ворота, через blockout
 
 ================================================================================
 ROAD MAP

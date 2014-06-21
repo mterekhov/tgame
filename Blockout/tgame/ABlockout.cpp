@@ -33,6 +33,9 @@ ABlockout::~ABlockout()
 
 void ABlockout::init()
 {
+    //  call shared to create instance and init some OpenGL pars;
+    spcTGame::AOpenGLState::create();
+    
     ATexture tex = _crafter.textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
     _crafter.createTexturedBlock(AFormationFactory::createFormation1(), tex);
     
@@ -40,6 +43,8 @@ void ABlockout::init()
 //    _crafter.createColoredBlock(AFormationFactory::createFormation1());
 
     _crafter.createWell(_wellWidth, _wellHeight, _wellDepth);
+    
+    _keyboardEvents.addDelegate(_logic);
 }
 
 //==============================================================================
@@ -47,6 +52,7 @@ void ABlockout::init()
 void ABlockout::render()
 {
     AOpenGLState* oglState = AOpenGLState::shared();
+    oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     oglState->pushMarices();
 
@@ -71,6 +77,21 @@ void ABlockout::processGameCycle()
 {
     _logic.processLogic();
     render();
+}
+
+//==============================================================================
+    
+void ABlockout::processKeyboardEvent(const TUint buttonCode)
+{
+    _keyboardEvents.keyPressed(buttonCode);
+}
+
+//==============================================================================
+
+void ABlockout::updateScreenSize(const TDouble screenWidth, const TDouble screenHeight)
+{
+    AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
+    oglState->frustumSetup(screenWidth, screenHeight);
 }
 
 //==============================================================================

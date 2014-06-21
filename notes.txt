@@ -50,3 +50,6 @@ ASolidBlock
 ATga to save images
 ATexture
 AImage
+
+
+Снаружи используются только AOGLState и ABlockout классы, остальные должны инкапсулироваться и не давать доступа кому бы-то ни было

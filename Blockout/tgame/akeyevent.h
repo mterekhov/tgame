@@ -1,29 +1,21 @@
-#ifndef SPCTGAME_ALOGIC_H
-#define SPCTGAME_ALOGIC_H
+#ifndef SPCTGAME_AKEYEVENT_H
+#define SPCTGAME_AKEYEVENT_H
 
 //==============================================================================
 
-#include "aformation.h"
-#include "apoint.h"
-#include "akeyevent.h"
+#include "blockouttypes.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-    
+
 //==============================================================================
-    
-class ALogic : public AKeyEvent
+
+class AKeyEvent
 {
 public:
-    ALogic();
-    ~ALogic();
-    
-    TBool collisions(const AFormation* forCompare, const APoint& pos);
     virtual void processKey(const TUint buttonCode);
-    
-    void processLogic();
 };
 
 //==============================================================================
@@ -31,5 +23,5 @@ public:
 }   //  namespace spcTGame
 
 //==============================================================================
-    
-#endif  //  SPCTGAME_ALOGIC_H
+
+#endif  //  SPCTGAME_AKEYEVENT_H

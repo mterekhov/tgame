@@ -1,4 +1,5 @@
 #include "alogic.h"
+#include "blockoutdebug.h"
 
 //==============================================================================
 
@@ -54,4 +55,11 @@ void ALogic::processLogic()
 
 //==============================================================================
     
+void ALogic::processKey(const TUint buttonCode)
+{
+    loger("key pressed in logic: %i", buttonCode);
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

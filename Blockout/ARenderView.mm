@@ -1,5 +1,4 @@
 #import "ARenderView.h"
-#import "AOpenGLState.h"
 
 //==============================================================================
 
@@ -88,9 +87,6 @@
     
     [self updateScreenSize:self.bounds.size.width screenHeight:self.bounds.size.height];
 
-    //  call shared to create instance and init some OpenGL pars;
-    spcTGame::AOpenGLState::create();
-    
     _blockout = new spcTGame::ABlockout();
 }
 
@@ -98,17 +94,13 @@
 
 - (void) updateScreenSize:(spcTGame::TDouble) screenWidth screenHeight: (spcTGame::TDouble) screenHeight
 {
-    spcTGame::AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
-    oglState->frustumSetup(screenWidth, screenHeight);
+    _blockout->updateScreenSize(screenWidth, screenHeight);
 }
 
 //==============================================================================
 
 - (void) renderGame
 {
-    spcTGame::AOpenGLState* oglState = spcTGame::AOpenGLState::shared();
-    oglState->clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
     _blockout->processGameCycle();
 
 	[[NSOpenGLContext currentContext] flushBuffer];
