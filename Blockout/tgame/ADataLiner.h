@@ -1,6 +1,8 @@
 #ifndef SPCTGAME_ADATALINER_H
 #define SPCTGAME_ADATALINER_H
 
+//==============================================================================
+
 #include "APoint.h"
 #include "APoint2D.h"
 #include "BlockoutTypes.h"
@@ -54,4 +56,4 @@ public:
 
 //==============================================================================
     
-#endif
+#endif  //  SPCTGAME_ADATALINER_H

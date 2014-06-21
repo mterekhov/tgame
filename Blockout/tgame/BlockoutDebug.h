@@ -27,4 +27,4 @@ namespace spcTGame
 
 //==============================================================================
 
-#endif
+#endif  //  SPCTGAME_ABLOCKOUTDEBUG_H

@@ -34,7 +34,7 @@ ABlockout::~ABlockout()
 void ABlockout::init()
 {
     ATexture tex = _crafter.textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
-    _crafter.createTexturedBlock(AFormationFactory::createFormation2(), tex);
+    _crafter.createTexturedBlock(AFormationFactory::createFormation1(), tex);
     
 //    _crafter.createSolidBlock(AFormationFactory::createFormation1());
 //    _crafter.createColoredBlock(AFormationFactory::createFormation1());

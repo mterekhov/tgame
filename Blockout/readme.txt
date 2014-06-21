@@ -2,7 +2,6 @@
 CURRENT TASKS
 ================================================================================
 - correct //    #ifndef SPCTGAME_AOPENGLSTATE_H and its finis comment at the end of header file
-- correct face culling
 
 ================================================================================
 ROAD MAP

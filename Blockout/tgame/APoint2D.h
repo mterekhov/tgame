@@ -36,4 +36,4 @@ typedef std::vector<APoint2D> TPoints2DList;
 
 //==============================================================================
     
-#endif
+#endif  //  SPCTGAME_APOINT2D_H
