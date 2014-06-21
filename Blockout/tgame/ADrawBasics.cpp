@@ -278,47 +278,47 @@ TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
     APoint2D p3 = APoint2D(xaspect, yaspect);
     APoint2D p4 = APoint2D(xaspect, 0.0f);
 
+    points.push_back(p3);
     points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
     points.push_back(p4);
+    points.push_back(p2);
     points.push_back(p1);
+    points.push_back(p4);
 
     points.push_back(p2);
-    points.push_back(p3);
     points.push_back(p1);
     points.push_back(p3);
+    points.push_back(p3);
+    points.push_back(p1);
     points.push_back(p4);
-    points.push_back(p1);
     
     points.push_back(p2);
-    points.push_back(p3);
     points.push_back(p1);
     points.push_back(p3);
+    points.push_back(p3);
+    points.push_back(p1);
     points.push_back(p4);
+
+    points.push_back(p3);
+    points.push_back(p2);
+    points.push_back(p4);
+    points.push_back(p2);
     points.push_back(p1);
+    points.push_back(p4);
+
+    points.push_back(p3);
+    points.push_back(p2);
+    points.push_back(p4);
+    points.push_back(p2);
+    points.push_back(p1);
+    points.push_back(p4);
 
     points.push_back(p2);
-    points.push_back(p3);
     points.push_back(p1);
     points.push_back(p3);
+    points.push_back(p3);
+    points.push_back(p1);
     points.push_back(p4);
-    points.push_back(p1);
-
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
-
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
 
     return points;
 }
