@@ -210,6 +210,12 @@
 		4C8000F616BD43FD008B1E74 /* Render */ = {
 			isa = PBXGroup;
 			children = (
+				4CF3043B1949ECCA0092A63D /* adrawbasics.cpp */,
+				4CF3043C1949ECCA0092A63D /* adrawbasics.h */,
+				4CF304031949EC5F0092A63D /* aoglwrapper.cpp */,
+				4CF304041949EC5F0092A63D /* aoglwrapper.h */,
+				4CF304051949EC5F0092A63D /* aopenglstate.cpp */,
+				4CF304061949EC5F0092A63D /* aopenglstate.h */,
 				4CF304571949ED220092A63D /* acrafter.cpp */,
 				4CF304581949ED220092A63D /* acrafter.h */,
 				4CAF5A6016E647A600E04427 /* ObjectsToRender */,
@@ -251,17 +257,6 @@
 				4CF304461949ED030092A63D /* atexturedblock.h */,
 			);
 			name = Blocks;
-			sourceTree = "<group>";
-		};
-		4CBCB19C1949D9D200576081 /* OpenGL */ = {
-			isa = PBXGroup;
-			children = (
-				4CF304031949EC5F0092A63D /* aoglwrapper.cpp */,
-				4CF304041949EC5F0092A63D /* aoglwrapper.h */,
-				4CF304051949EC5F0092A63D /* aopenglstate.cpp */,
-				4CF304061949EC5F0092A63D /* aopenglstate.h */,
-			);
-			name = OpenGL;
 			sourceTree = "<group>";
 		};
 		4CC8217B16D7A3100090CE07 /* Resources */ = {
@@ -354,8 +349,6 @@
 		B7ECFF5916AD4FBC00946E91 /* Paintings */ = {
 			isa = PBXGroup;
 			children = (
-				4CF3043B1949ECCA0092A63D /* adrawbasics.cpp */,
-				4CF3043C1949ECCA0092A63D /* adrawbasics.h */,
 				4C52515A16CA8621002A5B42 /* DataTypes */,
 				4C531EAE177F010600B33D01 /* Formation */,
 				4CEA40E116CFB08400A678B5 /* Texture */,
@@ -371,7 +364,6 @@
 				4CF3045C1949ED340092A63D /* ablockout.h */,
 				4CF3045D1949ED340092A63D /* blockoutdebug.cpp */,
 				4CF3045F1949ED340092A63D /* blockouttypes.h */,
-				4CBCB19C1949D9D200576081 /* OpenGL */,
 				4C923D0916C45321008EDA5C /* Logic */,
 				B7ECFF5916AD4FBC00946E91 /* Paintings */,
 				4C8000F616BD43FD008B1E74 /* Render */,

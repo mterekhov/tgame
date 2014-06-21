@@ -27,6 +27,17 @@ AFormation AFormationFactory::createFormation1()
 
 //==============================================================================
 
+AFormation AFormationFactory::createFormation2()
+{
+    AFormation formation(1, 1, 1);
+    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return AFormationFactory::nullFormation();
+
+    return formation;
+}
+
+//==============================================================================
+
 AFormation AFormationFactory::nullFormation()
 {
     return AFormation();

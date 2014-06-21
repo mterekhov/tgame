@@ -10,7 +10,7 @@ namespace spcTGame
     
 //==============================================================================
     
-#pragma mark - beta -
+#pragma mark - render basics -
 
 //==============================================================================
 
@@ -47,79 +47,6 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATe
 
 //==============================================================================
 
-void ADrawBasics::drawTriangles(const TFloat* pointsArray, const TUint stride, const TUint pointsCount)
-{
-    if (!pointsArray)
-    {
-        loger("failed to draw array of vertexes");
-        return;
-    }
-
-    AOGLWrapper::oglVertexPointer(3, GL_FLOAT, stride, pointsArray);
-    AOGLWrapper::oglDrawArrays(GL_TRIANGLES, 0, pointsCount);
-}
-
-//==============================================================================
-
-TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
-{
-    TPoints2DList points;
-    
-    TFloat xaspect = static_cast<TFloat>(tex.imageWidth()) / static_cast<TFloat>(tex.width());
-    TFloat yaspect = static_cast<TFloat>(tex.imageHeight()) / static_cast<TFloat>(tex.height());
-
-    APoint2D p1 = APoint2D(0.0f, 0.0f);
-    APoint2D p2 = APoint2D(0.0f, yaspect);
-    APoint2D p3 = APoint2D(xaspect, yaspect);
-    APoint2D p4 = APoint2D(xaspect, 0.0f);
-
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
-
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
-    
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
-
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
-
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
-
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p1);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p1);
-
-    return points;
-}
-
-//==============================================================================
-
 void ADrawBasics::drawSolidCube(const APoint& location, const TFloat cubeSize)
 {
     TPointsList pointsList = ADrawBasics::generateCoords(location, cubeSize);
@@ -128,90 +55,6 @@ void ADrawBasics::drawSolidCube(const APoint& location, const TFloat cubeSize)
 
     ADrawBasics::drawTriangles(dataLiner);
 }
-
-//==============================================================================
-
-void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
-{
-    TUint numberOfFloatValues = dataLiner.numberOfFloatValues();
-    TFloat* line = new TFloat[numberOfFloatValues];
-    memset(line, 0, numberOfFloatValues * sizeof(TFloat));
-    if (dataLiner.generateArray(line) == false)
-    {
-        loger("failed to generate array of vertexes");
-        return;
-    }
-
-    drawTriangles(line, (dataLiner.arrayStride() == 3) ? 0 : dataLiner.arrayStride(), dataLiner.pointsCount());
-    
-    delete [] line;
-}
-
-
-//==============================================================================
-
-TPointsList ADrawBasics::generateCoords(const APoint& location, const TFloat cubeSize)
-{
-    APoint p1 = location;
-    APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
-    APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
-    APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
-
-    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
-    APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
-    APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
-    APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
-
-    TPointsList points;
-    
-    points.push_back(p1);
-    points.push_back(p2);
-    points.push_back(p4);
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p4);
-
-    points.push_back(p5);
-    points.push_back(p6);
-    points.push_back(p8);
-    points.push_back(p6);
-    points.push_back(p7);
-    points.push_back(p8);
-    
-    points.push_back(p5);
-    points.push_back(p8);
-    points.push_back(p1);
-    points.push_back(p8);
-    points.push_back(p4);
-    points.push_back(p1);
-
-    points.push_back(p5);
-    points.push_back(p6);
-    points.push_back(p1);
-    points.push_back(p6);
-    points.push_back(p2);
-    points.push_back(p1);
-
-    points.push_back(p6);
-    points.push_back(p7);
-    points.push_back(p2);
-    points.push_back(p7);
-    points.push_back(p3);
-    points.push_back(p2);
-
-    points.push_back(p8);
-    points.push_back(p7);
-    points.push_back(p4);
-    points.push_back(p7);
-    points.push_back(p3);
-    points.push_back(p4);
-
-    return points;
-}
-
-//==============================================================================
-
-#pragma mark - render basics -
 
 //==============================================================================
 
@@ -259,10 +102,6 @@ void ADrawBasics::drawLine(const APoint& p1, const APoint& p2)
     AOGLWrapper::oglVertexPointer(3, GL_FLOAT, 0, line);
     AOGLWrapper::oglDrawArrays(GL_LINES, 0, 2);
 }
-
-//==============================================================================
-
-#pragma mark - render some usefull stuff -
 
 //==============================================================================
 
@@ -390,4 +229,161 @@ void ADrawBasics::installCamera(const AVector& eyePosition3D, const AVector& cen
 
 //==============================================================================
     
+#pragma mark - Routines -
+
+//==============================================================================
+
+void ADrawBasics::drawTriangles(const TFloat* pointsArray, const TUint stride, const TUint pointsCount)
+{
+    if (!pointsArray)
+    {
+        loger("failed to draw array of vertexes");
+        return;
+    }
+
+    AOGLWrapper::oglVertexPointer(3, GL_FLOAT, stride, pointsArray);
+    AOGLWrapper::oglDrawArrays(GL_TRIANGLES, 0, pointsCount);
+}
+
+//==============================================================================
+
+void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
+{
+    TUint numberOfFloatValues = dataLiner.numberOfFloatValues();
+    TFloat* line = new TFloat[numberOfFloatValues];
+    memset(line, 0, numberOfFloatValues * sizeof(TFloat));
+    if (dataLiner.generateArray(line) == false)
+    {
+        loger("failed to generate array of vertexes");
+        return;
+    }
+
+    drawTriangles(line, (dataLiner.arrayStride() == 3) ? 0 : dataLiner.arrayStride(), dataLiner.pointsCount());
+    
+    delete [] line;
+}
+
+//==============================================================================
+
+
+TPoints2DList ADrawBasics::generateUV(const ATexture& tex)
+{
+    TPoints2DList points;
+    
+    TFloat xaspect = static_cast<TFloat>(tex.imageWidth()) / static_cast<TFloat>(tex.width());
+    TFloat yaspect = static_cast<TFloat>(tex.imageHeight()) / static_cast<TFloat>(tex.height());
+
+    APoint2D p1 = APoint2D(0.0f, 0.0f);
+    APoint2D p2 = APoint2D(0.0f, yaspect);
+    APoint2D p3 = APoint2D(xaspect, yaspect);
+    APoint2D p4 = APoint2D(xaspect, 0.0f);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+    
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p1);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    return points;
+}
+
+//==============================================================================
+
+TPointsList ADrawBasics::generateCoords(const APoint& location, const TFloat cubeSize)
+{
+    APoint p1 = location;
+    APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
+    APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
+    APoint p4 = APoint(location.x,            location.y, location.z + cubeSize);
+
+    APoint p5 = APoint(location.x,            location.y + cubeSize, location.z);
+    APoint p6 = APoint(location.x + cubeSize, location.y + cubeSize, location.z);
+    APoint p7 = APoint(location.x + cubeSize, location.y + cubeSize, location.z + cubeSize);
+    APoint p8 = APoint(location.x,            location.y + cubeSize, location.z + cubeSize);
+
+    TPointsList points;
+    
+    points.push_back(p1);
+    points.push_back(p2);
+    points.push_back(p4);
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p4);
+
+    points.push_back(p5);
+    points.push_back(p6);
+    points.push_back(p8);
+    points.push_back(p6);
+    points.push_back(p7);
+    points.push_back(p8);
+    
+    points.push_back(p5);
+    points.push_back(p8);
+    points.push_back(p1);
+    points.push_back(p8);
+    points.push_back(p4);
+    points.push_back(p1);
+
+    points.push_back(p5);
+    points.push_back(p6);
+    points.push_back(p1);
+    points.push_back(p6);
+    points.push_back(p2);
+    points.push_back(p1);
+
+    points.push_back(p6);
+    points.push_back(p7);
+    points.push_back(p2);
+    points.push_back(p7);
+    points.push_back(p3);
+    points.push_back(p2);
+
+    points.push_back(p8);
+    points.push_back(p7);
+    points.push_back(p4);
+    points.push_back(p7);
+    points.push_back(p3);
+    points.push_back(p4);
+
+    return points;
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

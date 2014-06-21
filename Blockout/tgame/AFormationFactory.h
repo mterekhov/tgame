@@ -16,6 +16,7 @@ class AFormationFactory
 {
 public:
     static AFormation createFormation1();
+    static AFormation createFormation2();
     static AFormation nullFormation();
 };
 
