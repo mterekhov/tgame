@@ -19,48 +19,6 @@ ADataLiner::~ADataLiner()
 
 //==============================================================================
 
-void ADataLiner::pushPoint(const APoint& coords)
-{
-    _coordsList.push_back(coords);
-}
-
-//==============================================================================
-
-void ADataLiner::pushUVPoint(const APoint2D& point)
-{
-    _uvList.push_back(point);
-}
-
-//==============================================================================
-
-void ADataLiner::pushNormalPoint(const APoint& point)
-{
-    _normalsList.push_back(point);
-}
-
-//==============================================================================
-
-void ADataLiner::pushCoordPointList(const TPointsList& pointsList)
-{
-    _coordsList.insert(_coordsList.end(), pointsList.begin(), pointsList.end());
-}
-
-//==============================================================================
-
-void ADataLiner::pushUVPointList(const TPoints2DList& pointsList)
-{
-    _uvList.insert(_uvList.end(), pointsList.begin(), pointsList.end());
-}
-
-//==============================================================================
-
-void ADataLiner::pushNormalPointList(const TPointsList& pointsList)
-{
-    _normalsList.insert(_normalsList.end(), pointsList.begin(), pointsList.end());
-}
-
-//==============================================================================
-
 EIntegrity ADataLiner::checkIntegrity() const
 {
     EIntegrity result = EINTEGRITY_OK;
@@ -86,26 +44,28 @@ EIntegrity ADataLiner::checkIntegrity() const
 
 TUint ADataLiner::pointsCount() const
 {
-    TUint strider = arrayStride();
-    if (strider)
-        return numberOfFloatValues() / strider;
-    
-    return 0;
+    return _coordsList.size();
+//    TUint strider = arrayStride();
+//    if (strider)
+//        return numberOfFloatValues() / strider;
+//    
+//    return 0;
 }
 
 //==============================================================================
 
 TUint ADataLiner::numberOfFloatValues() const
 {
-    TUint coordsSize = static_cast<TUint>(_coordsList.size());
-    if (!coordsSize)
-        return 0;
-    
-    TUint uvSize = static_cast<TUint>(_uvList.size());
-    TUint normalsSize = static_cast<TUint>(_normalsList.size());
-    TUint sizer = 3 * coordsSize + 2 * uvSize + 3 * normalsSize;
-    
-    return sizer;
+    return arrayStride() * pointsCount();
+//    TUint coordsSize = static_cast<TUint>(_coordsList.size());
+//    if (!coordsSize)
+//        return 0;
+//    
+//    TUint uvSize = static_cast<TUint>(_uvList.size());
+//    TUint normalsSize = static_cast<TUint>(_normalsList.size());
+//    TUint sizer = 3 * coordsSize + 2 * uvSize + 3 * normalsSize;
+//    
+//    return sizer;
 }
 
 //==============================================================================
@@ -174,5 +134,68 @@ TBool ADataLiner::generateArray(TFloat* resultArray) const
 }
 
 //==============================================================================
+
+void ADataLiner::printData() const
+{
+    for (TUint i = 0; i < _coordsList.size(); i++)
+    {
+        printf("%i. xyz: %.3f\t%.3f\t%.3f\t\t", i, _coordsList[i].x, _coordsList[i].y, _coordsList[i].z);
+        if (_uvList.size())
+            printf("uv: %.3f\t%.3f\t\t", _uvList[i].x, _uvList[i].y);
+
+        if (_normalsList.size())
+            printf("normals: %.3f\t%.3f\t%.3f", _normalsList[i].x, _normalsList[i].y, _normalsList[i].z);
+        
+        printf("\n");
+    }
+}
+
+//==============================================================================
     
+#pragma mark - pushers -
+
+//==============================================================================
+
+void ADataLiner::pushPoint(const APoint& coords)
+{
+    _coordsList.push_back(coords);
+}
+
+//==============================================================================
+
+void ADataLiner::pushUVPoint(const APoint2D& point)
+{
+    _uvList.push_back(point);
+}
+
+//==============================================================================
+
+void ADataLiner::pushNormalPoint(const APoint& point)
+{
+    _normalsList.push_back(point);
+}
+
+//==============================================================================
+
+void ADataLiner::pushCoordPointList(const TPointsList& pointsList)
+{
+    _coordsList.insert(_coordsList.end(), pointsList.begin(), pointsList.end());
+}
+
+//==============================================================================
+
+void ADataLiner::pushUVPointList(const TPoints2DList& pointsList)
+{
+    _uvList.insert(_uvList.end(), pointsList.begin(), pointsList.end());
+}
+
+//==============================================================================
+
+void ADataLiner::pushNormalPointList(const TPointsList& pointsList)
+{
+    _normalsList.insert(_normalsList.end(), pointsList.begin(), pointsList.end());
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

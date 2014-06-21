@@ -1,6 +1,7 @@
 #include "ACrafter.h"
 #include "AOpenGLState.h"
 #include "BlockoutDebug.h"
+#include "aoglwrapper.h"
 
 //==============================================================================
 
@@ -163,10 +164,13 @@ void ACrafter::processRender()
     oglState->drawColor(previousColor);
 
     //  Draw textured objects
+    previousColor = oglState->drawColor();
+    oglState->drawColor(AColor::whiteColor());
     oglState->textureEnable();
     listToRender = _texturedRenderList;
     renderList(listToRender);
     oglState->textureDisable();
+    oglState->drawColor(previousColor);
 }
 
 //==============================================================================

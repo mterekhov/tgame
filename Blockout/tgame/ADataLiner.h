@@ -45,6 +45,7 @@ public:
 
     EIntegrity checkIntegrity() const;
     TBool generateArray(TFloat* resultArray) const;
+    void printData() const;
 };
 
 //==============================================================================

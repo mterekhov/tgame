@@ -23,6 +23,7 @@ private:
     static TPointsList generateCoords(const APoint& location, const TFloat cubeSize);
     
     static void drawTriangles(const ADataLiner& dataLiner);
+    static void drawTriangles(const TFloat* pointsArray, const TUint stride, const TUint pointsCount);
 
 public:
     static void installCamera(const AVector& eyePosition3D, const AVector& center3D, const AVector& upVector3D);

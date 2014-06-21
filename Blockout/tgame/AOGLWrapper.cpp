@@ -20,7 +20,10 @@ void AOGLWrapper::oglVertexPointer(TInt size, TEnum type, TSize stride, const TV
 }
 
 //==============================================================================
-    
+
+/// mode - what primitives you would like to draw
+/// first - index of the first element
+/// count - number of points(not primitives or it's floats)
 void AOGLWrapper::oglDrawArrays(TEnum mode, TInt first, TSize count)
 {
     glDrawArrays(mode, first, count);
@@ -45,6 +48,27 @@ void AOGLWrapper::oglTranslatef(TFloat x, TFloat y, TFloat z)
 void AOGLWrapper::oglEnable(TEnum cap)
 {
     glEnable(cap);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglDepthFunc(TEnum func)
+{
+    glDepthFunc(func);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglClearDepth(TDouble depth)
+{
+    glClearDepth(depth);
+}
+
+//==============================================================================
+
+void AOGLWrapper::oglShadeModel(TEnum mode)
+{
+    glShadeModel(mode);
 }
 
 //==============================================================================

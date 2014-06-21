@@ -21,33 +21,42 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATe
     ADataLiner dataLiner;
     dataLiner.pushCoordPointList(coordspoints);
     dataLiner.pushUVPointList(uvpoints);
-    TUint sizer = dataLiner.numberOfFloatValues();
-    TFloat* line = new TFloat[sizer];
-    memset(line, 0, sizer * sizeof(TFloat));
+
+    TFloat* line = new TFloat[dataLiner.numberOfFloatValues()];
+    memset(line, 0, dataLiner.numberOfFloatValues() * sizeof(TFloat));
     
     if (dataLiner.generateArray(line) == false)
     {
         loger("failed to generate array of vertexes");
         return;
     }
-
-    //    for (int i = 0; i < dataLiner.pointsCount(); i++)
-//    {
-//        loger("xyz = %.3f\t%.3f\t%.3f\nuv = %.3f\t%.3f", line[dataLiner.arrayStride() * i],
-//               line[dataLiner.arrayStride() * i + 1],
-//               line[dataLiner.arrayStride() * i + 2],
-//               line[dataLiner.arrayStride() * i + 3],
-//               line[dataLiner.arrayStride() * i + 4]);
-//    }
     
     AOpenGLState* instance = AOpenGLState::shared();
+    instance->textureEnable();
     instance->currentTexture(texture);
 
-    AOGLWrapper::oglTexCoordPointer(2, GL_FLOAT, 5, &line[3]);
-    ADrawBasics::drawTriangles(dataLiner);
-//    ADrawBasics::drawTriangles(line, dataLiner.pointsCount());
-    
+    TUint strideInBytes = sizeof(TFloat) * dataLiner.arrayStride();
+    AOGLWrapper::oglTexCoordPointer(2, GL_FLOAT, strideInBytes, &line[3]);
+    ADrawBasics::drawTriangles(line, strideInBytes, dataLiner.pointsCount());
+
     instance->clearCurrentTexture();
+    instance->textureDisable();
+    
+    delete [] line;
+}
+
+//==============================================================================
+
+void ADrawBasics::drawTriangles(const TFloat* pointsArray, const TUint stride, const TUint pointsCount)
+{
+    if (!pointsArray)
+    {
+        loger("failed to draw array of vertexes");
+        return;
+    }
+
+    AOGLWrapper::oglVertexPointer(3, GL_FLOAT, stride, pointsArray);
+    AOGLWrapper::oglDrawArrays(GL_TRIANGLES, 0, pointsCount);
 }
 
 //==============================================================================
@@ -124,20 +133,20 @@ void ADrawBasics::drawSolidCube(const APoint& location, const TFloat cubeSize)
 
 void ADrawBasics::drawTriangles(const ADataLiner& dataLiner)
 {
-    TUint sizer = dataLiner.numberOfFloatValues();
-    TFloat* line = new TFloat[sizer];
-    memset(line, 0, sizer * sizeof(TFloat));
+    TUint numberOfFloatValues = dataLiner.numberOfFloatValues();
+    TFloat* line = new TFloat[numberOfFloatValues];
+    memset(line, 0, numberOfFloatValues * sizeof(TFloat));
     if (dataLiner.generateArray(line) == false)
     {
         loger("failed to generate array of vertexes");
         return;
     }
 
-    AOGLWrapper::oglVertexPointer(3, GL_FLOAT, 0, line);
-    AOGLWrapper::oglDrawArrays(GL_TRIANGLES, 0, dataLiner.pointsCount());
+    drawTriangles(line, (dataLiner.arrayStride() == 3) ? 0 : dataLiner.arrayStride(), dataLiner.pointsCount());
     
     delete [] line;
 }
+
 
 //==============================================================================
 

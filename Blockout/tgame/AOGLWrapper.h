@@ -40,6 +40,9 @@ public:
     static void oglTexParameterf(TEnum target, TEnum pname, TFloat param);
     static void oglBindTexture(TEnum target, TUint texture);
     static TEnum oglGetError();
+    static void oglShadeModel(TEnum mode);
+    static void oglClearDepth(TDouble depth);
+    static void oglDepthFunc(TEnum func);
 };
 
 //==============================================================================

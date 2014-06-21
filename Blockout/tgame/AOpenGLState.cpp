@@ -42,11 +42,11 @@ AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _curren
     clearColorSetup(_clearColor);
 
     AOGLWrapper::oglEnable(GL_DEPTH_TEST);
-	glClearDepth(1.0f);
-	glDepthFunc(GL_LESS);
+    AOGLWrapper::oglClearDepth(1.0f);
+    AOGLWrapper::oglDepthFunc(GL_LESS);
 
-//	AOGLWrapper::oglEnable(GL_CULL_FACE);
-	glShadeModel(GL_SMOOTH); // Type of shading for the polygons
+	AOGLWrapper::oglEnable(GL_CULL_FACE);
+	AOGLWrapper::oglShadeModel(GL_SMOOTH); // Type of shading for the polygons
     AOGLWrapper::oglEnableClientState(GL_VERTEX_ARRAY);
 }
 
