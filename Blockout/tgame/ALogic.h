@@ -21,7 +21,11 @@ private:
     ADataStorage& _dataStorage;
     
     void moveCurrentBlockDown();
-    AFormation& generateFormation();
+    void moveCurrentBlockUp();
+    void moveCurrentBlockLeft();
+    void moveCurrentBlockRight();
+    
+   AFormation& generateFormation();
 
 public:
     ALogic(ADataStorage& dataStorage);

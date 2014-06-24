@@ -129,4 +129,30 @@ TBool AFormation::doesInbounds(const AFormation* data)
 
 //==============================================================================
     
+APoint AFormation::gridSpacePosition() const
+{
+    return _gridSpacePosition;
+}
+
+//==============================================================================
+    
+void AFormation::gridSpacePosition(const APoint& position)
+{
+    _gridSpacePosition = position;
+}
+
+//==============================================================================
+    
+APoint AFormation::gridSpaceLocation(const TUint column, const TUint row, const TUint levelIndex) const
+{
+    APoint gridSpaceLocation;
+    gridSpaceLocation.x = _gridSpacePosition.x + column;
+    gridSpaceLocation.y = _gridSpacePosition.y + row;
+    gridSpaceLocation.z = _gridSpacePosition.z + levelIndex;
+    
+    return gridSpaceLocation;
+}
+
+//==============================================================================
+    
 }   //  namespace spcTGame

@@ -82,14 +82,17 @@ void ALogic::processKey(const TUint buttonCode)
         break;
         
         case EKEYCODES_UP:
+            moveCurrentBlockUp();
             loger("moving up");
         break;
         
         case EKEYCODES_LEFT:
+            moveCurrentBlockLeft();
             loger("moving left");
         break;
         
         case EKEYCODES_RIGHT:
+            moveCurrentBlockRight();
             loger("moving right");
         break;
         
@@ -115,6 +118,36 @@ void ALogic::processKey(const TUint buttonCode)
 
 void ALogic::moveCurrentBlockDown()
 {
+    AFormation& currentFormation = _dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
+    currentFormation.gridSpacePosition(APoint(position.x, position.y, position.z + 1));
+}
+
+//==============================================================================
+
+void ALogic::moveCurrentBlockUp()
+{
+    AFormation& currentFormation = _dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
+    currentFormation.gridSpacePosition(APoint(position.x, position.y, position.z - 1));
+}
+
+//==============================================================================
+
+void ALogic::moveCurrentBlockLeft()
+{
+    AFormation& currentFormation = _dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
+    currentFormation.gridSpacePosition(APoint(position.x - 1, position.y, position.z));
+}
+
+//==============================================================================
+
+void ALogic::moveCurrentBlockRight()
+{
+    AFormation& currentFormation = _dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
+    currentFormation.gridSpacePosition(APoint(position.x + 1, position.y, position.z));
 }
 
 //==============================================================================

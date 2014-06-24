@@ -6,6 +6,7 @@
 #include "arobject.h"
 #include "aformation.h"
 #include "acolor.h"
+#include "apoint.h"
 
 //==============================================================================
 
@@ -19,7 +20,7 @@ class ABlock : public ARObject
 protected:
     AFormation& _data;
     TFloat _size;
-    
+
 public:
     ABlock(AFormation& data);
     ABlock(const ABlock& block);

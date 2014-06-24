@@ -7,7 +7,8 @@
 //
 //==============================================================================
 
-#include "BlockoutTypes.h"
+#include "blockouttypes.h"
+#include "apoint.h"
 
 //==============================================================================
 
@@ -32,6 +33,7 @@ private:
     TUint _height;
     TUint _levelsCount;
     TData* _data;
+    APoint _gridSpacePosition;
 
 public:
     AFormation();
@@ -45,6 +47,10 @@ public:
     TUint levelsCount() const;
     TData item(const TUint column, const TUint row, const TUint levelIndex) const;
     TBool item(const TUint column, const TUint row, const TUint levelIndex, const TData& value);
+    
+    APoint gridSpacePosition() const;
+    void gridSpacePosition(const APoint& point);
+    APoint gridSpaceLocation(const TUint column, const TUint row, const TUint levelIndex) const;
     
     TBool doesInbounds(const AFormation* data);
 };

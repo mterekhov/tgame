@@ -38,7 +38,10 @@ void ATexturedBlock::renderObject()
             {
                 TData value = _data.item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
-                    ADrawBasics::drawTexturedCube(APoint(i, l, j), _size, _texture);
+                {
+                    APoint point = _data.gridSpaceLocation(i, l, j);
+                    ADrawBasics::drawTexturedCube(point, _size, _texture);
+                }
             }
         }
     }

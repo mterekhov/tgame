@@ -2,13 +2,15 @@
 CURRENT TASKS
 ================================================================================
 - check new and delete pairs to avoid memory leaks
+- inject everywhere cellSize
+- use references in render lists and textures lists
+- move formation in grid space
 
 ================================================================================
 ROAD MAP
 ================================================================================
 
 General purposes
-- keyboard input processing(MAC only without wrappers and helpers but in isolated place) so we can in future attach config functionality
 - block formation movement(left/right/up/down/drop)
 - block formation restrictions in terms of well borders
 - block falling to the bottom on timer

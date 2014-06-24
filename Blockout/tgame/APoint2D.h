@@ -5,7 +5,7 @@
 
 #include <vector>
 
-#include "BlockoutTypes.h"
+#include "blockouttypes.h"
 
 //==============================================================================
 
