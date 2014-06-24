@@ -26,6 +26,7 @@ private:
     void moveCurrentBlockRight();
     
    AFormation& generateFormation();
+    bool isBreakingWellBound(const APoint& position, const AFormation& formation);
 
 public:
     ALogic(ADataStorage& dataStorage);

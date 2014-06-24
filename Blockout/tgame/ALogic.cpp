@@ -77,22 +77,22 @@ void ALogic::processKey(const TUint buttonCode)
     switch (buttonCode)
     {
         case EKEYCODES_DOWN:
-            moveCurrentBlockDown();
+            moveCurrentBlockLeft();
             loger("moving down");
         break;
         
         case EKEYCODES_UP:
-            moveCurrentBlockUp();
+            moveCurrentBlockRight();
             loger("moving up");
         break;
         
         case EKEYCODES_LEFT:
-            moveCurrentBlockLeft();
+            moveCurrentBlockUp();
             loger("moving left");
         break;
         
         case EKEYCODES_RIGHT:
-            moveCurrentBlockRight();
+            moveCurrentBlockDown();
             loger("moving right");
         break;
         
@@ -116,11 +116,22 @@ void ALogic::processKey(const TUint buttonCode)
 
 //==============================================================================
 
+bool ALogic::isBreakingWellBound(const APoint& position, const AFormation& formation)
+{
+    return true;
+    return false;
+}
+
+//==============================================================================
+
 void ALogic::moveCurrentBlockDown()
 {
     AFormation& currentFormation = _dataStorage.currentFormation();
     APoint position = currentFormation.gridSpacePosition();
-    currentFormation.gridSpacePosition(APoint(position.x, position.y, position.z + 1));
+    position.z += _dataStorage.cellSize();
+
+    if (isBreakingWellBound(position, currentFormation) == false)
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================
@@ -129,7 +140,10 @@ void ALogic::moveCurrentBlockUp()
 {
     AFormation& currentFormation = _dataStorage.currentFormation();
     APoint position = currentFormation.gridSpacePosition();
-    currentFormation.gridSpacePosition(APoint(position.x, position.y, position.z - 1));
+    position.z -= _dataStorage.cellSize();
+
+    if (isBreakingWellBound(position, currentFormation) == false)
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================
@@ -138,7 +152,10 @@ void ALogic::moveCurrentBlockLeft()
 {
     AFormation& currentFormation = _dataStorage.currentFormation();
     APoint position = currentFormation.gridSpacePosition();
-    currentFormation.gridSpacePosition(APoint(position.x - 1, position.y, position.z));
+    position.x -= _dataStorage.cellSize();
+
+    if (isBreakingWellBound(position, currentFormation) == false)
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================
@@ -147,7 +164,10 @@ void ALogic::moveCurrentBlockRight()
 {
     AFormation& currentFormation = _dataStorage.currentFormation();
     APoint position = currentFormation.gridSpacePosition();
-    currentFormation.gridSpacePosition(APoint(position.x + 1, position.y, position.z));
+    position.x += _dataStorage.cellSize();
+
+    if (isBreakingWellBound(position, currentFormation) == false)
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================

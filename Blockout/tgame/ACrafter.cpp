@@ -161,13 +161,16 @@ void ACrafter::processRender()
 
     oglState->pushMarices();
 
-    ADrawBasics::installCamera(AVector(4, 5, 7),
-                               AVector(0, 0, 0),
-                               AVector(0.0f, 1.0f, 0.0f));
+//    ADrawBasics::installCamera(AVector(4, 5, 7),
+//                               AVector(0, 0, 0),
+//                               AVector(0.0f, 1.0f, 0.0f));
 
-//    ADrawBasics::installCamera(AVector(_wellWidth / 2.0f, 2.0f * _wellDepth, _wellHeight / 2.0f),
-//                               AVector(_wellWidth / 2.0f, 0.0f, _wellHeight / 2.0f),
-//                               AVector(1.0f, 0.0f, 0.0f));
+    TFloat wWidth = _dataStorage.wellWidth();
+    TFloat wHeight = _dataStorage.wellHeight();
+    TFloat wDepth = _dataStorage.wellDepth();
+    ADrawBasics::installCamera(AVector(wWidth / 2.0f, 2.0f * wDepth, wHeight / 2.0f),
+                               AVector(wWidth / 2.0f, 0.0f, wHeight / 2.0f),
+                               AVector(1.0f, 0.0f, 0.0f));
 //    ADrawBasics::drawOrigin(APoint(0,0,0), 1.0f);
 //    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
