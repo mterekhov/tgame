@@ -18,7 +18,7 @@ class ALogic : public AKeyEvent
 {
 public:
     ALogic();
-    ~ALogic();
+    virtual ~ALogic();
     
     TBool collisions(const AFormation* forCompare, const APoint& pos);
     virtual void processKey(const TUint buttonCode);

@@ -33,6 +33,7 @@
     ARenderView* view = [[[ARenderView alloc] initWithFrame: _window.frame
                                                 pixelFormat: pixelFormat] autorelease];
     [_window setContentView:view];
+    [_window makeFirstResponder: view];
     [view initRender];
 }
 

@@ -97,6 +97,7 @@
 		4C7C09DA194726640081B310 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
 		4C84B3851824EE8500EFD26A /* libtgame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtgame.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB3AF4216EB3C0B002DE363 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = Blockout/resources/celtic.tga; sourceTree = "<group>"; };
+		4CBFB5AC19596A28002D7249 /* keymaps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = keymaps.h; path = Blockout/tgame/keymaps.h; sourceTree = "<group>"; };
 		4CC8218216D7A52A0090CE07 /* celtic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtic.png; path = Blockout/resources/celtic.png; sourceTree = "<group>"; };
 		4CC8218316D7A52A0090CE07 /* marble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marble.png; path = Blockout/resources/marble.png; sourceTree = "<group>"; };
 		4CC8218416D7A52A0090CE07 /* recycled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recycled.png; path = Blockout/resources/recycled.png; sourceTree = "<group>"; };
@@ -224,6 +225,7 @@
 				4C580B231955B747000E71E6 /* akeyevent.h */,
 				4C580B1E1955B0FB000E71E6 /* akeyboardevents.cpp */,
 				4C580B1F1955B0FB000E71E6 /* akeyboardevents.h */,
+				4CBFB5AC19596A28002D7249 /* keymaps.h */,
 			);
 			name = System;
 			sourceTree = "<group>";

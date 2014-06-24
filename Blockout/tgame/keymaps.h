@@ -1,13 +1,11 @@
-#ifndef SPCTGAME_AKEYBOARDEVENTS_H
-#define SPCTGAME_AKEYBOARDEVENTS_H
+#ifndef SPCTGAME_KEYMAPS_H
+#define SPCTGAME_KEYMAPS_H
 
 //==============================================================================
 
-#include <list>
+#include <map>
 
-#include "akeyevent.h"
 #include "blockouttypes.h"
-#include "keymaps.h"
 
 //==============================================================================
 
@@ -16,19 +14,21 @@ namespace spcTGame
 
 //==============================================================================
 
-typedef std::list<AKeyEvent*> TKeyDelegateList;
-typedef TKeyDelegateList::iterator TKeyDelegateListIter;
+typedef std::map<TString, TUint> TStringMap;
+typedef std::map<TString, TUint>::iterator TStringMapIter;
 
 //==============================================================================
 
-class AKeyboardEvents
+enum EKeyCodes
 {
-private:
-    TKeyDelegateList _delegates;
-    
-public:
-    void addDelegate(AKeyEvent& newDelegate);
-    void keyPressed(const TUint buttonCode);
+    EKEYCODES_UP = 126,
+    EKEYCODES_DOWN = 125,
+    EKEYCODES_LEFT = 123,
+    EKEYCODES_RIGHT = 124,
+    EKEYCODES_ROTATE_X = 12,
+    EKEYCODES_ROTATE_Y = 13,
+    EKEYCODES_ROTATE_Z = 14,
+    EKEYCODES_DROP_BLOCK = 49,
 };
 
 //==============================================================================
@@ -37,4 +37,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_AKEYBOARDEVENTS_H
+#endif  //  SPCTGAME_KEYMAPS_H

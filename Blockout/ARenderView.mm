@@ -145,4 +145,23 @@
 
 //==============================================================================
 
+#pragma mark - Key events -
+
+//==============================================================================
+
+- (BOOL)acceptsFirstResponder
+{
+    return YES;
+}
+
+//==============================================================================
+
+- (void) keyDown:(NSEvent *)theEvent
+{
+//    NSString* characters = [theEvent charactersIgnoringModifiers];
+    _blockout->processKeyboardEvent(theEvent.keyCode);
+}
+
+//==============================================================================
+
 @end

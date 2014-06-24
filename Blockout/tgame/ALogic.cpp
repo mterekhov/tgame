@@ -1,5 +1,6 @@
 #include "alogic.h"
 #include "blockoutdebug.h"
+#include "keymaps.h"
 
 //==============================================================================
 
@@ -57,7 +58,40 @@ void ALogic::processLogic()
     
 void ALogic::processKey(const TUint buttonCode)
 {
-    loger("key pressed in logic: %i", buttonCode);
+    switch (buttonCode)
+    {
+        case EKEYCODES_DOWN:
+            loger("moving down");
+        break;
+        
+        case EKEYCODES_UP:
+            loger("moving up");
+        break;
+        
+        case EKEYCODES_LEFT:
+            loger("moving left");
+        break;
+        
+        case EKEYCODES_RIGHT:
+            loger("moving right");
+        break;
+        
+        case EKEYCODES_ROTATE_X:
+            loger("rotate x");
+        break;
+        
+        case EKEYCODES_ROTATE_Y:
+            loger("rotate y");
+        break;
+        
+        case EKEYCODES_ROTATE_Z:
+            loger("rotate z");
+        break;
+        
+        case EKEYCODES_DROP_BLOCK:
+            loger("drop block");
+        break;
+    }
 }
 
 //==============================================================================
