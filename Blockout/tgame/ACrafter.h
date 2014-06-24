@@ -2,6 +2,10 @@
 #define SPCTGAME_ACRAFTER_H
 
 //==============================================================================
+//
+//  The main purpose of this class is to render everything we need and keep it in memory
+//
+//==============================================================================
 
 #include <list>
 
@@ -10,6 +14,7 @@
 #include "ablock.h"
 #include "atexturemanager.h"
 #include "awell.h"
+#include "adatastorage.h"
 
 //==============================================================================
 
@@ -27,6 +32,8 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 class ACrafter
 {
 private:
+    ADataStorage& _dataStorage;
+
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
     
@@ -41,15 +48,15 @@ private:
 public:
     ATextureManager textureManager;
 
-    ACrafter();
+    ACrafter(ADataStorage& dataStorage);
     virtual ~ACrafter();
     
     void processRender();
     
-    AWell* createWell(const TFloat width, const TFloat height, const TFloat depth);
-    ATexturedBlock* createTexturedBlock(const AFormation& formation, const ATexture& texture);
-    ASolidBlock* createSolidBlock(const AFormation& formation);
-    AColoredBlock* createColoredBlock(const AFormation& formation);
+    AWell* createWell();
+    ATexturedBlock* createTexturedBlock(AFormation& formation, const ATexture& texture);
+    ASolidBlock* createSolidBlock(AFormation& formation);
+    AColoredBlock* createColoredBlock(AFormation& formation);
 };
 
 //==============================================================================

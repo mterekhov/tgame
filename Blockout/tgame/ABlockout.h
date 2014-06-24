@@ -7,6 +7,7 @@
 #include "alogic.h"
 #include "acolor.h"
 #include "akeyboardevents.h"
+#include "adatastorage.h"
 
 //==============================================================================
 
@@ -21,14 +22,11 @@ private:
     void init();
     void render();
 
+    ADataStorage _dataStorage;
     ACrafter _crafter;
     ALogic _logic;
     AKeyboardEvents _keyboardEvents;
-    
-    TFloat _wellWidth;
-    TFloat _wellHeight;
-    TFloat _wellDepth;
-    
+        
 public:
     ABlockout();
     ~ABlockout();

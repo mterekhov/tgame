@@ -9,7 +9,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ALogic::ALogic()
+ALogic::ALogic(ADataStorage& dataStorage) : _dataStorage(dataStorage)
 {
 }
 
@@ -17,6 +17,22 @@ ALogic::ALogic()
 
 ALogic::~ALogic()
 {
+}
+
+//==============================================================================
+
+void ALogic::startGame()
+{
+    AFormation& newStartFormation = generateFormation();
+    _dataStorage.currentFormation(newStartFormation);
+}
+
+//==============================================================================
+
+AFormation& ALogic::generateFormation()
+{
+    AFormation& newFormation = _dataStorage.createFormation1();
+    return newFormation;
 }
 
 //==============================================================================
@@ -61,6 +77,7 @@ void ALogic::processKey(const TUint buttonCode)
     switch (buttonCode)
     {
         case EKEYCODES_DOWN:
+            moveCurrentBlockDown();
             loger("moving down");
         break;
         
@@ -92,6 +109,12 @@ void ALogic::processKey(const TUint buttonCode)
             loger("drop block");
         break;
     }
+}
+
+//==============================================================================
+
+void ALogic::moveCurrentBlockDown()
+{
 }
 
 //==============================================================================

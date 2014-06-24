@@ -14,7 +14,7 @@ namespace spcTGame
 
 //==============================================================================
 
-ACrafter::ACrafter()
+ACrafter::ACrafter(ADataStorage& dataStorage): _dataStorage(dataStorage)
 {
 }
 
@@ -31,9 +31,9 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
-AWell* ACrafter::createWell(const TFloat width, const TFloat height, const TFloat depth)
+AWell* ACrafter::createWell()
 {
-    AWell* well = new AWell(width, height, depth);
+    AWell* well = new AWell(_dataStorage.wellWidth(), _dataStorage.wellHeight(), _dataStorage.wellDepth());
     addObjectForRender(well);
     
     return well;
@@ -45,7 +45,7 @@ AWell* ACrafter::createWell(const TFloat width, const TFloat height, const TFloa
 
 //==============================================================================
 
-ASolidBlock* ACrafter::createSolidBlock(const AFormation& formation)
+ASolidBlock* ACrafter::createSolidBlock(AFormation& formation)
 {
     ASolidBlock* newBlock = new ASolidBlock(formation);
     addObjectForRender(newBlock);
@@ -55,7 +55,7 @@ ASolidBlock* ACrafter::createSolidBlock(const AFormation& formation)
 
 //==============================================================================
 
-AColoredBlock* ACrafter::createColoredBlock(const AFormation& formation)
+AColoredBlock* ACrafter::createColoredBlock(AFormation& formation)
 {
     AColoredBlock* newBlock = new AColoredBlock(formation);
     addObjectForRender(newBlock);
@@ -65,7 +65,7 @@ AColoredBlock* ACrafter::createColoredBlock(const AFormation& formation)
 
 //==============================================================================
 
-ATexturedBlock* ACrafter::createTexturedBlock(const AFormation& formation, const ATexture& texture)
+ATexturedBlock* ACrafter::createTexturedBlock(AFormation& formation, const ATexture& texture)
 {
     ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
     addObjectForRender(newBlock);

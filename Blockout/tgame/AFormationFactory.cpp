@@ -6,6 +6,10 @@ namespace spcTGame
 {
     
 //==============================================================================
+
+AFormation AFormationFactory::_nullFormation;
+
+//==============================================================================
     
 AFormation AFormationFactory::createFormation1()
 {
@@ -38,9 +42,9 @@ AFormation AFormationFactory::createFormation2()
 
 //==============================================================================
 
-AFormation AFormationFactory::nullFormation()
+AFormation& AFormationFactory::nullFormation()
 {
-    return AFormation();
+    return _nullFormation;
 }
 
 //==============================================================================

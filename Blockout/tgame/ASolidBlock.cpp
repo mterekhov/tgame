@@ -9,7 +9,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ASolidBlock::ASolidBlock(const AFormation& data) : AColoredBlock(data)
+ASolidBlock::ASolidBlock(AFormation& data) : AColoredBlock(data)
 {
 }
 

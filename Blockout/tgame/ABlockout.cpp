@@ -18,7 +18,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ABlockout::ABlockout() : _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f)
+ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_dataStorage)
 {
     init();
 }
@@ -35,14 +35,10 @@ void ABlockout::init()
 {
     //  call shared to create instance and init some OpenGL pars;
     spcTGame::AOpenGLState::create();
-    
-    ATexture tex = _crafter.textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
-    _crafter.createTexturedBlock(AFormationFactory::createFormation1(), tex);
-    
-//    _crafter.createSolidBlock(AFormationFactory::createFormation1());
-//    _crafter.createColoredBlock(AFormationFactory::createFormation1());
 
-    _crafter.createWell(_wellWidth, _wellHeight, _wellDepth);
+    ATexture tex = _crafter.textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
+    _crafter.createTexturedBlock(_dataStorage.currentFormation(), tex);
+    _crafter.createWell();
     
     _keyboardEvents.addDelegate(_logic);
 }

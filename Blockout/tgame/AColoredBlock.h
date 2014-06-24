@@ -20,7 +20,7 @@ protected:
     AColor _color;
 
 public:
-    AColoredBlock(const AFormation& data);
+    AColoredBlock(AFormation& data);
     AColoredBlock(const AColoredBlock& block);
     virtual ~AColoredBlock();
     
