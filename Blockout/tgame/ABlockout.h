@@ -33,6 +33,7 @@ public:
     
     void updateScreenSize(const TDouble screenWidth, const TDouble screenHeight);
     
+    void startGame();
     void processKeyboardEvent(const TUint buttonCode);
     void processGameCycle();
 };

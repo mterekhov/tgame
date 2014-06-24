@@ -42,6 +42,7 @@ private:
     void clearRenderList();
     TBool clearList(TRObjectsList& renderList);
     
+    void renderContent();
     void renderList(const TRObjectsList& renderList);
     TBool addObjectForRender(ARObject* object);
     

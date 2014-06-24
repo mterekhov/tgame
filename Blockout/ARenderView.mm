@@ -50,7 +50,7 @@
     _openGLInited = NO;
 
     [self initContext:self.pixelFormat];
-    [self initGL];
+    [self initGame];
     
     _animationInterval = 1.0f / 60.0f;
     [self startAnimation];
@@ -77,7 +77,7 @@
 
 //==============================================================================
 
-- (void) initGL
+- (void) initGame
 {
     if (_openGLInited == YES)
     {
@@ -88,6 +88,7 @@
     [self updateScreenSize:self.bounds.size.width screenHeight:self.bounds.size.height];
 
     _blockout = new spcTGame::ABlockout();
+    _blockout->startGame();
 }
 
 //==============================================================================

@@ -2,8 +2,6 @@
 CURRENT TASKS
 ================================================================================
 - check new and delete pairs to avoid memory leaks
-- keyboard events translations
-- сделать все через одни ворота, через blockout
 
 ================================================================================
 ROAD MAP
