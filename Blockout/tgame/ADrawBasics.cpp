@@ -32,7 +32,6 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATe
     }
     
     AOpenGLState* instance = AOpenGLState::shared();
-    instance->textureEnable();
     instance->currentTexture(texture);
 
     TUint strideInBytes = sizeof(TFloat) * dataLiner.arrayStride();
@@ -40,7 +39,6 @@ void ADrawBasics::drawTexturedCube(const APoint& pos, const TFloat cubeSize, ATe
     ADrawBasics::drawTriangles(line, strideInBytes, dataLiner.pointsCount());
 
     instance->clearCurrentTexture();
-    instance->textureDisable();
     
     delete [] line;
 }
