@@ -20,9 +20,9 @@ private:
     void renderContent() const;
 
 public:
-    TFloat wellWidth;
-    TFloat wellHeight;
-    TFloat wellDepth;
+    TFloat wellWidth;   //  maps to z axis
+    TFloat wellHeight;  //  maps to x axis
+    TFloat wellDepth;   //  maps to y axis
     TFloat wellCellSize;
     
     AColor color;
