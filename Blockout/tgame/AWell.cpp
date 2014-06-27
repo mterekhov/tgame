@@ -11,7 +11,7 @@ namespace spcTGame
     
 //==============================================================================
     
-AWell::AWell(const TFloat width, const TFloat height, const TFloat depth) : ARObject(), wellWidth(width), wellHeight(height), wellDepth(depth), wellCellSize(1.0f)
+AWell::AWell(const TFloat width, const TFloat height, const TFloat depth, const TFloat cellSize) : ARObject(), wellWidth(width), wellHeight(height), wellDepth(depth), wellCellSize(cellSize)
 {
 }
 

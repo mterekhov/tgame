@@ -92,16 +92,17 @@ TData AFormation::item(const TUint column, const TUint row, const TUint levelInd
 
 TBool AFormation::item(const TUint column, const TUint row, const TUint levelIndex, const TData& value)
 {
+    loger("%i\t\t%i\t\t%i", column, row, levelIndex);
     if (!_data)
         return false;
 
-    if (row > _height)
+    if (row >= _height)
         return false;
 
-    if (column > _width)
+    if (column >= _width)
         return false;
 
-    if (levelIndex > _levelsCount)
+    if (levelIndex >= _levelsCount)
         return false;
 
     int skip = _width * _height * levelIndex;

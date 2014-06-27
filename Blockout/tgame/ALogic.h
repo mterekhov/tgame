@@ -7,6 +7,7 @@
 #include "apoint.h"
 #include "akeyevent.h"
 #include "adatastorage.h"
+#include "amatrix.h"
 
 //==============================================================================
 
@@ -24,9 +25,16 @@ private:
     void moveCurrentBlockUp();
     void moveCurrentBlockLeft();
     void moveCurrentBlockRight();
+    void dropCurrentBlock();
+    void rotateY();
     
-   AFormation& generateFormation();
+    void generateStartFormation();
+    AFormation& generateFormation();
     bool isBreakingWellBound(const APoint& position, const AFormation& formation);
+
+    APoint applyMatrixToPoint(const AMatrix& mat, const APoint& in);
+    void defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin);
+    AFormation& defineDimmension(const AMatrix& m, std::list<TInt>& shifts, std::list<APoint>& points);
 
 public:
     ALogic(ADataStorage& dataStorage);

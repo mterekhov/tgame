@@ -39,6 +39,8 @@ public:
 
     ADataStorage();
     ~ADataStorage();
+    
+    AFormation& createFormation(const TFloat width, const TFloat height, const TFloat levelsCount);
     AFormation& createFormation1();
 
     TFloat wellWidth();

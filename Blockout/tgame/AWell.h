@@ -28,7 +28,7 @@ public:
     AColor color;
 
     AWell();
-    AWell(const TFloat width, const TFloat height, const TFloat depth);
+    AWell(const TFloat width, const TFloat height, const TFloat depth, const TFloat cellSize);
     virtual ~AWell();
 
     virtual void renderObject();

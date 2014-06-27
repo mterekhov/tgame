@@ -6,15 +6,8 @@ namespace spcTGame
 {
     
 //==============================================================================
-    
-TFloat ADataStorage::cellSize()
-{
-    return 1.0f;
-}
 
-//==============================================================================
-
-ADataStorage::ADataStorage() : _currentFormation(AFormationFactory::nullFormation()), _wellWidth(3.0f), _wellHeight(3.0f), _wellDepth(9.0f)
+ADataStorage::ADataStorage() : _currentFormation(AFormationFactory::nullFormation()), _wellWidth(5.0f), _wellHeight(5.0f), _wellDepth(9.0f)
 {
 }
 
@@ -22,6 +15,16 @@ ADataStorage::ADataStorage() : _currentFormation(AFormationFactory::nullFormatio
 
 ADataStorage::~ADataStorage()
 {
+}
+
+//==============================================================================
+
+AFormation& ADataStorage::createFormation(const TFloat width, const TFloat height, const TFloat levelsCount)
+{
+    AFormation newFormation(width, height, levelsCount);
+    _formationList.push_back(newFormation);
+    
+    return _formationList.back();
 }
 
 //==============================================================================
@@ -88,6 +91,13 @@ void ADataStorage::wellHeight(const TFloat height)
 void ADataStorage::wellDepth(const TFloat depth)
 {
     _wellDepth = depth;
+}
+
+//==============================================================================
+
+TFloat ADataStorage::cellSize()
+{
+    return 1.0f;
 }
 
 //==============================================================================

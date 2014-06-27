@@ -15,6 +15,7 @@
 #include "atexturemanager.h"
 #include "awell.h"
 #include "adatastorage.h"
+#include "akeyevent.h"
 
 //==============================================================================
 
@@ -29,7 +30,7 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 
 //==============================================================================
 
-class ACrafter
+class ACrafter : public AKeyEvent
 {
 private:
     ADataStorage& _dataStorage;
@@ -51,7 +52,9 @@ public:
 
     ACrafter(ADataStorage& dataStorage);
     virtual ~ACrafter();
-    
+
+    virtual void processKey(const TUint buttonCode);
+
     void processRender();
     
     AWell* createWell();

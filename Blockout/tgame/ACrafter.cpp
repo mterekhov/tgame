@@ -34,7 +34,7 @@ ACrafter::~ACrafter()
 
 AWell* ACrafter::createWell()
 {
-    AWell* well = new AWell(_dataStorage.wellWidth(), _dataStorage.wellHeight(), _dataStorage.wellDepth());
+    AWell* well = new AWell(_dataStorage.wellWidth(), _dataStorage.wellHeight(), _dataStorage.wellDepth(), _dataStorage.cellSize());
     addObjectForRender(well);
     
     return well;
@@ -150,6 +150,15 @@ TBool ACrafter::addObjectForRender(ARObject* object)
 
 //==============================================================================
 
+void ACrafter::processKey(const TUint buttonCode)
+{
+    ATexture tex = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
+    AFormation& f = _dataStorage.currentFormation();
+    createTexturedBlock(_dataStorage.currentFormation(), tex);
+}
+
+//==============================================================================
+
 #pragma mark - craft the list -
 
 //==============================================================================
@@ -161,16 +170,17 @@ void ACrafter::processRender()
 
     oglState->pushMarices();
 
-//    ADrawBasics::installCamera(AVector(4, 5, 7),
+//    ADrawBasics::installCamera(AVector(6, 5, 7),
 //                               AVector(0, 0, 0),
 //                               AVector(0.0f, 1.0f, 0.0f));
 
     TFloat wWidth = _dataStorage.wellWidth();
     TFloat wHeight = _dataStorage.wellHeight();
     TFloat wDepth = _dataStorage.wellDepth();
-    ADrawBasics::installCamera(AVector(wWidth / 2.0f, 2.0f * wDepth, wHeight / 2.0f),
-                               AVector(wWidth / 2.0f, 0.0f, wHeight / 2.0f),
+    ADrawBasics::installCamera(AVector(wHeight / 2.0f, 2.0f * wDepth, wWidth / 2.0f),
+                               AVector(wHeight / 2.0f, 0.0f, wWidth / 2.0f),
                                AVector(1.0f, 0.0f, 0.0f));
+    
 //    ADrawBasics::drawOrigin(APoint(0,0,0), 1.0f);
 //    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 

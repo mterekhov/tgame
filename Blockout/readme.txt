@@ -4,17 +4,14 @@ CURRENT TASKS
 - check new and delete pairs to avoid memory leaks
 - inject everywhere cellSize
 - use references in render lists and textures lists
-- move formation in grid space
+- block rotations and it's data model modification
 
 ================================================================================
 ROAD MAP
 ================================================================================
 
 General purposes
-- block formation movement(left/right/up/down/drop)
-- block formation restrictions in terms of well borders
 - block falling to the bottom on timer
-- block rotations and it's data model modification
 - block movement restrictions according to the well configuration(collision detection)
 - appending block formation into the well configuration
 - draw filled well

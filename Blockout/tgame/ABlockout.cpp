@@ -39,6 +39,7 @@ void ABlockout::init()
     _crafter.createWell();
     
     _keyboardEvents.addDelegate(_logic);
+    _keyboardEvents.addDelegate(_crafter);
 }
 
 //==============================================================================
@@ -46,7 +47,7 @@ void ABlockout::init()
 void ABlockout::startGame()
 {
     _logic.startGame();
-    
+
     ATexture tex = _crafter.textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
     _crafter.createTexturedBlock(_dataStorage.currentFormation(), tex);
 }

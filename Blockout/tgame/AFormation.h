@@ -29,9 +29,9 @@ enum EDataState
 class AFormation
 {
 private:
-    TUint _width;
-    TUint _height;
-    TUint _levelsCount;
+    TUint _width;   //  is mapped to z axis of ogl
+    TUint _height;  //  is mapped to x axis of ogl
+    TUint _levelsCount; //  is mapped to y axis of ogl
     TData* _data;
     APoint _gridSpacePosition;
 
@@ -42,6 +42,7 @@ public:
     ~AFormation();
     
     const TData* data() const;
+    TData* data();
     TUint height() const;
     TUint width() const;
     TUint levelsCount() const;

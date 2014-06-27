@@ -17,6 +17,8 @@
 		4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4CB3AF4216EB3C0B002DE363 /* celtic.tga */; };
 		4CBFB5B419598633002D7249 /* adatastorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CBFB5B219598633002D7249 /* adatastorage.cpp */; };
 		4CBFB5B519598633002D7249 /* adatastorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBFB5B319598633002D7249 /* adatastorage.h */; };
+		4CBFB5BA195B202C002D7249 /* amatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CBFB5B8195B202C002D7249 /* amatrix.cpp */; };
+		4CBFB5BB195B202C002D7249 /* amatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBFB5B9195B202C002D7249 /* amatrix.h */; };
 		4CC8218516D7A52A0090CE07 /* celtic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218216D7A52A0090CE07 /* celtic.png */; };
 		4CC8218616D7A52A0090CE07 /* marble.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218316D7A52A0090CE07 /* marble.png */; };
 		4CC8218716D7A52A0090CE07 /* recycled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC8218416D7A52A0090CE07 /* recycled.png */; };
@@ -102,6 +104,8 @@
 		4CBFB5AC19596A28002D7249 /* keymaps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = keymaps.h; path = Blockout/tgame/keymaps.h; sourceTree = "<group>"; };
 		4CBFB5B219598633002D7249 /* adatastorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adatastorage.cpp; path = Blockout/tgame/adatastorage.cpp; sourceTree = "<group>"; };
 		4CBFB5B319598633002D7249 /* adatastorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adatastorage.h; path = Blockout/tgame/adatastorage.h; sourceTree = "<group>"; };
+		4CBFB5B8195B202C002D7249 /* amatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amatrix.cpp; path = Blockout/tgame/amatrix.cpp; sourceTree = "<group>"; };
+		4CBFB5B9195B202C002D7249 /* amatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amatrix.h; path = Blockout/tgame/amatrix.h; sourceTree = "<group>"; };
 		4CC8218216D7A52A0090CE07 /* celtic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtic.png; path = Blockout/resources/celtic.png; sourceTree = "<group>"; };
 		4CC8218316D7A52A0090CE07 /* marble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marble.png; path = Blockout/resources/marble.png; sourceTree = "<group>"; };
 		4CC8218416D7A52A0090CE07 /* recycled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recycled.png; path = Blockout/resources/recycled.png; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 				4CF304161949EC8B0092A63D /* avector.h */,
 				4CF3041F1949EC980092A63D /* adataliner.cpp */,
 				4CF304201949EC980092A63D /* adataliner.h */,
+				4CBFB5B8195B202C002D7249 /* amatrix.cpp */,
+				4CBFB5B9195B202C002D7249 /* amatrix.h */,
 			);
 			name = RenderTypes;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 				4CF304081949EC5F0092A63D /* aoglwrapper.h in Headers */,
 				4CF3044E1949ED030092A63D /* atexturedblock.h in Headers */,
 				4CF3044A1949ED030092A63D /* acoloredblock.h in Headers */,
+				4CBFB5BB195B202C002D7249 /* amatrix.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +536,7 @@
 				4CF3041B1949EC8B0092A63D /* apoint2d.cpp in Sources */,
 				4CF304211949EC980092A63D /* adataliner.cpp in Sources */,
 				4CF3043D1949ECCA0092A63D /* adrawbasics.cpp in Sources */,
+				4CBFB5BA195B202C002D7249 /* amatrix.cpp in Sources */,
 				4CBFB5B419598633002D7249 /* adatastorage.cpp in Sources */,
 				4CF304271949ECA70092A63D /* aformation.cpp in Sources */,
 				4CF3044B1949ED030092A63D /* asolidblock.cpp in Sources */,
