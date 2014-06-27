@@ -26,7 +26,10 @@ private:
     void moveCurrentBlockLeft();
     void moveCurrentBlockRight();
     void dropCurrentBlock();
+    void rotateX();
     void rotateY();
+    void rotateZ();
+    void rotate(const AMatrix& m);
     
     void generateStartFormation();
     AFormation& generateFormation();

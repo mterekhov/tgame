@@ -95,6 +95,7 @@ void ALogic::processKey(const TUint buttonCode)
         
         case EKEYCODES_ROTATE_X:
             loger("rotate x");
+            rotateX();
         break;
         
         case EKEYCODES_ROTATE_Y:
@@ -102,6 +103,7 @@ void ALogic::processKey(const TUint buttonCode)
         break;
         
         case EKEYCODES_ROTATE_Z:
+            rotateZ();
             loger("rotate z");
         break;
         
@@ -201,7 +203,29 @@ bool ALogic::isBreakingWellBound(const APoint& position, const AFormation& forma
 void ALogic::rotateY()
 {
     AMatrix m = AMatrix::rotationY(M_PI_2);
-    
+    rotate(m);
+}
+
+//==============================================================================
+
+void ALogic::rotateX()
+{
+    AMatrix m = AMatrix::rotationX(M_PI_2);
+    rotate(m);
+}
+
+//==============================================================================
+
+void ALogic::rotateZ()
+{
+    AMatrix m = AMatrix::rotationZ(M_PI_2);
+    rotate(m);
+}
+
+//==============================================================================
+
+void ALogic::rotate(const AMatrix& m)
+{
     std::list<APoint> points;
     std::list<TInt> shifts;
     AFormation& f = defineDimmension(m, shifts, points);
@@ -215,11 +239,9 @@ void ALogic::rotateY()
     for (std::list<APoint>::iterator iter = points.begin(); iter != points.end(); iter++)
     {
         APoint p = *iter;
-//        printf("old point %.3f\t%.3f\t%.3f\n", p.x, p.y, p.z);
         p.x += static_cast<TFloat>(shiftX);
         p.y += static_cast<TFloat>(shiftY);
         p.z += static_cast<TFloat>(shiftZ);
-        printf("new point %.3f\t%.3f\t%.3f\n", p.x, p.y, p.z);
         TInt column = static_cast<TUint>(round(p.z));
         TInt row = static_cast<TUint>(round(p.x));
         TInt level = static_cast<TUint>(round(p.y));
@@ -227,13 +249,12 @@ void ALogic::rotateY()
         TBool r = f.item(column, row, level, EDATASTATE_RENDERABLE);
         if (r == false)
         {
-            loger("FUCKUP");
+            loger("can not rotate");
         }
     }
     
     f.gridSpacePosition(_dataStorage.currentFormation().gridSpacePosition());
     _dataStorage.currentFormation(f);
-    
 }
 
 //==============================================================================
