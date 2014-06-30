@@ -1,10 +1,8 @@
 ================================================================================
 CURRENT TASKS
 ================================================================================
-- check boundaries of well in case of rotated cube
-- check new and delete pairs to avoid memory leaks
-- inject everywhere cellSize
-- use references in render lists and textures lists
+- appending block formation into the well configuration
+- draw filled well
 
 ================================================================================
 ROAD MAP
@@ -12,8 +10,6 @@ ROAD MAP
 
 General purposes
 - block falling to the bottom on timer
-- appending block formation into the well configuration
-- draw filled well
 
 - timer(c++ time) to emulate block drops
 - speed switching to increase the difficulty
