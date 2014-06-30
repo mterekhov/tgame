@@ -32,6 +32,7 @@ enum EFormation
     
 ALogic::ALogic(ADataStorage& dataStorage) : _dataStorage(dataStorage)
 {
+    srand(time(0));
 }
 
 //==============================================================================
@@ -71,7 +72,6 @@ void ALogic::generateStartFormation()
 
 AFormation& ALogic::generateRandomFormation()
 {
-    srand(0);
     TUint formationIndex = rand() % FORMATIONS_COUNT;
     AFormation& newFormation = _dataStorage.createFormation1();
 
