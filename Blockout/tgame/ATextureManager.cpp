@@ -9,7 +9,14 @@ namespace spcTGame
     
 //==============================================================================
     
-const ATexture ATextureManager::zeroTexture;
+ATexture ATextureManager::_zeroTexture;
+
+//==============================================================================
+
+ATexture& ATextureManager::zeroTexture()
+{
+    return _zeroTexture;
+}
 
 //==============================================================================
 

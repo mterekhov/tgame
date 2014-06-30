@@ -34,8 +34,13 @@ ACrafter::~ACrafter()
 
 AWell* ACrafter::createWell()
 {
-    AWell* well = new AWell(_dataStorage.wellWidth(), _dataStorage.wellHeight(), _dataStorage.wellDepth(), _dataStorage.cellSize());
+    AFormation& wellContent = _dataStorage.createFormation(_dataStorage.wellWidth(), _dataStorage.wellHeight(), _dataStorage.wellDepth());
+    AWell* well = new AWell(_dataStorage.cellSize(), wellContent);
     addObjectForRender(well);
+    
+    wellContent.item(0, 2, 7, EDATASTATE_RENDERABLE);
+    ATexture& t = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/celtic.tga");
+    addObjectForRender(createTexturedBlock(wellContent, t));
     
     return well;
 }
@@ -153,7 +158,6 @@ TBool ACrafter::addObjectForRender(ARObject* object)
 void ACrafter::processKey(const TUint buttonCode)
 {
     ATexture tex = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
-    AFormation& f = _dataStorage.currentFormation();
     createTexturedBlock(_dataStorage.currentFormation(), tex);
 }
 

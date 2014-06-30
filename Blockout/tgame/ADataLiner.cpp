@@ -45,11 +45,6 @@ EIntegrity ADataLiner::checkIntegrity() const
 TUint ADataLiner::pointsCount() const
 {
     return _coordsList.size();
-//    TUint strider = arrayStride();
-//    if (strider)
-//        return numberOfFloatValues() / strider;
-//    
-//    return 0;
 }
 
 //==============================================================================
@@ -57,15 +52,6 @@ TUint ADataLiner::pointsCount() const
 TUint ADataLiner::numberOfFloatValues() const
 {
     return arrayStride() * pointsCount();
-//    TUint coordsSize = static_cast<TUint>(_coordsList.size());
-//    if (!coordsSize)
-//        return 0;
-//    
-//    TUint uvSize = static_cast<TUint>(_uvList.size());
-//    TUint normalsSize = static_cast<TUint>(_normalsList.size());
-//    TUint sizer = 3 * coordsSize + 2 * uvSize + 3 * normalsSize;
-//    
-//    return sizer;
 }
 
 //==============================================================================

@@ -2,7 +2,9 @@
 
 #include "awell.h"
 #include "adrawbasics.h"
-#import "aopenglstate.h"
+#include "aopenglstate.h"
+#include "adatastorage.h"
+#include "blockoutdebug.h"
 
 //==============================================================================
 
@@ -11,25 +13,19 @@ namespace spcTGame
     
 //==============================================================================
     
-AWell::AWell(const TFloat width, const TFloat height, const TFloat depth, const TFloat cellSize) : ARObject(), wellWidth(width), wellHeight(height), wellDepth(depth), wellCellSize(cellSize)
+AWell::AWell(const TFloat cellSize, AFormation& content) : ARObject(), wellWidth(content.width()), wellHeight(content.height()), wellDepth(content.levelsCount()), wellCellSize(cellSize), _content(content)
 {
 }
 
 //==============================================================================
 
-AWell::AWell() : ARObject(), wellWidth(0.0f), wellHeight(0.0f), wellDepth(0.0f), wellCellSize(1.0f)
+AWell::AWell() : ARObject(), wellWidth(0.0f), wellHeight(0.0f), wellDepth(0.0f), wellCellSize(1.0f), _content(AFormationFactory::nullFormation())
 {
 }
 
 //==============================================================================
 
 AWell::~AWell()
-{
-}
-
-//==============================================================================
-
-void AWell::renderContent() const
 {
 }
 
@@ -88,7 +84,6 @@ void AWell::renderHull() const
 void AWell::renderObject()
 {
     renderHull();
-    renderContent();
 }
 
 //==============================================================================

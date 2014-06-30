@@ -25,11 +25,12 @@ class ATextureManager
 {
 private:
     TTexturesList _textureList;
+    static ATexture _zeroTexture;
 
     TBool clearAllTextures(TTexturesList& textureList);
 
 public:
-    static const ATexture zeroTexture;
+    static ATexture& zeroTexture();
 
     ATextureManager();
     ~ATextureManager();

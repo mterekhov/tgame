@@ -11,6 +11,21 @@ namespace spcTGame
     
 //==============================================================================
 
+enum EFormation
+{
+    FORMATIONS_ONE,
+    FORMATIONS_TWO,
+    FORMATIONS_THREE,
+    FORMATIONS_FOUR,
+    FORMATIONS_FIVE,
+    FORMATIONS_SIX,
+    FORMATIONS_SEVEN,
+    FORMATIONS_EIGHT,
+    FORMATIONS_COUNT
+};
+
+//==============================================================================
+
 #define PRECISION_EPSILON 0.000001
 
 //==============================================================================
@@ -56,7 +71,45 @@ void ALogic::generateStartFormation()
 
 AFormation& ALogic::generateRandomFormation()
 {
+    srand(0);
+    TUint formationIndex = rand() % FORMATIONS_COUNT;
     AFormation& newFormation = _dataStorage.createFormation1();
+
+    switch (formationIndex)
+    {
+        case FORMATIONS_ONE:
+            newFormation = _dataStorage.createFormation1();
+        break;
+        
+        case FORMATIONS_TWO:
+            newFormation = _dataStorage.createFormation2();
+        break;
+        
+        case FORMATIONS_THREE:
+            newFormation = _dataStorage.createFormation3();
+        break;
+        
+        case FORMATIONS_FOUR:
+            newFormation = _dataStorage.createFormation4();
+        break;
+        
+        case FORMATIONS_FIVE:
+            newFormation = _dataStorage.createFormation5();
+        break;
+        
+        case FORMATIONS_SIX:
+            newFormation = _dataStorage.createFormation6();
+        break;
+        
+        case FORMATIONS_SEVEN:
+            newFormation = _dataStorage.createFormation7();
+        break;
+        
+        case FORMATIONS_EIGHT:
+            newFormation = _dataStorage.createFormation8();
+        break;
+    };
+    
     return newFormation;
 }
 

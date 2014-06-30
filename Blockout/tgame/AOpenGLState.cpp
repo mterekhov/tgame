@@ -36,7 +36,7 @@ AOpenGLState* AOpenGLState::shared()
 
 //==============================================================================
 
-AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _currentTexture(ATextureManager::zeroTexture)
+AOpenGLState::AOpenGLState() : _lineWidth(1.0f), _textureEnabled(false), _currentTexture(ATextureManager::zeroTexture())
 {
     drawColorSetup(_drawColor);
     clearColorSetup(_clearColor);
@@ -206,7 +206,7 @@ const ATexture& AOpenGLState::currentTexture() const
 void AOpenGLState::clearCurrentTexture()
 {
     _currentTexture.unBind();
-    _currentTexture = ATextureManager::zeroTexture;
+    _currentTexture = ATextureManager::zeroTexture();
 }
 
 //==============================================================================

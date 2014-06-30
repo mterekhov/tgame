@@ -5,6 +5,7 @@
 
 #include "arobject.h"
 #include "acolor.h"
+#include "aformation.h"
 
 //==============================================================================
 
@@ -16,8 +17,9 @@ namespace spcTGame
 class AWell : public ARObject
 {
 private:
+    AFormation& _content;
+
     void renderHull() const;
-    void renderContent() const;
 
 public:
     TFloat wellWidth;   //  maps to z axis
@@ -28,7 +30,7 @@ public:
     AColor color;
 
     AWell();
-    AWell(const TFloat width, const TFloat height, const TFloat depth, const TFloat cellSize);
+    AWell(const TFloat cellSize, AFormation& content);
     virtual ~AWell();
 
     virtual void renderObject();
