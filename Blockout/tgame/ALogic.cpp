@@ -239,7 +239,10 @@ void ALogic::rotate(const AMatrix& m)
         }
     }
     
-    f.gridSpacePosition(_dataStorage.currentFormation().gridSpacePosition());
+    APoint gridPoint = _dataStorage.currentFormation().gridSpacePosition();
+    correctBlockPosition(gridPoint, f);
+
+    f.gridSpacePosition(gridPoint);
     _dataStorage.currentFormation(f);
 }
 
@@ -284,11 +287,24 @@ AFormation& ALogic::createRotatedFormation(const AMatrix& m, SRotationMetaData& 
     rotationMeta.negativeShifts[0] = fabs(minHeight);
     rotationMeta.negativeShifts[1] = fabs(minLevels);
 
-//    if (static_cast<TFloat>(maxWidth) > _dataStorage.wellWidth())
-//        shiftX = maxWidth - _dataStorage.wellWidth();
-    
-
     return _dataStorage.createFormation(rotationMeta.newDimmension[0], rotationMeta.newDimmension[1], rotationMeta.newDimmension[2]);
+}
+
+//==============================================================================
+
+void ALogic::correctBlockPosition(APoint& point, const AFormation& f)
+{
+    TFloat shift = static_cast<TFloat>(f.height()) + point.x;
+    if (shift > _dataStorage.wellHeight())
+        point.x += _dataStorage.wellHeight() - shift;
+    
+    shift = static_cast<TFloat>(f.width()) + point.z;
+    if (shift > _dataStorage.wellWidth())
+        point.z += _dataStorage.wellWidth() - shift;
+    
+    shift = static_cast<TFloat>(f.levelsCount()) + point.y;
+    if (shift > _dataStorage.wellDepth())
+        point.y += _dataStorage.wellDepth() - shift;
 }
 
 //==============================================================================

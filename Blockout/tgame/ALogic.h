@@ -18,15 +18,12 @@ namespace spcTGame
 
 typedef std::list<APoint> TRotatedPoints;
 typedef TRotatedPoints::iterator TRPIter;
-//typedef std::list<TInt> TPositionShift;
-//typedef TPositionShift::iterator TPSIter;
 
 #define SHIFT_DIMMENSION 3
 
 struct SRotationMetaData
 {
     TInt negativeShifts[SHIFT_DIMMENSION];
-    TInt positionShift[SHIFT_DIMMENSION];
     TInt newDimmension[SHIFT_DIMMENSION];
     
     TRotatedPoints rotatedPoints;
@@ -56,6 +53,7 @@ private:
     APoint applyMatrixToPoint(const AMatrix& mat, const APoint& in);
     void defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin);
     AFormation& createRotatedFormation(const AMatrix& m, SRotationMetaData& rotationMeta);
+    void correctBlockPosition(APoint& point, const AFormation& f);
 
 public:
     ALogic(ADataStorage& dataStorage);
