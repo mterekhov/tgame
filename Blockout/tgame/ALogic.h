@@ -15,6 +15,24 @@ namespace spcTGame
 {
     
 //==============================================================================
+
+typedef std::list<APoint> TRotatedPoints;
+typedef TRotatedPoints::iterator TRPIter;
+//typedef std::list<TInt> TPositionShift;
+//typedef TPositionShift::iterator TPSIter;
+
+#define SHIFT_DIMMENSION 3
+
+struct SRotationMetaData
+{
+    TInt negativeShifts[SHIFT_DIMMENSION];
+    TInt positionShift[SHIFT_DIMMENSION];
+    TInt newDimmension[SHIFT_DIMMENSION];
+    
+    TRotatedPoints rotatedPoints;
+};
+
+//==============================================================================
     
 class ALogic : public AKeyEvent
 {
@@ -32,12 +50,12 @@ private:
     void rotate(const AMatrix& m);
     
     void generateStartFormation();
-    AFormation& generateFormation();
+    AFormation& generateRandomFormation();
     bool isBreakingWellBound(const APoint& position, const AFormation& formation);
 
     APoint applyMatrixToPoint(const AMatrix& mat, const APoint& in);
     void defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin);
-    AFormation& defineDimmension(const AMatrix& m, std::list<TInt>& shifts, std::list<APoint>& points);
+    AFormation& createRotatedFormation(const AMatrix& m, SRotationMetaData& rotationMeta);
 
 public:
     ALogic(ADataStorage& dataStorage);

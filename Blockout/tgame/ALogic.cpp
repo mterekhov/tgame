@@ -46,7 +46,7 @@ void ALogic::startGame()
 
 void ALogic::generateStartFormation()
 {
-    AFormation& newStartFormation = generateFormation();
+    AFormation& newStartFormation = generateRandomFormation();
     APoint p(0.0f, _dataStorage.wellDepth() - 1, 0.0f);
     newStartFormation.gridSpacePosition(p);
     _dataStorage.currentFormation(newStartFormation);
@@ -54,7 +54,7 @@ void ALogic::generateStartFormation()
 
 //==============================================================================
 
-AFormation& ALogic::generateFormation()
+AFormation& ALogic::generateRandomFormation()
 {
     AFormation& newFormation = _dataStorage.createFormation1();
     return newFormation;
@@ -75,26 +75,21 @@ void ALogic::processKey(const TUint buttonCode)
     {
         case EKEYCODES_DOWN:
             moveCurrentBlockLeft();
-            loger("moving down");
         break;
         
         case EKEYCODES_UP:
             moveCurrentBlockRight();
-            loger("moving up");
         break;
         
         case EKEYCODES_LEFT:
             moveCurrentBlockUp();
-            loger("moving left");
         break;
         
         case EKEYCODES_RIGHT:
             moveCurrentBlockDown();
-            loger("moving right");
         break;
         
         case EKEYCODES_ROTATE_X:
-            loger("rotate x");
             rotateX();
         break;
         
@@ -104,12 +99,10 @@ void ALogic::processKey(const TUint buttonCode)
         
         case EKEYCODES_ROTATE_Z:
             rotateZ();
-            loger("rotate z");
         break;
         
         case EKEYCODES_DROP_BLOCK:
             dropCurrentBlock();
-            loger("drop block");
         break;
     }
 }
@@ -226,22 +219,15 @@ void ALogic::rotateZ()
 
 void ALogic::rotate(const AMatrix& m)
 {
-    std::list<APoint> points;
-    std::list<TInt> shifts;
-    AFormation& f = defineDimmension(m, shifts, points);
-    std::list<TInt>::iterator shiftIter = shifts.begin();
-    TInt shiftZ = *shiftIter;
-    shiftIter++;
-    TInt shiftX = *shiftIter;
-    shiftIter++;
-    TInt shiftY = *shiftIter;
-    
-    for (std::list<APoint>::iterator iter = points.begin(); iter != points.end(); iter++)
+    SRotationMetaData rotationMeta;
+    AFormation& f = createRotatedFormation(m, rotationMeta);
+
+    for (TRPIter iter = rotationMeta.rotatedPoints.begin(); iter != rotationMeta.rotatedPoints.end(); iter++)
     {
         APoint p = *iter;
-        p.x += static_cast<TFloat>(shiftX);
-        p.y += static_cast<TFloat>(shiftY);
-        p.z += static_cast<TFloat>(shiftZ);
+        p.x += rotationMeta.negativeShifts[0];
+        p.y += rotationMeta.negativeShifts[1];
+        p.z += rotationMeta.negativeShifts[2];
         TInt column = static_cast<TUint>(round(p.z));
         TInt row = static_cast<TUint>(round(p.x));
         TInt level = static_cast<TUint>(round(p.y));
@@ -259,7 +245,7 @@ void ALogic::rotate(const AMatrix& m)
 
 //==============================================================================
 
-AFormation& ALogic::defineDimmension(const AMatrix& m, std::list<TInt>& shifts, std::list<APoint>& points)
+AFormation& ALogic::createRotatedFormation(const AMatrix& m, SRotationMetaData& rotationMeta)
 {
     TInt maxWidth = 0;
     TInt maxHeight = 0;
@@ -269,10 +255,6 @@ AFormation& ALogic::defineDimmension(const AMatrix& m, std::list<TInt>& shifts, 
     TInt minLevels = 0;
     
     AFormation& currentBlock = _dataStorage.currentFormation();
-    
-    TUint sizer = currentBlock.levelsCount() * currentBlock.width() * currentBlock.height();
-    TData* newData = new TData[sizer];
-    memset(newData, EDATASTATE_EMPTY, sizer * sizeof(TData));
     
     for (TInt l = 0; l < currentBlock.levelsCount(); l++)
     {
@@ -284,11 +266,8 @@ AFormation& ALogic::defineDimmension(const AMatrix& m, std::list<TInt>& shifts, 
                 if (value == EDATASTATE_RENDERABLE)
                 {
                     APoint pointToRotate(i, l, j);
-//                    printf("rotating\n%i\t%i\t%i\n", i, l, j);
-                    
                     APoint rotated = applyMatrixToPoint(m, pointToRotate);
-                    points.push_back(rotated);
-//                    printf("after rotation\n%.3f\t%.3f\t%.3f\n", rotated.x, rotated.y, rotated.z);
+                    rotationMeta.rotatedPoints.push_back(rotated);
                     
                     defineAxisNewDimension(rotated.z, &maxWidth, &minWidth);
                     defineAxisNewDimension(rotated.x, &maxHeight, &minHeight);
@@ -297,16 +276,19 @@ AFormation& ALogic::defineDimmension(const AMatrix& m, std::list<TInt>& shifts, 
             }
         }
     }
+
+    rotationMeta.newDimmension[0] = maxWidth - minWidth + 1;
+    rotationMeta.newDimmension[1] = maxHeight - minHeight + 1;
+    rotationMeta.newDimmension[2] = maxLevels - minLevels + 1;
+    rotationMeta.negativeShifts[2] = fabs(minWidth);
+    rotationMeta.negativeShifts[0] = fabs(minHeight);
+    rotationMeta.negativeShifts[1] = fabs(minLevels);
+
+//    if (static_cast<TFloat>(maxWidth) > _dataStorage.wellWidth())
+//        shiftX = maxWidth - _dataStorage.wellWidth();
     
-//    printf("\n\nmax %i\t%i\t%i\n", maxWidth, maxHeight, maxLevels);
-//    printf("min %i\t%i\t%i\n", minWidth, minHeight, minLevels);
-//    printf("new dimmension %i\t%i\t%i\n", maxWidth - minWidth + 1, maxHeight - minHeight + 1, maxLevels - minLevels + 1);
 
-    shifts.push_back(fabs(minWidth));
-    shifts.push_back(fabs(minHeight));
-    shifts.push_back(fabs(minLevels));
-
-    return _dataStorage.createFormation(maxWidth - minWidth + 1, maxHeight - minHeight + 1, maxLevels - minLevels + 1);
+    return _dataStorage.createFormation(rotationMeta.newDimmension[0], rotationMeta.newDimmension[1], rotationMeta.newDimmension[2]);
 }
 
 //==============================================================================
