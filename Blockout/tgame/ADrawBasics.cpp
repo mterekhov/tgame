@@ -58,6 +58,9 @@ void ADrawBasics::drawSolidCube(const APoint& location, const TFloat cubeSize)
 
 void ADrawBasics::drawCarcasedCube(const APoint& location, const TFloat cubeSize)
 {
+    AOpenGLState* oglState = AOpenGLState::shared();
+    TFloat oldWidth = oglState->lineWidth();
+    oglState->lineWidth(3);
     APoint p1 = location;
     APoint p2 = APoint(location.x + cubeSize, location.y, location.z);
     APoint p3 = APoint(location.x + cubeSize, location.y, location.z + cubeSize);
@@ -82,6 +85,8 @@ void ADrawBasics::drawCarcasedCube(const APoint& location, const TFloat cubeSize
     ADrawBasics::drawLine(p6, p2);
     ADrawBasics::drawLine(p7, p3);
     ADrawBasics::drawLine(p8, p4);
+
+    oglState->lineWidth(oldWidth);
 }
 
 //==============================================================================
