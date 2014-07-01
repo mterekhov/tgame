@@ -41,7 +41,10 @@ void ASolidBlock::renderObject()
             {
                 TData value = _data.item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
-                    ADrawBasics::drawSolidCube(APoint(i, l, j), _size);
+                {
+                    APoint point = _data.gridSpaceLocation(i, l, j);
+                    ADrawBasics::drawSolidCube(point, _size);
+                }
             }
         }
     }

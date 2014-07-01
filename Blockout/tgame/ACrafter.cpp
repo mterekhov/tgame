@@ -157,8 +157,8 @@ TBool ACrafter::addObjectForRender(ARObject* object)
 
 void ACrafter::processKey(const TUint buttonCode)
 {
-    ATexture tex = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
-    createTexturedBlock(_dataStorage.currentFormation(), tex);
+//    ATexture tex = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
+    createColoredBlock(_dataStorage.currentFormation());
 }
 
 //==============================================================================

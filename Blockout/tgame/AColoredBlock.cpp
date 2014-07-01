@@ -41,7 +41,10 @@ void AColoredBlock::renderObject()
             {
                 TData value = _data.item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
-                    ADrawBasics::drawCarcasedCube(APoint(i, l, j), _size);
+                {
+                    APoint point = _data.gridSpaceLocation(i, l, j);
+                    ADrawBasics::drawCarcasedCube(point, _size);
+                }
             }
         }
     }

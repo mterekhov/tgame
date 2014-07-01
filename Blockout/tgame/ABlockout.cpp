@@ -48,8 +48,7 @@ void ABlockout::startGame()
 {
     _logic.startGame();
 
-    ATexture tex = _crafter.textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
-    _crafter.createTexturedBlock(_dataStorage.currentFormation(), tex);
+    _crafter.createColoredBlock(_dataStorage.currentFormation());
 }
 
 //==============================================================================
