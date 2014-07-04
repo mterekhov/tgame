@@ -55,17 +55,16 @@ void ALogic::processLogic()
     
 void ALogic::startGame()
 {
-    generateStartFormation();
+    generateNewFormation();
 }
 
 //==============================================================================
 
-void ALogic::generateStartFormation()
+void ALogic::generateNewFormation()
 {
     AFormation& newStartFormation = generateRandomFormation();
     APoint p(0.0f, _dataStorage.wellDepth() - 1, 0.0f);
     newStartFormation.gridSpacePosition(p);
-    _dataStorage.currentFormation(newStartFormation);
 }
 
 //==============================================================================
@@ -73,7 +72,7 @@ void ALogic::generateStartFormation()
 AFormation& ALogic::generateRandomFormation()
 {
     TUint formationIndex = rand() % FORMATIONS_COUNT;
-    AFormation& newFormation = _dataStorage.createFormation1();
+    AFormation& newFormation = AFormationFactory::nullFormation();
 
     switch (formationIndex)
     {
@@ -216,12 +215,8 @@ void ALogic::moveCurrentBlockRight()
 
 void ALogic::dropCurrentBlock()
 {
-    AFormation& currentBlock = _dataStorage.currentFormation();
-    APoint position = currentBlock.gridSpacePosition();
-    position.y = 0;
-    
-    currentBlock.gridSpacePosition(position);
-    generateStartFormation();
+    makeDrop(_dataStorage.currentFormation());
+    generateNewFormation();
 }
 
 //==============================================================================
@@ -272,6 +267,8 @@ void ALogic::rotateZ()
 
 void ALogic::rotate(const AMatrix& m)
 {
+    APoint gridPoint = _dataStorage.currentFormation().gridSpacePosition();
+
     SRotationMetaData rotationMeta;
     AFormation& f = createRotatedFormation(m, rotationMeta);
 
@@ -292,11 +289,8 @@ void ALogic::rotate(const AMatrix& m)
         }
     }
     
-    APoint gridPoint = _dataStorage.currentFormation().gridSpacePosition();
     correctBlockPosition(gridPoint, f);
-
     f.gridSpacePosition(gridPoint);
-    _dataStorage.currentFormation(f);
 }
 
 //==============================================================================
@@ -395,6 +389,45 @@ APoint ALogic::applyMatrixToPoint(const AMatrix& mat, const APoint& in)
     res.z /= out3;
     
     return res;
+}
+
+//==============================================================================
+
+#pragma mark - make drop -
+
+//==============================================================================
+
+void ALogic::makeDrop(AFormation& formation)
+{
+    APoint position = formation.gridSpacePosition();
+    
+    APoint dropPosition = findDropPosition(formation);
+    formation.gridSpacePosition(dropPosition);
+}
+
+//==============================================================================
+
+APoint ALogic::findDropPosition(AFormation& formation)
+{
+    APoint dropPosition = formation.gridSpacePosition();
+    AFormation& wellFormation = _dataStorage.wellFormation();
+
+    for (TInt l = 0; l < formation.levelsCount(); l++)
+    {
+        for (TInt i = 0; i < formation.height(); i++)
+        {
+            for (TInt j = 0; j < formation.width(); j++)
+            {
+                TData value = formation.item(j, i, l);
+                if (value == EDATASTATE_RENDERABLE)
+                {
+                    
+                }
+            }
+        }
+    }
+    
+    return dropPosition;
 }
 
 //==============================================================================

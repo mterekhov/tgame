@@ -34,13 +34,9 @@ ACrafter::~ACrafter()
 
 AWell* ACrafter::createWell()
 {
-    AFormation& wellContent = _dataStorage.createFormation(_dataStorage.wellWidth(), _dataStorage.wellHeight(), _dataStorage.wellDepth());
-    AWell* well = new AWell(_dataStorage.cellSize(), wellContent);
+    AFormation& wellContent = _dataStorage.createWellFormation(7, 7, 15);
+    AWell* well = new AWell(wellContent);
     addObjectForRender(well);
-    
-    wellContent.item(0, 2, 7, EDATASTATE_RENDERABLE);
-    ATexture& t = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/celtic.tga");
-    addObjectForRender(createTexturedBlock(wellContent, t));
     
     return well;
 }

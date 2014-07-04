@@ -29,11 +29,8 @@ class ADataStorage
 private:
     TFormationList _formationList;
     AFormation& _currentFormation;
-    
-    TFloat _wellWidth;
-    TFloat _wellHeight;
-    TFloat _wellDepth;
-    
+    AFormation& _wellFormation;
+
 public:
     static TFloat cellSize();
 
@@ -41,6 +38,7 @@ public:
     ~ADataStorage();
     
     AFormation& createFormation(const TFloat width, const TFloat height, const TFloat levelsCount);
+    AFormation& createWellFormation(const TFloat width, const TFloat height, const TFloat levelsCount);
     AFormation& createFormation1();
     AFormation& createFormation2();
     AFormation& createFormation3();
@@ -55,12 +53,11 @@ public:
     TFloat wellWidth();
     TFloat wellHeight();
     TFloat wellDepth();
-    void wellWidth(const TFloat width);
-    void wellHeight(const TFloat height);
-    void wellDepth(const TFloat depth);
-    
-    void currentFormation(AFormation& formation);
+
+    AFormation& pushFormation(const AFormation& pushFormation);
+
     AFormation& currentFormation();
+    AFormation& wellFormation();
 };
 
 //==============================================================================

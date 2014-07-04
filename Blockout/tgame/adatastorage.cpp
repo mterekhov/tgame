@@ -7,7 +7,7 @@ namespace spcTGame
     
 //==============================================================================
 
-ADataStorage::ADataStorage() : _currentFormation(AFormationFactory::nullFormation()), _wellWidth(5.0f), _wellHeight(5.0f), _wellDepth(9.0f)
+ADataStorage::ADataStorage() : _currentFormation(AFormationFactory::nullFormation()), _wellFormation(AFormationFactory::nullFormation())
 {
 }
 
@@ -19,11 +19,27 @@ ADataStorage::~ADataStorage()
 
 //==============================================================================
 
+AFormation& ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat levelsCount)
+{
+    AFormation newFormation(width, height, levelsCount);
+    _wellFormation = pushFormation(newFormation);
+    return _wellFormation;
+}
+
+//==============================================================================
+
 AFormation& ADataStorage::createFormation(const TFloat width, const TFloat height, const TFloat levelsCount)
 {
     AFormation newFormation(width, height, levelsCount);
-    _formationList.push_back(newFormation);
-    
+    return pushFormation(newFormation);
+}
+
+//==============================================================================
+
+AFormation& ADataStorage::pushFormation(const AFormation& pushFormation)
+{
+    _formationList.push_back(pushFormation);
+
     return _formationList.back();
 }
 
@@ -32,9 +48,8 @@ AFormation& ADataStorage::createFormation(const TFloat width, const TFloat heigh
 AFormation& ADataStorage::createFormation1()
 {
     AFormation newFormation = AFormationFactory::createFormation1();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -42,9 +57,8 @@ AFormation& ADataStorage::createFormation1()
 AFormation& ADataStorage::createFormation2()
 {
     AFormation newFormation = AFormationFactory::createFormation2();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -52,9 +66,8 @@ AFormation& ADataStorage::createFormation2()
 AFormation& ADataStorage::createFormation3()
 {
     AFormation newFormation = AFormationFactory::createFormation3();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -62,9 +75,8 @@ AFormation& ADataStorage::createFormation3()
 AFormation& ADataStorage::createFormation4()
 {
     AFormation newFormation = AFormationFactory::createFormation4();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -72,9 +84,8 @@ AFormation& ADataStorage::createFormation4()
 AFormation& ADataStorage::createFormation5()
 {
     AFormation newFormation = AFormationFactory::createFormation5();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -82,9 +93,8 @@ AFormation& ADataStorage::createFormation5()
 AFormation& ADataStorage::createFormation6()
 {
     AFormation newFormation = AFormationFactory::createFormation6();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -92,9 +102,8 @@ AFormation& ADataStorage::createFormation6()
 AFormation& ADataStorage::createFormation7()
 {
     AFormation newFormation = AFormationFactory::createFormation7();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -102,9 +111,8 @@ AFormation& ADataStorage::createFormation7()
 AFormation& ADataStorage::createFormation8()
 {
     AFormation newFormation = AFormationFactory::createFormation8();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -112,9 +120,8 @@ AFormation& ADataStorage::createFormation8()
 AFormation& ADataStorage::createFormation9()
 {
     AFormation newFormation = AFormationFactory::createFormation9();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -122,16 +129,8 @@ AFormation& ADataStorage::createFormation9()
 AFormation& ADataStorage::createFormation10()
 {
     AFormation newFormation = AFormationFactory::createFormation10();
-    _formationList.push_back(newFormation);
-    
-    return _formationList.back();
-}
-
-//==============================================================================
-
-void ADataStorage::currentFormation(AFormation& formation)
-{
-    _currentFormation = formation;
+    _currentFormation = pushFormation(newFormation);
+    return _currentFormation;
 }
 
 //==============================================================================
@@ -143,44 +142,30 @@ AFormation& ADataStorage::currentFormation()
 
 //==============================================================================
 
+AFormation& ADataStorage::wellFormation()
+{
+    return _wellFormation;
+}
+
+//==============================================================================
+
 TFloat ADataStorage::wellWidth()
 {
-    return _wellWidth;
+    return _wellFormation.width();
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellHeight()
 {
-    return _wellHeight;
+    return _wellFormation.height();
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellDepth()
 {
-    return _wellDepth;
-}
-
-//==============================================================================
-
-void ADataStorage::wellWidth(const TFloat width)
-{
-    _wellWidth = width;
-}
-
-//==============================================================================
-
-void ADataStorage::wellHeight(const TFloat height)
-{
-    _wellHeight = height;
-}
-
-//==============================================================================
-
-void ADataStorage::wellDepth(const TFloat depth)
-{
-    _wellDepth = depth;
+    return _wellFormation.levelsCount();
 }
 
 //==============================================================================

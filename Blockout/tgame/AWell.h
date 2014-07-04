@@ -3,7 +3,7 @@
 
 //==============================================================================
 
-#include "arobject.h"
+#include "ablock.h"
 #include "acolor.h"
 #include "aformation.h"
 
@@ -14,23 +14,15 @@ namespace spcTGame
     
 //==============================================================================
     
-class AWell : public ARObject
+class AWell : public ABlock
 {
 private:
-    AFormation& _content;
-
     void renderHull() const;
 
 public:
-    TFloat wellWidth;   //  maps to z axis
-    TFloat wellHeight;  //  maps to x axis
-    TFloat wellDepth;   //  maps to y axis
-    TFloat wellCellSize;
-    
     AColor color;
 
-    AWell();
-    AWell(const TFloat cellSize, AFormation& content);
+    AWell(AFormation& content);
     virtual ~AWell();
 
     virtual void renderObject();

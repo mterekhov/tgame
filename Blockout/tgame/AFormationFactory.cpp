@@ -166,6 +166,7 @@ AFormation AFormationFactory::createFormation10()
 
 AFormation& AFormationFactory::nullFormation()
 {
+    _nullFormation = AFormation();
     return _nullFormation;
 }
 

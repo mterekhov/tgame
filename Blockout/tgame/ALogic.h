@@ -46,7 +46,7 @@ private:
     void rotateZ();
     void rotate(const AMatrix& m);
     
-    void generateStartFormation();
+    void generateNewFormation();
     AFormation& generateRandomFormation();
     bool isBreakingWellBound(const APoint& position, const AFormation& formation);
 
@@ -54,6 +54,9 @@ private:
     void defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin);
     AFormation& createRotatedFormation(const AMatrix& m, SRotationMetaData& rotationMeta);
     void correctBlockPosition(APoint& point, const AFormation& f);
+    
+    void makeDrop(AFormation& formation);
+    APoint findDropPosition(AFormation& formation);
 
 public:
     ALogic(ADataStorage& dataStorage);
