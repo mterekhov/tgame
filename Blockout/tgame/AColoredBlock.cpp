@@ -9,7 +9,7 @@ namespace spcTGame
     
 //==============================================================================
     
-AColoredBlock::AColoredBlock(AFormation& data) : ABlock(data), _color(AColor::redColor())
+AColoredBlock::AColoredBlock(AFormation* data) : ABlock(data), _color(AColor::redColor())
 {
 }
 
@@ -33,16 +33,16 @@ void AColoredBlock::renderObject()
     AColor color = oglInstance->drawColor();
     oglInstance->drawColor(_color);
 
-    for (TInt l = 0; l < _data.levelsCount(); l++)
+    for (TInt l = 0; l < _data->levelsCount(); l++)
     {
-        for (TInt i = 0; i < _data.height(); i++)
+        for (TInt i = 0; i < _data->height(); i++)
         {
-            for (TInt j = 0; j < _data.width(); j++)
+            for (TInt j = 0; j < _data->width(); j++)
             {
-                TData value = _data.item(j, i, l);
+                TData value = _data->item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
                 {
-                    APoint point = _data.gridSpaceLocation(i, l, j);
+                    APoint point = _data->gridSpaceLocation(i, l, j);
                     ADrawBasics::drawCarcasedCube(point, _size);
                 }
             }

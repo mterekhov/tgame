@@ -22,7 +22,7 @@ private:
 public:
     AColor color;
 
-    AWell(AFormation& content);
+    AWell(AFormation* content);
     virtual ~AWell();
 
     virtual void renderObject();

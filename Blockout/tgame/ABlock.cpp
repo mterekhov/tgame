@@ -9,7 +9,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ABlock::ABlock(AFormation& data) : _data(data), _size(1.0f)
+ABlock::ABlock(AFormation* data) : _data(data), _size(1.0f)
 {
 }
 
@@ -35,14 +35,14 @@ TFloat ABlock::size() const
 
 //==============================================================================
 
-void ABlock::size(const TFloat size)
-{
-    _size = size;
-}
+//void ABlock::size(const TFloat size)
+//{
+//    _size = size;
+//}
 
 //==============================================================================
 
-AFormation& ABlock::data() const
+AFormation* ABlock::data() const
 {
     return _data;
 }

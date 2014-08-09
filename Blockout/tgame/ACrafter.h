@@ -58,9 +58,9 @@ public:
     void processRender();
     
     AWell* createWell();
-    ATexturedBlock* createTexturedBlock(AFormation& formation, const ATexture& texture);
-    ASolidBlock* createSolidBlock(AFormation& formation);
-    AColoredBlock* createColoredBlock(AFormation& formation);
+    ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
+    ASolidBlock* createSolidBlock(AFormation* formation);
+    AColoredBlock* createColoredBlock(AFormation* formation);
 };
 
 //==============================================================================

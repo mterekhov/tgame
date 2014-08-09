@@ -18,18 +18,18 @@ namespace spcTGame
 class ABlock : public ARObject
 {
 protected:
-    AFormation& _data;
+    AFormation* _data;
     TFloat _size;
 
 public:
-    ABlock(AFormation& data);
+    ABlock(AFormation* data);
     ABlock(const ABlock& block);
     virtual ~ABlock();
     
-    AFormation& data() const;
+    AFormation* data() const;
 
     TFloat size() const;
-    void size(const TFloat size);
+//    void size(const TFloat size);
 };
 
 //==============================================================================

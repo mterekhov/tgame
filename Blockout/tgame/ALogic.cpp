@@ -62,17 +62,17 @@ void ALogic::startGame()
 
 void ALogic::generateNewFormation()
 {
-    AFormation& newStartFormation = generateRandomFormation();
+    AFormation* newStartFormation = generateRandomFormation();
     APoint p(0.0f, _dataStorage.wellDepth() - 1, 0.0f);
-    newStartFormation.gridSpacePosition(p);
+    newStartFormation->gridSpacePosition(p);
 }
 
 //==============================================================================
 
-AFormation& ALogic::generateRandomFormation()
+AFormation* ALogic::generateRandomFormation()
 {
     TUint formationIndex = rand() % FORMATIONS_COUNT;
-    AFormation& newFormation = AFormationFactory::nullFormation();
+    AFormation* newFormation = 0;
 
     switch (formationIndex)
     {
@@ -167,48 +167,48 @@ void ALogic::processKey(const TUint buttonCode)
 
 void ALogic::moveCurrentBlockDown()
 {
-    AFormation& currentBlock = _dataStorage.currentFormation();
-    APoint position = currentBlock.gridSpacePosition();
+    AFormation* currentBlock = _dataStorage.currentFormation();
+    APoint position = currentBlock->gridSpacePosition();
     position.z += _dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentBlock) == false)
-        currentBlock.gridSpacePosition(position);
+        currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
 
 void ALogic::moveCurrentBlockUp()
 {
-    AFormation& currentBlock = _dataStorage.currentFormation();
-    APoint position = currentBlock.gridSpacePosition();
+    AFormation* currentBlock = _dataStorage.currentFormation();
+    APoint position = currentBlock->gridSpacePosition();
     position.z -= _dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentBlock) == false)
-        currentBlock.gridSpacePosition(position);
+        currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
 
 void ALogic::moveCurrentBlockLeft()
 {
-    AFormation& currentBlock = _dataStorage.currentFormation();
-    APoint position = currentBlock.gridSpacePosition();
+    AFormation* currentBlock = _dataStorage.currentFormation();
+    APoint position = currentBlock->gridSpacePosition();
     position.x -= _dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentBlock) == false)
-        currentBlock.gridSpacePosition(position);
+        currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
 
 void ALogic::moveCurrentBlockRight()
 {
-    AFormation& currentBlock = _dataStorage.currentFormation();
-    APoint position = currentBlock.gridSpacePosition();
+    AFormation* currentBlock = _dataStorage.currentFormation();
+    APoint position = currentBlock->gridSpacePosition();
     position.x += _dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentBlock) == false)
-        currentBlock.gridSpacePosition(position);
+        currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
@@ -221,14 +221,14 @@ void ALogic::dropCurrentBlock()
 
 //==============================================================================
 
-bool ALogic::isBreakingWellBound(const APoint& position, const AFormation& formation)
+bool ALogic::isBreakingWellBound(const APoint& position, const AFormation* formation)
 {
     //  check top border
-    if ((position.x + formation.height()) >_dataStorage.wellHeight() ||
+    if ((position.x + formation->height()) >_dataStorage.wellHeight() ||
          position.x < 0)
         return true;
         
-    if ((position.z + formation.width()) >_dataStorage.wellWidth() ||
+    if ((position.z + formation->width()) >_dataStorage.wellWidth() ||
          position.z < 0)
         return true;
         
@@ -267,10 +267,10 @@ void ALogic::rotateZ()
 
 void ALogic::rotate(const AMatrix& m)
 {
-    APoint gridPoint = _dataStorage.currentFormation().gridSpacePosition();
+    APoint gridPoint = _dataStorage.currentFormation()->gridSpacePosition();
 
     SRotationMetaData rotationMeta;
-    AFormation& f = createRotatedFormation(m, rotationMeta);
+    AFormation* f = createRotatedFormation(m, rotationMeta);
 
     for (TRPIter iter = rotationMeta.rotatedPoints.begin(); iter != rotationMeta.rotatedPoints.end(); iter++)
     {
@@ -282,7 +282,7 @@ void ALogic::rotate(const AMatrix& m)
         TInt row = static_cast<TUint>(round(p.x));
         TInt level = static_cast<TUint>(round(p.y));
         
-        TBool r = f.item(column, row, level, EDATASTATE_RENDERABLE);
+        TBool r = f->item(column, row, level, EDATASTATE_RENDERABLE);
         if (r == false)
         {
             loger("can not rotate");
@@ -290,12 +290,12 @@ void ALogic::rotate(const AMatrix& m)
     }
     
     correctBlockPosition(gridPoint, f);
-    f.gridSpacePosition(gridPoint);
+    f->gridSpacePosition(gridPoint);
 }
 
 //==============================================================================
 
-AFormation& ALogic::createRotatedFormation(const AMatrix& m, SRotationMetaData& rotationMeta)
+AFormation* ALogic::createRotatedFormation(const AMatrix& m, SRotationMetaData& rotationMeta)
 {
     TInt maxWidth = 0;
     TInt maxHeight = 0;
@@ -304,15 +304,15 @@ AFormation& ALogic::createRotatedFormation(const AMatrix& m, SRotationMetaData& 
     TInt minHeight = 0;
     TInt minLevels = 0;
     
-    AFormation& currentBlock = _dataStorage.currentFormation();
+    AFormation* currentBlock = _dataStorage.currentFormation();
     
-    for (TInt l = 0; l < currentBlock.levelsCount(); l++)
+    for (TInt l = 0; l < currentBlock->levelsCount(); l++)
     {
-        for (TInt i = 0; i < currentBlock.height(); i++)
+        for (TInt i = 0; i < currentBlock->height(); i++)
         {
-            for (TInt j = 0; j < currentBlock.width(); j++)
+            for (TInt j = 0; j < currentBlock->width(); j++)
             {
-                TData value = currentBlock.item(j, i, l);
+                TData value = currentBlock->item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
                 {
                     APoint pointToRotate(i, l, j);
@@ -334,22 +334,22 @@ AFormation& ALogic::createRotatedFormation(const AMatrix& m, SRotationMetaData& 
     rotationMeta.negativeShifts[0] = fabs(minHeight);
     rotationMeta.negativeShifts[1] = fabs(minLevels);
 
-    return _dataStorage.createFormation(rotationMeta.newDimmension[0], rotationMeta.newDimmension[1], rotationMeta.newDimmension[2]);
+    return AFormationFactory::createFormation(rotationMeta.newDimmension[0], rotationMeta.newDimmension[1], rotationMeta.newDimmension[2]);
 }
 
 //==============================================================================
 
-void ALogic::correctBlockPosition(APoint& point, const AFormation& f)
+void ALogic::correctBlockPosition(APoint& point, const AFormation* f)
 {
-    TFloat shift = static_cast<TFloat>(f.height()) + point.x;
+    TFloat shift = static_cast<TFloat>(f->height()) + point.x;
     if (shift > _dataStorage.wellHeight())
         point.x += _dataStorage.wellHeight() - shift;
     
-    shift = static_cast<TFloat>(f.width()) + point.z;
+    shift = static_cast<TFloat>(f->width()) + point.z;
     if (shift > _dataStorage.wellWidth())
         point.z += _dataStorage.wellWidth() - shift;
     
-    shift = static_cast<TFloat>(f.levelsCount()) + point.y;
+    shift = static_cast<TFloat>(f->levelsCount()) + point.y;
     if (shift > _dataStorage.wellDepth())
         point.y += _dataStorage.wellDepth() - shift;
 }
@@ -397,28 +397,28 @@ APoint ALogic::applyMatrixToPoint(const AMatrix& mat, const APoint& in)
 
 //==============================================================================
 
-void ALogic::makeDrop(AFormation& formation)
+void ALogic::makeDrop(AFormation* formation)
 {
-    APoint position = formation.gridSpacePosition();
+    APoint position = formation->gridSpacePosition();
     
     APoint dropPosition = findDropPosition(formation);
-    formation.gridSpacePosition(dropPosition);
+    formation->gridSpacePosition(dropPosition);
 }
 
 //==============================================================================
 
-APoint ALogic::findDropPosition(AFormation& formation)
+APoint ALogic::findDropPosition(AFormation* formation)
 {
-    APoint dropPosition = formation.gridSpacePosition();
-    AFormation& wellFormation = _dataStorage.wellFormation();
+    APoint dropPosition = formation->gridSpacePosition();
+    AFormation* wellFormation = _dataStorage.wellFormation();
 
-    for (TInt l = 0; l < formation.levelsCount(); l++)
+    for (TInt l = 0; l < formation->levelsCount(); l++)
     {
-        for (TInt i = 0; i < formation.height(); i++)
+        for (TInt i = 0; i < formation->height(); i++)
         {
-            for (TInt j = 0; j < formation.width(); j++)
+            for (TInt j = 0; j < formation->width(); j++)
             {
-                TData value = formation.item(j, i, l);
+                TData value = formation->item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
                 {
                     
