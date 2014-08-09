@@ -259,12 +259,12 @@
 		4CBFB5AD195980F0002D7249 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4CF304251949ECA70092A63D /* aformationfactory.cpp */,
+				4CF304261949ECA70092A63D /* aformationfactory.h */,
 				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
 				4CBFB5B319598633002D7249 /* adatastorage.h */,
 				4CF304231949ECA70092A63D /* aformation.cpp */,
 				4CF304241949ECA70092A63D /* aformation.h */,
-				4CF304251949ECA70092A63D /* aformationfactory.cpp */,
-				4CF304261949ECA70092A63D /* aformationfactory.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";
