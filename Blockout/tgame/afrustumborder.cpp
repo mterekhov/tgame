@@ -28,10 +28,4 @@ AFrustumBorder::AFrustumBorder(const AFrustumBorder& border)
 
 //==============================================================================
 
-AFrustumBorder::AFrustumBorder()
-{
-}
-
-//==============================================================================
-
 }   //  namespace spcTGame

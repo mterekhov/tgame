@@ -128,6 +128,14 @@ AFormation* ADataStorage::createFormation10()
 
 //==============================================================================
 
+void ADataStorage::currentFormation(AFormation* formation)
+{
+    _formationList.remove(_currentFormation);
+    _currentFormation = formation;
+}
+
+//==============================================================================
+
 AFormation* ADataStorage::currentFormation()
 {
     return _currentFormation;

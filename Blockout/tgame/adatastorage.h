@@ -58,6 +58,7 @@ public:
     TFloat wellHeight();
     TFloat wellDepth();
 
+    void currentFormation(AFormation* formation);
     AFormation* currentFormation();
     AFormation* wellFormation();
 };
