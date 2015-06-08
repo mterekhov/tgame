@@ -1,39 +1,33 @@
-#ifndef SPCTGAME_ACOLOREDBLOCK_H
-#define SPCTGAME_ACOLOREDBLOCK_H
+#ifndef SPCTGAME_AFRUSTUMBORDER_H
+#define SPCTGAME_AFRUSTUMBORDER_H
 
 //==============================================================================
 
-#include "ablock.h"
-#include "aformation.h"
-#include "acolor.h"
+#include "blockouttypes.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-    
-//==============================================================================
-    
-class AColoredBlock : public ABlock
-{
-protected:
-    AColor _color;
 
+//==============================================================================
+
+class AFrustumBorder
+{
 public:
-    AColoredBlock(AFormation* data);
-    AColoredBlock(const AColoredBlock& block);
-    virtual ~AColoredBlock();
+    AFrustumBorder();
+    AFrustumBorder(const TFloat x, const TFloat y, const TFloat z);
+    AFrustumBorder(const AFrustumBorder& border);
     
-    virtual void renderObject();
-    
-    AColor color() const;
-    void color(const AColor& color);
+    TFloat x;
+    TFloat y;
+    TFloat z;
 };
 
 //==============================================================================
 
 }   //  namespace spcTGame
-    
+
 //==============================================================================
-    
-#endif  //  SPCTGAME_ACOLOREDBLOCK_H
+
+#endif  //  SPCTGAME_AFRUSTUMBORDER_H

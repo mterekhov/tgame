@@ -13,13 +13,7 @@ namespace spcTGame
     
 //==============================================================================
     
-AWell::AWell(const TFloat cellSize, AFormation& content) : ARObject(), wellWidth(content.width()), wellHeight(content.height()), wellDepth(content.levelsCount()), wellCellSize(cellSize), _content(content)
-{
-}
-
-//==============================================================================
-
-AWell::AWell() : ARObject(), wellWidth(0.0f), wellHeight(0.0f), wellDepth(0.0f), wellCellSize(1.0f), _content(AFormationFactory::nullFormation())
+AWell::AWell(AFormation* content) : ABlock(content)
 {
 }
 
@@ -38,43 +32,43 @@ void AWell::renderHull() const
     AColor color = oglInstance->drawColor();
     
     oglInstance->drawColor(AColor::greenColor());
-    for (TFloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * wellCellSize), APoint(wellHeight * wellCellSize, 0.0f, i * wellCellSize));
+    for (TFloat i = 0.0f; i < _data->width() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * _size), APoint(_data->height() * _size, 0.0f, i * _size));
 
-    for (TFloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, 0.0f), APoint(i * wellCellSize, 0.0f, wellWidth * wellCellSize));
-
-////////////////////////////////////////////////////////////////////////////////
-
-    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, 0.0f), APoint(wellHeight * wellCellSize, i * wellCellSize, 0.0f));
-
-    for (TFloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, 0.0f), APoint(i * wellCellSize, wellDepth * wellCellSize, 0.0f));
+    for (TFloat i = 0.0f; i < _data->height() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(i * _size, 0.0f, 0.0f), APoint(i * _size, 0.0f, _data->width() * _size));
 
 ////////////////////////////////////////////////////////////////////////////////
 
-    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, wellWidth * wellCellSize), APoint(wellHeight * wellCellSize, i * wellCellSize, wellWidth * wellCellSize));
+    for (TFloat i = 0.0f; i < _data->levelsCount() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(0.0f, i * _size, 0.0f), APoint(_data->height() * _size, i * _size, 0.0f));
 
-    for (TFloat i = 0.0f; i < wellHeight + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(i * wellCellSize, 0.0f, wellWidth * wellCellSize), APoint(i * wellCellSize, wellDepth * wellCellSize, wellWidth * wellCellSize));
-
-////////////////////////////////////////////////////////////////////////////////
-
-    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(0.0f, i * wellCellSize, 0.0f), APoint(0.0f, i * wellCellSize, wellWidth * wellCellSize));
-
-    for (TFloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * wellCellSize), APoint(0.0f, wellDepth * wellCellSize, i * wellCellSize));
+    for (TFloat i = 0.0f; i < _data->height() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(i * _size, 0.0f, 0.0f), APoint(i * _size, _data->levelsCount() * _size, 0.0f));
 
 ////////////////////////////////////////////////////////////////////////////////
 
-    for (TFloat i = 0.0f; i < wellDepth + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(wellHeight * wellCellSize, i * wellCellSize, 0.0f), APoint(wellHeight * wellCellSize, i * wellCellSize, wellWidth * wellCellSize));
+    for (TFloat i = 0.0f; i < _data->levelsCount() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(0.0f, i * _size, _data->width() * _size), APoint(_data->height() * _size, i * _size, _data->width() * _size));
 
-    for (TFloat i = 0.0f; i < wellWidth + 1.0f; i += 1.0f)
-        ADrawBasics::drawLine(APoint(wellHeight * wellCellSize, 0.0f, i * wellCellSize), APoint(wellHeight * wellCellSize, wellDepth * wellCellSize, i * wellCellSize));
+    for (TFloat i = 0.0f; i < _data->height() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(i * _size, 0.0f, _data->width() * _size), APoint(i * _size, _data->levelsCount() * _size, _data->width() * _size));
+
+////////////////////////////////////////////////////////////////////////////////
+
+    for (TFloat i = 0.0f; i < _data->levelsCount() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(0.0f, i * _size, 0.0f), APoint(0.0f, i * _size, _data->width() * _size));
+
+    for (TFloat i = 0.0f; i < _data->width() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(0.0f, 0.0f, i * _size), APoint(0.0f, _data->levelsCount() * _size, i * _size));
+
+////////////////////////////////////////////////////////////////////////////////
+
+    for (TFloat i = 0.0f; i < _data->levelsCount() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(_data->height() * _size, i * _size, 0.0f), APoint(_data->height() * _size, i * _size, _data->width() * _size));
+
+    for (TFloat i = 0.0f; i < _data->width() + 1.0f; i += 1.0f)
+        ADrawBasics::drawLine(APoint(_data->height() * _size, 0.0f, i * _size), APoint(_data->height() * _size, _data->levelsCount() * _size, i * _size));
 
     oglInstance->drawColor(color);
 }

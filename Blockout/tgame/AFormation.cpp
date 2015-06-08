@@ -121,8 +121,8 @@ TBool AFormation::doesInbounds(const AFormation* data)
         return false;
     
     if ((data->height() < _height) &&
-       (data->width() < _width) &&
-       (data->levelsCount() < _levelsCount))
+        (data->width() < _width) &&
+        (data->levelsCount() < _levelsCount))
        return true;
     
     return false;

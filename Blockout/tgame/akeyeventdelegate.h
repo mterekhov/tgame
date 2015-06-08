@@ -1,40 +1,27 @@
-#ifndef SPCTGAME_ABLOCK_H
-#define SPCTGAME_ABLOCK_H
+#ifndef SPCTGAME_AKEYEVENTDELEGATE_H
+#define SPCTGAME_AKEYEVENTDELEGATE_H
 
 //==============================================================================
 
-#include "arobject.h"
-#include "aformation.h"
-#include "acolor.h"
-#include "apoint.h"
+#include "blockouttypes.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-    
+
 //==============================================================================
-    
-class ABlock : public ARObject
+
+class AKeyEventDelegate
 {
-protected:
-    AFormation* _data;
-    TFloat _size;
-
 public:
-    ABlock(AFormation* data);
-    ABlock(const ABlock& block);
-    virtual ~ABlock();
-    
-    AFormation* data() const;
-
-    TFloat size() const;
+    virtual void processKey(const TUint buttonCode);
 };
 
 //==============================================================================
 
 }   //  namespace spcTGame
-    
+
 //==============================================================================
-    
-#endif  //  SPCTGAME_ABLOCK_H
+
+#endif  //  SPCTGAME_AKEYEVENTDELEGATE_H

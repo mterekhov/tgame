@@ -5,7 +5,7 @@
 
 #include <list>
 
-#include "akeyevent.h"
+#include "akeyeventdelegate.h"
 #include "blockouttypes.h"
 #include "keymaps.h"
 
@@ -16,7 +16,7 @@ namespace spcTGame
 
 //==============================================================================
 
-typedef std::list<AKeyEvent*> TKeyDelegateList;
+typedef std::list<AKeyEventDelegate*> TKeyDelegateList;
 typedef TKeyDelegateList::iterator TKeyDelegateListIter;
 
 //==============================================================================
@@ -27,7 +27,7 @@ private:
     TKeyDelegateList _delegates;
     
 public:
-    void addDelegate(AKeyEvent& newDelegate);
+    void addDelegate(AKeyEventDelegate& newDelegate);
     void keyPressed(const TUint buttonCode);
 };
 

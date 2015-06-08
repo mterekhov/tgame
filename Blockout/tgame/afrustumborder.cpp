@@ -1,9 +1,4 @@
-#ifndef SPCTGAME_AKEYEVENT_H
-#define SPCTGAME_AKEYEVENT_H
-
-//==============================================================================
-
-#include "blockouttypes.h"
+#include "afrustumborder.h"
 
 //==============================================================================
 
@@ -12,16 +7,25 @@ namespace spcTGame
 
 //==============================================================================
 
-class AKeyEvent
+AFrustumBorder::AFrustumBorder() : x(0.0f), y(0.0f), z(0.0f)
 {
-public:
-    virtual void processKey(const TUint buttonCode);
-};
+}
+
+//==============================================================================
+
+AFrustumBorder::AFrustumBorder(const TFloat x, const TFloat y, const TFloat z) : x(x), y(y), z(z)
+{
+}
+
+//==============================================================================
+
+AFrustumBorder::AFrustumBorder(const AFrustumBorder& border)
+{
+    x = border.x;
+    y = border.y;
+    z = border.z;
+}
 
 //==============================================================================
 
 }   //  namespace spcTGame
-
-//==============================================================================
-
-#endif  //  SPCTGAME_AKEYEVENT_H

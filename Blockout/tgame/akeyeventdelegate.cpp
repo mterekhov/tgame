@@ -1,4 +1,4 @@
-#include "akeyevent.h"
+#include "akeyeventdelegate.h"
 
 //==============================================================================
 
@@ -7,7 +7,7 @@ namespace spcTGame
 
 //==============================================================================
 
-void AKeyEvent::processKey(const TUint buttonCode)
+void AKeyEventDelegate::processKey(const TUint buttonCode)
 {
 }
 

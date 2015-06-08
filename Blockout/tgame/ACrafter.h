@@ -15,7 +15,7 @@
 #include "atexturemanager.h"
 #include "awell.h"
 #include "adatastorage.h"
-#include "akeyevent.h"
+#include "akeyeventdelegate.h"
 
 //==============================================================================
 
@@ -30,7 +30,7 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 
 //==============================================================================
 
-class ACrafter : public AKeyEvent
+class ACrafter : public AKeyEventDelegate
 {
 private:
     ADataStorage& _dataStorage;
@@ -58,9 +58,9 @@ public:
     void processRender();
     
     AWell* createWell();
-    ATexturedBlock* createTexturedBlock(AFormation& formation, const ATexture& texture);
-    ASolidBlock* createSolidBlock(AFormation& formation);
-    AColoredBlock* createColoredBlock(AFormation& formation);
+    ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
+    ASolidBlock* createSolidBlock(AFormation* formation);
+    AColoredBlock* createColoredBlock(AFormation* formation);
 };
 
 //==============================================================================

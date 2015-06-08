@@ -5,7 +5,7 @@
 
 #include "aformation.h"
 #include "apoint.h"
-#include "akeyevent.h"
+#include "akeyeventdelegate.h"
 #include "adatastorage.h"
 #include "amatrix.h"
 
@@ -13,25 +13,10 @@
 
 namespace spcTGame
 {
-    
-//==============================================================================
-
-typedef std::list<APoint> TRotatedPoints;
-typedef TRotatedPoints::iterator TRPIter;
-
-#define SHIFT_DIMMENSION 3
-
-struct SRotationMetaData
-{
-    TInt negativeShifts[SHIFT_DIMMENSION];
-    TInt newDimmension[SHIFT_DIMMENSION];
-    
-    TRotatedPoints rotatedPoints;
-};
 
 //==============================================================================
     
-class ALogic : public AKeyEvent
+class ALogic : public AKeyEventDelegate
 {
 private:
     ADataStorage& _dataStorage;
@@ -46,14 +31,12 @@ private:
     void rotateZ();
     void rotate(const AMatrix& m);
     
-    void generateStartFormation();
-    AFormation& generateRandomFormation();
-    bool isBreakingWellBound(const APoint& position, const AFormation& formation);
+    void generateNewFormation();
+    AFormation* generateRandomFormation();
+    bool isBreakingWellBound(const APoint& position, const AFormation* formation);
 
-    APoint applyMatrixToPoint(const AMatrix& mat, const APoint& in);
-    void defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin);
-    AFormation& createRotatedFormation(const AMatrix& m, SRotationMetaData& rotationMeta);
-    void correctBlockPosition(APoint& point, const AFormation& f);
+    void makeDrop(AFormation* formation);
+    APoint findDropPosition(AFormation* formation);
 
 public:
     ALogic(ADataStorage& dataStorage);

@@ -7,168 +7,165 @@ namespace spcTGame
     
 //==============================================================================
 
-AFormation AFormationFactory::_nullFormation;
+AFormation* AFormationFactory::createFormation1()
+{
+    AFormation* formation = AFormationFactory::createFormation(1, 1, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    return formation;
+}
 
 //==============================================================================
+
+AFormation* AFormationFactory::createFormation2()
+{
+    AFormation* formation = AFormationFactory::createFormation(1, 2, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    return formation;
+}
+
+//==============================================================================
+
+AFormation* AFormationFactory::createFormation3()
+{
+    AFormation* formation = AFormationFactory::createFormation(1, 3, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(0, 2, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    return formation;
+}
+
+//==============================================================================
+
+AFormation* AFormationFactory::createFormation4()
+{
+    AFormation* formation = AFormationFactory::createFormation(2, 2, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(1, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    return formation;
+}
+
+//==============================================================================
+
+AFormation* AFormationFactory::createFormation5()
+{
+    AFormation* formation = AFormationFactory::createFormation(2, 2, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(1, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(1, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    return formation;
+}
+
+//==============================================================================
+
+AFormation* AFormationFactory::createFormation6()
+{
+    AFormation* formation = AFormationFactory::createFormation(2, 3, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(0, 2, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    if (formation->item(1, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
+
+    return formation;
+}
+
+//==============================================================================
+
+AFormation* AFormationFactory::createFormation7()
+{
+    AFormation* formation = AFormationFactory::createFormation(3, 2, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
     
-AFormation AFormationFactory::createFormation1()
-{
-    AFormation formation(1, 1, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    return formation;
-}
-
-//==============================================================================
-
-AFormation AFormationFactory::createFormation2()
-{
-    AFormation formation(1, 2, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    return formation;
-}
-
-//==============================================================================
-
-AFormation AFormationFactory::createFormation3()
-{
-    AFormation formation(1, 3, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(0, 2, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    return formation;
-}
-
-//==============================================================================
-
-AFormation AFormationFactory::createFormation4()
-{
-    AFormation formation(2, 2, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(1, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    return formation;
-}
-
-//==============================================================================
-
-AFormation AFormationFactory::createFormation5()
-{
-    AFormation formation(2, 2, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(1, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(1, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    return formation;
-}
-
-//==============================================================================
-
-AFormation AFormationFactory::createFormation6()
-{
-    AFormation formation(2, 3, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(0, 2, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    if (formation.item(1, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-
-    return formation;
-}
-
-//==============================================================================
-
-AFormation AFormationFactory::createFormation7()
-{
-    AFormation formation(3, 2, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
+    if (formation->item(1, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
     
-    if (formation.item(1, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
+    if (formation->item(1, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
     
-    if (formation.item(1, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
-    
-    if (formation.item(2, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
+    if (formation->item(2, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
 
     return formation;
 }
 
 //==============================================================================
 
-AFormation AFormationFactory::createFormation8()
+AFormation* AFormationFactory::createFormation8()
 {
-    AFormation formation(2, 3, 1);
-    if (formation.item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
+    AFormation* formation = AFormationFactory::createFormation(2, 3, 1);
+    if (formation->item(0, 0, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
     
-    if (formation.item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
+    if (formation->item(0, 1, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
     
-    if (formation.item(0, 2, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
+    if (formation->item(0, 2, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
     
-    if (formation.item(1, 2, 0, EDATASTATE_RENDERABLE) == false)
-        return AFormationFactory::nullFormation();
+    if (formation->item(1, 2, 0, EDATASTATE_RENDERABLE) == false)
+        return 0;
 
     return formation;
 }
 
 //==============================================================================
 
-AFormation AFormationFactory::createFormation9()
+AFormation* AFormationFactory::createFormation9()
 {
-    return AFormation();
+    return new AFormation();
 }
 
 //==============================================================================
 
-AFormation AFormationFactory::createFormation10()
+AFormation* AFormationFactory::createFormation10()
 {
-    return AFormation();
+    return new AFormation();
 }
 
 //==============================================================================
 
-AFormation& AFormationFactory::nullFormation()
+AFormation* AFormationFactory::createFormation(const TUint column, const TUint row, const TUint levelIndex)
 {
-    return _nullFormation;
+    AFormation* newFormation = new AFormation(column, row, levelIndex);
+    return newFormation;
 }
-
+    
 //==============================================================================
     
 }   //  namespace spcTGame

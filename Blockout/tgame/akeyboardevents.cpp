@@ -21,7 +21,7 @@ TStringMap stringToKeycode = {{"moveUp", EKEYCODES_UP},
 
 //==============================================================================
 
-void AKeyboardEvents::addDelegate(AKeyEvent& newDelegate)
+void AKeyboardEvents::addDelegate(AKeyEventDelegate& newDelegate)
 {
     _delegates.push_back(&newDelegate);
 }

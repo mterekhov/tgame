@@ -34,13 +34,9 @@ ACrafter::~ACrafter()
 
 AWell* ACrafter::createWell()
 {
-    AFormation& wellContent = _dataStorage.createFormation(_dataStorage.wellWidth(), _dataStorage.wellHeight(), _dataStorage.wellDepth());
-    AWell* well = new AWell(_dataStorage.cellSize(), wellContent);
+    AFormation* wellContent = _dataStorage.createWellFormation(7, 7, 15);
+    AWell* well = new AWell(wellContent);
     addObjectForRender(well);
-    
-    wellContent.item(0, 2, 7, EDATASTATE_RENDERABLE);
-    ATexture& t = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/celtic.tga");
-    addObjectForRender(createTexturedBlock(wellContent, t));
     
     return well;
 }
@@ -51,7 +47,7 @@ AWell* ACrafter::createWell()
 
 //==============================================================================
 
-ASolidBlock* ACrafter::createSolidBlock(AFormation& formation)
+ASolidBlock* ACrafter::createSolidBlock(AFormation* formation)
 {
     ASolidBlock* newBlock = new ASolidBlock(formation);
     addObjectForRender(newBlock);
@@ -61,7 +57,7 @@ ASolidBlock* ACrafter::createSolidBlock(AFormation& formation)
 
 //==============================================================================
 
-AColoredBlock* ACrafter::createColoredBlock(AFormation& formation)
+AColoredBlock* ACrafter::createColoredBlock(AFormation* formation)
 {
     AColoredBlock* newBlock = new AColoredBlock(formation);
     addObjectForRender(newBlock);
@@ -71,7 +67,7 @@ AColoredBlock* ACrafter::createColoredBlock(AFormation& formation)
 
 //==============================================================================
 
-ATexturedBlock* ACrafter::createTexturedBlock(AFormation& formation, const ATexture& texture)
+ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const ATexture& texture)
 {
     ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
     addObjectForRender(newBlock);
