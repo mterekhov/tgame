@@ -32,7 +32,7 @@ enum EFormation
     
 ALogic::ALogic(ADataStorage& dataStorage) : _dataStorage(dataStorage)
 {
-    srand(time(0));
+    srand(static_cast<TUint>(time(0)));
 }
 
 //==============================================================================

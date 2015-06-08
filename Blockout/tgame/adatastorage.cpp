@@ -22,19 +22,10 @@ ADataStorage::~ADataStorage()
 AFormation* ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat levelsCount)
 {
     AFormation* newFormation = AFormationFactory::createFormation(width, height, levelsCount);
-//    AFormation* newFormation = new AFormation(width, height, levelsCount);
     _wellFormation = pushFormation(newFormation);
     
     return _wellFormation;
 }
-
-//==============================================================================
-
-//AFormation* ADataStorage::createFormation(const TFloat width, const TFloat height, const TFloat levelsCount)
-//{
-//    AFormation* newFormation = new AFormation(width, height, levelsCount);
-//    return pushFormation(newFormation);
-//}
 
 //==============================================================================
 

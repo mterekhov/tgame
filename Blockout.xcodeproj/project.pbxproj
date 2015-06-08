@@ -10,8 +10,8 @@
 		4C580AB11955A647000E71E6 /* image.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C580AB01955A647000E71E6 /* image.tga */; };
 		4C580B201955B0FB000E71E6 /* akeyboardevents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C580B1E1955B0FB000E71E6 /* akeyboardevents.cpp */; };
 		4C580B211955B0FB000E71E6 /* akeyboardevents.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C580B1F1955B0FB000E71E6 /* akeyboardevents.h */; };
-		4C580B251955B747000E71E6 /* akeyevent.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C580B231955B747000E71E6 /* akeyevent.h */; };
-		4C580B261955B9EC000E71E6 /* akeyevent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C580B221955B747000E71E6 /* akeyevent.cpp */; };
+		4C580B251955B747000E71E6 /* akeyeventdelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C580B231955B747000E71E6 /* akeyeventdelegate.h */; };
+		4C580B261955B9EC000E71E6 /* akeyeventdelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C580B221955B747000E71E6 /* akeyeventdelegate.cpp */; };
 		4C7C09DB194726640081B310 /* notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C09DA194726640081B310 /* notes.txt */; };
 		4C84B4471824F06000EFD26A /* libtgame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C84B3851824EE8500EFD26A /* libtgame.a */; };
 		4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4CB3AF4216EB3C0B002DE363 /* celtic.tga */; };
@@ -96,8 +96,8 @@
 		4C580AB01955A647000E71E6 /* image.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = image.tga; path = Blockout/resources/image.tga; sourceTree = "<group>"; };
 		4C580B1E1955B0FB000E71E6 /* akeyboardevents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyboardevents.cpp; path = Blockout/tgame/akeyboardevents.cpp; sourceTree = "<group>"; };
 		4C580B1F1955B0FB000E71E6 /* akeyboardevents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyboardevents.h; path = Blockout/tgame/akeyboardevents.h; sourceTree = "<group>"; };
-		4C580B221955B747000E71E6 /* akeyevent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyevent.cpp; path = Blockout/tgame/akeyevent.cpp; sourceTree = "<group>"; };
-		4C580B231955B747000E71E6 /* akeyevent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyevent.h; path = Blockout/tgame/akeyevent.h; sourceTree = "<group>"; };
+		4C580B221955B747000E71E6 /* akeyeventdelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyeventdelegate.cpp; path = Blockout/tgame/akeyeventdelegate.cpp; sourceTree = "<group>"; };
+		4C580B231955B747000E71E6 /* akeyeventdelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyeventdelegate.h; path = Blockout/tgame/akeyeventdelegate.h; sourceTree = "<group>"; };
 		4C7C09DA194726640081B310 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
 		4C84B3851824EE8500EFD26A /* libtgame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtgame.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB3AF4216EB3C0B002DE363 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = Blockout/resources/celtic.tga; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 		4C580AB21955B08A000E71E6 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				4C580B221955B747000E71E6 /* akeyevent.cpp */,
-				4C580B231955B747000E71E6 /* akeyevent.h */,
+				4C580B221955B747000E71E6 /* akeyeventdelegate.cpp */,
+				4C580B231955B747000E71E6 /* akeyeventdelegate.h */,
 				4C580B1E1955B0FB000E71E6 /* akeyboardevents.cpp */,
 				4C580B1F1955B0FB000E71E6 /* akeyboardevents.h */,
 				4CBFB5AC19596A28002D7249 /* keymaps.h */,
@@ -259,12 +259,12 @@
 		4CBFB5AD195980F0002D7249 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4CF304231949ECA70092A63D /* aformation.cpp */,
+				4CF304241949ECA70092A63D /* aformation.h */,
 				4CF304251949ECA70092A63D /* aformationfactory.cpp */,
 				4CF304261949ECA70092A63D /* aformationfactory.h */,
 				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
 				4CBFB5B319598633002D7249 /* adatastorage.h */,
-				4CF304231949ECA70092A63D /* aformation.cpp */,
-				4CF304241949ECA70092A63D /* aformation.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF304221949EC980092A63D /* adataliner.h in Headers */,
-				4C580B251955B747000E71E6 /* akeyevent.h in Headers */,
+				4C580B251955B747000E71E6 /* akeyeventdelegate.h in Headers */,
 				4CF3043E1949ECCA0092A63D /* adrawbasics.h in Headers */,
 				4CF304641949ED340092A63D /* blockouttypes.h in Headers */,
 				4CF304541949ED110092A63D /* arobject.h in Headers */,
@@ -476,7 +476,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = A;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Landsknecht;
 			};
 			buildConfigurationList = B732725E16AB20C2001DE602 /* Build configuration list for PBXProject "Blockout" */;
@@ -532,7 +532,7 @@
 				4C580B201955B0FB000E71E6 /* akeyboardevents.cpp in Sources */,
 				4CF304471949ED030092A63D /* ablock.cpp in Sources */,
 				4CF304371949ECB90092A63D /* atexturemanager.cpp in Sources */,
-				4C580B261955B9EC000E71E6 /* akeyevent.cpp in Sources */,
+				4C580B261955B9EC000E71E6 /* akeyeventdelegate.cpp in Sources */,
 				4CF3041B1949EC8B0092A63D /* apoint2d.cpp in Sources */,
 				4CF304211949EC980092A63D /* adataliner.cpp in Sources */,
 				4CF3043D1949ECCA0092A63D /* adrawbasics.cpp in Sources */,
@@ -611,6 +611,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG_LOG=1",
@@ -635,6 +636,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

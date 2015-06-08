@@ -29,7 +29,6 @@ public:
     AFormation* data() const;
 
     TFloat size() const;
-//    void size(const TFloat size);
 };
 
 //==============================================================================

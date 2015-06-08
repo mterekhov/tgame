@@ -5,7 +5,7 @@
 
 #include "aformation.h"
 #include "apoint.h"
-#include "akeyevent.h"
+#include "akeyeventdelegate.h"
 #include "adatastorage.h"
 #include "amatrix.h"
 
@@ -31,7 +31,7 @@ struct SRotationMetaData
 
 //==============================================================================
     
-class ALogic : public AKeyEvent
+class ALogic : public AKeyEventDelegate
 {
 private:
     ADataStorage& _dataStorage;

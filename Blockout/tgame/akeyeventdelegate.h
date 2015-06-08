@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_AKEYEVENT_H
-#define SPCTGAME_AKEYEVENT_H
+#ifndef SPCTGAME_AKEYEVENTDELEGATE_H
+#define SPCTGAME_AKEYEVENTDELEGATE_H
 
 //==============================================================================
 
@@ -12,7 +12,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class AKeyEvent
+class AKeyEventDelegate
 {
 public:
     virtual void processKey(const TUint buttonCode);
@@ -24,4 +24,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_AKEYEVENT_H
+#endif  //  SPCTGAME_AKEYEVENTDELEGATE_H

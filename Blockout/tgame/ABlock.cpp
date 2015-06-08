@@ -35,13 +35,6 @@ TFloat ABlock::size() const
 
 //==============================================================================
 
-//void ABlock::size(const TFloat size)
-//{
-//    _size = size;
-//}
-
-//==============================================================================
-
 AFormation* ABlock::data() const
 {
     return _data;
