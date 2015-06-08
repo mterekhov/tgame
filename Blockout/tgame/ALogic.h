@@ -16,18 +16,18 @@ namespace spcTGame
     
 //==============================================================================
 
-typedef std::list<APoint> TRotatedPoints;
-typedef TRotatedPoints::iterator TRPIter;
+//typedef std::list<APoint> TRotatedPoints;
+//typedef TRotatedPoints::iterator TRPIter;
 
-#define SHIFT_DIMMENSION 3
-
-struct SRotationMetaData
-{
-    TInt negativeShifts[SHIFT_DIMMENSION];
-    TInt newDimmension[SHIFT_DIMMENSION];
-    
-    TRotatedPoints rotatedPoints;
-};
+//#define SHIFT_DIMMENSION 3
+//
+//struct SRotationMetaData
+//{
+//    TInt negativeShifts[SHIFT_DIMMENSION];
+//    TInt newDimmension[SHIFT_DIMMENSION];
+//    
+//    TRotatedPoints rotatedPoints;
+//};
 
 //==============================================================================
     

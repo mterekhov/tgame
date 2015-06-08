@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3CC4081B25AEDB002D540A /* ablockoperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3CC4051B25AED6002D540A /* ablockoperations.cpp */; };
+		4C3CC40B1B25B4C7002D540A /* afrustumborder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */; };
+		4C3CC40C1B25B4C7002D540A /* afrustumborder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3CC40A1B25B4C7002D540A /* afrustumborder.h */; };
 		4C580AB11955A647000E71E6 /* image.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C580AB01955A647000E71E6 /* image.tga */; };
 		4C580B201955B0FB000E71E6 /* akeyboardevents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C580B1E1955B0FB000E71E6 /* akeyboardevents.cpp */; };
 		4C580B211955B0FB000E71E6 /* akeyboardevents.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C580B1F1955B0FB000E71E6 /* akeyboardevents.h */; };
@@ -93,6 +96,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C3CC4051B25AED6002D540A /* ablockoperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablockoperations.cpp; path = Blockout/tgame/ablockoperations.cpp; sourceTree = "<group>"; };
+		4C3CC4061B25AED6002D540A /* ablockoperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ablockoperations.h; path = Blockout/tgame/ablockoperations.h; sourceTree = "<group>"; };
+		4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = afrustumborder.cpp; path = Blockout/tgame/afrustumborder.cpp; sourceTree = "<group>"; };
+		4C3CC40A1B25B4C7002D540A /* afrustumborder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = afrustumborder.h; path = Blockout/tgame/afrustumborder.h; sourceTree = "<group>"; };
 		4C580AB01955A647000E71E6 /* image.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = image.tga; path = Blockout/resources/image.tga; sourceTree = "<group>"; };
 		4C580B1E1955B0FB000E71E6 /* akeyboardevents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyboardevents.cpp; path = Blockout/tgame/akeyboardevents.cpp; sourceTree = "<group>"; };
 		4C580B1F1955B0FB000E71E6 /* akeyboardevents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyboardevents.h; path = Blockout/tgame/akeyboardevents.h; sourceTree = "<group>"; };
@@ -233,6 +240,10 @@
 			children = (
 				4CF3040B1949EC720092A63D /* alogic.cpp */,
 				4CF3040C1949EC720092A63D /* alogic.h */,
+				4C3CC4061B25AED6002D540A /* ablockoperations.h */,
+				4C3CC4051B25AED6002D540A /* ablockoperations.cpp */,
+				4C3CC40A1B25B4C7002D540A /* afrustumborder.h */,
+				4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -414,6 +425,7 @@
 				4CF3042A1949ECA70092A63D /* aformationfactory.h in Headers */,
 				4CF304181949EC8B0092A63D /* acolor.h in Headers */,
 				4CF3040A1949EC5F0092A63D /* aopenglstate.h in Headers */,
+				4C3CC40C1B25B4C7002D540A /* afrustumborder.h in Headers */,
 				4CF304341949ECB90092A63D /* aimage.h in Headers */,
 				4CF3040E1949EC720092A63D /* alogic.h in Headers */,
 				4CF304611949ED340092A63D /* ablockout.h in Headers */,
@@ -529,6 +541,7 @@
 				4CF304591949ED220092A63D /* acrafter.cpp in Sources */,
 				4CF304531949ED110092A63D /* arobject.cpp in Sources */,
 				4CF304551949ED110092A63D /* awell.cpp in Sources */,
+				4C3CC4081B25AEDB002D540A /* ablockoperations.cpp in Sources */,
 				4C580B201955B0FB000E71E6 /* akeyboardevents.cpp in Sources */,
 				4CF304471949ED030092A63D /* ablock.cpp in Sources */,
 				4CF304371949ECB90092A63D /* atexturemanager.cpp in Sources */,
@@ -541,6 +554,7 @@
 				4CF304271949ECA70092A63D /* aformation.cpp in Sources */,
 				4CF3044B1949ED030092A63D /* asolidblock.cpp in Sources */,
 				4CF304391949ECB90092A63D /* atga.cpp in Sources */,
+				4C3CC40B1B25B4C7002D540A /* afrustumborder.cpp in Sources */,
 				4CF304601949ED340092A63D /* ablockout.cpp in Sources */,
 				4CF304191949EC8B0092A63D /* apoint.cpp in Sources */,
 				4CF3041D1949EC8B0092A63D /* avector.cpp in Sources */,

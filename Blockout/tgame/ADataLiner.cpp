@@ -44,7 +44,7 @@ EIntegrity ADataLiner::checkIntegrity() const
 
 TUint ADataLiner::pointsCount() const
 {
-    return _coordsList.size();
+    return static_cast<TUint>(_coordsList.size());
 }
 
 //==============================================================================
