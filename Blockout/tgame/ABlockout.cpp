@@ -39,7 +39,6 @@ void ABlockout::init()
     _crafter.createWell();
     
     _keyboardEvents.addDelegate(_logic);
-    _keyboardEvents.addDelegate(_crafter);
 }
 
 //==============================================================================

@@ -15,7 +15,6 @@
 #include "atexturemanager.h"
 #include "awell.h"
 #include "adatastorage.h"
-#include "akeyeventdelegate.h"
 
 //==============================================================================
 
@@ -30,7 +29,7 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 
 //==============================================================================
 
-class ACrafter : public AKeyEventDelegate
+class ACrafter
 {
 private:
     ADataStorage& _dataStorage;
@@ -46,14 +45,14 @@ private:
     void renderContent();
     void renderList(const TRObjectsList& renderList);
     TBool addObjectForRender(ARObject* object);
+    void removeFromRenderList(ARObject* object);
+    void deleteBlock(ABlock* block);
     
 public:
     ATextureManager textureManager;
 
     ACrafter(ADataStorage& dataStorage);
     virtual ~ACrafter();
-
-    virtual void processKey(const TUint buttonCode);
 
     void processRender();
     

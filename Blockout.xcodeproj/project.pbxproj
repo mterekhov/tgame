@@ -229,28 +229,28 @@
 				4CF304041949EC5F0092A63D /* aoglwrapper.h */,
 				4CF304051949EC5F0092A63D /* aopenglstate.cpp */,
 				4CF304061949EC5F0092A63D /* aopenglstate.h */,
-				4CF304571949ED220092A63D /* acrafter.cpp */,
-				4CF304581949ED220092A63D /* acrafter.h */,
 			);
 			name = Render;
 			sourceTree = "<group>";
 		};
-		4C923D0916C45321008EDA5C /* Logic */ = {
+		4C923D0916C45321008EDA5C /* MainObjects */ = {
 			isa = PBXGroup;
 			children = (
+				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
+				4CBFB5B319598633002D7249 /* adatastorage.h */,
+				4CF304571949ED220092A63D /* acrafter.cpp */,
+				4CF304581949ED220092A63D /* acrafter.h */,
 				4CF3040B1949EC720092A63D /* alogic.cpp */,
 				4CF3040C1949EC720092A63D /* alogic.h */,
-				4C3CC4061B25AED6002D540A /* ablockoperations.h */,
-				4C3CC4051B25AED6002D540A /* ablockoperations.cpp */,
-				4C3CC40A1B25B4C7002D540A /* afrustumborder.h */,
-				4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */,
 			);
-			name = Logic;
+			name = MainObjects;
 			sourceTree = "<group>";
 		};
 		4CAF5A6016E647A600E04427 /* ObjectsToRender */ = {
 			isa = PBXGroup;
 			children = (
+				4CF3044F1949ED110092A63D /* arobject.cpp */,
+				4CF304501949ED110092A63D /* arobject.h */,
 				4CF3043F1949ED030092A63D /* ablock.cpp */,
 				4CF304401949ED030092A63D /* ablock.h */,
 				4CF304411949ED030092A63D /* acoloredblock.cpp */,
@@ -259,8 +259,6 @@
 				4CF304441949ED030092A63D /* asolidblock.h */,
 				4CF304451949ED030092A63D /* atexturedblock.cpp */,
 				4CF304461949ED030092A63D /* atexturedblock.h */,
-				4CF3044F1949ED110092A63D /* arobject.cpp */,
-				4CF304501949ED110092A63D /* arobject.h */,
 				4CF304511949ED110092A63D /* awell.cpp */,
 				4CF304521949ED110092A63D /* awell.h */,
 			);
@@ -274,8 +272,6 @@
 				4CF304241949ECA70092A63D /* aformation.h */,
 				4CF304251949ECA70092A63D /* aformationfactory.cpp */,
 				4CF304261949ECA70092A63D /* aformationfactory.h */,
-				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
-				4CBFB5B319598633002D7249 /* adatastorage.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -309,6 +305,17 @@
 				4CC8218416D7A52A0090CE07 /* recycled.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		4CC929CC1B2A0B1F0010DEF5 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				4C3CC4061B25AED6002D540A /* ablockoperations.h */,
+				4C3CC4051B25AED6002D540A /* ablockoperations.cpp */,
+				4C3CC40A1B25B4C7002D540A /* afrustumborder.h */,
+				4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */,
+			);
+			name = Blocks;
 			sourceTree = "<group>";
 		};
 		4CEA40E116CFB08400A678B5 /* Texture */ = {
@@ -390,7 +397,8 @@
 		B7ECFF5D16AD5F1800946E91 /* TGame */ = {
 			isa = PBXGroup;
 			children = (
-				4C923D0916C45321008EDA5C /* Logic */,
+				4C923D0916C45321008EDA5C /* MainObjects */,
+				4CC929CC1B2A0B1F0010DEF5 /* Blocks */,
 				4C8000F616BD43FD008B1E74 /* Render */,
 				4CBFB5AD195980F0002D7249 /* Data */,
 				4C580AB21955B08A000E71E6 /* System */,
