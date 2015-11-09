@@ -36,7 +36,11 @@ private:
 
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
+
+    void generateTexturedRenderList(const TFormationList& formations, const ATexture& texture);
+    AWell* createWell();
     
+    void renewRenderLists();
     void clearAllLists();
     void clearTextureList();
     void clearRenderList();
@@ -45,8 +49,6 @@ private:
     void renderContent();
     void renderList(const TRObjectsList& renderList);
     TBool addObjectForRender(ARObject* object);
-    void removeFromRenderList(ARObject* object);
-    void deleteBlock(ABlock* block);
     
 public:
     ATextureManager textureManager;
@@ -54,9 +56,10 @@ public:
     ACrafter(ADataStorage& dataStorage);
     virtual ~ACrafter();
 
-    void processRender();
+    void startGame();
+    void blockDropped();
     
-    AWell* createWell();
+    void processRender();
     ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
     ASolidBlock* createSolidBlock(AFormation* formation);
     AColoredBlock* createColoredBlock(AFormation* formation);

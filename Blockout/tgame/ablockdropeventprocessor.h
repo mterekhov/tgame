@@ -1,9 +1,10 @@
-#ifndef SPCTGAME_AKEYEVENTDELEGATE_H
-#define SPCTGAME_AKEYEVENTDELEGATE_H
+#ifndef SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
+#define SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
 
 //==============================================================================
 
 #include "blockouttypes.h"
+#include "agameeventdelegate.h"
 
 //==============================================================================
 
@@ -12,10 +13,17 @@ namespace spcTGame
 
 //==============================================================================
 
-class AKeyEventDelegate
+class ABlockDropEventProcessor : public AGameEventDelegate
 {
+private:
+    void makeDrop(AFormation* formation);
+    APoint findDropPosition(AFormation* formation);
+
 public:
-    virtual void processKey(const TUint buttonCode);
+    ABlockDropEventProcessor(ACrafter &crafter, ADataStorage &dataStorage);
+    virtual ~ABlockDropEventProcessor();
+
+    virtual void processEvent(void *context);
 };
 
 //==============================================================================
@@ -24,4 +32,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_AKEYEVENTDELEGATE_H
+#endif  //  SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H

@@ -28,14 +28,55 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
+#pragma mark - Game events -
+
+//==============================================================================
+
+void ACrafter::startGame()
+{
+    //  remove everything from render cycle
+    clearAllLists();
+
+    //  create well and add it to render cycle
+    createWell();
+    
+    //  create current block and add it to render cycle
+    createColoredBlock(_dataStorage.currentFormation());
+}
+
+//==============================================================================
+
+void ACrafter::blockDropped()
+{
+    renewRenderLists();
+}
+
+//==============================================================================
+
+#pragma mark - Routine -
+
+//==============================================================================
+
+void ACrafter::renewRenderLists()
+{
+    clearAllLists();
+    
+    //  create well and add it to render cycle
+    createWell();
+    
+    //  create current block and add it to render cycle
+    createColoredBlock(_dataStorage.currentFormation());
+}
+
+//==============================================================================
+
 #pragma mark - create well -
 
 //==============================================================================
 
 AWell* ACrafter::createWell()
 {
-    AFormation* wellContent = _dataStorage.createWellFormation(7, 7, 15);
-    AWell* well = new AWell(wellContent);
+    AWell* well = new AWell(_dataStorage.wellFormation());
     addObjectForRender(well);
     
     return well;
@@ -78,6 +119,16 @@ ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const AText
 //==============================================================================
 
 #pragma mark - render list management -
+
+//==============================================================================
+
+void ACrafter::generateTexturedRenderList(const TFormationList& formations, const ATexture& texture)
+{
+    for (TFormationListConstIter iter = formations.begin(); iter != formations.end(); iter++)
+    {
+        createTexturedBlock((*iter), texture);
+    }
+}
 
 //==============================================================================
 
@@ -210,36 +261,4 @@ void ACrafter::renderList(const TRObjectsList& renderList)
 
 //==============================================================================
     
-void ACrafter::deleteBlock(ABlock* block)
-{
-    if (block == 0)
-        return;
-
-    removeFromRenderList(block);
-    _dataStorage.deleteFormation(block->data());
-    
-    delete block;
-}
-
-//==============================================================================
-
-void ACrafter::removeFromRenderList(ARObject* object)
-{
-    if (object == 0)
-        return;
-    
-    switch (object->objectType())
-    {
-        case OBJECTTYPE_SOLID:
-            _solidRenderList.remove(object);
-        break;
-            
-        case OBJECTTYPE_TEXTURED:
-            _texturedRenderList.remove(object);
-        break;
-    }
-}
-
-//==============================================================================
-
 }   //  namespace spcTGame
