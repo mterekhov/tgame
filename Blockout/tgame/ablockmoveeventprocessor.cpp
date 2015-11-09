@@ -41,6 +41,8 @@ void ABlockMoveEventProcessor::processEvent(void *context)
             moveCurrentBlockRight();
         break;
     }
+    
+    _crafter.blockMovedOrRotated();
 }
 
 //==============================================================================

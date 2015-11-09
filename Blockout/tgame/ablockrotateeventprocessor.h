@@ -14,15 +14,6 @@ namespace spcTGame
 
 //==============================================================================
 
-enum ERotateAxis
-{
-    EROTATE_AXIS_X,
-    EROTATE_AXIS_Y,
-    EROTATE_AXIS_Z
-};
-
-//==============================================================================
-
 class ABlockRotateEventProcessor : public AGameEventDelegate
 {
 private:

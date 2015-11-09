@@ -217,7 +217,6 @@
 		4C580AB21955B08A000E71E6 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				AEA6DE481BF0EAF70012E88B /* EventsProcessors */,
 				4C580B1F1955B0FB000E71E6 /* akeyboardevents.h */,
 				4C580B1E1955B0FB000E71E6 /* akeyboardevents.cpp */,
 				4CBFB5AC19596A28002D7249 /* keymaps.h */,
@@ -344,14 +343,14 @@
 		AEA6DE481BF0EAF70012E88B /* EventsProcessors */ = {
 			isa = PBXGroup;
 			children = (
-				AEA6DE4D1BF0F8570012E88B /* ablockrotateeventprocessor.h */,
-				AEA6DE4C1BF0F8570012E88B /* ablockrotateeventprocessor.cpp */,
-				4C580B231955B747000E71E6 /* agameeventdelegate.h */,
-				4C580B221955B747000E71E6 /* agameeventdelegate.cpp */,
 				AEA6DE4A1BF0F15E0012E88B /* ablockmoveeventprocessor.h */,
 				AEA6DE491BF0F15E0012E88B /* ablockmoveeventprocessor.cpp */,
+				AEA6DE4D1BF0F8570012E88B /* ablockrotateeventprocessor.h */,
+				AEA6DE4C1BF0F8570012E88B /* ablockrotateeventprocessor.cpp */,
 				AEA6DE461BF0E7610012E88B /* ablockdropeventprocessor.h */,
 				AEA6DE451BF0E7610012E88B /* ablockdropeventprocessor.cpp */,
+				4C580B231955B747000E71E6 /* agameeventdelegate.h */,
+				4C580B221955B747000E71E6 /* agameeventdelegate.cpp */,
 			);
 			name = EventsProcessors;
 			sourceTree = "<group>";
@@ -424,6 +423,7 @@
 				4CC929CC1B2A0B1F0010DEF5 /* Blocks */,
 				4C8000F616BD43FD008B1E74 /* Render */,
 				4CBFB5AD195980F0002D7249 /* Data */,
+				AEA6DE481BF0EAF70012E88B /* EventsProcessors */,
 				4C580AB21955B08A000E71E6 /* System */,
 				4CF3045B1949ED340092A63D /* ablockout.cpp */,
 				4CF3045C1949ED340092A63D /* ablockout.h */,

@@ -13,16 +13,6 @@ namespace spcTGame
 
 //==============================================================================
 
-enum EMoveDirection
-{
-    EMOVE_DIRECTION_LEFT,
-    EMOVE_DIRECTION_UP,
-    EMOVE_DIRECTION_DOWN,
-    EMOVE_DIRECTION_RIGHT
-};
-
-//==============================================================================
-
 class ABlockMoveEventProcessor : public AGameEventDelegate
 {
 private:

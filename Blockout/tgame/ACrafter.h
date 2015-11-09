@@ -58,6 +58,7 @@ public:
 
     void startGame();
     void blockDropped();
+    void blockMovedOrRotated();
     
     void processRender();
     ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);

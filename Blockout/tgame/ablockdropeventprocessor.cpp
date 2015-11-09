@@ -21,6 +21,7 @@ ABlockDropEventProcessor::~ABlockDropEventProcessor()
 
 void ABlockDropEventProcessor::processEvent(void *context)
 {
+    _crafter.blockDropped();
 }
 
 //==============================================================================

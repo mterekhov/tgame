@@ -46,6 +46,13 @@ void ACrafter::startGame()
 
 //==============================================================================
 
+void ACrafter::blockMovedOrRotated()
+{
+    renewRenderLists();
+}
+
+//==============================================================================
+
 void ACrafter::blockDropped()
 {
     renewRenderLists();

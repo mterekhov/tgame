@@ -38,6 +38,8 @@ void ABlockRotateEventProcessor::processEvent(void *context)
             rotateZ();
         break;
     }
+
+    _crafter.blockMovedOrRotated();
 }
 
 //==============================================================================
