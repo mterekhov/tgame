@@ -75,9 +75,9 @@
 		4CF304621949ED340092A63D /* blockoutdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3045D1949ED340092A63D /* blockoutdebug.cpp */; };
 		4CF304641949ED340092A63D /* blockouttypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF3045F1949ED340092A63D /* blockouttypes.h */; };
 		4CF304661949ED540092A63D /* blockoutdebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304651949ED540092A63D /* blockoutdebug.h */; };
-		AEA6DE471BF0E7610012E88B /* ablockdropeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE451BF0E7610012E88B /* ablockdropeventprocessor.cpp */; };
-		AEA6DE4B1BF0F15E0012E88B /* ablockmoveeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE491BF0F15E0012E88B /* ablockmoveeventprocessor.cpp */; };
-		AEA6DE4E1BF0F8570012E88B /* ablockrotateeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE4C1BF0F8570012E88B /* ablockrotateeventprocessor.cpp */; };
+		AEA6DE501BF1C7120012E88B /* ablockmoveeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE491BF0F15E0012E88B /* ablockmoveeventprocessor.cpp */; };
+		AEA6DE511BF1C7120012E88B /* ablockrotateeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE4C1BF0F8570012E88B /* ablockrotateeventprocessor.cpp */; };
+		AEA6DE521BF1C7120012E88B /* ablockdropeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE451BF0E7610012E88B /* ablockdropeventprocessor.cpp */; };
 		B732726916AB20C2001DE602 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732726816AB20C2001DE602 /* Cocoa.framework */; };
 		B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B732727116AB20C2001DE602 /* InfoPlist.strings */; };
 		B732727516AB20C2001DE602 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B732727416AB20C2001DE602 /* main.m */; };
@@ -567,6 +567,7 @@
 			files = (
 				4CF304091949EC5F0092A63D /* aopenglstate.cpp in Sources */,
 				4CF304071949EC5F0092A63D /* aoglwrapper.cpp in Sources */,
+				AEA6DE501BF1C7120012E88B /* ablockmoveeventprocessor.cpp in Sources */,
 				4CF304351949ECB90092A63D /* atexture.cpp in Sources */,
 				4CF304331949ECB90092A63D /* aimage.cpp in Sources */,
 				4CF304591949ED220092A63D /* acrafter.cpp in Sources */,
@@ -576,6 +577,7 @@
 				4C580B201955B0FB000E71E6 /* akeyboardevents.cpp in Sources */,
 				4CF304471949ED030092A63D /* ablock.cpp in Sources */,
 				4CF304371949ECB90092A63D /* atexturemanager.cpp in Sources */,
+				AEA6DE511BF1C7120012E88B /* ablockrotateeventprocessor.cpp in Sources */,
 				4C580B261955B9EC000E71E6 /* agameeventdelegate.cpp in Sources */,
 				4CF3041B1949EC8B0092A63D /* apoint2d.cpp in Sources */,
 				4CF304211949EC980092A63D /* adataliner.cpp in Sources */,
@@ -592,6 +594,7 @@
 				4CF3040D1949EC720092A63D /* alogic.cpp in Sources */,
 				4CF304171949EC8B0092A63D /* acolor.cpp in Sources */,
 				4CF304621949ED340092A63D /* blockoutdebug.cpp in Sources */,
+				AEA6DE521BF1C7120012E88B /* ablockdropeventprocessor.cpp in Sources */,
 				4CF304491949ED030092A63D /* acoloredblock.cpp in Sources */,
 				4CF3044D1949ED030092A63D /* atexturedblock.cpp in Sources */,
 				4CF304291949ECA70092A63D /* aformationfactory.cpp in Sources */,
@@ -602,11 +605,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEA6DE471BF0E7610012E88B /* ablockdropeventprocessor.cpp in Sources */,
-				AEA6DE4B1BF0F15E0012E88B /* ablockmoveeventprocessor.cpp in Sources */,
 				B732727C16AB20C2001DE602 /* AAppDelegate.mm in Sources */,
 				B732728716AB2507001DE602 /* ARenderView.mm in Sources */,
-				AEA6DE4E1BF0F8570012E88B /* ablockrotateeventprocessor.cpp in Sources */,
 				B732727516AB20C2001DE602 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
