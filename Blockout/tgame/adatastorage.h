@@ -41,8 +41,6 @@ public:
     ADataStorage();
     ~ADataStorage();
     
-    AFormation* createWellFormation(const TFloat width, const TFloat height, const TFloat levelsCount);
-    
     AFormation* createFormation1();
     AFormation* createFormation2();
     AFormation* createFormation3();
@@ -54,13 +52,16 @@ public:
     AFormation* createFormation9();
     AFormation* createFormation10();
 
+    AFormation* createWellFormation(const TFloat width, const TFloat height, const TFloat levelsCount);
+    AFormation* wellFormation();
     TFloat wellWidth();
     TFloat wellHeight();
     TFloat wellDepth();
 
     void currentFormation(AFormation* formation);
     AFormation* currentFormation();
-    AFormation* wellFormation();
+
+    void deleteFormation(AFormation* formation);
 };
 
 //==============================================================================

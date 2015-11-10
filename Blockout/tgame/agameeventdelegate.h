@@ -1,12 +1,11 @@
-#ifndef SPCTGAME_ALOGIC_H
-#define SPCTGAME_ALOGIC_H
+#ifndef SPCTGAME_AGAMEEVENTDELEGATE_H
+#define SPCTGAME_AGAMEEVENTDELEGATE_H
 
 //==============================================================================
 
-#include "aformation.h"
-#include "apoint.h"
+#include "blockouttypes.h"
+#include "acrafter.h"
 #include "adatastorage.h"
-#include "amatrix.h"
 
 //==============================================================================
 
@@ -14,22 +13,18 @@ namespace spcTGame
 {
 
 //==============================================================================
-    
-class ALogic
 
+class AGameEventDelegate
 {
-private:
-    ADataStorage& _dataStorage;
-    
-    void generateNewFormation();
-    AFormation* generateRandomFormation();
+protected:
+    ACrafter &_crafter;
+    ADataStorage &_dataStorage;
 
 public:
-    ALogic(ADataStorage& dataStorage);
-    virtual ~ALogic();
-
-    void startGame();
-    void processLogic();
+    AGameEventDelegate(ACrafter &crafter, ADataStorage &dataStorage);
+    virtual ~AGameEventDelegate();
+    
+    virtual void processEvent(void *context);
 };
 
 //==============================================================================
@@ -37,5 +32,5 @@ public:
 }   //  namespace spcTGame
 
 //==============================================================================
-    
-#endif  //  SPCTGAME_ALOGIC_H
+
+#endif  //  SPCTGAME_AGAMEEVENTDELEGATE_H

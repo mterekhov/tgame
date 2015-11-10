@@ -18,7 +18,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_dataStorage)
+ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_dataStorage), _keyboardEvents(_crafter, _dataStorage)
 {
     init();
 }
@@ -35,20 +35,17 @@ void ABlockout::init()
 {
     //  call shared to create instance and init some OpenGL pars;
     spcTGame::AOpenGLState::create();
-
-    _crafter.createWell();
-    
-    _keyboardEvents.addDelegate(_logic);
-    _keyboardEvents.addDelegate(_crafter);
 }
 
 //==============================================================================
 
 void ABlockout::startGame()
 {
+    //  creates all the formations we need
     _logic.startGame();
-
-    _crafter.createColoredBlock(_dataStorage.currentFormation());
+    
+    //  creating all the render lists to draw
+    _crafter.startGame();
 }
 
 //==============================================================================

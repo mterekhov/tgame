@@ -15,7 +15,6 @@
 #include "atexturemanager.h"
 #include "awell.h"
 #include "adatastorage.h"
-#include "akeyeventdelegate.h"
 
 //==============================================================================
 
@@ -30,14 +29,18 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 
 //==============================================================================
 
-class ACrafter : public AKeyEventDelegate
+class ACrafter
 {
 private:
     ADataStorage& _dataStorage;
 
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
+
+    void generateTexturedRenderList(const TFormationList& formations, const ATexture& texture);
+    AWell* createWell();
     
+    void renewRenderLists();
     void clearAllLists();
     void clearTextureList();
     void clearRenderList();
@@ -53,11 +56,11 @@ public:
     ACrafter(ADataStorage& dataStorage);
     virtual ~ACrafter();
 
-    virtual void processKey(const TUint buttonCode);
-
-    void processRender();
+    void startGame();
+    void blockDropped();
+    void blockMovedOrRotated();
     
-    AWell* createWell();
+    void processRender();
     ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
     ASolidBlock* createSolidBlock(AFormation* formation);
     AColoredBlock* createColoredBlock(AFormation* formation);

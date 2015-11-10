@@ -28,14 +28,62 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
+#pragma mark - Game events -
+
+//==============================================================================
+
+void ACrafter::startGame()
+{
+    //  remove everything from render cycle
+    clearAllLists();
+
+    //  create well and add it to render cycle
+    createWell();
+    
+    //  create current block and add it to render cycle
+    createColoredBlock(_dataStorage.currentFormation());
+}
+
+//==============================================================================
+
+void ACrafter::blockMovedOrRotated()
+{
+    renewRenderLists();
+}
+
+//==============================================================================
+
+void ACrafter::blockDropped()
+{
+    renewRenderLists();
+}
+
+//==============================================================================
+
+#pragma mark - Routine -
+
+//==============================================================================
+
+void ACrafter::renewRenderLists()
+{
+    clearAllLists();
+    
+    //  create well and add it to render cycle
+    createWell();
+    
+    //  create current block and add it to render cycle
+    createColoredBlock(_dataStorage.currentFormation());
+}
+
+//==============================================================================
+
 #pragma mark - create well -
 
 //==============================================================================
 
 AWell* ACrafter::createWell()
 {
-    AFormation* wellContent = _dataStorage.createWellFormation(7, 7, 15);
-    AWell* well = new AWell(wellContent);
+    AWell* well = new AWell(_dataStorage.wellFormation());
     addObjectForRender(well);
     
     return well;
@@ -81,6 +129,16 @@ ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const AText
 
 //==============================================================================
 
+void ACrafter::generateTexturedRenderList(const TFormationList& formations, const ATexture& texture)
+{
+    for (TFormationListConstIter iter = formations.begin(); iter != formations.end(); iter++)
+    {
+        createTexturedBlock((*iter), texture);
+    }
+}
+
+//==============================================================================
+
 void ACrafter::clearAllLists()
 {
     clearRenderList();
@@ -98,7 +156,6 @@ void ACrafter::clearRenderList()
 }
 
 //==============================================================================
-
 
 void ACrafter::clearTextureList()
 {
@@ -151,14 +208,6 @@ TBool ACrafter::addObjectForRender(ARObject* object)
 
 //==============================================================================
 
-void ACrafter::processKey(const TUint buttonCode)
-{
-//    ATexture tex = textureManager.createTextureFromTGA("/Users/michael/Development/private/blockout/Blockout/resources/image.tga");
-    createColoredBlock(_dataStorage.currentFormation());
-}
-
-//==============================================================================
-
 #pragma mark - craft the list -
 
 //==============================================================================
@@ -170,19 +219,12 @@ void ACrafter::processRender()
 
     oglState->pushMarices();
 
-//    ADrawBasics::installCamera(AVector(6, 5, 7),
-//                               AVector(0, 0, 0),
-//                               AVector(0.0f, 1.0f, 0.0f));
-
     TFloat wWidth = _dataStorage.wellWidth();
     TFloat wHeight = _dataStorage.wellHeight();
     TFloat wDepth = _dataStorage.wellDepth();
     ADrawBasics::installCamera(AVector(wHeight / 2.0f, 2.0f * wDepth, wWidth / 2.0f),
                                AVector(wHeight / 2.0f, 0.0f, wWidth / 2.0f),
                                AVector(1.0f, 0.0f, 0.0f));
-    
-//    ADrawBasics::drawOrigin(APoint(0,0,0), 1.0f);
-//    ADrawBasics::drawGrid(50.0f, 50.0f, 1.0f);
 
     renderContent();
 

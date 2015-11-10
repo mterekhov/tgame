@@ -178,4 +178,15 @@ TFloat ADataStorage::cellSize()
 
 //==============================================================================
 
+void ADataStorage::deleteFormation(AFormation* formation)
+{
+    if (formation == 0)
+        return;
+    
+    _formationList.remove(formation);
+    delete formation;
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

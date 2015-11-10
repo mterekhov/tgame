@@ -3,11 +3,13 @@
 
 //==============================================================================
 
-#include <list>
-
-#include "akeyeventdelegate.h"
 #include "blockouttypes.h"
 #include "keymaps.h"
+#include "acrafter.h"
+#include "adatastorage.h"
+#include "ablockdropeventprocessor.h"
+#include "ablockmoveeventprocessor.h"
+#include "ablockrotateeventprocessor.h"
 
 //==============================================================================
 
@@ -16,19 +18,18 @@ namespace spcTGame
 
 //==============================================================================
 
-typedef std::list<AKeyEventDelegate*> TKeyDelegateList;
-typedef TKeyDelegateList::iterator TKeyDelegateListIter;
-
-//==============================================================================
-
 class AKeyboardEvents
 {
 private:
-    TKeyDelegateList _delegates;
-    
+    ABlockDropEventProcessor _dropEventProcessor;
+    ABlockMoveEventProcessor _moveEventProcessor;
+    ABlockRotateEventProcessor _rotateEventProcessor;
+
 public:
-    void addDelegate(AKeyEventDelegate& newDelegate);
-    void keyPressed(const TUint buttonCode);
+    AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage);
+    ~AKeyboardEvents();
+    
+    void keyPressed(TUint buttonCode);
 };
 
 //==============================================================================

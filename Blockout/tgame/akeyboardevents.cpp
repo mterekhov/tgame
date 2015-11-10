@@ -21,18 +21,40 @@ TStringMap stringToKeycode = {{"moveUp", EKEYCODES_UP},
 
 //==============================================================================
 
-void AKeyboardEvents::addDelegate(AKeyEventDelegate& newDelegate)
+AKeyboardEvents::AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage) : _dropEventProcessor(crafter, dataStorage),
+                                                                                 _moveEventProcessor(crafter, dataStorage),
+                                                                                 _rotateEventProcessor(crafter, dataStorage)
 {
-    _delegates.push_back(&newDelegate);
 }
 
 //==============================================================================
 
-void AKeyboardEvents::keyPressed(const TUint buttonCode)
+AKeyboardEvents::~AKeyboardEvents()
 {
-    for (TKeyDelegateListIter iter = _delegates.begin(); iter != _delegates.end(); iter++)
+}
+
+//==============================================================================
+
+void AKeyboardEvents::keyPressed(TUint buttonCode)
+{
+    switch (buttonCode)
     {
-        (*iter)->processKey(buttonCode);
+        case EKEYCODES_DOWN:
+        case EKEYCODES_UP:
+        case EKEYCODES_LEFT:
+        case EKEYCODES_RIGHT:
+            _moveEventProcessor.processEvent(&buttonCode);
+        break;
+        
+        case EKEYCODES_ROTATE_X:
+        case EKEYCODES_ROTATE_Y:
+        case EKEYCODES_ROTATE_Z:
+            _rotateEventProcessor.processEvent(&buttonCode);
+        break;
+        
+        case EKEYCODES_DROP_BLOCK:
+            _dropEventProcessor.processEvent(0);
+        break;
     }
 }
 

@@ -2,6 +2,10 @@
 #define SPCTGAME_AFRUSTUMBORDER_H
 
 //==============================================================================
+//
+//  This class limits the volume in which the block should be
+//
+//==============================================================================
 
 #include "blockouttypes.h"
 
