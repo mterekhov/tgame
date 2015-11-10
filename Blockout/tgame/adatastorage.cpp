@@ -203,4 +203,26 @@ void ADataStorage::deleteFormation(AFormation* formation)
 
 //==============================================================================
 
+#pragma mark - Drop logic -
+
+//==============================================================================
+
+void ADataStorage::makeFormationDropped(AFormation *formation)
+{
+    if (formation == 0)
+        return;
+    
+    _formationList.remove(formation);
+    _droppedFormationsList.push_back(formation);
+}
+
+//==============================================================================
+
+const TFormationList& ADataStorage::droppedFormationsList()
+{
+    return _droppedFormationsList;
+}
+
+//==============================================================================
+
 }   //  namespace spcTGame

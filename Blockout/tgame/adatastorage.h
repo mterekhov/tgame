@@ -30,8 +30,10 @@ class ADataStorage
 {
 private:
     TFormationList _formationList;  //  list of all formations
+
     AFormation* _currentFormation;  //  current block formation
     AFormation* _wellFormation;     //  well formation just to define well sizes WIDTHxHEIGHTxDEPTH
+    TFormationList _droppedFormationsList;  //  list of all formations for dropped blocks
 
     AFormation* pushFormation(AFormation* pushFormation);
     void destroyAllFormations();
@@ -70,9 +72,13 @@ public:
 
     void currentFormation(AFormation* formation);
     AFormation* currentFormation();
+    
+    const TFormationList& droppedFormationsList();
 
     //  delete formation from _formationList and destroy as object
     void deleteFormation(AFormation* formation);
+    
+    void makeFormationDropped(AFormation *formation);
 };
 
 //==============================================================================
