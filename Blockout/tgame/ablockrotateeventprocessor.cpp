@@ -70,10 +70,9 @@ void ABlockRotateEventProcessor::rotateZ()
 
 void ABlockRotateEventProcessor::rotate(const AMatrix& m)
 {
-    AFormation* well = _dataStorage.wellFormation();
     AFormation* rotatedFormation = ABlockOperations::createRotatedFrustumFormation(*_dataStorage.currentFormation(),
                                                                                    m,
-                                                                                   AFrustumBorder(well->height(), well->levelsCount(), well->width()));
+                                                                                   AFrustumBorder(_dataStorage.wellHeight(), _dataStorage.wellDepth(), _dataStorage.wellWidth()));
     _dataStorage.currentFormation(rotatedFormation);
 }
 

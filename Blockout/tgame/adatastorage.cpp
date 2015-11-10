@@ -15,13 +15,26 @@ ADataStorage::ADataStorage() : _currentFormation(0), _wellFormation(0)
 
 ADataStorage::~ADataStorage()
 {
+    destroyAllFormations();
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat levelsCount)
+void ADataStorage::destroyAllFormations()
 {
-    AFormation* newFormation = AFormationFactory::createFormation(width, height, levelsCount);
+    for (TFormationListIter iter = _formationList.begin(); iter != _formationList.end(); iter++)
+    {
+        AFormation *formation = *iter;
+        _formationList.remove(formation);
+        delete formation;
+    }
+}
+
+//==============================================================================
+
+AFormation* ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat depth)
+{
+    AFormation* newFormation = AFormationFactory::createFormation(width, height, depth);
     _wellFormation = pushFormation(newFormation);
     
     return _wellFormation;

@@ -32,13 +32,12 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 class ACrafter
 {
 private:
+    ATextureManager textureManager;
     ADataStorage& _dataStorage;
-
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
 
     void generateTexturedRenderList(const TFormationList& formations, const ATexture& texture);
-    AWell* createWell();
     
     void renewRenderLists();
     void clearAllLists();
@@ -48,22 +47,21 @@ private:
     
     void renderContent();
     void renderList(const TRObjectsList& renderList);
+    
     TBool addObjectForRender(ARObject* object);
+    ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
+    ASolidBlock* createSolidBlock(AFormation* formation);
+    AColoredBlock* createColoredBlock(AFormation* formation);
+    AWell* createWell();
     
 public:
-    ATextureManager textureManager;
-
     ACrafter(ADataStorage& dataStorage);
     virtual ~ACrafter();
 
     void startGame();
     void blockDropped();
     void blockMovedOrRotated();
-    
     void processRender();
-    ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
-    ASolidBlock* createSolidBlock(AFormation* formation);
-    AColoredBlock* createColoredBlock(AFormation* formation);
 };
 
 //==============================================================================

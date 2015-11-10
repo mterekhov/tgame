@@ -29,11 +29,12 @@ typedef TFormationList::const_iterator TFormationListConstIter;
 class ADataStorage
 {
 private:
-    TFormationList _formationList;
-    AFormation* _currentFormation;
-    AFormation* _wellFormation;
+    TFormationList _formationList;  //  list of all formations
+    AFormation* _currentFormation;  //  current block formation
+    AFormation* _wellFormation;     //  well formation just to define well sizes WIDTHxHEIGHTxDEPTH
 
     AFormation* pushFormation(AFormation* pushFormation);
+    void destroyAllFormations();
 
 public:
     static TFloat cellSize();
@@ -52,15 +53,25 @@ public:
     AFormation* createFormation9();
     AFormation* createFormation10();
 
-    AFormation* createWellFormation(const TFloat width, const TFloat height, const TFloat levelsCount);
+    //  creates _wellFormation and assignes to it
+    AFormation* createWellFormation(const TFloat width, const TFloat height, const TFloat depth);
+    
+    //  _wellFormation getter
     AFormation* wellFormation();
+
+    //  _wellFormation width
     TFloat wellWidth();
+
+    //  _wellFormation height
     TFloat wellHeight();
+
+    //  _wellFormation depth
     TFloat wellDepth();
 
     void currentFormation(AFormation* formation);
     AFormation* currentFormation();
 
+    //  delete formation from _formationList and destroy as object
     void deleteFormation(AFormation* formation);
 };
 
