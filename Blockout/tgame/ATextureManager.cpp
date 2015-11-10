@@ -49,4 +49,15 @@ ATexture& ATextureManager::createTextureFromTGA(const TString& filePath)
 
 //==============================================================================
     
+ATexture& ATextureManager::createOrFindTextureFromTGA(const TString& filePath)
+{
+    TTexturesListIter textureIter = _textureList.find(filePath);
+    if (textureIter == _textureList.end())
+        return createTextureFromTGA(filePath);
+    
+    return textureIter->second;
+}
+
+//==============================================================================
+    
 }   //  namespace spcTGame

@@ -36,6 +36,7 @@ public:
     ~ATextureManager();
     
     ATexture& createTextureFromTGA(const TString& filePath);
+    ATexture& createOrFindTextureFromTGA(const TString& filePath);
 };
 
 //==============================================================================
