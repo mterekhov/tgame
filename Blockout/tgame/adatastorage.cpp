@@ -252,16 +252,6 @@ void ADataStorage::dropCurrentFormation()
 
 //==============================================================================
 
-void ADataStorage::makeFormationDropped(AFormation *formation)
-{
-    if (formation == 0)
-        return;
-
-    _droppedFormationsList.push_back(formation);
-}
-
-//==============================================================================
-
 const TFormationList& ADataStorage::droppedFormationsList()
 {
     return _droppedFormationsList;
@@ -307,6 +297,16 @@ void ADataStorage::deleteFormation(AFormation* formation)
     
     _formationList.remove(formation);
     delete formation;
+}
+
+//==============================================================================
+
+void ADataStorage::makeFormationDropped(AFormation *formation)
+{
+    if (formation == 0)
+        return;
+
+    _droppedFormationsList.push_back(formation);
 }
 
 //==============================================================================
