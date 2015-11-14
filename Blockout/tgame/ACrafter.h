@@ -32,7 +32,7 @@ typedef TRObjectsList::const_iterator TRObjectsListConstIter;
 class ACrafter
 {
 private:
-    ATextureManager textureManager;
+    ATextureManager _textureManager;
     ADataStorage& _dataStorage;
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
@@ -53,6 +53,7 @@ private:
     ASolidBlock* createSolidBlock(AFormation* formation);
     AColoredBlock* createColoredBlock(AFormation* formation);
     AWell* createWell();
+    void createDroppedBlocks();
     
 public:
     ACrafter(ADataStorage& dataStorage);

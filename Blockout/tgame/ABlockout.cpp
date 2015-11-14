@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <time.h>
-
 #include "ablockout.h"
 #include "adrawbasics.h"
 #include "aopenglstate.h"

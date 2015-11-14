@@ -17,6 +17,21 @@ namespace spcTGame
     
 //==============================================================================
     
+enum EFormation
+{
+    FORMATIONS_ONE,
+    FORMATIONS_TWO,
+    FORMATIONS_THREE,
+    FORMATIONS_FOUR,
+    FORMATIONS_FIVE,
+    FORMATIONS_SIX,
+    FORMATIONS_SEVEN,
+    FORMATIONS_EIGHT,
+    FORMATIONS_COUNT
+};
+
+//==============================================================================
+
 class AFormationFactory
 {
 public:

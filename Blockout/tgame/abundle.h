@@ -1,12 +1,10 @@
-#ifndef SPCTGAME_ALOGIC_H
-#define SPCTGAME_ALOGIC_H
+#ifndef SPCTGAME_ABUNDLE_H
+#define SPCTGAME_ABUNDLE_H
 
 //==============================================================================
 
-#include "aformation.h"
-#include "apoint.h"
-#include "adatastorage.h"
-#include "amatrix.h"
+#include "blockouttypes.h"
+#include "abundleprotocol.h"
 
 //==============================================================================
 
@@ -14,28 +12,21 @@ namespace spcTGame
 {
 
 //==============================================================================
-    
-class ALogic
 
+class ABundle
 {
 private:
-    ADataStorage& _dataStorage;
+    static ABundleProtocol *_mainBundle;
+    static ABundleProtocol *getMainBundle();
     
-    void generateNewCurrentFormation();
-
 public:
-    ALogic(ADataStorage& dataStorage);
-    virtual ~ALogic();
-
-    void startGame();
-    void processLogic();
-    void dropCurrentFormation();
+    static TString fullPathToResource(const TString& resourceFileName);
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ALOGIC_H
+#endif  //  SPCTGAME_ABUNDLE_H

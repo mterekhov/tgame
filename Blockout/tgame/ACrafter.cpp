@@ -3,6 +3,7 @@
 #include "blockoutdebug.h"
 #include "aoglwrapper.h"
 #include "adrawbasics.h"
+#include "abundle.h"
 
 //==============================================================================
 
@@ -73,9 +74,23 @@ void ACrafter::renewRenderLists()
     
     //  create current block and add it to render cycle
     createColoredBlock(_dataStorage.currentFormation());
+    
+    //  create render list for all dropped blocks
+    createDroppedBlocks();
 }
 
 //==============================================================================
+
+void ACrafter::createDroppedBlocks()
+{
+    const TFormationList& droppedFormations = _dataStorage.droppedFormationsList();
+    for (TFormationListConstIter iter = droppedFormations.begin(); iter != droppedFormations.end(); iter++)
+    {
+        TString textureFileName = "celtic.tga";
+        textureFileName = ABundle::fullPathToResource(textureFileName);
+        createTexturedBlock(*iter, _textureManager.createTextureFromTGA(textureFileName));
+    }
+}
 
 #pragma mark - create well -
 

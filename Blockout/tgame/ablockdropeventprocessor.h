@@ -16,7 +16,7 @@ namespace spcTGame
 class ABlockDropEventProcessor : public AGameEventDelegate
 {
 private:
-    void makeDrop(AFormation* formation);
+    void makeDrop();
     APoint findDropPosition(AFormation* formation);
 
 public:

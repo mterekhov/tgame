@@ -75,6 +75,11 @@
 		4CF304621949ED340092A63D /* blockoutdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3045D1949ED340092A63D /* blockoutdebug.cpp */; };
 		4CF304641949ED340092A63D /* blockouttypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF3045F1949ED340092A63D /* blockouttypes.h */; };
 		4CF304661949ED540092A63D /* blockoutdebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304651949ED540092A63D /* blockoutdebug.h */; };
+		AE0A7D131BF2352700D5A589 /* abundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0A7D111BF2352700D5A589 /* abundle.cpp */; };
+		AE0A7D141BF2352700D5A589 /* abundle.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0A7D121BF2352700D5A589 /* abundle.h */; };
+		AE51D1EB1BF4E08A00BFFB03 /* abundleprotocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */; };
+		AE51D1EE1BF4E20400BFFB03 /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */; };
+		AE51D1EF1BF4E20400BFFB03 /* amacbundle.h in Headers */ = {isa = PBXBuildFile; fileRef = AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */; };
 		AEA6DE501BF1C7120012E88B /* ablockmoveeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE491BF0F15E0012E88B /* ablockmoveeventprocessor.cpp */; };
 		AEA6DE511BF1C7120012E88B /* ablockrotateeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE4C1BF0F8570012E88B /* ablockrotateeventprocessor.cpp */; };
 		AEA6DE521BF1C7120012E88B /* ablockdropeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE451BF0E7610012E88B /* ablockdropeventprocessor.cpp */; };
@@ -169,6 +174,11 @@
 		4CF3045D1949ED340092A63D /* blockoutdebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = blockoutdebug.cpp; path = Blockout/tgame/blockoutdebug.cpp; sourceTree = "<group>"; };
 		4CF3045F1949ED340092A63D /* blockouttypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockouttypes.h; path = Blockout/tgame/blockouttypes.h; sourceTree = "<group>"; };
 		4CF304651949ED540092A63D /* blockoutdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockoutdebug.h; path = Blockout/tgame/blockoutdebug.h; sourceTree = "<group>"; };
+		AE0A7D111BF2352700D5A589 /* abundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abundle.cpp; path = Blockout/tgame/abundle.cpp; sourceTree = "<group>"; };
+		AE0A7D121BF2352700D5A589 /* abundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundle.h; path = Blockout/tgame/abundle.h; sourceTree = "<group>"; };
+		AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = Blockout/tgame/abundleprotocol.h; sourceTree = "<group>"; };
+		AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = Blockout/tgame/mac/amacbundle.mm; sourceTree = "<group>"; };
+		AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = Blockout/tgame/mac/amacbundle.h; sourceTree = "<group>"; };
 		AEA6DE451BF0E7610012E88B /* ablockdropeventprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablockdropeventprocessor.cpp; path = Blockout/tgame/ablockdropeventprocessor.cpp; sourceTree = "<group>"; };
 		AEA6DE461BF0E7610012E88B /* ablockdropeventprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ablockdropeventprocessor.h; path = Blockout/tgame/ablockdropeventprocessor.h; sourceTree = "<group>"; };
 		AEA6DE491BF0F15E0012E88B /* ablockmoveeventprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablockmoveeventprocessor.cpp; path = Blockout/tgame/ablockmoveeventprocessor.cpp; sourceTree = "<group>"; };
@@ -340,6 +350,18 @@
 			name = Texture;
 			sourceTree = "<group>";
 		};
+		AE0A7D101BF234FE00D5A589 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */,
+				AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */,
+				AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */,
+				AE0A7D121BF2352700D5A589 /* abundle.h */,
+				AE0A7D111BF2352700D5A589 /* abundle.cpp */,
+			);
+			name = Bundle;
+			sourceTree = "<group>";
+		};
 		AEA6DE481BF0EAF70012E88B /* EventsProcessors */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +441,7 @@
 		B7ECFF5D16AD5F1800946E91 /* TGame */ = {
 			isa = PBXGroup;
 			children = (
+				AE0A7D101BF234FE00D5A589 /* Bundle */,
 				4C923D0916C45321008EDA5C /* MainObjects */,
 				4CC929CC1B2A0B1F0010DEF5 /* Blocks */,
 				4C8000F616BD43FD008B1E74 /* Render */,
@@ -460,8 +483,10 @@
 				4CF304341949ECB90092A63D /* aimage.h in Headers */,
 				4CF3040E1949EC720092A63D /* alogic.h in Headers */,
 				4CF304611949ED340092A63D /* ablockout.h in Headers */,
+				AE0A7D141BF2352700D5A589 /* abundle.h in Headers */,
 				4CF304561949ED110092A63D /* awell.h in Headers */,
 				4C580B211955B0FB000E71E6 /* akeyboardevents.h in Headers */,
+				AE51D1EB1BF4E08A00BFFB03 /* abundleprotocol.h in Headers */,
 				4CBFB5B519598633002D7249 /* adatastorage.h in Headers */,
 				4CF3041C1949EC8B0092A63D /* apoint2d.h in Headers */,
 				4CF3043A1949ECB90092A63D /* atga.h in Headers */,
@@ -469,6 +494,7 @@
 				4CF3045A1949ED220092A63D /* acrafter.h in Headers */,
 				4CF304081949EC5F0092A63D /* aoglwrapper.h in Headers */,
 				4CF3044E1949ED030092A63D /* atexturedblock.h in Headers */,
+				AE51D1EF1BF4E20400BFFB03 /* amacbundle.h in Headers */,
 				4CF3044A1949ED030092A63D /* acoloredblock.h in Headers */,
 				4CBFB5BB195B202C002D7249 /* amatrix.h in Headers */,
 			);
@@ -583,6 +609,7 @@
 				4CF304211949EC980092A63D /* adataliner.cpp in Sources */,
 				4CF3043D1949ECCA0092A63D /* adrawbasics.cpp in Sources */,
 				4CBFB5BA195B202C002D7249 /* amatrix.cpp in Sources */,
+				AE51D1EE1BF4E20400BFFB03 /* amacbundle.mm in Sources */,
 				4CBFB5B419598633002D7249 /* adatastorage.cpp in Sources */,
 				4CF304271949ECA70092A63D /* aformation.cpp in Sources */,
 				4CF3044B1949ED030092A63D /* asolidblock.cpp in Sources */,
@@ -594,6 +621,7 @@
 				4CF3040D1949EC720092A63D /* alogic.cpp in Sources */,
 				4CF304171949EC8B0092A63D /* acolor.cpp in Sources */,
 				4CF304621949ED340092A63D /* blockoutdebug.cpp in Sources */,
+				AE0A7D131BF2352700D5A589 /* abundle.cpp in Sources */,
 				AEA6DE521BF1C7120012E88B /* ablockdropeventprocessor.cpp in Sources */,
 				4CF304491949ED030092A63D /* acoloredblock.cpp in Sources */,
 				4CF3044D1949ED030092A63D /* atexturedblock.cpp in Sources */,
