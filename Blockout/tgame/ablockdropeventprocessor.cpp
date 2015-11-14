@@ -28,16 +28,21 @@ void ABlockDropEventProcessor::processEvent(void *context)
 
 void ABlockDropEventProcessor::makeDrop()
 {
+    //  assign drop position to current formation
     AFormation *formationToDrop = _dataStorage.currentFormation();
     APoint dropPosition = findDropPosition(formationToDrop);
-    dropPosition.y = 0;
     formationToDrop->gridSpacePosition(dropPosition);
 
+    //  mark current formation as dropped
+    //  and generate new current formation
     _dataStorage.dropCurrentFormation();
+    
+    //  correct new current formation position
     AFormation* newCurrentFormation = _dataStorage.currentFormation();
     APoint p(0.0f, _dataStorage.wellDepth() - 1.0f, 0.0f);
     newCurrentFormation->gridSpacePosition(p);
 
+    //  notify renderer about drop event
     _crafter.blockDropped();
 }
 
@@ -46,6 +51,7 @@ void ABlockDropEventProcessor::makeDrop()
 APoint ABlockDropEventProcessor::findDropPosition(AFormation* formation)
 {
     APoint dropPosition = formation->gridSpacePosition();
+    dropPosition.y = 0;
 //    AFormation* wellFormation = _dataStorage.wellFormation();
 //
 //    for (TInt l = 0; l < formation->levelsCount(); l++)
