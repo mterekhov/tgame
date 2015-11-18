@@ -80,6 +80,10 @@
 		AE51D1EB1BF4E08A00BFFB03 /* abundleprotocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */; };
 		AE51D1EE1BF4E20400BFFB03 /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */; };
 		AE51D1EF1BF4E20400BFFB03 /* amacbundle.h in Headers */ = {isa = PBXBuildFile; fileRef = AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */; };
+		AE9E2FED1BFCB7A400ECACDC /* agamestepscontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9E2FEB1BFCB7A400ECACDC /* agamestepscontroller.cpp */; };
+		AE9E2FEE1BFCB7A400ECACDC /* agamestepscontroller.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9E2FEC1BFCB7A400ECACDC /* agamestepscontroller.h */; };
+		AE9E2FF11BFCB88200ECACDC /* adropdownblockgamestep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9E2FEF1BFCB88200ECACDC /* adropdownblockgamestep.cpp */; };
+		AE9E2FF21BFCB88200ECACDC /* adropdownblockgamestep.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9E2FF01BFCB88200ECACDC /* adropdownblockgamestep.h */; };
 		AEA6DE501BF1C7120012E88B /* ablockmoveeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE491BF0F15E0012E88B /* ablockmoveeventprocessor.cpp */; };
 		AEA6DE511BF1C7120012E88B /* ablockrotateeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE4C1BF0F8570012E88B /* ablockrotateeventprocessor.cpp */; };
 		AEA6DE521BF1C7120012E88B /* ablockdropeventprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA6DE451BF0E7610012E88B /* ablockdropeventprocessor.cpp */; };
@@ -179,6 +183,11 @@
 		AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = Blockout/tgame/abundleprotocol.h; sourceTree = "<group>"; };
 		AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = Blockout/tgame/mac/amacbundle.mm; sourceTree = "<group>"; };
 		AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = Blockout/tgame/mac/amacbundle.h; sourceTree = "<group>"; };
+		AE9E2FEB1BFCB7A400ECACDC /* agamestepscontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = agamestepscontroller.cpp; path = Blockout/tgame/agamestepscontroller.cpp; sourceTree = "<group>"; };
+		AE9E2FEC1BFCB7A400ECACDC /* agamestepscontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = agamestepscontroller.h; path = Blockout/tgame/agamestepscontroller.h; sourceTree = "<group>"; };
+		AE9E2FEF1BFCB88200ECACDC /* adropdownblockgamestep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adropdownblockgamestep.cpp; path = Blockout/tgame/adropdownblockgamestep.cpp; sourceTree = "<group>"; };
+		AE9E2FF01BFCB88200ECACDC /* adropdownblockgamestep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adropdownblockgamestep.h; path = Blockout/tgame/adropdownblockgamestep.h; sourceTree = "<group>"; };
+		AE9E2FF31BFCB8E700ECACDC /* agamestepprotocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = agamestepprotocol.h; path = Blockout/tgame/agamestepprotocol.h; sourceTree = "<group>"; };
 		AEA6DE451BF0E7610012E88B /* ablockdropeventprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablockdropeventprocessor.cpp; path = Blockout/tgame/ablockdropeventprocessor.cpp; sourceTree = "<group>"; };
 		AEA6DE461BF0E7610012E88B /* ablockdropeventprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ablockdropeventprocessor.h; path = Blockout/tgame/ablockdropeventprocessor.h; sourceTree = "<group>"; };
 		AEA6DE491BF0F15E0012E88B /* ablockmoveeventprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablockmoveeventprocessor.cpp; path = Blockout/tgame/ablockmoveeventprocessor.cpp; sourceTree = "<group>"; };
@@ -362,7 +371,27 @@
 			name = Bundle;
 			sourceTree = "<group>";
 		};
-		AEA6DE481BF0EAF70012E88B /* EventsProcessors */ = {
+		AE9E2FEA1BFCB78300ECACDC /* GameSteps */ = {
+			isa = PBXGroup;
+			children = (
+				AE9E2FF41BFCB8FF00ECACDC /* Steps */,
+				AE9E2FEC1BFCB7A400ECACDC /* agamestepscontroller.h */,
+				AE9E2FEB1BFCB7A400ECACDC /* agamestepscontroller.cpp */,
+			);
+			name = GameSteps;
+			sourceTree = "<group>";
+		};
+		AE9E2FF41BFCB8FF00ECACDC /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				AE9E2FF31BFCB8E700ECACDC /* agamestepprotocol.h */,
+				AE9E2FF01BFCB88200ECACDC /* adropdownblockgamestep.h */,
+				AE9E2FEF1BFCB88200ECACDC /* adropdownblockgamestep.cpp */,
+			);
+			name = Steps;
+			sourceTree = "<group>";
+		};
+		AEA6DE481BF0EAF70012E88B /* UserInputEventsProcessors */ = {
 			isa = PBXGroup;
 			children = (
 				AEA6DE4A1BF0F15E0012E88B /* ablockmoveeventprocessor.h */,
@@ -374,7 +403,7 @@
 				4C580B231955B747000E71E6 /* agameeventdelegate.h */,
 				4C580B221955B747000E71E6 /* agameeventdelegate.cpp */,
 			);
-			name = EventsProcessors;
+			name = UserInputEventsProcessors;
 			sourceTree = "<group>";
 		};
 		B732725916AB20C2001DE602 = {
@@ -441,12 +470,13 @@
 		B7ECFF5D16AD5F1800946E91 /* TGame */ = {
 			isa = PBXGroup;
 			children = (
+				AE9E2FEA1BFCB78300ECACDC /* GameSteps */,
 				AE0A7D101BF234FE00D5A589 /* Bundle */,
 				4C923D0916C45321008EDA5C /* MainObjects */,
 				4CC929CC1B2A0B1F0010DEF5 /* Blocks */,
 				4C8000F616BD43FD008B1E74 /* Render */,
 				4CBFB5AD195980F0002D7249 /* Data */,
-				AEA6DE481BF0EAF70012E88B /* EventsProcessors */,
+				AEA6DE481BF0EAF70012E88B /* UserInputEventsProcessors */,
 				4C580AB21955B08A000E71E6 /* System */,
 				4CF3045B1949ED340092A63D /* ablockout.cpp */,
 				4CF3045C1949ED340092A63D /* ablockout.h */,
@@ -475,7 +505,9 @@
 				4CF304361949ECB90092A63D /* atexture.h in Headers */,
 				4CF304661949ED540092A63D /* blockoutdebug.h in Headers */,
 				4CF3041E1949EC8B0092A63D /* avector.h in Headers */,
+				AE9E2FF21BFCB88200ECACDC /* adropdownblockgamestep.h in Headers */,
 				4CF3041A1949EC8B0092A63D /* apoint.h in Headers */,
+				AE9E2FEE1BFCB7A400ECACDC /* agamestepscontroller.h in Headers */,
 				4CF3042A1949ECA70092A63D /* aformationfactory.h in Headers */,
 				4CF304181949EC8B0092A63D /* acolor.h in Headers */,
 				4CF3040A1949EC5F0092A63D /* aopenglstate.h in Headers */,
@@ -599,6 +631,7 @@
 				4CF304591949ED220092A63D /* acrafter.cpp in Sources */,
 				4CF304531949ED110092A63D /* arobject.cpp in Sources */,
 				4CF304551949ED110092A63D /* awell.cpp in Sources */,
+				AE9E2FF11BFCB88200ECACDC /* adropdownblockgamestep.cpp in Sources */,
 				4C3CC4081B25AEDB002D540A /* ablockoperations.cpp in Sources */,
 				4C580B201955B0FB000E71E6 /* akeyboardevents.cpp in Sources */,
 				4CF304471949ED030092A63D /* ablock.cpp in Sources */,
@@ -614,6 +647,7 @@
 				4CF304271949ECA70092A63D /* aformation.cpp in Sources */,
 				4CF3044B1949ED030092A63D /* asolidblock.cpp in Sources */,
 				4CF304391949ECB90092A63D /* atga.cpp in Sources */,
+				AE9E2FED1BFCB7A400ECACDC /* agamestepscontroller.cpp in Sources */,
 				4C3CC40B1B25B4C7002D540A /* afrustumborder.cpp in Sources */,
 				4CF304601949ED340092A63D /* ablockout.cpp in Sources */,
 				4CF304191949EC8B0092A63D /* apoint.cpp in Sources */,

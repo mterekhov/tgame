@@ -1,12 +1,11 @@
-#ifndef SPCTGAME_ALOGIC_H
-#define SPCTGAME_ALOGIC_H
+#ifndef SPCTGAME_AGAMESTEPSCONTROLLER_H
+#define SPCTGAME_AGAMESTEPSCONTROLLER_H
 
 //==============================================================================
 
-#include "aformation.h"
-#include "apoint.h"
-#include "adatastorage.h"
-#include "amatrix.h"
+#include <vector>
+
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -15,33 +14,28 @@ namespace spcTGame
 
 //==============================================================================
 
-#define LEVEL_DEC_PERIOD 1
+typedef std::vector<AGameStepProtocol*> TGameStepsQueue;
+typedef TGameStepsQueue::iterator TGameStepsQueueIter;
+typedef TGameStepsQueue::const_iterator TGameStepsQueueConstIter;
 
 //==============================================================================
-    
-class ALogic
 
+class AGameStepsController
 {
 private:
-    time_t _previousCycleTimeStamp;
+    TGameStepsQueue _stepsQueue;
     
-    ADataStorage& _dataStorage;
-    
-    void generateNewCurrentFormation();
-    void decreaseCurrentBlockLevel();
+    void destroyAllSteps();
 
 public:
-    ALogic(ADataStorage& dataStorage);
-    virtual ~ALogic();
-
-    void startGame();
-    void processLogic();
+    void addStepToProcessQueue(AGameStepProtocol *gameStep);
+    void processSteps();
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ALOGIC_H
+#endif  //  SPCTGAME_AGAMESTEPSCONTROLLER_H

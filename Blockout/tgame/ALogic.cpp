@@ -11,10 +11,6 @@ namespace spcTGame
     
 //==============================================================================
 
-#define PRECISION_EPSILON 0.000001
-
-//==============================================================================
-    
 ALogic::ALogic(ADataStorage& dataStorage) : _dataStorage(dataStorage)
 {
 }
@@ -33,6 +29,16 @@ ALogic::~ALogic()
     
 void ALogic::processLogic()
 {
+    time_t timeStamp = time(NULL);
+    if (_previousCycleTimeStamp == 0)
+        _previousCycleTimeStamp = timeStamp;
+    time_t diff = timeStamp - _previousCycleTimeStamp;
+    
+    if (diff > LEVEL_DEC_PERIOD)
+    {
+        decreaseCurrentBlockLevel();
+        _previousCycleTimeStamp = timeStamp;
+    }
 }
 
 //==============================================================================
@@ -41,12 +47,6 @@ void ALogic::startGame()
 {
     _dataStorage.createWellFormation(7, 7, 15);
     generateNewCurrentFormation();
-}
-
-//==============================================================================
-
-void ALogic::dropCurrentFormation()
-{
 }
 
 //==============================================================================
@@ -62,6 +62,16 @@ void ALogic::generateNewCurrentFormation()
     newStartFormation->gridSpacePosition(p);
 
     _dataStorage.replaceCurrentFormation(newStartFormation);
+}
+
+//==============================================================================
+
+void ALogic::decreaseCurrentBlockLevel()
+{
+    AFormation *currentFormation = _dataStorage.currentFormation();
+    APoint currentFormationPosition = currentFormation->gridSpacePosition();
+    currentFormationPosition.y -= 1.0f;
+    currentFormation->gridSpacePosition(currentFormationPosition);
 }
 
 //==============================================================================
