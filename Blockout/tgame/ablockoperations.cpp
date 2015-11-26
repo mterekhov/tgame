@@ -73,9 +73,9 @@ AFormation* ABlockOperations::createRotatedFormation(const AFormation& formation
     rotationMeta.newDimmension[0] = maxWidth - minWidth + 1;
     rotationMeta.newDimmension[1] = maxHeight - minHeight + 1;
     rotationMeta.newDimmension[2] = maxLevels - minLevels + 1;
-    rotationMeta.negativeShifts[2] = fabs(minWidth);
-    rotationMeta.negativeShifts[0] = fabs(minHeight);
-    rotationMeta.negativeShifts[1] = fabs(minLevels);
+    rotationMeta.negativeShifts[2] = std::abs(minWidth);
+    rotationMeta.negativeShifts[0] = std::abs(minHeight);
+    rotationMeta.negativeShifts[1] = std::abs(minLevels);
 
     AFormation* rotatedFormation = AFormationFactory::createFormation(rotationMeta.newDimmension[0], rotationMeta.newDimmension[1], rotationMeta.newDimmension[2]);
     for (TRPIter iter = rotationMeta.rotatedPoints.begin(); iter != rotationMeta.rotatedPoints.end(); iter++)
