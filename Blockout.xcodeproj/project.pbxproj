@@ -313,10 +313,10 @@
 				4CF304141949EC8B0092A63D /* apoint2d.h */,
 				4CF304151949EC8B0092A63D /* avector.cpp */,
 				4CF304161949EC8B0092A63D /* avector.h */,
-				4CF3041F1949EC980092A63D /* adataliner.cpp */,
-				4CF304201949EC980092A63D /* adataliner.h */,
 				4CBFB5B8195B202C002D7249 /* amatrix.cpp */,
 				4CBFB5B9195B202C002D7249 /* amatrix.h */,
+				4CF3041F1949EC980092A63D /* adataliner.cpp */,
+				4CF304201949EC980092A63D /* adataliner.h */,
 			);
 			name = RenderTypes;
 			sourceTree = "<group>";
