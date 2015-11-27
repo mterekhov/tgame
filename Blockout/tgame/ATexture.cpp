@@ -87,6 +87,7 @@ TBool ATexture::init(const AImage& image)
         TData* data = new TData[_width * _height * image.bytePerPixel()];
         correctData(image, data);
         AOGLWrapper::oglTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
+        delete data;
     }
     else
     {
