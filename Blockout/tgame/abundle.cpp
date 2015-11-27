@@ -8,23 +8,30 @@ namespace spcTGame
     
 //==============================================================================
 
-ABundleProtocol *ABundle::_mainBundle;
+ABundle::ABundle()
+{
+    _bundle = new AMacBundle();
+}
 
 //==============================================================================
 
-ABundleProtocol *ABundle::getMainBundle()
+ABundle::~ABundle()
 {
-    if (_mainBundle)
-        return _mainBundle;
-    
-    return new AMacBundle();
+    if (_bundle)
+        delete _bundle;
 }
 
 //==============================================================================
 
 TString ABundle::fullPathToResource(const TString& resourceFileName)
 {
-    return getMainBundle()->fullPathToResource(resourceFileName);
+    if (!_bundle)
+        return "";
+    
+    if (resourceFileName.length() == 0)
+        return "";
+    
+    return _bundle->fullPathToResource(resourceFileName);
 }
 
 //==============================================================================

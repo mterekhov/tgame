@@ -347,14 +347,14 @@
 		4CEA40E116CFB08400A678B5 /* Texture */ = {
 			isa = PBXGroup;
 			children = (
+				4CF304311949ECB90092A63D /* atga.cpp */,
+				4CF304321949ECB90092A63D /* atga.h */,
 				4CF3042B1949ECB90092A63D /* aimage.cpp */,
 				4CF3042C1949ECB90092A63D /* aimage.h */,
 				4CF3042D1949ECB90092A63D /* atexture.cpp */,
 				4CF3042E1949ECB90092A63D /* atexture.h */,
 				4CF3042F1949ECB90092A63D /* atexturemanager.cpp */,
 				4CF304301949ECB90092A63D /* atexturemanager.h */,
-				4CF304311949ECB90092A63D /* atga.cpp */,
-				4CF304321949ECB90092A63D /* atga.h */,
 			);
 			name = Texture;
 			sourceTree = "<group>";
@@ -362,11 +362,11 @@
 		AE0A7D101BF234FE00D5A589 /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
-				AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */,
-				AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */,
 				AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */,
 				AE0A7D121BF2352700D5A589 /* abundle.h */,
 				AE0A7D111BF2352700D5A589 /* abundle.cpp */,
+				AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */,
+				AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */,
 			);
 			name = Bundle;
 			sourceTree = "<group>";

@@ -87,7 +87,7 @@ void ACrafter::createDroppedBlocks()
     for (TFormationListConstIter iter = droppedFormations.begin(); iter != droppedFormations.end(); iter++)
     {
         TString textureFileName = "celtic.tga";
-        textureFileName = ABundle::fullPathToResource(textureFileName);
+        textureFileName = ABundle().fullPathToResource(textureFileName);
         createTexturedBlock(*iter, _textureManager.createTextureFromTGA(textureFileName));
     }
 }
