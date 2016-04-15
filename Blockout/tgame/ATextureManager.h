@@ -27,8 +27,6 @@ private:
     TTexturesList _textureList;
     static ATexture _zeroTexture;
 
-    TBool clearAllTextures(TTexturesList& textureList);
-
 public:
     static ATexture& zeroTexture();
 

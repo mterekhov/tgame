@@ -137,7 +137,8 @@ enum EImageType
 class ATga
 {
 public:
-	ATga(const TString& filePath, TBool headersOnly = false);
+    /// Default constructor
+    ATga(const TString& filePath, TBool headersOnly = false);
 
     /// Default destructor
 	virtual ~ATga();

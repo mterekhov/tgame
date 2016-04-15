@@ -294,10 +294,10 @@
 		4CBFB5AD195980F0002D7249 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4CF304231949ECA70092A63D /* aformation.cpp */,
 				4CF304241949ECA70092A63D /* aformation.h */,
-				4CF304251949ECA70092A63D /* aformationfactory.cpp */,
+				4CF304231949ECA70092A63D /* aformation.cpp */,
 				4CF304261949ECA70092A63D /* aformationfactory.h */,
+				4CF304251949ECA70092A63D /* aformationfactory.cpp */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -347,14 +347,14 @@
 		4CEA40E116CFB08400A678B5 /* Texture */ = {
 			isa = PBXGroup;
 			children = (
-				4CF304311949ECB90092A63D /* atga.cpp */,
 				4CF304321949ECB90092A63D /* atga.h */,
-				4CF3042B1949ECB90092A63D /* aimage.cpp */,
+				4CF304311949ECB90092A63D /* atga.cpp */,
 				4CF3042C1949ECB90092A63D /* aimage.h */,
-				4CF3042D1949ECB90092A63D /* atexture.cpp */,
+				4CF3042B1949ECB90092A63D /* aimage.cpp */,
 				4CF3042E1949ECB90092A63D /* atexture.h */,
-				4CF3042F1949ECB90092A63D /* atexturemanager.cpp */,
+				4CF3042D1949ECB90092A63D /* atexture.cpp */,
 				4CF304301949ECB90092A63D /* atexturemanager.h */,
+				4CF3042F1949ECB90092A63D /* atexturemanager.cpp */,
 			);
 			name = Texture;
 			sourceTree = "<group>";
