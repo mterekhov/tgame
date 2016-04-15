@@ -13,14 +13,16 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABundle
+class ABundle : public ABundleProtocol
 {
 private:
-    static ABundleProtocol *_mainBundle;
-    static ABundleProtocol *getMainBundle();
+    ABundleProtocol *_bundle;
     
 public:
-    static TString fullPathToResource(const TString& resourceFileName);
+    ABundle();
+    virtual ~ABundle();
+    
+    virtual TString fullPathToResource(const TString& resourceFileName);
 };
 
 //==============================================================================

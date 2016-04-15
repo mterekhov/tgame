@@ -39,7 +39,7 @@ ATexture& ATextureManager::createTextureFromTGA(const TString& filePath)
     AOpenGLState* oglState = AOpenGLState::shared();
     oglState->textureEnable();
     
-    ATexture newTexture(*tgaFile.image());
+    ATexture newTexture(tgaFile.image());
     _textureList[newTexture.name()] = newTexture;
 
     oglState->textureDisable();

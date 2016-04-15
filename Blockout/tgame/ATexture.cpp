@@ -87,6 +87,7 @@ TBool ATexture::init(const AImage& image)
         TData* data = new TData[_width * _height * image.bytePerPixel()];
         correctData(image, data);
         AOGLWrapper::oglTexImage2D(GL_TEXTURE_2D, 0, _type, _width, _height, 0, _type, _pixelSize, data);
+        delete [] data;
     }
     else
     {
@@ -112,7 +113,7 @@ void ATexture::defineFilters()
         AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     }
 
-//  This parameteer is deprecated but should be used in version lower then OpenGL 3.0
+//  This parameter is deprecated but should be used in version lower then OpenGL 3.0
 //  in all upper versions should be used glGenerateMipmap​().
 //    AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, _mipMaping);
     AOGLWrapper::oglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, _minFilter);

@@ -33,11 +33,6 @@ public:
     /// Default destructor
     ~ATexture();
     
-    /// Initialize texture
-    /// @param AImage& - init texture with image
-    /// @return TBool - true if everything is ok, otherwise false
-    TBool init(const AImage& image);
-    
     /// Bind texture
     void bind() const;
     
@@ -86,10 +81,15 @@ public:
     /// @param const TString& - name for the texture
     void name(const TString& name);
     
-    /// Destroy all thge data in textyure object
-    void destroy();
-
 private:
+    
+    /// Initialize texture
+    /// @param AImage& - init texture with image
+    /// @return TBool - true if everything is ok, otherwise false
+    TBool init(const AImage& image);
+    
+    /// Destroy all the data in texture object
+    void destroy();
     
     /// Init texture from tga file
     /// @param const TString& - relative file name of tga image

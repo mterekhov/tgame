@@ -21,6 +21,7 @@ namespace spcTGame
 class AImage
 {
 public:
+    /// This constructor copies all the data from pointer data to it's own pointer
     AImage(const TString& imageName, TData* data, const TWidth width,
             const THeight height, const TBitpp bitpp);
     
