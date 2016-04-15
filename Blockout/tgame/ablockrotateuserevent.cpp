@@ -1,4 +1,4 @@
-#include "ablockrotateeventprocessor.h"
+#include "ablockrotateuserevent.h"
 #include "ablockoperations.h"
 #include "keymaps.h"
 
@@ -9,19 +9,19 @@ namespace spcTGame
 
 //==============================================================================
 
-ABlockRotateEventProcessor::ABlockRotateEventProcessor(ACrafter &crafter, ADataStorage &dataStorage) : AGameEventDelegate(crafter, dataStorage)
+ABlockRotateUserEvent::ABlockRotateUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : AUserEvent(crafter, dataStorage)
 {
 }
 
 //==============================================================================
 
-ABlockRotateEventProcessor::~ABlockRotateEventProcessor()
+ABlockRotateUserEvent::~ABlockRotateUserEvent()
 {
 }
 
 //==============================================================================
 
-void ABlockRotateEventProcessor::processEvent(void *context)
+void ABlockRotateUserEvent::processEvent(void *context)
 {
     EKeyCodes rotateAxis = *static_cast<EKeyCodes *>(context);
     switch (rotateAxis)
@@ -37,6 +37,9 @@ void ABlockRotateEventProcessor::processEvent(void *context)
         case EKEYCODES_ROTATE_Z:
             rotateZ();
         break;
+            
+        default:
+        break;
     }
 
     _crafter.blockMovedOrRotated();
@@ -44,7 +47,7 @@ void ABlockRotateEventProcessor::processEvent(void *context)
 
 //==============================================================================
 
-void ABlockRotateEventProcessor::rotateY()
+void ABlockRotateUserEvent::rotateY()
 {
     AMatrix m = AMatrix::rotationY(M_PI_2);
     rotate(m);
@@ -52,7 +55,7 @@ void ABlockRotateEventProcessor::rotateY()
 
 //==============================================================================
 
-void ABlockRotateEventProcessor::rotateX()
+void ABlockRotateUserEvent::rotateX()
 {
     AMatrix m = AMatrix::rotationX(M_PI_2);
     rotate(m);
@@ -60,7 +63,7 @@ void ABlockRotateEventProcessor::rotateX()
 
 //==============================================================================
 
-void ABlockRotateEventProcessor::rotateZ()
+void ABlockRotateUserEvent::rotateZ()
 {
     AMatrix m = AMatrix::rotationZ(M_PI_2);
     rotate(m);
@@ -68,7 +71,7 @@ void ABlockRotateEventProcessor::rotateZ()
 
 //==============================================================================
 
-void ABlockRotateEventProcessor::rotate(const AMatrix& m)
+void ABlockRotateUserEvent::rotate(const AMatrix& m)
 {
     AFormation* rotatedFormation = ABlockOperations::createRotatedFrustumFormation(*_dataStorage.currentFormation(),
                                                                                    m,

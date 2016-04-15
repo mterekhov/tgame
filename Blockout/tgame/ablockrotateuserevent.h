@@ -1,10 +1,10 @@
-#ifndef SPCTGAME_ABLOCKROTATEEVENTPROCESSOR_H
-#define SPCTGAME_ABLOCKROTATEEVENTPROCESSOR_H
+#ifndef SPCTGAME_ABLOCKROTATEUSEREVENT_H
+#define SPCTGAME_ABLOCKROTATEUSEREVENT_H
 
 //==============================================================================
 
 #include "blockouttypes.h"
-#include "agameeventdelegate.h"
+#include "auserevent.h"
 #include "amatrix.h"
 
 //==============================================================================
@@ -14,7 +14,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockRotateEventProcessor : public AGameEventDelegate
+class ABlockRotateUserEvent : public AUserEvent
 {
 private:
     TBool isBreakingWellBound(const APoint& position, const AFormation* formation);
@@ -25,8 +25,8 @@ private:
     void rotate(const AMatrix& m);
 
 public:
-    ABlockRotateEventProcessor(ACrafter &crafter, ADataStorage &dataStorage);
-    virtual ~ABlockRotateEventProcessor();
+    ABlockRotateUserEvent(ACrafter &crafter, ADataStorage &dataStorage);
+    virtual ~ABlockRotateUserEvent();
 
     virtual void processEvent(void *context);
 };
@@ -37,4 +37,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_ABLOCKROTATEEVENTPROCESSOR_H
+#endif  //  SPCTGAME_ABLOCKROTATEUSEREVENT_H

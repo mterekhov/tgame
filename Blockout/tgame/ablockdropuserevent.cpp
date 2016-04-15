@@ -1,4 +1,4 @@
-#include "ablockdropeventprocessor.h"
+#include "ablockdropuserevent.h"
 
 //==============================================================================
 
@@ -7,26 +7,26 @@ namespace spcTGame
 
 //==============================================================================
 
-ABlockDropEventProcessor::ABlockDropEventProcessor(ACrafter &crafter, ADataStorage &dataStorage) : AGameEventDelegate(crafter, dataStorage)
+ABlockDropUserEvent::ABlockDropUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : AUserEvent(crafter, dataStorage)
 {
 }
 
 //==============================================================================
 
-ABlockDropEventProcessor::~ABlockDropEventProcessor()
+ABlockDropUserEvent::~ABlockDropUserEvent()
 {
 }
 
 //==============================================================================
 
-void ABlockDropEventProcessor::processEvent(void *context)
+void ABlockDropUserEvent::processEvent(void *context)
 {
     makeDrop();
 }
 
 //==============================================================================
 
-void ABlockDropEventProcessor::makeDrop()
+void ABlockDropUserEvent::makeDrop()
 {
     //  assign drop position to current formation
     AFormation *formationToDrop = _dataStorage.currentFormation();
@@ -48,7 +48,7 @@ void ABlockDropEventProcessor::makeDrop()
 
 //==============================================================================
 
-APoint ABlockDropEventProcessor::findDropPosition(AFormation* formation)
+APoint ABlockDropUserEvent::findDropPosition(AFormation* formation)
 {
     APoint dropPosition = formation->gridSpacePosition();
     dropPosition.y = 0;

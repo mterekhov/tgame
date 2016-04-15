@@ -2,6 +2,10 @@
 #define SPCTGAME_AGAMESTEPPROTOCOL_H
 
 //==============================================================================
+//
+//  This class provides common functionality for any event which could happen in game
+//
+//==============================================================================
 
 namespace spcTGame
 {

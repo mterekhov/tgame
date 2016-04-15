@@ -1,4 +1,4 @@
-#include "agameeventdelegate.h"
+#include "auserevent.h"
 
 //==============================================================================
 
@@ -7,19 +7,19 @@ namespace spcTGame
 
 //==============================================================================
 
-AGameEventDelegate::AGameEventDelegate(ACrafter &crafter, ADataStorage &dataStorage) : _crafter(crafter), _dataStorage(dataStorage)
+AUserEvent::AUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : _crafter(crafter), _dataStorage(dataStorage)
 {
 }
 
 //==============================================================================
 
-AGameEventDelegate::~AGameEventDelegate()
+AUserEvent::~AUserEvent()
 {
 }
 
 //==============================================================================
 
-void AGameEventDelegate::processEvent(void *context)
+void AUserEvent::processEvent(void *context)
 {
 }
 

@@ -1,4 +1,4 @@
-#include "ablockmoveeventprocessor.h"
+#include "ablockmoveuserevent.h"
 #include "keymaps.h"
 
 //==============================================================================
@@ -8,19 +8,19 @@ namespace spcTGame
 
 //==============================================================================
 
-ABlockMoveEventProcessor::ABlockMoveEventProcessor(ACrafter &crafter, ADataStorage &dataStorage) : AGameEventDelegate(crafter, dataStorage)
+ABlockMoveUserEvent::ABlockMoveUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : AUserEvent(crafter, dataStorage)
 {
 }
 
 //==============================================================================
 
-ABlockMoveEventProcessor::~ABlockMoveEventProcessor()
+ABlockMoveUserEvent::~ABlockMoveUserEvent()
 {
 }
 
 //==============================================================================
 
-void ABlockMoveEventProcessor::processEvent(void *context)
+void ABlockMoveUserEvent::processEvent(void *context)
 {
     EKeyCodes direction = *static_cast<EKeyCodes *>(context);
     switch (direction)
@@ -40,6 +40,9 @@ void ABlockMoveEventProcessor::processEvent(void *context)
         case EKEYCODES_RIGHT:
             moveCurrentBlockRight();
         break;
+            
+        default:
+        break;
     }
     
     _crafter.blockMovedOrRotated();
@@ -47,7 +50,7 @@ void ABlockMoveEventProcessor::processEvent(void *context)
 
 //==============================================================================
 
-void ABlockMoveEventProcessor::moveCurrentBlockRight()
+void ABlockMoveUserEvent::moveCurrentBlockRight()
 {
     AFormation* currentBlock = _dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
@@ -59,7 +62,7 @@ void ABlockMoveEventProcessor::moveCurrentBlockRight()
 
 //==============================================================================
 
-void ABlockMoveEventProcessor::moveCurrentBlockLeft()
+void ABlockMoveUserEvent::moveCurrentBlockLeft()
 {
     AFormation* currentBlock = _dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
@@ -71,7 +74,7 @@ void ABlockMoveEventProcessor::moveCurrentBlockLeft()
 
 //==============================================================================
 
-void ABlockMoveEventProcessor::moveCurrentBlockDown()
+void ABlockMoveUserEvent::moveCurrentBlockDown()
 {
     AFormation* currentBlock = _dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
@@ -83,7 +86,7 @@ void ABlockMoveEventProcessor::moveCurrentBlockDown()
 
 //==============================================================================
 
-void ABlockMoveEventProcessor::moveCurrentBlockUp()
+void ABlockMoveUserEvent::moveCurrentBlockUp()
 {
     AFormation* currentBlock = _dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
@@ -95,7 +98,7 @@ void ABlockMoveEventProcessor::moveCurrentBlockUp()
 
 //==============================================================================
 
-TBool ABlockMoveEventProcessor::isBreakingWellBound(const APoint& position, const AFormation* formation)
+TBool ABlockMoveUserEvent::isBreakingWellBound(const APoint& position, const AFormation* formation)
 {
     //  check top border
     if ((position.x + formation->height()) > _dataStorage.wellHeight() ||

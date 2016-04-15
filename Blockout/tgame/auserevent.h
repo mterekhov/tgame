@@ -1,10 +1,11 @@
-#ifndef SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
-#define SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
+#ifndef SPCTGAME_AUSEREVENT_H
+#define SPCTGAME_AUSEREVENT_H
 
 //==============================================================================
 
 #include "blockouttypes.h"
-#include "agameeventdelegate.h"
+#include "acrafter.h"
+#include "adatastorage.h"
 
 //==============================================================================
 
@@ -13,16 +14,16 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockDropEventProcessor : public AGameEventDelegate
+class AUserEvent
 {
-private:
-    void makeDrop();
-    APoint findDropPosition(AFormation* formation);
+protected:
+    ACrafter &_crafter;
+    ADataStorage &_dataStorage;
 
 public:
-    ABlockDropEventProcessor(ACrafter &crafter, ADataStorage &dataStorage);
-    virtual ~ABlockDropEventProcessor();
-
+    AUserEvent(ACrafter &crafter, ADataStorage &dataStorage);
+    virtual ~AUserEvent();
+    
     virtual void processEvent(void *context);
 };
 
@@ -32,4 +33,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
+#endif  //  SPCTGAME_AUSEREVENT_H

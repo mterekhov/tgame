@@ -1,10 +1,10 @@
-#ifndef SPCTGAME_ABLOCKMOVEEVENTPROCESSOR_H
-#define SPCTGAME_ABLOCKMOVEEVENTPROCESSOR_H
+#ifndef SPCTGAME_ABLOCKMOVEUSEREVENT_H
+#define SPCTGAME_ABLOCKMOVEUSEREVENT_H
 
 //==============================================================================
 
 #include "blockouttypes.h"
-#include "agameeventdelegate.h"
+#include "auserevent.h"
 
 //==============================================================================
 
@@ -13,7 +13,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockMoveEventProcessor : public AGameEventDelegate
+class ABlockMoveUserEvent : public AUserEvent
 {
 private:
     TBool isBreakingWellBound(const APoint& position, const AFormation* formation);
@@ -24,8 +24,8 @@ private:
     void moveCurrentBlockRight();
 
 public:
-    ABlockMoveEventProcessor(ACrafter &crafter, ADataStorage &dataStorage);
-    virtual ~ABlockMoveEventProcessor();
+    ABlockMoveUserEvent(ACrafter &crafter, ADataStorage &dataStorage);
+    virtual ~ABlockMoveUserEvent();
 
     virtual void processEvent(void *context);
 };
@@ -36,4 +36,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_ABLOCKMOVEEVENTPROCESSOR_H
+#endif  //  SPCTGAME_ABLOCKMOVEUSEREVENT_H
