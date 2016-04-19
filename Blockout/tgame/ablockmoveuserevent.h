@@ -16,18 +16,20 @@ namespace spcTGame
 class ABlockMoveUserEvent : public AUserEvent
 {
 private:
-    TBool isBreakingWellBound(const APoint& position, const AFormation* formation);
+    TUint _buttonCode;
+    
+    TBool isBreakingWellBound(const APoint& position, const AFormation* formation, ADataStorage &dataStorage);
 
-    void moveCurrentBlockDown();
-    void moveCurrentBlockUp();
-    void moveCurrentBlockLeft();
-    void moveCurrentBlockRight();
+    void moveCurrentBlockDown(ADataStorage &dataStorage);
+    void moveCurrentBlockUp(ADataStorage &dataStorage);
+    void moveCurrentBlockLeft(ADataStorage &dataStorage);
+    void moveCurrentBlockRight(ADataStorage &dataStorage);
 
 public:
-    ABlockMoveUserEvent(ACrafter &crafter, ADataStorage &dataStorage);
+    ABlockMoveUserEvent(const TUint buttonCode);
     virtual ~ABlockMoveUserEvent();
 
-    virtual void processEvent(void *context);
+    virtual void processEvent(ACrafter &crafter, ADataStorage &dataStorage);
 };
 
 //==============================================================================

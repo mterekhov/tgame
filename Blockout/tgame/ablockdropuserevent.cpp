@@ -7,7 +7,7 @@ namespace spcTGame
 
 //==============================================================================
 
-ABlockDropUserEvent::ABlockDropUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : AUserEvent(crafter, dataStorage)
+ABlockDropUserEvent::ABlockDropUserEvent()
 {
 }
 
@@ -19,31 +19,31 @@ ABlockDropUserEvent::~ABlockDropUserEvent()
 
 //==============================================================================
 
-void ABlockDropUserEvent::processEvent(void *context)
+void ABlockDropUserEvent::processEvent(ACrafter &crafter, ADataStorage &dataStorage)
 {
-    makeDrop();
+    makeDrop(crafter, dataStorage);
 }
 
 //==============================================================================
 
-void ABlockDropUserEvent::makeDrop()
+void ABlockDropUserEvent::makeDrop(ACrafter &crafter, ADataStorage &dataStorage)
 {
     //  assign drop position to current formation
-    AFormation *formationToDrop = _dataStorage.currentFormation();
+    AFormation *formationToDrop = dataStorage.currentFormation();
     APoint dropPosition = findDropPosition(formationToDrop);
     formationToDrop->gridSpacePosition(dropPosition);
 
     //  mark current formation as dropped
     //  and generate new current formation
-    _dataStorage.dropCurrentFormation();
+    dataStorage.dropCurrentFormation();
     
     //  correct new current formation position
-    AFormation* newCurrentFormation = _dataStorage.currentFormation();
-    APoint p(0.0f, _dataStorage.wellDepth() - 1.0f, 0.0f);
+    AFormation* newCurrentFormation = dataStorage.currentFormation();
+    APoint p(0.0f, dataStorage.wellDepth() - 1.0f, 0.0f);
     newCurrentFormation->gridSpacePosition(p);
 
     //  notify renderer about drop event
-    _crafter.blockDropped();
+    crafter.blockDropped();
 }
 
 //==============================================================================

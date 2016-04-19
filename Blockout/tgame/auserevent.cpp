@@ -7,7 +7,7 @@ namespace spcTGame
 
 //==============================================================================
 
-AUserEvent::AUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : _crafter(crafter), _dataStorage(dataStorage)
+AUserEvent::AUserEvent()
 {
 }
 
@@ -19,7 +19,7 @@ AUserEvent::~AUserEvent()
 
 //==============================================================================
 
-void AUserEvent::processEvent(void *context)
+void AUserEvent::processEvent(ACrafter &crafter, ADataStorage &dataStorage)
 {
 }
 

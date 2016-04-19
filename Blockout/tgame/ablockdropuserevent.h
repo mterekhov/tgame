@@ -16,14 +16,14 @@ namespace spcTGame
 class ABlockDropUserEvent : public AUserEvent
 {
 private:
-    void makeDrop();
+    void makeDrop(ACrafter &crafter, ADataStorage &dataStorage);
     APoint findDropPosition(AFormation* formation);
 
 public:
-    ABlockDropUserEvent(ACrafter &crafter, ADataStorage &dataStorage);
+    ABlockDropUserEvent();
     virtual ~ABlockDropUserEvent();
 
-    virtual void processEvent(void *context);
+    virtual void processEvent(ACrafter &crafter, ADataStorage &dataStorage);
 };
 
 //==============================================================================

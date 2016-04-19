@@ -8,7 +8,7 @@ namespace spcTGame
 
 //==============================================================================
 
-ABlockMoveUserEvent::ABlockMoveUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : AUserEvent(crafter, dataStorage)
+ABlockMoveUserEvent::ABlockMoveUserEvent(const TUint buttonCode) : _buttonCode(buttonCode)
 {
 }
 
@@ -20,92 +20,92 @@ ABlockMoveUserEvent::~ABlockMoveUserEvent()
 
 //==============================================================================
 
-void ABlockMoveUserEvent::processEvent(void *context)
+void ABlockMoveUserEvent::processEvent(ACrafter &crafter, ADataStorage &dataStorage)
 {
-    EKeyCodes direction = *static_cast<EKeyCodes *>(context);
-    switch (direction)
+    switch (_buttonCode)
     {
         case EKEYCODES_DOWN:
-            moveCurrentBlockDown();
+            moveCurrentBlockDown(dataStorage);
         break;
         
         case EKEYCODES_UP:
-            moveCurrentBlockUp();
+            moveCurrentBlockUp(dataStorage);
         break;
         
         case EKEYCODES_LEFT:
-            moveCurrentBlockLeft();
+            moveCurrentBlockLeft(dataStorage);
         break;
         
         case EKEYCODES_RIGHT:
-            moveCurrentBlockRight();
+            moveCurrentBlockRight(dataStorage);
         break;
             
         default:
+            return;
         break;
     }
     
-    _crafter.blockMovedOrRotated();
+    crafter.blockMovedOrRotated();
 }
 
 //==============================================================================
 
-void ABlockMoveUserEvent::moveCurrentBlockRight()
+void ABlockMoveUserEvent::moveCurrentBlockRight(ADataStorage &dataStorage)
 {
-    AFormation* currentBlock = _dataStorage.currentFormation();
+    AFormation* currentBlock = dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
-    position.z += _dataStorage.cellSize();
+    position.z += dataStorage.cellSize();
 
-    if (isBreakingWellBound(position, currentBlock) == false)
+    if (isBreakingWellBound(position, currentBlock, dataStorage) == false)
         currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
 
-void ABlockMoveUserEvent::moveCurrentBlockLeft()
+void ABlockMoveUserEvent::moveCurrentBlockLeft(ADataStorage &dataStorage)
 {
-    AFormation* currentBlock = _dataStorage.currentFormation();
+    AFormation* currentBlock = dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
-    position.z -= _dataStorage.cellSize();
+    position.z -= dataStorage.cellSize();
 
-    if (isBreakingWellBound(position, currentBlock) == false)
+    if (isBreakingWellBound(position, currentBlock, dataStorage) == false)
         currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
 
-void ABlockMoveUserEvent::moveCurrentBlockDown()
+void ABlockMoveUserEvent::moveCurrentBlockDown(ADataStorage &dataStorage)
 {
-    AFormation* currentBlock = _dataStorage.currentFormation();
+    AFormation* currentBlock = dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
-    position.x -= _dataStorage.cellSize();
+    position.x -= dataStorage.cellSize();
 
-    if (isBreakingWellBound(position, currentBlock) == false)
+    if (isBreakingWellBound(position, currentBlock, dataStorage) == false)
         currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
 
-void ABlockMoveUserEvent::moveCurrentBlockUp()
+void ABlockMoveUserEvent::moveCurrentBlockUp(ADataStorage &dataStorage)
 {
-    AFormation* currentBlock = _dataStorage.currentFormation();
+    AFormation* currentBlock = dataStorage.currentFormation();
     APoint position = currentBlock->gridSpacePosition();
-    position.x += _dataStorage.cellSize();
+    position.x += dataStorage.cellSize();
 
-    if (isBreakingWellBound(position, currentBlock) == false)
+    if (isBreakingWellBound(position, currentBlock, dataStorage) == false)
         currentBlock->gridSpacePosition(position);
 }
 
 //==============================================================================
 
-TBool ABlockMoveUserEvent::isBreakingWellBound(const APoint& position, const AFormation* formation)
+TBool ABlockMoveUserEvent::isBreakingWellBound(const APoint& position, const AFormation* formation, ADataStorage &dataStorage)
 {
     //  check top border
-    if ((position.x + formation->height()) > _dataStorage.wellHeight() ||
+    if ((position.x + formation->height()) > dataStorage.wellHeight() ||
          position.x < 0)
         return true;
         
-    if ((position.z + formation->width()) > _dataStorage.wellWidth() ||
+    if ((position.z + formation->width()) > dataStorage.wellWidth() ||
          position.z < 0)
         return true;
         

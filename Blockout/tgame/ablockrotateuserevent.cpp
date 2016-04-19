@@ -9,7 +9,7 @@ namespace spcTGame
 
 //==============================================================================
 
-ABlockRotateUserEvent::ABlockRotateUserEvent(ACrafter &crafter, ADataStorage &dataStorage) : AUserEvent(crafter, dataStorage)
+ABlockRotateUserEvent::ABlockRotateUserEvent(const TUint buttonCode) : _buttonCode(buttonCode) 
 {
 }
 
@@ -21,62 +21,61 @@ ABlockRotateUserEvent::~ABlockRotateUserEvent()
 
 //==============================================================================
 
-void ABlockRotateUserEvent::processEvent(void *context)
+void ABlockRotateUserEvent::processEvent(ACrafter &crafter, ADataStorage &dataStorage)
 {
-    EKeyCodes rotateAxis = *static_cast<EKeyCodes *>(context);
-    switch (rotateAxis)
+    switch (_buttonCode)
     {
         case EKEYCODES_ROTATE_X:
-            rotateX();
+            rotateX(dataStorage);
         break;
         
         case EKEYCODES_ROTATE_Y:
-            rotateY();
+            rotateY(dataStorage);
         break;
         
         case EKEYCODES_ROTATE_Z:
-            rotateZ();
+            rotateZ(dataStorage);
         break;
             
         default:
         break;
     }
 
-    _crafter.blockMovedOrRotated();
+    crafter.blockMovedOrRotated();
 }
 
 //==============================================================================
 
-void ABlockRotateUserEvent::rotateY()
+void ABlockRotateUserEvent::rotateY(ADataStorage &dataStorage)
 {
     AMatrix m = AMatrix::rotationY(M_PI_2);
-    rotate(m);
+    rotate(m, dataStorage);
 }
 
 //==============================================================================
 
-void ABlockRotateUserEvent::rotateX()
+void ABlockRotateUserEvent::rotateX(ADataStorage &dataStorage)
 {
     AMatrix m = AMatrix::rotationX(M_PI_2);
-    rotate(m);
+    rotate(m, dataStorage);
 }
 
 //==============================================================================
 
-void ABlockRotateUserEvent::rotateZ()
+void ABlockRotateUserEvent::rotateZ(ADataStorage &dataStorage)
 {
     AMatrix m = AMatrix::rotationZ(M_PI_2);
-    rotate(m);
+    rotate(m, dataStorage);
 }
 
 //==============================================================================
 
-void ABlockRotateUserEvent::rotate(const AMatrix& m)
+void ABlockRotateUserEvent::rotate(const AMatrix& m, ADataStorage &dataStorage)
 {
-    AFormation* rotatedFormation = ABlockOperations::createRotatedFrustumFormation(*_dataStorage.currentFormation(),
+    AFormation* rotatedFormation = ABlockOperations::createRotatedFrustumFormation(*dataStorage.currentFormation(),
                                                                                    m,
-                                                                                   AFrustumBorder(_dataStorage.wellHeight(), _dataStorage.wellDepth(), _dataStorage.wellWidth()));
-    _dataStorage.replaceCurrentFormation(rotatedFormation);
+                                                                                   AFrustumBorder(dataStorage.wellHeight(), dataStorage.wellDepth(), dataStorage.wellWidth()));
+    dataStorage.replaceCurrentFormation(rotatedFormation);
 }
 
 //==============================================================================

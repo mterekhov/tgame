@@ -21,9 +21,7 @@ TStringMap stringToKeycode = {{"moveUp", EKEYCODES_UP},
 
 //==============================================================================
 
-AKeyboardEvents::AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage) : _dropEventProcessor(crafter, dataStorage),
-                                                                                 _moveEventProcessor(crafter, dataStorage),
-                                                                                 _rotateEventProcessor(crafter, dataStorage)
+AKeyboardEvents::AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage) : _dataStorage(dataStorage), _crafter(crafter)
 {
 }
 
@@ -37,25 +35,28 @@ AKeyboardEvents::~AKeyboardEvents()
 
 void AKeyboardEvents::keyPressed(TUint buttonCode)
 {
+    AUserEvent *userEvent;
     switch (buttonCode)
     {
         case EKEYCODES_DOWN:
         case EKEYCODES_UP:
         case EKEYCODES_LEFT:
         case EKEYCODES_RIGHT:
-            _moveEventProcessor.processEvent(&buttonCode);
+            userEvent = new ABlockMoveUserEvent(buttonCode);
         break;
         
         case EKEYCODES_ROTATE_X:
         case EKEYCODES_ROTATE_Y:
         case EKEYCODES_ROTATE_Z:
-            _rotateEventProcessor.processEvent(&buttonCode);
+            userEvent = new ABlockRotateUserEvent(buttonCode);
         break;
         
         case EKEYCODES_DROP_BLOCK:
-            _dropEventProcessor.processEvent(0);
+            userEvent = new ABlockDropUserEvent();
         break;
     }
+    
+    userEvent->processEvent(_crafter, _dataStorage);
 }
 
 //==============================================================================

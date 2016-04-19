@@ -7,9 +7,9 @@
 #include "keymaps.h"
 #include "acrafter.h"
 #include "adatastorage.h"
-#include "ablockdropeventprocessor.h"
-#include "ablockmoveeventprocessor.h"
-#include "ablockrotateeventprocessor.h"
+#include "ablockdropuserevent.h"
+#include "ablockmoveuserevent.h"
+#include "ablockrotateuserevent.h"
 
 //==============================================================================
 
@@ -21,9 +21,8 @@ namespace spcTGame
 class AKeyboardEvents
 {
 private:
-    ABlockDropEventProcessor _dropEventProcessor;
-    ABlockMoveEventProcessor _moveEventProcessor;
-    ABlockRotateEventProcessor _rotateEventProcessor;
+    ACrafter& _crafter;
+    ADataStorage& _dataStorage;
 
 public:
     AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage);

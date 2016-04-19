@@ -16,15 +16,11 @@ namespace spcTGame
 
 class AUserEvent
 {
-protected:
-    ACrafter &_crafter;
-    ADataStorage &_dataStorage;
-
 public:
-    AUserEvent(ACrafter &crafter, ADataStorage &dataStorage);
+    AUserEvent();
     virtual ~AUserEvent();
     
-    virtual void processEvent(void *context);
+    virtual void processEvent(ACrafter &crafter, ADataStorage &dataStorage);
 };
 
 //==============================================================================
