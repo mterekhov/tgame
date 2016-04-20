@@ -21,7 +21,7 @@ TStringMap stringToKeycode = {{"moveUp", EKEYCODES_UP},
 
 //==============================================================================
 
-AKeyboardEvents::AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage) : _dataStorage(dataStorage), _crafter(crafter)
+AKeyboardEvents::AKeyboardEvents(AGameStepsController& gameStepsController) : _gameStepsController(gameStepsController)
 {
 }
 
@@ -36,6 +36,7 @@ AKeyboardEvents::~AKeyboardEvents()
 void AKeyboardEvents::keyPressed(TUint buttonCode)
 {
     AUserEvent *userEvent;
+    
     switch (buttonCode)
     {
         case EKEYCODES_DOWN:
@@ -56,7 +57,8 @@ void AKeyboardEvents::keyPressed(TUint buttonCode)
         break;
     }
     
-    userEvent->processEvent(_crafter, _dataStorage);
+    if (userEvent)
+        userEvent->processEvent(_gameStepsController);
 }
 
 //==============================================================================

@@ -8,6 +8,7 @@
 #include "acolor.h"
 #include "akeyboardevents.h"
 #include "adatastorage.h"
+#include "agamestepscontroller.h"
 
 //==============================================================================
 
@@ -26,6 +27,7 @@ private:
     ACrafter _crafter;
     ALogic _logic;
     AKeyboardEvents _keyboardEvents;
+    AGameStepsController _gameStepsController;
         
 public:
     ABlockout();

@@ -7,6 +7,18 @@ namespace spcTGame
     
 //==============================================================================
 
+AGameStepsController::AGameStepsController(ADataStorage &dataStorage) : _dataStorage(dataStorage)
+{
+}
+
+//==============================================================================
+
+AGameStepsController::~AGameStepsController()
+{
+}
+
+//==============================================================================
+
 void AGameStepsController::addStepToProcessQueue(AGameStepProtocol *gameStep)
 {
     if (gameStep == 0)
@@ -19,13 +31,16 @@ void AGameStepsController::addStepToProcessQueue(AGameStepProtocol *gameStep)
 
 void AGameStepsController::processSteps()
 {
+    printf("start %i steps execution ... ", _stepsQueue.size());
     for (TGameStepsQueueIter iter = _stepsQueue.begin(); iter != _stepsQueue.end(); iter++)
     {
         AGameStepProtocol *step = *iter;
-        step->executeStep();
+        step->executeStep(_dataStorage);
+        delete step;
     }
     
     _stepsQueue.clear();
+    printf("finished\n");
 }
 
 //==============================================================================

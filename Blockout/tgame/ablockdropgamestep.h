@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ADROPDOWNBLOCKGAMESTEP_H
-#define SPCTGAME_ADROPDOWNBLOCKGAMESTEP_H
+#ifndef SPCTGAME_ABLOCKDROPGAMESTEP_H
+#define SPCTGAME_ABLOCKDROPGAMESTEP_H
 
 //==============================================================================
 
@@ -12,10 +12,16 @@ namespace spcTGame
 
 //==============================================================================
 
-class ADropDwnBlockGameStep : public AGameStepProtocol
+class ABlockDropGameStep : public AGameStepProtocol
 {
+private:
+    APoint findDropPosition(AFormation* formation);
+    
 public:
-    virtual void executeStep();
+    ABlockDropGameStep();
+    virtual ~ABlockDropGameStep();
+    
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
@@ -24,4 +30,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ADROPDOWNBLOCKGAMESTEP_H
+#endif  //  SPCTGAME_ABLOCKDROPGAMESTEP_H

@@ -4,8 +4,7 @@
 //==============================================================================
 
 #include "blockouttypes.h"
-#include "acrafter.h"
-#include "adatastorage.h"
+#include "agamestepscontroller.h"
 
 //==============================================================================
 
@@ -20,7 +19,7 @@ public:
     AUserEvent();
     virtual ~AUserEvent();
     
-    virtual void processEvent(ACrafter &crafter, ADataStorage &dataStorage);
+    virtual void processEvent(AGameStepsController& gameStepsController);
 };
 
 //==============================================================================

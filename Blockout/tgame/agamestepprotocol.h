@@ -7,6 +7,10 @@
 //
 //==============================================================================
 
+#include "adatastorage.h"
+
+//==============================================================================
+
 namespace spcTGame
 {
 
@@ -15,7 +19,7 @@ namespace spcTGame
 class AGameStepProtocol
 {
 public:
-    virtual void executeStep() = 0;
+    virtual void executeStep(ADataStorage &dataStorage) = 0;
 };
 
 //==============================================================================

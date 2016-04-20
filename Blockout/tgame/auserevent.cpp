@@ -19,7 +19,7 @@ AUserEvent::~AUserEvent()
 
 //==============================================================================
 
-void AUserEvent::processEvent(ACrafter &crafter, ADataStorage &dataStorage)
+void AUserEvent::processEvent(AGameStepsController& gameStepsController)
 {
 }
 

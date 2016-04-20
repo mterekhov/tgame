@@ -21,11 +21,10 @@ namespace spcTGame
 class AKeyboardEvents
 {
 private:
-    ACrafter& _crafter;
-    ADataStorage& _dataStorage;
+    AGameStepsController& _gameStepsController;
 
 public:
-    AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage);
+    AKeyboardEvents(AGameStepsController& gameStepsController);
     ~AKeyboardEvents();
     
     void keyPressed(TUint buttonCode);

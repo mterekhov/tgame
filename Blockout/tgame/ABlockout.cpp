@@ -15,7 +15,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_dataStorage), _keyboardEvents(_crafter, _dataStorage)
+ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_dataStorage), _gameStepsController(_dataStorage), _keyboardEvents(_gameStepsController)
 {
     init();
 }
@@ -50,6 +50,7 @@ void ABlockout::startGame()
 void ABlockout::processGameCycle()
 {
     _logic.processLogic();
+    _gameStepsController.processSteps();
     _crafter.processRender();
 }
 
