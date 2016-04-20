@@ -42,7 +42,7 @@ void ABlockout::startGame()
     _logic.startGame();
     
     //  creating all the render lists to draw
-    _crafter.startGame();
+    _crafter.refreshRenderLists();
 }
 
 //==============================================================================
@@ -50,7 +50,10 @@ void ABlockout::startGame()
 void ABlockout::processGameCycle()
 {
     _logic.processLogic();
-    _gameStepsController.processSteps();
+    
+    if (_gameStepsController.processSteps() != 0)
+        _crafter.refreshRenderLists();
+        
     _crafter.processRender();
 }
 

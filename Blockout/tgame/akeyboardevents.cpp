@@ -1,6 +1,9 @@
 #include "akeyboardevents.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
+#include "ablockdropuserevent.h"
+#include "ablockmoveuserevent.h"
+#include "ablockrotateuserevent.h"
 
 //==============================================================================
 

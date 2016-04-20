@@ -33,7 +33,7 @@ ACrafter::~ACrafter()
 
 //==============================================================================
 
-void ACrafter::startGame()
+void ACrafter::refreshRenderLists()
 {
     //  remove everything from render cycle
     clearAllLists();
@@ -43,20 +43,6 @@ void ACrafter::startGame()
     
     //  create current block and add it to render cycle
     createColoredBlock(_dataStorage.currentFormation());
-}
-
-//==============================================================================
-
-void ACrafter::blockMovedOrRotated()
-{
-    renewRenderLists();
-}
-
-//==============================================================================
-
-void ACrafter::blockDropped()
-{
-    renewRenderLists();
 }
 
 //==============================================================================
@@ -91,6 +77,8 @@ void ACrafter::createDroppedBlocks()
         createTexturedBlock(*iter, _textureManager.createTextureFromTGA(textureFileName));
     }
 }
+
+//==============================================================================
 
 #pragma mark - create well -
 

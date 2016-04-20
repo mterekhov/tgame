@@ -29,18 +29,23 @@ void AGameStepsController::addStepToProcessQueue(AGameStepProtocol *gameStep)
 
 //==============================================================================
 
-void AGameStepsController::processSteps()
+TUint AGameStepsController::processSteps()
 {
     printf("start %i steps execution ... ", _stepsQueue.size());
+    
+    TUint stepsProcessed = 0;
     for (TGameStepsQueueIter iter = _stepsQueue.begin(); iter != _stepsQueue.end(); iter++)
     {
         AGameStepProtocol *step = *iter;
         step->executeStep(_dataStorage);
         delete step;
+        stepsProcessed++;
     }
-    
+
     _stepsQueue.clear();
     printf("finished\n");
+    
+    return stepsProcessed;
 }
 
 //==============================================================================

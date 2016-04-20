@@ -4,12 +4,7 @@
 //==============================================================================
 
 #include "blockouttypes.h"
-#include "keymaps.h"
-#include "acrafter.h"
-#include "adatastorage.h"
-#include "ablockdropuserevent.h"
-#include "ablockmoveuserevent.h"
-#include "ablockrotateuserevent.h"
+#include "agamestepscontroller.h"
 
 //==============================================================================
 

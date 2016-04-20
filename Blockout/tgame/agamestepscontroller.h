@@ -32,7 +32,7 @@ public:
     AGameStepsController(ADataStorage &dataStorage);
     ~AGameStepsController();
     void addStepToProcessQueue(AGameStepProtocol *gameStep);
-    void processSteps();
+    TUint processSteps();
 };
 
 //==============================================================================
