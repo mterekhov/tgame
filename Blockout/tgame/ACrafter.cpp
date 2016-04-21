@@ -35,14 +35,7 @@ ACrafter::~ACrafter()
 
 void ACrafter::refreshRenderLists()
 {
-    //  remove everything from render cycle
-    clearAllLists();
-
-    //  create well and add it to render cycle
-    createWell();
-    
-    //  create current block and add it to render cycle
-    createColoredBlock(_dataStorage.currentFormation());
+    renewRenderLists();
 }
 
 //==============================================================================
