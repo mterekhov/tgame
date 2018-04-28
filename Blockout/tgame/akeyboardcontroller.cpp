@@ -3,7 +3,7 @@
 #include "keymaps.h"
 #include "aformationmovegamestep.h"
 #include "aformationrotategamestep.h"
-#include "ablockdropgamestep.h"
+#include "aformationdropgamestep.h"
 
 //==============================================================================
 
@@ -54,7 +54,7 @@ void AKeyboardController::keyPressed(TUint buttonCode)
         break;
         
         case EKEYCODES_DROP_BLOCK:
-		    _gameStepsController.addStepToProcessQueue(new ABlockDropGameStep());
+		    _gameStepsController.addStepToProcessQueue(new AFormationDropGameStep());
         break;
     }
 }

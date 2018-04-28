@@ -1,4 +1,4 @@
-#include "ablockdropgamestep.h"
+#include "aformationdropgamestep.h"
 
 //==============================================================================
 
@@ -7,19 +7,19 @@ namespace spcTGame
     
 //==============================================================================
 
-ABlockDropGameStep::ABlockDropGameStep()
+AFormationDropGameStep::AFormationDropGameStep()
 {
 }
 
 //==============================================================================
 
-ABlockDropGameStep::~ABlockDropGameStep()
+AFormationDropGameStep::~AFormationDropGameStep()
 {
 }
 
 //==============================================================================
 
-void ABlockDropGameStep::executeStep(ADataStorage &dataStorage)
+void AFormationDropGameStep::executeStep(ADataStorage &dataStorage)
 {
     //  assign drop position to current formation
     AFormation *formationToDrop = dataStorage.currentFormation();
@@ -38,7 +38,7 @@ void ABlockDropGameStep::executeStep(ADataStorage &dataStorage)
 
 //==============================================================================
 
-APoint ABlockDropGameStep::findDropPosition(AFormation* formation)
+APoint AFormationDropGameStep::findDropPosition(AFormation* formation)
 {
     APoint dropPosition = formation->gridSpacePosition();
     dropPosition.y = 0;
