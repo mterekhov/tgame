@@ -1,10 +1,10 @@
-#ifndef SPCTGAME_ABLOCKROTATEUSEREVENT_H
-#define SPCTGAME_ABLOCKROTATEUSEREVENT_H
+#ifndef SPCTGAME_AKEYBOARDCONTROLLER_H
+#define SPCTGAME_AKEYBOARDCONTROLLER_H
 
 //==============================================================================
 
 #include "blockouttypes.h"
-#include "auserevent.h"
+#include "agamestepscontroller.h"
 
 //==============================================================================
 
@@ -13,16 +13,16 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockRotateUserEvent : public AUserEvent
+class AKeyboardController
 {
 private:
-    TUint _buttonCode;
-    
-public:
-    ABlockRotateUserEvent(const TUint buttonCode);
-    virtual ~ABlockRotateUserEvent();
+    AGameStepsController& _gameStepsController;
 
-    virtual void processEvent(AGameStepsController& gameStepsController);
+public:
+    AKeyboardController(AGameStepsController& gameStepsController);
+    ~AKeyboardController();
+    
+    void keyPressed(TUint buttonCode);
 };
 
 //==============================================================================
@@ -31,4 +31,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_ABLOCKROTATEUSEREVENT_H
+#endif  //  SPCTGAME_AKEYBOARDCONTROLLER_H

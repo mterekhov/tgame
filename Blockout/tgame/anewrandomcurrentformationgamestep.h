@@ -1,10 +1,9 @@
-#ifndef SPCTGAME_ABLOCKDROPUSEREVENT_H
-#define SPCTGAME_ABLOCKDROPUSEREVENT_H
+#ifndef SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
+#define SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
 
 //==============================================================================
 
-#include "blockouttypes.h"
-#include "auserevent.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -13,19 +12,19 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockDropUserEvent : public AUserEvent
+class ANewRandomCurrentFormationGameStep : public AGameStepProtocol
 {
 public:
-    ABlockDropUserEvent();
-    virtual ~ABlockDropUserEvent();
-
-    virtual void processEvent(AGameStepsController& gameStepsController);
+    ANewRandomCurrentFormationGameStep();
+    virtual ~ANewRandomCurrentFormationGameStep();
+    
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
-
-#endif  //  SPCTGAME_ABLOCKDROPUSEREVENT_H
+    
+#endif  //  SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H

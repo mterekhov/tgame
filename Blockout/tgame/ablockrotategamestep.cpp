@@ -44,17 +44,17 @@ void ABlockRotateGameStep::executeStep(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void ABlockRotateGameStep::rotateY(ADataStorage &dataStorage)
+void ABlockRotateGameStep::rotateX(ADataStorage &dataStorage)
 {
-    AMatrix m = AMatrix::rotationY(M_PI_2);
+    AMatrix m = AMatrix::rotationX(M_PI_2);
     rotate(m, dataStorage);
 }
 
 //==============================================================================
 
-void ABlockRotateGameStep::rotateX(ADataStorage &dataStorage)
+void ABlockRotateGameStep::rotateY(ADataStorage &dataStorage)
 {
-    AMatrix m = AMatrix::rotationX(M_PI_2);
+    AMatrix m = AMatrix::rotationY(M_PI_2);
     rotate(m, dataStorage);
 }
 

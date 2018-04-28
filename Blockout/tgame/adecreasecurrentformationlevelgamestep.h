@@ -1,10 +1,9 @@
-#ifndef SPCTGAME_AUSEREVENT_H
-#define SPCTGAME_AUSEREVENT_H
+#ifndef SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H
+#define SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H
 
 //==============================================================================
 
-#include "blockouttypes.h"
-#include "agamestepscontroller.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -13,19 +12,19 @@ namespace spcTGame
 
 //==============================================================================
 
-class AUserEvent
+class ADecreaseCurrentFormationLevelGameStep : public AGameStepProtocol
 {
 public:
-    AUserEvent();
-    virtual ~AUserEvent();
+    ADecreaseCurrentFormationLevelGameStep();
+    virtual ~ADecreaseCurrentFormationLevelGameStep();
     
-    virtual void processEvent(AGameStepsController& gameStepsController);
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
-
-#endif  //  SPCTGAME_AUSEREVENT_H
+    
+#endif  //  SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H

@@ -1,28 +1,27 @@
-#include "ablockmoveuserevent.h"
-#include "ablockmovegamestep.h"
+#include "acreatewellgamestep.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-
+    
 //==============================================================================
 
-ABlockMoveUserEvent::ABlockMoveUserEvent(const TUint buttonCode) : _buttonCode(buttonCode)
+ACreateWellGameStep::ACreateWellGameStep()
 {
 }
 
 //==============================================================================
 
-ABlockMoveUserEvent::~ABlockMoveUserEvent()
+ACreateWellGameStep::~ACreateWellGameStep()
 {
 }
 
 //==============================================================================
 
-void ABlockMoveUserEvent::processEvent(AGameStepsController& gameStepsController)
-{    
-    gameStepsController.addStepToProcessQueue(new ABlockMoveGameStep(_buttonCode));
+void ACreateWellGameStep::executeStep(ADataStorage &dataStorage)
+{
+    dataStorage.createWellFormation(7, 7, 15);
 }
 
 //==============================================================================

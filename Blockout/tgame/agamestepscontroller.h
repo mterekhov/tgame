@@ -23,16 +23,15 @@ typedef TGameStepsQueue::const_iterator TGameStepsQueueConstIter;
 class AGameStepsController
 {
 private:
-    ADataStorage& _dataStorage;
     TGameStepsQueue _stepsQueue;
     
     void destroyAllSteps();
 
 public:
-    AGameStepsController(ADataStorage &dataStorage);
+    AGameStepsController();
     ~AGameStepsController();
     void addStepToProcessQueue(AGameStepProtocol *gameStep);
-    TUint processSteps();
+    TUint processSteps(ADataStorage& dataStorage);
 };
 
 //==============================================================================

@@ -6,7 +6,7 @@
 #include "acrafter.h"
 #include "alogic.h"
 #include "acolor.h"
-#include "akeyboardevents.h"
+#include "akeyboardcontroller.h"
 #include "adatastorage.h"
 #include "agamestepscontroller.h"
 
@@ -26,7 +26,7 @@ private:
     ADataStorage _dataStorage;
     ACrafter _crafter;
     ALogic _logic;
-    AKeyboardEvents _keyboardEvents;
+    AKeyboardController _keyboardController;
     AGameStepsController _gameStepsController;
         
 public:

@@ -1,10 +1,9 @@
-#ifndef SPCTGAME_ABLOCKMOVEUSEREVENT_H
-#define SPCTGAME_ABLOCKMOVEUSEREVENT_H
+#ifndef SPCTGAME_ACREATEWELLGAMESTEP_H
+#define SPCTGAME_ACREATEWELLGAMESTEP_H
 
 //==============================================================================
 
-#include "blockouttypes.h"
-#include "auserevent.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -13,22 +12,22 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockMoveUserEvent : public AUserEvent
+class ACreateWellGameStep : public AGameStepProtocol
 {
 private:
-    TUint _buttonCode;
-
+    APoint findDropPosition(AFormation* formation);
+    
 public:
-    ABlockMoveUserEvent(const TUint buttonCode);
-    virtual ~ABlockMoveUserEvent();
-
-    virtual void processEvent(AGameStepsController& gameStepsController);
+    ACreateWellGameStep();
+    virtual ~ACreateWellGameStep();
+    
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
-
-#endif  //  SPCTGAME_ABLOCKMOVEUSEREVENT_H
+    
+#endif  //  SPCTGAME_ACREATEWELLGAMESTEP_H

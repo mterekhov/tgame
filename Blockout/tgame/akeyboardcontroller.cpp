@@ -1,9 +1,9 @@
-#include "akeyboardevents.h"
+#include "akeyboardcontroller.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
-#include "ablockdropuserevent.h"
-#include "ablockmoveuserevent.h"
-#include "ablockrotateuserevent.h"
+#include "ablockmovegamestep.h"
+#include "ablockrotategamestep.h"
+#include "ablockdropgamestep.h"
 
 //==============================================================================
 
@@ -24,44 +24,39 @@ TStringMap stringToKeycode = {{"moveUp", EKEYCODES_UP},
 
 //==============================================================================
 
-AKeyboardEvents::AKeyboardEvents(AGameStepsController& gameStepsController) : _gameStepsController(gameStepsController)
+AKeyboardController::AKeyboardController(AGameStepsController& gameStepsController) : _gameStepsController(gameStepsController)
 {
 }
 
 //==============================================================================
 
-AKeyboardEvents::~AKeyboardEvents()
+AKeyboardController::~AKeyboardController()
 {
 }
 
 //==============================================================================
 
-void AKeyboardEvents::keyPressed(TUint buttonCode)
+void AKeyboardController::keyPressed(TUint buttonCode)
 {
-    AUserEvent *userEvent;
-    
     switch (buttonCode)
     {
         case EKEYCODES_DOWN:
         case EKEYCODES_UP:
         case EKEYCODES_LEFT:
         case EKEYCODES_RIGHT:
-            userEvent = new ABlockMoveUserEvent(buttonCode);
+		    _gameStepsController.addStepToProcessQueue(new ABlockMoveGameStep(buttonCode));
         break;
         
         case EKEYCODES_ROTATE_X:
         case EKEYCODES_ROTATE_Y:
         case EKEYCODES_ROTATE_Z:
-            userEvent = new ABlockRotateUserEvent(buttonCode);
+		    _gameStepsController.addStepToProcessQueue(new ABlockRotateGameStep(buttonCode));
         break;
         
         case EKEYCODES_DROP_BLOCK:
-            userEvent = new ABlockDropUserEvent();
+		    _gameStepsController.addStepToProcessQueue(new ABlockDropGameStep());
         break;
     }
-    
-    if (userEvent)
-        userEvent->processEvent(_gameStepsController);
 }
 
 //==============================================================================
