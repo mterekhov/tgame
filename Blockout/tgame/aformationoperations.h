@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ABLOCKOPERATIONS_H
-#define SPCTGAME_ABLOCKOPERATIONS_H
+#ifndef SPCTGAME_AFORMATIONOPERATIONS_H
+#define SPCTGAME_AFORMATIONOPERATIONS_H
 
 //==============================================================================
 
@@ -14,7 +14,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockOperations
+class AFormationOperations
 {
 private:
     static void defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin);
@@ -32,4 +32,4 @@ public:
 
 //==============================================================================
 
-#endif  //  SPCTGAME_ABLOCKOPERATIONS_H
+#endif  //  SPCTGAME_AFORMATIONOPERATIONS_H

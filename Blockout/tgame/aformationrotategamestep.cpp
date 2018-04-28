@@ -1,6 +1,6 @@
 #include "aformationrotategamestep.h"
 #include "keymaps.h"
-#include "ablockoperations.h"
+#include "aformationoperations.h"
 
 //==============================================================================
 
@@ -70,7 +70,7 @@ void AFormationRotateGameStep::rotateZ(ADataStorage &dataStorage)
 
 void AFormationRotateGameStep::rotate(const AMatrix& m, ADataStorage &dataStorage)
 {
-    AFormation* rotatedFormation = ABlockOperations::createRotatedFrustumFormation(*dataStorage.currentFormation(),
+    AFormation* rotatedFormation = AFormationOperations::createRotatedFrustumFormation(*dataStorage.currentFormation(),
                                                                                    m,
                                                                                    AFrustumBorder(dataStorage.wellHeight(), dataStorage.wellDepth(), dataStorage.wellWidth()));
     dataStorage.replaceCurrentFormation(rotatedFormation);

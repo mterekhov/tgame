@@ -1,8 +1,6 @@
 #include "alogic.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
-#include "aformation.h"
-#include "ablockoperations.h"
 #include "acreatewellgamestep.h"
 #include "anewrandomcurrentformationgamestep.h"
 #include "adecreasecurrentformationlevelgamestep.h"

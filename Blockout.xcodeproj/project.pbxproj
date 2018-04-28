@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C3CC4081B25AEDB002D540A /* ablockoperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3CC4051B25AED6002D540A /* ablockoperations.cpp */; };
+		4C3CC4081B25AEDB002D540A /* aformationoperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3CC4051B25AED6002D540A /* aformationoperations.cpp */; };
 		4C3CC40B1B25B4C7002D540A /* afrustumborder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */; };
 		4C3CC40C1B25B4C7002D540A /* afrustumborder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3CC40A1B25B4C7002D540A /* afrustumborder.h */; };
 		4C580AB11955A647000E71E6 /* image.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C580AB01955A647000E71E6 /* image.tga */; };
@@ -108,8 +108,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C3CC4051B25AED6002D540A /* ablockoperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablockoperations.cpp; path = Blockout/tgame/ablockoperations.cpp; sourceTree = "<group>"; };
-		4C3CC4061B25AED6002D540A /* ablockoperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ablockoperations.h; path = Blockout/tgame/ablockoperations.h; sourceTree = "<group>"; };
+		4C3CC4051B25AED6002D540A /* aformationoperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformationoperations.cpp; path = Blockout/tgame/aformationoperations.cpp; sourceTree = "<group>"; };
+		4C3CC4061B25AED6002D540A /* aformationoperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformationoperations.h; path = Blockout/tgame/aformationoperations.h; sourceTree = "<group>"; };
 		4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = afrustumborder.cpp; path = Blockout/tgame/afrustumborder.cpp; sourceTree = "<group>"; };
 		4C3CC40A1B25B4C7002D540A /* afrustumborder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = afrustumborder.h; path = Blockout/tgame/afrustumborder.h; sourceTree = "<group>"; };
 		4C580AB01955A647000E71E6 /* image.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = image.tga; path = Blockout/resources/image.tga; sourceTree = "<group>"; };
@@ -341,8 +341,8 @@
 		4CC929CC1B2A0B1F0010DEF5 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				4C3CC4061B25AED6002D540A /* ablockoperations.h */,
-				4C3CC4051B25AED6002D540A /* ablockoperations.cpp */,
+				4C3CC4061B25AED6002D540A /* aformationoperations.h */,
+				4C3CC4051B25AED6002D540A /* aformationoperations.cpp */,
 				4C3CC40A1B25B4C7002D540A /* afrustumborder.h */,
 				4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */,
 			);
@@ -626,7 +626,7 @@
 				4CF304531949ED110092A63D /* arobject.cpp in Sources */,
 				4CF304551949ED110092A63D /* awell.cpp in Sources */,
 				AE9E2FF11BFCB88200ECACDC /* aformationdropgamestep.cpp in Sources */,
-				4C3CC4081B25AEDB002D540A /* ablockoperations.cpp in Sources */,
+				4C3CC4081B25AEDB002D540A /* aformationoperations.cpp in Sources */,
 				4C580B201955B0FB000E71E6 /* akeyboardcontroller.cpp in Sources */,
 				4CF304471949ED030092A63D /* ablock.cpp in Sources */,
 				4CF304371949ECB90092A63D /* atexturemanager.cpp in Sources */,

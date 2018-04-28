@@ -1,6 +1,6 @@
 #include <list>
 
-#include "ablockoperations.h"
+#include "aformationoperations.h"
 #include "aformationfactory.h"
 #include "blockoutdebug.h"
 
@@ -26,7 +26,7 @@ struct SRotationMetaData
 
 //==============================================================================
 
-AFormation* ABlockOperations::createRotatedFrustumFormation(const AFormation& formationToRotate, const AMatrix& m, const AFrustumBorder& frustum)
+AFormation* AFormationOperations::createRotatedFrustumFormation(const AFormation& formationToRotate, const AMatrix& m, const AFrustumBorder& frustum)
 {
     APoint gridPoint = formationToRotate.gridSpacePosition();
     
@@ -39,7 +39,7 @@ AFormation* ABlockOperations::createRotatedFrustumFormation(const AFormation& fo
 
 //==============================================================================
 
-AFormation* ABlockOperations::createRotatedFormation(const AFormation& formationToRotate, const AMatrix& m)
+AFormation* AFormationOperations::createRotatedFormation(const AFormation& formationToRotate, const AMatrix& m)
 {
     TInt maxWidth = 0;
     TInt maxHeight = 0;
@@ -100,7 +100,7 @@ AFormation* ABlockOperations::createRotatedFormation(const AFormation& formation
 
 //==============================================================================
 
-void ABlockOperations::frustumBlockPosition(APoint& point, const AFormation* f, const AFrustumBorder& frustum)
+void AFormationOperations::frustumBlockPosition(APoint& point, const AFormation* f, const AFrustumBorder& frustum)
 {
     TFloat shift = static_cast<TFloat>(f->height()) + point.x;
     if (shift > frustum.x)
@@ -117,7 +117,7 @@ void ABlockOperations::frustumBlockPosition(APoint& point, const AFormation* f, 
 
 //==============================================================================
 
-void ABlockOperations::defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin)
+void AFormationOperations::defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin)
 {
     TFloat min = static_cast<TFloat>(*currentMin);
     TFloat max = static_cast<TFloat>(*currentMax);
@@ -137,7 +137,7 @@ void ABlockOperations::defineAxisNewDimension(const TFloat oglCoord, TInt* curre
 
 //==============================================================================
 
-APoint ABlockOperations::applyMatrixToPoint(const AMatrix& mat, const APoint& in)
+APoint AFormationOperations::applyMatrixToPoint(const AMatrix& mat, const APoint& in)
 {
     APoint res;
     res.x = mat.m[0][0] * in.x + mat.m[1][0] * in.y + mat.m[2][0] * in.z + mat.m[3][0];
