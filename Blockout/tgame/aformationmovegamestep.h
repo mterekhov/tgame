@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ABLOCKMOVEGAMESTEP_H
-#define SPCTGAME_ABLOCKMOVEGAMESTEP_H
+#ifndef SPCTGAME_AFORMATIONMOVEGAMESTEP_H
+#define SPCTGAME_AFORMATIONMOVEGAMESTEP_H
 
 //==============================================================================
 
@@ -37,4 +37,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ABLOCKMOVEGAMESTEP_H
+#endif  //  SPCTGAME_AFORMATIONMOVEGAMESTEP_H
