@@ -29,11 +29,6 @@ void AFormationDropGameStep::executeStep(ADataStorage &dataStorage)
     //  mark current formation as dropped
     //  and generate new current formation
     dataStorage.dropCurrentFormation();
-    
-    //  correct new current formation position
-    AFormation* newCurrentFormation = dataStorage.currentFormation();
-    APoint p(0.0f, dataStorage.wellDepth() - 1.0f, 0.0f);
-    newCurrentFormation->gridSpacePosition(p);
 }
 
 //==============================================================================
