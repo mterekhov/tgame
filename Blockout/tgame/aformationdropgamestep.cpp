@@ -27,7 +27,6 @@ void AFormationDropGameStep::executeStep(ADataStorage &dataStorage)
     formationToDrop->gridSpacePosition(dropPosition);
 
     //  mark current formation as dropped
-    //  and generate new current formation
     dataStorage.dropCurrentFormation();
 }
 

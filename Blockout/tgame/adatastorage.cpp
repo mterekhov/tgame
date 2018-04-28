@@ -247,7 +247,6 @@ TFloat ADataStorage::wellDepth()
 void ADataStorage::dropCurrentFormation()
 {
     makeFormationDropped(_currentFormation);
-    assignCurrentFormation(createRandomFormation());
 }
 
 //==============================================================================
