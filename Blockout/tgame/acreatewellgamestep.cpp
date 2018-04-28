@@ -1,26 +1,27 @@
-#include "agameeventdelegate.h"
+#include "acreatewellgamestep.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-
+    
 //==============================================================================
 
-AGameEventDelegate::AGameEventDelegate(ACrafter &crafter, ADataStorage &dataStorage) : _crafter(crafter), _dataStorage(dataStorage)
+ACreateWellGameStep::ACreateWellGameStep()
 {
 }
 
 //==============================================================================
 
-AGameEventDelegate::~AGameEventDelegate()
+ACreateWellGameStep::~ACreateWellGameStep()
 {
 }
 
 //==============================================================================
 
-void AGameEventDelegate::processEvent(void *context)
+void ACreateWellGameStep::executeStep(ADataStorage &dataStorage)
 {
+    dataStorage.createWellFormation(7, 7, 15);
 }
 
 //==============================================================================

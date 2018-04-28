@@ -1,6 +1,9 @@
-#include "akeyboardevents.h"
+#include "akeyboardcontroller.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
+#include "ablockmovegamestep.h"
+#include "ablockrotategamestep.h"
+#include "ablockdropgamestep.h"
 
 //==============================================================================
 
@@ -21,21 +24,19 @@ TStringMap stringToKeycode = {{"moveUp", EKEYCODES_UP},
 
 //==============================================================================
 
-AKeyboardEvents::AKeyboardEvents(ACrafter &crafter, ADataStorage &dataStorage) : _dropEventProcessor(crafter, dataStorage),
-                                                                                 _moveEventProcessor(crafter, dataStorage),
-                                                                                 _rotateEventProcessor(crafter, dataStorage)
+AKeyboardController::AKeyboardController(AGameStepsController& gameStepsController) : _gameStepsController(gameStepsController)
 {
 }
 
 //==============================================================================
 
-AKeyboardEvents::~AKeyboardEvents()
+AKeyboardController::~AKeyboardController()
 {
 }
 
 //==============================================================================
 
-void AKeyboardEvents::keyPressed(TUint buttonCode)
+void AKeyboardController::keyPressed(TUint buttonCode)
 {
     switch (buttonCode)
     {
@@ -43,17 +44,17 @@ void AKeyboardEvents::keyPressed(TUint buttonCode)
         case EKEYCODES_UP:
         case EKEYCODES_LEFT:
         case EKEYCODES_RIGHT:
-            _moveEventProcessor.processEvent(&buttonCode);
+		    _gameStepsController.addStepToProcessQueue(new ABlockMoveGameStep(buttonCode));
         break;
         
         case EKEYCODES_ROTATE_X:
         case EKEYCODES_ROTATE_Y:
         case EKEYCODES_ROTATE_Z:
-            _rotateEventProcessor.processEvent(&buttonCode);
+		    _gameStepsController.addStepToProcessQueue(new ABlockRotateGameStep(buttonCode));
         break;
         
         case EKEYCODES_DROP_BLOCK:
-            _dropEventProcessor.processEvent(0);
+		    _gameStepsController.addStepToProcessQueue(new ABlockDropGameStep());
         break;
     }
 }

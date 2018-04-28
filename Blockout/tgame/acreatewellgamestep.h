@@ -1,10 +1,9 @@
-#ifndef SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
-#define SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
+#ifndef SPCTGAME_ACREATEWELLGAMESTEP_H
+#define SPCTGAME_ACREATEWELLGAMESTEP_H
 
 //==============================================================================
 
-#include "blockouttypes.h"
-#include "agameeventdelegate.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -13,23 +12,22 @@ namespace spcTGame
 
 //==============================================================================
 
-class ABlockDropEventProcessor : public AGameEventDelegate
+class ACreateWellGameStep : public AGameStepProtocol
 {
 private:
-    void makeDrop();
     APoint findDropPosition(AFormation* formation);
-
+    
 public:
-    ABlockDropEventProcessor(ACrafter &crafter, ADataStorage &dataStorage);
-    virtual ~ABlockDropEventProcessor();
-
-    virtual void processEvent(void *context);
+    ACreateWellGameStep();
+    virtual ~ACreateWellGameStep();
+    
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
-
-#endif  //  SPCTGAME_ABLOCKDROPEVENTPROCESSOR_H
+    
+#endif  //  SPCTGAME_ACREATEWELLGAMESTEP_H

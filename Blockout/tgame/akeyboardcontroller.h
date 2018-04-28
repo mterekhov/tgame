@@ -1,9 +1,10 @@
-#ifndef SPCTGAME_ADROPDOWNBLOCKGAMESTEP_H
-#define SPCTGAME_ADROPDOWNBLOCKGAMESTEP_H
+#ifndef SPCTGAME_AKEYBOARDCONTROLLER_H
+#define SPCTGAME_AKEYBOARDCONTROLLER_H
 
 //==============================================================================
 
-#include "agamestepprotocol.h"
+#include "blockouttypes.h"
+#include "agamestepscontroller.h"
 
 //==============================================================================
 
@@ -12,16 +13,22 @@ namespace spcTGame
 
 //==============================================================================
 
-class ADropDwnBlockGameStep : public AGameStepProtocol
+class AKeyboardController
 {
+private:
+    AGameStepsController& _gameStepsController;
+
 public:
-    virtual void executeStep();
+    AKeyboardController(AGameStepsController& gameStepsController);
+    ~AKeyboardController();
+    
+    void keyPressed(TUint buttonCode);
 };
 
 //==============================================================================
-    
+
 }   //  namespace spcTGame
 
 //==============================================================================
-    
-#endif  //  SPCTGAME_ADROPDOWNBLOCKGAMESTEP_H
+
+#endif  //  SPCTGAME_AKEYBOARDCONTROLLER_H

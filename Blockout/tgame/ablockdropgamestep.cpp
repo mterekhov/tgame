@@ -1,54 +1,44 @@
-#include "ablockdropeventprocessor.h"
+#include "ablockdropgamestep.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-
+    
 //==============================================================================
 
-ABlockDropEventProcessor::ABlockDropEventProcessor(ACrafter &crafter, ADataStorage &dataStorage) : AGameEventDelegate(crafter, dataStorage)
+ABlockDropGameStep::ABlockDropGameStep()
 {
 }
 
 //==============================================================================
 
-ABlockDropEventProcessor::~ABlockDropEventProcessor()
+ABlockDropGameStep::~ABlockDropGameStep()
 {
 }
 
 //==============================================================================
 
-void ABlockDropEventProcessor::processEvent(void *context)
-{
-    makeDrop();
-}
-
-//==============================================================================
-
-void ABlockDropEventProcessor::makeDrop()
+void ABlockDropGameStep::executeStep(ADataStorage &dataStorage)
 {
     //  assign drop position to current formation
-    AFormation *formationToDrop = _dataStorage.currentFormation();
+    AFormation *formationToDrop = dataStorage.currentFormation();
     APoint dropPosition = findDropPosition(formationToDrop);
     formationToDrop->gridSpacePosition(dropPosition);
 
     //  mark current formation as dropped
     //  and generate new current formation
-    _dataStorage.dropCurrentFormation();
+    dataStorage.dropCurrentFormation();
     
     //  correct new current formation position
-    AFormation* newCurrentFormation = _dataStorage.currentFormation();
-    APoint p(0.0f, _dataStorage.wellDepth() - 1.0f, 0.0f);
+    AFormation* newCurrentFormation = dataStorage.currentFormation();
+    APoint p(0.0f, dataStorage.wellDepth() - 1.0f, 0.0f);
     newCurrentFormation->gridSpacePosition(p);
-
-    //  notify renderer about drop event
-    _crafter.blockDropped();
 }
 
 //==============================================================================
 
-APoint ABlockDropEventProcessor::findDropPosition(AFormation* formation)
+APoint ABlockDropGameStep::findDropPosition(AFormation* formation)
 {
     APoint dropPosition = formation->gridSpacePosition();
     dropPosition.y = 0;

@@ -1,13 +1,9 @@
-#ifndef SPCTGAME_AGAMESTEPPROTOCOL_H
-#define SPCTGAME_AGAMESTEPPROTOCOL_H
+#ifndef SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H
+#define SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H
 
 //==============================================================================
-//
-//  This class provides common functionality for any event which could happen in game
-//
-//==============================================================================
 
-#include "adatastorage.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -16,10 +12,13 @@ namespace spcTGame
 
 //==============================================================================
 
-class AGameStepProtocol
+class ADecreaseCurrentFormationLevelGameStep : public AGameStepProtocol
 {
 public:
-    virtual void executeStep(ADataStorage &dataStorage) = 0;
+    ADecreaseCurrentFormationLevelGameStep();
+    virtual ~ADecreaseCurrentFormationLevelGameStep();
+    
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
@@ -28,4 +27,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_AGAMESTEPPROTOCOL_H
+#endif  //  SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H

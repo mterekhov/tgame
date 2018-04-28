@@ -1,13 +1,9 @@
-#ifndef SPCTGAME_AGAMESTEPPROTOCOL_H
-#define SPCTGAME_AGAMESTEPPROTOCOL_H
+#ifndef SPCTGAME_ABLOCKDROPGAMESTEP_H
+#define SPCTGAME_ABLOCKDROPGAMESTEP_H
 
 //==============================================================================
-//
-//  This class provides common functionality for any event which could happen in game
-//
-//==============================================================================
 
-#include "adatastorage.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -16,10 +12,16 @@ namespace spcTGame
 
 //==============================================================================
 
-class AGameStepProtocol
+class ABlockDropGameStep : public AGameStepProtocol
 {
+private:
+    APoint findDropPosition(AFormation* formation);
+    
 public:
-    virtual void executeStep(ADataStorage &dataStorage) = 0;
+    ABlockDropGameStep();
+    virtual ~ABlockDropGameStep();
+    
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
@@ -28,4 +30,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_AGAMESTEPPROTOCOL_H
+#endif  //  SPCTGAME_ABLOCKDROPGAMESTEP_H

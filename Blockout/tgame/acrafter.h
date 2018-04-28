@@ -59,9 +59,7 @@ public:
     ACrafter(ADataStorage& dataStorage);
     virtual ~ACrafter();
 
-    void startGame();
-    void blockDropped();
-    void blockMovedOrRotated();
+    void refreshRenderLists();
     void processRender();
 };
 

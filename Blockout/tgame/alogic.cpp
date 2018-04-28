@@ -3,6 +3,9 @@
 #include "keymaps.h"
 #include "aformation.h"
 #include "ablockoperations.h"
+#include "acreatewellgamestep.h"
+#include "anewrandomcurrentformationgamestep.h"
+#include "adecreasecurrentformationlevelgamestep.h"
 
 //==============================================================================
 
@@ -11,7 +14,7 @@ namespace spcTGame
     
 //==============================================================================
 
-ALogic::ALogic(ADataStorage& dataStorage) : _dataStorage(dataStorage)
+ALogic::ALogic(AGameStepsController& gameStepsController) : _gameStepsController(gameStepsController)
 {
 }
 
@@ -36,7 +39,7 @@ void ALogic::processLogic()
     
     if (diff > LEVEL_DEC_PERIOD)
     {
-        decreaseCurrentBlockLevel();
+		_gameStepsController.addStepToProcessQueue(new ADecreaseCurrentFormationLevelGameStep());
         _previousCycleTimeStamp = timeStamp;
     }
 }
@@ -45,33 +48,8 @@ void ALogic::processLogic()
 
 void ALogic::startGame()
 {
-    _dataStorage.createWellFormation(7, 7, 15);
-    generateNewCurrentFormation();
-}
-
-//==============================================================================
-
-#pragma mark - Routine -
-
-//==============================================================================
-
-void ALogic::generateNewCurrentFormation()
-{
-    AFormation* newStartFormation = _dataStorage.createRandomFormation();
-    APoint p(0.0f, _dataStorage.wellDepth() - 1.0f, 0.0f);
-    newStartFormation->gridSpacePosition(p);
-
-    _dataStorage.replaceCurrentFormation(newStartFormation);
-}
-
-//==============================================================================
-
-void ALogic::decreaseCurrentBlockLevel()
-{
-    AFormation *currentFormation = _dataStorage.currentFormation();
-    APoint currentFormationPosition = currentFormation->gridSpacePosition();
-    currentFormationPosition.y -= 1.0f;
-    currentFormation->gridSpacePosition(currentFormationPosition);
+	_gameStepsController.addStepToProcessQueue(new ACreateWellGameStep());
+	_gameStepsController.addStepToProcessQueue(new ANewRandomCurrentFormationGameStep());
 }
 
 //==============================================================================

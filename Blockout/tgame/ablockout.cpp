@@ -15,7 +15,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_dataStorage), _keyboardEvents(_crafter, _dataStorage)
+ABlockout::ABlockout() : _crafter(_dataStorage), _logic(_gameStepsController), _keyboardController(_gameStepsController)
 {
     init();
 }
@@ -42,7 +42,7 @@ void ABlockout::startGame()
     _logic.startGame();
     
     //  creating all the render lists to draw
-    _crafter.startGame();
+    _crafter.refreshRenderLists();
 }
 
 //==============================================================================
@@ -50,6 +50,10 @@ void ABlockout::startGame()
 void ABlockout::processGameCycle()
 {
     _logic.processLogic();
+    
+    if (_gameStepsController.processSteps(_dataStorage) != 0)
+        _crafter.refreshRenderLists();
+        
     _crafter.processRender();
 }
 
@@ -57,7 +61,7 @@ void ABlockout::processGameCycle()
     
 void ABlockout::processKeyboardEvent(const TUint buttonCode)
 {
-    _keyboardEvents.keyPressed(buttonCode);
+    _keyboardController.keyPressed(buttonCode);
 }
 
 //==============================================================================

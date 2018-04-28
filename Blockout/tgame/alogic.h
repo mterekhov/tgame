@@ -5,8 +5,8 @@
 
 #include "aformation.h"
 #include "apoint.h"
-#include "adatastorage.h"
 #include "amatrix.h"
+#include "agamestepscontroller.h"
 
 //==============================================================================
 
@@ -20,18 +20,13 @@ namespace spcTGame
 //==============================================================================
     
 class ALogic
-
 {
 private:
     time_t _previousCycleTimeStamp;
-    
-    ADataStorage& _dataStorage;
-    
-    void generateNewCurrentFormation();
-    void decreaseCurrentBlockLevel();
-
+	AGameStepsController &_gameStepsController;
+	
 public:
-    ALogic(ADataStorage& dataStorage);
+    ALogic(AGameStepsController& gameStepsController);
     virtual ~ALogic();
 
     void startGame();

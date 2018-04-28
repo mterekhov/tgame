@@ -28,8 +28,10 @@ private:
     void destroyAllSteps();
 
 public:
+    AGameStepsController();
+    ~AGameStepsController();
     void addStepToProcessQueue(AGameStepProtocol *gameStep);
-    void processSteps();
+    TUint processSteps(ADataStorage& dataStorage);
 };
 
 //==============================================================================

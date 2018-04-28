@@ -20,7 +20,7 @@
     
 	NSOpenGLPixelFormatAttribute attrs [] = {
 		NSOpenGLPFANoRecovery,
-		NSOpenGLPFAWindow,
+//		NSOpenGLPFAWindow,
 		NSOpenGLPFAColorSize, 32,
 		NSOpenGLPFADepthSize, 32,
 		NSOpenGLPFAMaximumPolicy,

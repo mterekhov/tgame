@@ -1,11 +1,9 @@
-#ifndef SPCTGAME_AGAMEEVENTDELEGATE_H
-#define SPCTGAME_AGAMEEVENTDELEGATE_H
+#ifndef SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
+#define SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
 
 //==============================================================================
 
-#include "blockouttypes.h"
-#include "acrafter.h"
-#include "adatastorage.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
@@ -14,23 +12,19 @@ namespace spcTGame
 
 //==============================================================================
 
-class AGameEventDelegate
+class ANewRandomCurrentFormationGameStep : public AGameStepProtocol
 {
-protected:
-    ACrafter &_crafter;
-    ADataStorage &_dataStorage;
-
 public:
-    AGameEventDelegate(ACrafter &crafter, ADataStorage &dataStorage);
-    virtual ~AGameEventDelegate();
+    ANewRandomCurrentFormationGameStep();
+    virtual ~ANewRandomCurrentFormationGameStep();
     
-    virtual void processEvent(void *context);
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
-
-#endif  //  SPCTGAME_AGAMEEVENTDELEGATE_H
+    
+#endif  //  SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
