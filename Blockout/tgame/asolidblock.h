@@ -15,7 +15,7 @@ namespace spcTGame
 class ASolidBlock : public AColoredBlock
 {
 public:
-    ASolidBlock(AFormation* data);
+    ASolidBlock(const AFormation& formation);
     ASolidBlock(const ASolidBlock& block);
     virtual ~ASolidBlock();
     

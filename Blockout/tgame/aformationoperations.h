@@ -19,11 +19,11 @@ class AFormationOperations
 private:
     static void defineAxisNewDimension(const TFloat oglCoord, TInt* currentMax, TInt* currentMin);
     static APoint applyMatrixToPoint(const AMatrix& mat, const APoint& in);
-    static void frustumBlockPosition(APoint& point, const AFormation* f, const AFrustumBorder& frustum);
+    static void frustumFormationPosition(APoint& point, AFormation& f, const AFrustumBorder& frustum);
 
 public:
-    static AFormation* createRotatedFormation(const AFormation& formnationToRotate, const AMatrix& m);
-    static AFormation* createRotatedFrustumFormation(const AFormation& formationToRotate, const AMatrix& m, const AFrustumBorder& frustum);
+    static AFormation createRotatedFormation(const AFormation& formationToRotate, const AMatrix& m);
+    static AFormation createRotatedFrustumFormation(const AFormation& formationToRotate, const AMatrix& m, const AFrustumBorder& frustum);
 };
 
 //==============================================================================

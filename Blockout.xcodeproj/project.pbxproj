@@ -267,8 +267,8 @@
 			children = (
 				4CF3045C1949ED340092A63D /* ablockout.h */,
 				4CF3045B1949ED340092A63D /* ablockout.cpp */,
-				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
 				4CBFB5B319598633002D7249 /* adatastorage.h */,
+				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
 				4CF304571949ED220092A63D /* acrafter.cpp */,
 				4CF304581949ED220092A63D /* acrafter.h */,
 				4CF3040C1949EC720092A63D /* alogic.h */,
@@ -280,18 +280,18 @@
 		4CAF5A6016E647A600E04427 /* ObjectsToRender */ = {
 			isa = PBXGroup;
 			children = (
-				4CF3044F1949ED110092A63D /* arobject.cpp */,
 				4CF304501949ED110092A63D /* arobject.h */,
-				4CF3043F1949ED030092A63D /* ablock.cpp */,
+				4CF3044F1949ED110092A63D /* arobject.cpp */,
 				4CF304401949ED030092A63D /* ablock.h */,
-				4CF304411949ED030092A63D /* acoloredblock.cpp */,
+				4CF3043F1949ED030092A63D /* ablock.cpp */,
 				4CF304421949ED030092A63D /* acoloredblock.h */,
-				4CF304431949ED030092A63D /* asolidblock.cpp */,
+				4CF304411949ED030092A63D /* acoloredblock.cpp */,
 				4CF304441949ED030092A63D /* asolidblock.h */,
-				4CF304451949ED030092A63D /* atexturedblock.cpp */,
+				4CF304431949ED030092A63D /* asolidblock.cpp */,
 				4CF304461949ED030092A63D /* atexturedblock.h */,
-				4CF304511949ED110092A63D /* awell.cpp */,
+				4CF304451949ED030092A63D /* atexturedblock.cpp */,
 				4CF304521949ED110092A63D /* awell.h */,
+				4CF304511949ED110092A63D /* awell.cpp */,
 			);
 			name = ObjectsToRender;
 			sourceTree = "<group>";

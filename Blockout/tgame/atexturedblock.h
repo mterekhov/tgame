@@ -19,7 +19,7 @@ private:
     ATexture _texture;
 
 public:
-    ATexturedBlock(AFormation* data, const ATexture& tex);
+    ATexturedBlock(const AFormation& formation, const ATexture& tex);
     ATexturedBlock(const ATexturedBlock& block);
     virtual ~ATexturedBlock();
     

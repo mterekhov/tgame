@@ -26,20 +26,20 @@ struct SRotationMetaData
 
 //==============================================================================
 
-AFormation* AFormationOperations::createRotatedFrustumFormation(const AFormation& formationToRotate, const AMatrix& m, const AFrustumBorder& frustum)
+AFormation AFormationOperations::createRotatedFrustumFormation(const AFormation& formationToRotate, const AMatrix& m, const AFrustumBorder& frustum)
 {
     APoint gridPoint = formationToRotate.gridSpacePosition();
     
-    AFormation* rotatedFormation = createRotatedFormation(formationToRotate, m);
-    frustumBlockPosition(gridPoint, rotatedFormation, frustum);
-    rotatedFormation->gridSpacePosition(gridPoint);
+    AFormation rotatedFormation = createRotatedFormation(formationToRotate, m);
+    frustumFormationPosition(gridPoint, rotatedFormation, frustum);
+    rotatedFormation.gridSpacePosition(gridPoint);
     
     return rotatedFormation;
 }
 
 //==============================================================================
 
-AFormation* AFormationOperations::createRotatedFormation(const AFormation& formationToRotate, const AMatrix& m)
+AFormation AFormationOperations::createRotatedFormation(const AFormation& formationToRotate, const AMatrix& m)
 {
     TInt maxWidth = 0;
     TInt maxHeight = 0;
@@ -77,7 +77,7 @@ AFormation* AFormationOperations::createRotatedFormation(const AFormation& forma
     rotationMeta.negativeShifts[0] = std::abs(minHeight);
     rotationMeta.negativeShifts[1] = std::abs(minLevels);
 
-    AFormation* rotatedFormation = AFormationFactory::createFormation(rotationMeta.newDimmension[0], rotationMeta.newDimmension[1], rotationMeta.newDimmension[2]);
+    AFormation rotatedFormation = AFormationFactory::createFormation(rotationMeta.newDimmension[0], rotationMeta.newDimmension[1], rotationMeta.newDimmension[2]);
     for (TRPIter iter = rotationMeta.rotatedPoints.begin(); iter != rotationMeta.rotatedPoints.end(); iter++)
     {
         APoint p = *iter;
@@ -88,7 +88,7 @@ AFormation* AFormationOperations::createRotatedFormation(const AFormation& forma
         TInt row = static_cast<TUint>(round(p.x));
         TInt level = static_cast<TUint>(round(p.y));
         
-        TBool r = rotatedFormation->item(column, row, level, EDATASTATE_RENDERABLE);
+        TBool r = rotatedFormation.item(column, row, level, EDATASTATE_RENDERABLE);
         if (r == false)
         {
             loger("can not rotate");
@@ -100,17 +100,17 @@ AFormation* AFormationOperations::createRotatedFormation(const AFormation& forma
 
 //==============================================================================
 
-void AFormationOperations::frustumBlockPosition(APoint& point, const AFormation* f, const AFrustumBorder& frustum)
+void AFormationOperations::frustumFormationPosition(APoint& point, AFormation& f, const AFrustumBorder& frustum)
 {
-    TFloat shift = static_cast<TFloat>(f->height()) + point.x;
+    TFloat shift = static_cast<TFloat>(f.height()) + point.x;
     if (shift > frustum.x)
         point.x += frustum.x - shift;
     
-    shift = static_cast<TFloat>(f->width()) + point.z;
+    shift = static_cast<TFloat>(f.width()) + point.z;
     if (shift > frustum.z)
         point.z += frustum.z - shift;
     
-    shift = static_cast<TFloat>(f->levelsCount()) + point.y;
+    shift = static_cast<TFloat>(f.levelsCount()) + point.y;
     if (shift > frustum.y)
         point.y += frustum.y - shift;
 }

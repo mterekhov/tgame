@@ -9,7 +9,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ASolidBlock::ASolidBlock(AFormation* data) : AColoredBlock(data)
+ASolidBlock::ASolidBlock(const AFormation& formation) : AColoredBlock(formation)
 {
 }
 
@@ -33,16 +33,16 @@ void ASolidBlock::renderObject()
     AColor color = oglInstance->drawColor();
     oglInstance->drawColor(_color);
 
-    for (TInt l = 0; l < _data->levelsCount(); l++)
+    for (TInt l = 0; l < _formation.levelsCount(); l++)
     {
-        for (TInt i = 0; i < _data->height(); i++)
+        for (TInt i = 0; i < _formation.height(); i++)
         {
-            for (TInt j = 0; j < _data->width(); j++)
+            for (TInt j = 0; j < _formation.width(); j++)
             {
-                TData value = _data->item(j, i, l);
+                TData value = _formation.item(j, i, l);
                 if (value == EDATASTATE_RENDERABLE)
                 {
-                    APoint point = _data->gridSpaceLocation(i, l, j);
+                    APoint point = _formation.gridSpaceLocation(i, l, j);
                     ADrawBasics::drawSolidCube(point, _size);
                 }
             }

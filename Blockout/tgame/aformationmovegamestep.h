@@ -17,7 +17,7 @@ class AFormationMoveGameStep : public AGameStepProtocol
 private:
     TUint _buttonCode;
         
-    TBool isBreakingWellBound(const APoint& position, const AFormation* formation, ADataStorage &dataStorage);
+    TBool isBreakingWellBound(const APoint& position, const AFormation& formation, ADataStorage &dataStorage);
 
     void moveCurrentFormationDown(ADataStorage &dataStorage);
     void moveCurrentFormationUp(ADataStorage &dataStorage);

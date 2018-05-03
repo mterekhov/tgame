@@ -4,6 +4,9 @@
 
 #include "adatastorage.h"
 
+#define WELL_FORMATION_INDEX 0
+#define CURRENT_FORMATION_INDEX 1
+
 //==============================================================================
 
 namespace spcTGame
@@ -11,7 +14,7 @@ namespace spcTGame
     
 //==============================================================================
 
-ADataStorage::ADataStorage() : _currentFormation(0), _wellFormation(0)
+ADataStorage::ADataStorage()
 {
     srand(static_cast<TUint>(time(0)));
 }
@@ -36,137 +39,135 @@ TFloat ADataStorage::cellSize()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation1()
+AFormation& ADataStorage::createFormation1()
 {
-    AFormation* newFormation = AFormationFactory::createFormation1();
+    AFormation newFormation = AFormationFactory::createFormation1();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation2()
+AFormation& ADataStorage::createFormation2()
 {
-    AFormation* newFormation = AFormationFactory::createFormation2();
+    AFormation newFormation = AFormationFactory::createFormation2();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation3()
+AFormation& ADataStorage::createFormation3()
 {
-    AFormation* newFormation = AFormationFactory::createFormation3();
+    AFormation newFormation = AFormationFactory::createFormation3();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation4()
+AFormation& ADataStorage::createFormation4()
 {
-    AFormation* newFormation = AFormationFactory::createFormation4();
+    AFormation newFormation = AFormationFactory::createFormation4();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation5()
+AFormation& ADataStorage::createFormation5()
 {
-    AFormation* newFormation = AFormationFactory::createFormation5();
+    AFormation newFormation = AFormationFactory::createFormation5();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation6()
+AFormation& ADataStorage::createFormation6()
 {
-    AFormation* newFormation = AFormationFactory::createFormation6();
+    AFormation newFormation = AFormationFactory::createFormation6();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation7()
+AFormation& ADataStorage::createFormation7()
 {
-    AFormation* newFormation = AFormationFactory::createFormation7();
+    AFormation newFormation = AFormationFactory::createFormation7();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation8()
+AFormation& ADataStorage::createFormation8()
 {
-    AFormation* newFormation = AFormationFactory::createFormation8();
+    AFormation newFormation = AFormationFactory::createFormation8();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation9()
+AFormation& ADataStorage::createFormation9()
 {
-    AFormation* newFormation = AFormationFactory::createFormation9();
+    AFormation newFormation = AFormationFactory::createFormation9();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation10()
+AFormation& ADataStorage::createFormation10()
 {
-    AFormation* newFormation = AFormationFactory::createFormation10();
+    AFormation newFormation = AFormationFactory::createFormation10();
 
     return createFormation(newFormation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::createRandomFormation()
+AFormation& ADataStorage::createRandomFormation()
 {
     TUint formationIndex = rand() % FORMATIONS_COUNT;
-    AFormation* newFormation = 0;
-
     switch (formationIndex)
     {
         case FORMATIONS_ONE:
-            newFormation = createFormation1();
+            return createFormation1();
         break;
         
         case FORMATIONS_TWO:
-            newFormation = createFormation2();
+            return createFormation2();
         break;
         
         case FORMATIONS_THREE:
-            newFormation = createFormation3();
+            return createFormation3();
         break;
         
         case FORMATIONS_FOUR:
-            newFormation = createFormation4();
+            return createFormation4();
         break;
         
         case FORMATIONS_FIVE:
-            newFormation = createFormation5();
+            return createFormation5();
         break;
         
         case FORMATIONS_SIX:
-            newFormation = createFormation6();
+            return createFormation6();
         break;
         
         case FORMATIONS_SEVEN:
-            newFormation = createFormation7();
+            return createFormation7();
         break;
         
         case FORMATIONS_EIGHT:
-            newFormation = createFormation8();
+            return createFormation8();
         break;
     };
     
-    return newFormation;
+	return createFormation1();
 }
 
 //==============================================================================
@@ -175,24 +176,16 @@ AFormation* ADataStorage::createRandomFormation()
 
 //==============================================================================
 
-void ADataStorage::assignCurrentFormation(AFormation* formation)
+void ADataStorage::assignCurrentFormation(const AFormation& formation)
 {
-    _currentFormation = createFormation(formation);
+	_formationList[CURRENT_FORMATION_INDEX] = formation;
 }
 
 //==============================================================================
 
-void ADataStorage::replaceCurrentFormation(AFormation* formation)
+AFormation& ADataStorage::currentFormation()
 {
-    deleteFormation(_currentFormation);
-    _currentFormation = createFormation(formation);
-}
-
-//==============================================================================
-
-AFormation* ADataStorage::currentFormation()
-{
-    return _currentFormation;
+    return _formationList[CURRENT_FORMATION_INDEX];
 }
 
 //==============================================================================
@@ -201,41 +194,38 @@ AFormation* ADataStorage::currentFormation()
 
 //==============================================================================
 
-AFormation* ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat depth)
+void ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat depth)
 {
-    deleteFormation(_wellFormation);
-    AFormation* newFormation = AFormationFactory::createFormation(width, height, depth);
-    _wellFormation = createFormation(newFormation);
-    
-    return _wellFormation;
+	_formationList[WELL_FORMATION_INDEX] = AFormationFactory::createFormation(width, height, depth);
+
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::wellFormation()
+const AFormation& ADataStorage::wellFormation() const
 {
-    return _wellFormation;
+    return _formationList[WELL_FORMATION_INDEX];
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellWidth()
 {
-    return _wellFormation->width();
+    return _formationList[WELL_FORMATION_INDEX].width();
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellHeight()
 {
-    return _wellFormation->height();
+    return _formationList[WELL_FORMATION_INDEX].height();
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellDepth()
 {
-    return _wellFormation->levelsCount();
+    return _formationList[WELL_FORMATION_INDEX].levelsCount();
 }
 
 //==============================================================================
@@ -246,7 +236,7 @@ TFloat ADataStorage::wellDepth()
 
 void ADataStorage::dropCurrentFormation()
 {
-    makeFormationDropped(_currentFormation);
+    makeFormationDropped(_formationList[CURRENT_FORMATION_INDEX]);
 }
 
 //==============================================================================
@@ -262,14 +252,14 @@ const TFormationList& ADataStorage::droppedFormationsList()
 
 //==============================================================================
 
-AFormation* ADataStorage::createFormation(AFormation *formation)
+AFormation& ADataStorage::createFormation(AFormation& formation)
 {
     return pushFormation(formation);
 }
 
 //==============================================================================
 
-AFormation* ADataStorage::pushFormation(AFormation* pushFormation)
+AFormation& ADataStorage::pushFormation(AFormation& pushFormation)
 {
     _formationList.push_back(pushFormation);
 
@@ -278,33 +268,8 @@ AFormation* ADataStorage::pushFormation(AFormation* pushFormation)
 
 //==============================================================================
 
-void ADataStorage::destroyAllFormations()
+void ADataStorage::makeFormationDropped(AFormation& formation)
 {
-    for (TFormationListIter iter = _formationList.begin(); iter != _formationList.end(); iter++)
-    {
-        AFormation *formation = *iter;
-        deleteFormation(formation);
-    }
-}
-
-//==============================================================================
-
-void ADataStorage::deleteFormation(AFormation* formation)
-{
-    if (formation == 0)
-        return;
-    
-    _formationList.remove(formation);
-    delete formation;
-}
-
-//==============================================================================
-
-void ADataStorage::makeFormationDropped(AFormation *formation)
-{
-    if (formation == 0)
-        return;
-
     _droppedFormationsList.push_back(formation);
 }
 

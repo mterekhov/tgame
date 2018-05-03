@@ -9,13 +9,13 @@ namespace spcTGame
     
 //==============================================================================
     
-ABlock::ABlock(AFormation* data) : _data(data), _size(1.0f)
+ABlock::ABlock(const AFormation& formation) : _formation(formation), _size(1.0f)
 {
 }
 
 //==============================================================================
 
-ABlock::ABlock(const ABlock& block) : ARObject(block), _data(block.data()),
+ABlock::ABlock(const ABlock& block) : ARObject(block), _formation(block.formation()),
                                         _size(block.size())
 {
 }
@@ -35,9 +35,9 @@ TFloat ABlock::size() const
 
 //==============================================================================
 
-AFormation* ABlock::data() const
+const AFormation& ABlock::formation() const
 {
-    return _data;
+    return _formation;
 }
 
 //==============================================================================
