@@ -4,8 +4,12 @@
 
 #include "adatastorage.h"
 
-#define WELL_FORMATION_INDEX 0
-#define CURRENT_FORMATION_INDEX 1
+enum EDataStorageIndexes
+{
+    EDATASTORAGEINDEXES_WELL_FORMATION_INDEX,
+    EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX,
+    EDATASTORAGEINDEXES_COUNT
+};
 
 //==============================================================================
 
@@ -17,13 +21,14 @@ namespace spcTGame
 ADataStorage::ADataStorage()
 {
     srand(static_cast<TUint>(time(0)));
+	_formationList.push_back(AFormationFactory::createFormation(1, 1, 1));
+	_formationList.push_back(createRandomFormation());
 }
 
 //==============================================================================
 
 ADataStorage::~ADataStorage()
 {
-    destroyAllFormations();
 }
 
 //==============================================================================
@@ -178,14 +183,21 @@ AFormation& ADataStorage::createRandomFormation()
 
 void ADataStorage::assignCurrentFormation(const AFormation& formation)
 {
-	_formationList[CURRENT_FORMATION_INDEX] = formation;
+//	if (!_formationList.size())
+// 	{
+//		_formationList.push_back(formation);
+//	}
+//	else
+	{
+		_formationList[EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX] = formation;
+	}
 }
 
 //==============================================================================
 
 AFormation& ADataStorage::currentFormation()
 {
-    return _formationList[CURRENT_FORMATION_INDEX];
+    return _formationList[EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX];
 }
 
 //==============================================================================
@@ -196,36 +208,42 @@ AFormation& ADataStorage::currentFormation()
 
 void ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat depth)
 {
-	_formationList[WELL_FORMATION_INDEX] = AFormationFactory::createFormation(width, height, depth);
-
+//	if (!_formationList.size())
+//	{
+//		_formationList.push_back(AFormationFactory::createFormation(width, height, depth));
+//	}
+//	else
+	{
+		_formationList[EDATASTORAGEINDEXES_WELL_FORMATION_INDEX] = AFormationFactory::createFormation(width, height, depth);
+	}
 }
 
 //==============================================================================
 
 const AFormation& ADataStorage::wellFormation() const
 {
-    return _formationList[WELL_FORMATION_INDEX];
+    return _formationList[EDATASTORAGEINDEXES_WELL_FORMATION_INDEX];
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellWidth()
 {
-    return _formationList[WELL_FORMATION_INDEX].width();
+    return _formationList[EDATASTORAGEINDEXES_WELL_FORMATION_INDEX].width();
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellHeight()
 {
-    return _formationList[WELL_FORMATION_INDEX].height();
+    return _formationList[EDATASTORAGEINDEXES_WELL_FORMATION_INDEX].height();
 }
 
 //==============================================================================
 
 TFloat ADataStorage::wellDepth()
 {
-    return _formationList[WELL_FORMATION_INDEX].levelsCount();
+    return _formationList[EDATASTORAGEINDEXES_WELL_FORMATION_INDEX].levelsCount();
 }
 
 //==============================================================================
@@ -236,7 +254,7 @@ TFloat ADataStorage::wellDepth()
 
 void ADataStorage::dropCurrentFormation()
 {
-    makeFormationDropped(_formationList[CURRENT_FORMATION_INDEX]);
+    makeFormationDropped(_formationList[EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX]);
 }
 
 //==============================================================================

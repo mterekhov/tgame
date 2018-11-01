@@ -4,6 +4,7 @@
 #include "aoglwrapper.h"
 #include "adrawbasics.h"
 #include "abundle.h"
+#include "awell.h"
 
 //==============================================================================
 
@@ -77,12 +78,10 @@ void ACrafter::createDroppedBlocks()
 
 //==============================================================================
 
-AWell* ACrafter::createWell()
+AWell& ACrafter::createWell()
 {
-    AWell* well = new AWell(_dataStorage.wellFormation());
-    addObjectForRender(well);
-    
-    return well;
+    AWell well(_dataStorage.wellFormation());
+    return static_cast<AWell&>(addObjectForRender(well));
 }
 
 //==============================================================================
@@ -91,32 +90,26 @@ AWell* ACrafter::createWell()
 
 //==============================================================================
 
-ASolidBlock* ACrafter::createSolidBlock(AFormation* formation)
+ASolidBlock& ACrafter::createSolidBlock(const AFormation& formation)
 {
-    ASolidBlock* newBlock = new ASolidBlock(formation);
-    addObjectForRender(newBlock);
-    
-    return newBlock;
+    ASolidBlock newBlock(formation);
+    return static_cast<ASolidBlock&>(addObjectForRender(newBlock));
 }
 
 //==============================================================================
 
-AColoredBlock* ACrafter::createColoredBlock(AFormation* formation)
+AColoredBlock& ACrafter::createColoredBlock(const AFormation& formation)
 {
-    AColoredBlock* newBlock = new AColoredBlock(formation);
-    addObjectForRender(newBlock);
-    
-    return newBlock;
+    AColoredBlock newBlock(formation);
+    return static_cast<AColoredBlock&>(addObjectForRender(newBlock));
 }
 
 //==============================================================================
 
-ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const ATexture& texture)
+ATexturedBlock& ACrafter::createTexturedBlock(const AFormation& formation, ATexture& texture)
 {
-    ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
-    addObjectForRender(newBlock);
-    
-    return newBlock;
+    ATexturedBlock newBlock(formation, texture);
+    return static_cast<ATexturedBlock&>(addObjectForRender(newBlock));
 }
 
 //==============================================================================
@@ -125,7 +118,7 @@ ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const AText
 
 //==============================================================================
 
-void ACrafter::generateTexturedRenderList(const TFormationList& formations, const ATexture& texture)
+void ACrafter::generateTexturedRenderList(const TFormationList& formations, ATexture& texture)
 {
     for (TFormationListConstIter iter = formations.begin(); iter != formations.end(); iter++)
     {
@@ -168,11 +161,6 @@ TBool ACrafter::clearList(TRObjectsList& renderList)
     if (renderList.size() == 0)
         return false;
 
-    TRObjectsListConstIter iterBegin = renderList.begin();
-    TRObjectsListConstIter iterEnd = renderList.end();
-    for (TRObjectsListConstIter iter = iterBegin; iter != iterEnd; iter++)
-        delete (*iter);
-    
     renderList.clear();
     
     return true;
@@ -180,26 +168,25 @@ TBool ACrafter::clearList(TRObjectsList& renderList)
 
 //==============================================================================
 
-TBool ACrafter::addObjectForRender(ARObject* object)
+ARObject& ACrafter::addObjectForRender(const ARObject& object)
 {
-    if (object == 0)
-        return false;
-    
-    switch (object->objectType())
+    switch (object.objectType())
     {
         case OBJECTTYPE_SOLID:
             _solidRenderList.push_back(object);
+			return _solidRenderList.back();
         break;
             
         case OBJECTTYPE_TEXTURED:
             _texturedRenderList.push_back(object);
+			return _texturedRenderList.back();
         break;
         
         default:
-            return false;
+			return _solidRenderList.back();
     }
     
-    return true;
+	return _solidRenderList.back();
 }
 
 //==============================================================================
@@ -251,15 +238,15 @@ void ACrafter::renderContent()
 
 //==============================================================================
 
-void ACrafter::renderList(const TRObjectsList& renderList)
+void ACrafter::renderList(TRObjectsList& renderList)
 {
     if (renderList.size() == 0)
         return;
 
-    TRObjectsListConstIter iterBegin = renderList.begin();
-    TRObjectsListConstIter iterEnd = renderList.end();
-    for (TRObjectsListConstIter iter = iterBegin; iter != iterEnd; iter++)
-        (*iter)->renderObject();
+    TRObjectsListIter iterBegin = renderList.begin();
+    TRObjectsListIter iterEnd = renderList.end();
+    for (TRObjectsListIter iter = iterBegin; iter != iterEnd; iter++)
+        (*iter).renderObject();
 }
 
 //==============================================================================

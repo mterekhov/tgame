@@ -269,8 +269,8 @@
 				4CF3045B1949ED340092A63D /* ablockout.cpp */,
 				4CBFB5B319598633002D7249 /* adatastorage.h */,
 				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
-				4CF304571949ED220092A63D /* acrafter.cpp */,
 				4CF304581949ED220092A63D /* acrafter.h */,
+				4CF304571949ED220092A63D /* acrafter.cpp */,
 				4CF3040C1949EC720092A63D /* alogic.h */,
 				4CF3040B1949EC720092A63D /* alogic.cpp */,
 			);
@@ -390,12 +390,12 @@
 			isa = PBXGroup;
 			children = (
 				AE9E2FF31BFCB8E700ECACDC /* agamestepprotocol.h */,
-				4C64BB842094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.cpp */,
 				4C64BB852094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.h */,
-				4C64BB812094A1860042AA21 /* anewrandomcurrentformationgamestep.cpp */,
+				4C64BB842094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.cpp */,
 				4C64BB822094A1860042AA21 /* anewrandomcurrentformationgamestep.h */,
-				4C64BB7E20949FC10042AA21 /* acreatewellgamestep.cpp */,
+				4C64BB812094A1860042AA21 /* anewrandomcurrentformationgamestep.cpp */,
 				4C64BB7D20949FC10042AA21 /* acreatewellgamestep.h */,
+				4C64BB7E20949FC10042AA21 /* acreatewellgamestep.cpp */,
 				AE0ACB191CC63ECD00375824 /* aformationmovegamestep.h */,
 				AE0ACB181CC63ECD00375824 /* aformationmovegamestep.cpp */,
 				AE0ACB1C1CC63FA800375824 /* aformationrotategamestep.h */,

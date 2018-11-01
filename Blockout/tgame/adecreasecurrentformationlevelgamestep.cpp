@@ -21,10 +21,10 @@ ADecreaseCurrentFormationLevelGameStep::~ADecreaseCurrentFormationLevelGameStep(
 
 void ADecreaseCurrentFormationLevelGameStep::executeStep(ADataStorage &dataStorage)
 {
-    AFormation *currentFormation = dataStorage.currentFormation();
-    APoint currentFormationPosition = currentFormation->gridSpacePosition();
+    AFormation& currentFormation = dataStorage.currentFormation();
+    APoint currentFormationPosition = currentFormation.gridSpacePosition();
     currentFormationPosition.y -= 1.0f;
-    currentFormation->gridSpacePosition(currentFormationPosition);
+    currentFormation.gridSpacePosition(currentFormationPosition);
 }
 
 //==============================================================================

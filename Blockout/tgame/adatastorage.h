@@ -45,9 +45,6 @@ private:
     //  Push formation into _formationList
     AFormation& pushFormation(AFormation& pushFormation);
 
-    //  clear _formationList
-    void destroyAllFormations();
-
     void makeFormationDropped(AFormation& formation);
 
 public:

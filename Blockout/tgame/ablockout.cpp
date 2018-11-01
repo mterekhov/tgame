@@ -49,12 +49,10 @@ void ABlockout::startGame()
 
 void ABlockout::processGameCycle()
 {
-    _logic.processLogic();
-    
-    if (_gameStepsController.processSteps(_dataStorage) != 0)
-        _crafter.refreshRenderLists();
-        
-    _crafter.processRender();
+	_logic.processLogic();
+	_gameStepsController.processSteps(_dataStorage);
+	_crafter.refreshRenderLists();
+	_crafter.processRender();
 }
 
 //==============================================================================

@@ -9,7 +9,7 @@ namespace spcTGame
     
 //==============================================================================
     
-ATexturedBlock::ATexturedBlock(const AFormation& formation, const ATexture& tex) : ABlock(formation), _texture(tex)
+ATexturedBlock::ATexturedBlock(const AFormation& formation, ATexture& tex) : ABlock(formation), _texture(tex)
 {
     _objectType = OBJECTTYPE_TEXTURED;
 }

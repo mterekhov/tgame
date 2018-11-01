@@ -23,9 +23,11 @@ namespace spcTGame
     
 //==============================================================================
 
-typedef std::list<ARObject*> TRObjectsList;
+typedef std::list<ARObject> TRObjectsList;
 typedef TRObjectsList::iterator TRObjectsListIter;
 typedef TRObjectsList::const_iterator TRObjectsListConstIter;
+
+class AWell;
 
 //==============================================================================
 
@@ -37,7 +39,7 @@ private:
     TRObjectsList _texturedRenderList;
     TRObjectsList _solidRenderList;
 
-    void generateTexturedRenderList(const TFormationList& formations, const ATexture& texture);
+    void generateTexturedRenderList(const TFormationList& formations, ATexture& texture);
     
     void renewRenderLists();
     void clearAllLists();
@@ -46,13 +48,14 @@ private:
     TBool clearList(TRObjectsList& renderList);
     
     void renderContent();
-    void renderList(const TRObjectsList& renderList);
+    void renderList(TRObjectsList& renderList);
     
-    TBool addObjectForRender(ARObject* object);
-    ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
-    ASolidBlock* createSolidBlock(AFormation* formation);
-    AColoredBlock* createColoredBlock(AFormation* formation);
-    AWell* createWell();
+	ARObject& addObjectForRender(const ARObject& object);
+
+    AWell& createWell();
+	AColoredBlock& createColoredBlock(const AFormation& formation);
+    ATexturedBlock& createTexturedBlock(const AFormation& formation, ATexture& texture);
+    ASolidBlock& createSolidBlock(const AFormation& formation);
     void createDroppedBlocks();
     
 public:
