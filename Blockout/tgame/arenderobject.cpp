@@ -65,7 +65,7 @@ ARenderInterface *ARenderObject::createWell(const AFormation& formation, const T
 	
 //==============================================================================
 
-void ARenderObject::render()
+void ARenderObject::render() const
 {
 	if (_object == 0)
 	{

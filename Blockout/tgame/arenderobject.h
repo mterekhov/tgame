@@ -30,7 +30,7 @@ public:
 	ARenderObject(const ARenderObject& renderObject);
     ~ARenderObject();
     
-    void render();
+    void render() const;
 };
 
 //==============================================================================

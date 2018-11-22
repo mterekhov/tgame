@@ -66,7 +66,7 @@ void ACrafter::createDroppedBlocks()
     const TFormationsList& droppedFormations = _dataStorage.droppedFormationsList();
     for (TFormationsListConstIter iter = droppedFormations.begin(); iter != droppedFormations.end(); iter++)
     {
-        TString textureFileName = "celtic.tga";
+        TString textureFileName = "MARBFAC3.tga";
         textureFileName = ABundle().fullPathToResource(textureFileName);
         createTexturedBlock(*iter, _textureManager.createTextureFromTGA(textureFileName));
     }
@@ -184,8 +184,8 @@ void ACrafter::renderColoredObjects()
     TRenderObjectsListIter iterEnd = _coloredObjectsList.end();
     for (TRenderObjectsListIter iter = iterBegin; iter != iterEnd; iter++)
     {
-    	ARenderObject object = *iter;
-        iter->render();
+    	const ARenderObject& object = *iter;
+        object.render();
 	}
 }
 
