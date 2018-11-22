@@ -5,6 +5,7 @@
 #include "aopenglstate.h"
 #include "adatastorage.h"
 #include "blockoutdebug.h"
+#include "arenderobject.h"
 
 //==============================================================================
 
@@ -13,8 +14,15 @@ namespace spcTGame
     
 //==============================================================================
     
-AWell::AWell(const AFormation& content) : ABlock(content)
+AWell::AWell(const AFormation& formation, const TFloat size, const AColor& color) : _formation(formation), _size(size), _color(color)
 {
+}
+
+//==============================================================================
+
+AWell::AWell(const AWell& well) : _formation(well._formation), _size(well._size), _color(well._color)
+{
+
 }
 
 //==============================================================================
@@ -25,7 +33,14 @@ AWell::~AWell()
 
 //==============================================================================
 
-void AWell::renderHull() const
+ARenderInterface *AWell::copy()
+{
+	return ARenderObject::createWell(_formation, _size, _color);
+}
+
+//==============================================================================
+
+void AWell::render()
 {
     AOpenGLState* oglInstance = AOpenGLState::shared();
     
@@ -75,11 +90,4 @@ void AWell::renderHull() const
 
 //==============================================================================
 
-void AWell::renderObject()
-{
-    renderHull();
-}
-
-//==============================================================================
-    
 }   //  namespace spcTGame

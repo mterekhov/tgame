@@ -21,8 +21,8 @@ namespace spcTGame
 ADataStorage::ADataStorage()
 {
     srand(static_cast<TUint>(time(0)));
-	_formationList.push_back(AFormationFactory::createFormation(1, 1, 1));
-	_formationList.push_back(createRandomFormation());
+	createWellFormation(1, 1, 1);
+	createCurrentFormation();
 }
 
 //==============================================================================
@@ -44,135 +44,135 @@ TFloat ADataStorage::cellSize()
 
 //==============================================================================
 
-AFormation& ADataStorage::createFormation1()
-{
-    AFormation newFormation = AFormationFactory::createFormation1();
+//AFormation& ADataStorage::createFormation1()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation1();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation2()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation2();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation3()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation3();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation4()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation4();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation5()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation5();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation6()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation6();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation7()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation7();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation8()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation8();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation9()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation9();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
+//
+//AFormation& ADataStorage::createFormation10()
+//{
+//    AFormation newFormation = AFormationFactory::createFormation10();
+//
+//    return addFormationToList(newFormation);
+//}
+//
+////==============================================================================
 
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation2()
-{
-    AFormation newFormation = AFormationFactory::createFormation2();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation3()
-{
-    AFormation newFormation = AFormationFactory::createFormation3();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation4()
-{
-    AFormation newFormation = AFormationFactory::createFormation4();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation5()
-{
-    AFormation newFormation = AFormationFactory::createFormation5();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation6()
-{
-    AFormation newFormation = AFormationFactory::createFormation6();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation7()
-{
-    AFormation newFormation = AFormationFactory::createFormation7();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation8()
-{
-    AFormation newFormation = AFormationFactory::createFormation8();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation9()
-{
-    AFormation newFormation = AFormationFactory::createFormation9();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createFormation10()
-{
-    AFormation newFormation = AFormationFactory::createFormation10();
-
-    return createFormation(newFormation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::createRandomFormation()
+AFormation ADataStorage::createRandomFormation()
 {
     TUint formationIndex = rand() % FORMATIONS_COUNT;
     switch (formationIndex)
     {
         case FORMATIONS_ONE:
-            return createFormation1();
+            return AFormationFactory::createFormation1();
         break;
         
         case FORMATIONS_TWO:
-            return createFormation2();
+            return AFormationFactory::createFormation2();
         break;
         
         case FORMATIONS_THREE:
-            return createFormation3();
+            return AFormationFactory::createFormation3();
         break;
         
         case FORMATIONS_FOUR:
-            return createFormation4();
+            return AFormationFactory::createFormation4();
         break;
         
         case FORMATIONS_FIVE:
-            return createFormation5();
+            return AFormationFactory::createFormation5();
         break;
         
         case FORMATIONS_SIX:
-            return createFormation6();
+            return AFormationFactory::createFormation6();
         break;
         
         case FORMATIONS_SEVEN:
-            return createFormation7();
+            return AFormationFactory::createFormation7();
         break;
         
         case FORMATIONS_EIGHT:
-            return createFormation8();
+            return AFormationFactory::createFormation8();
         break;
     };
     
-	return createFormation1();
+	return AFormationFactory::createFormation1();
 }
 
 //==============================================================================
@@ -181,23 +181,31 @@ AFormation& ADataStorage::createRandomFormation()
 
 //==============================================================================
 
-void ADataStorage::assignCurrentFormation(const AFormation& formation)
+void ADataStorage::assignCurrentFormation(AFormation& formation)
 {
-//	if (!_formationList.size())
-// 	{
-//		_formationList.push_back(formation);
-//	}
-//	else
-	{
-		_formationList[EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX] = formation;
-	}
+	_formationList[EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX] = formation;
 }
-
+	
 //==============================================================================
 
 AFormation& ADataStorage::currentFormation()
 {
     return _formationList[EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX];
+}
+
+//==============================================================================
+
+void ADataStorage::createCurrentFormation()
+{
+	AFormation newRandomFormation = createRandomFormation();
+	if (_formationList.size() < EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX + 1)
+	{
+		_formationList.push_back(newRandomFormation);
+	}
+	else
+	{
+		_formationList[EDATASTORAGEINDEXES_CURRENT_FORMATION_INDEX] = newRandomFormation;
+	}
 }
 
 //==============================================================================
@@ -208,13 +216,14 @@ AFormation& ADataStorage::currentFormation()
 
 void ADataStorage::createWellFormation(const TFloat width, const TFloat height, const TFloat depth)
 {
-//	if (!_formationList.size())
-//	{
-//		_formationList.push_back(AFormationFactory::createFormation(width, height, depth));
-//	}
-//	else
+	AFormation well = AFormationFactory::createFormation(width, height, depth);
+	if (_formationList.size() < EDATASTORAGEINDEXES_WELL_FORMATION_INDEX + 1)
 	{
-		_formationList[EDATASTORAGEINDEXES_WELL_FORMATION_INDEX] = AFormationFactory::createFormation(width, height, depth);
+		_formationList.push_back(well);
+	}
+	else
+	{
+		_formationList[EDATASTORAGEINDEXES_WELL_FORMATION_INDEX] = well;
 	}
 }
 
@@ -259,7 +268,7 @@ void ADataStorage::dropCurrentFormation()
 
 //==============================================================================
 
-const TFormationList& ADataStorage::droppedFormationsList()
+const TFormationsList& ADataStorage::droppedFormationsList()
 {
     return _droppedFormationsList;
 }
@@ -270,16 +279,9 @@ const TFormationList& ADataStorage::droppedFormationsList()
 
 //==============================================================================
 
-AFormation& ADataStorage::createFormation(AFormation& formation)
+AFormation& ADataStorage::addFormationToList(AFormation& formation)
 {
-    return pushFormation(formation);
-}
-
-//==============================================================================
-
-AFormation& ADataStorage::pushFormation(AFormation& pushFormation)
-{
-    _formationList.push_back(pushFormation);
+    _formationList.push_back(formation);
 
     return _formationList.back();
 }

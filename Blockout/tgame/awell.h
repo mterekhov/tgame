@@ -3,9 +3,9 @@
 
 //==============================================================================
 
-#include "ablock.h"
-#include "acolor.h"
+#include "arenderinterface.h"
 #include "aformation.h"
+#include "acolor.h"
 
 //==============================================================================
 
@@ -14,18 +14,20 @@ namespace spcTGame
     
 //==============================================================================
     
-class AWell : public ABlock
+class AWell : public ARenderInterface
 {
 private:
-    void renderHull() const;
+    AFormation _formation;
+    TFloat _size;
+    AColor _color;
 
 public:
-    AColor color;
-
-    AWell(const AFormation& formation);
+    AWell(const AFormation& formation, const TFloat size, const AColor& color);
+    AWell(const AWell& well);
     virtual ~AWell();
 
-    virtual void renderObject();
+    virtual ARenderInterface *copy();
+    virtual void render();
 };
 
 //==============================================================================

@@ -1,6 +1,7 @@
 #include "atexturedblock.h"
 #include "aopenglstate.h"
 #include "adrawbasics.h"
+#include "arenderobject.h"
 
 //==============================================================================
 
@@ -9,14 +10,13 @@ namespace spcTGame
     
 //==============================================================================
     
-ATexturedBlock::ATexturedBlock(const AFormation& formation, ATexture& tex) : ABlock(formation), _texture(tex)
+ATexturedBlock::ATexturedBlock(const AFormation& formation, const TFloat size, const ATexture& texture) : _formation(formation), _size(size), _texture(texture)
 {
-    _objectType = OBJECTTYPE_TEXTURED;
 }
 
 //==============================================================================
 
-ATexturedBlock::ATexturedBlock(const ATexturedBlock& block) : ABlock(block), _texture(block._texture)
+ATexturedBlock::ATexturedBlock(const ATexturedBlock& block) : _formation(block._formation), _size(block._size), _texture(block._texture)
 {
 }
 
@@ -28,7 +28,12 @@ ATexturedBlock::~ATexturedBlock()
 
 //==============================================================================
 
-void ATexturedBlock::renderObject()
+ARenderInterface *ATexturedBlock::copy()
+{
+	return ARenderObject::createTexturedBlock(_formation, _size, _texture);
+}
+
+void ATexturedBlock::render()
 {
     for (TInt l = 0; l < _formation.levelsCount(); l++)
     {

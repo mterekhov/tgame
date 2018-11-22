@@ -28,8 +28,9 @@ AFormation::AFormation(const TUint width, const TUint height, const TUint count)
 
 AFormation::AFormation(const AFormation& formation) : _width(formation.width()), _height(formation.height()), _levelsCount(formation.levelsCount())
 {
-    _data = new TData[_width * _height * _levelsCount];
     TUint sizer = _width * _height * _levelsCount * sizeof(TData);
+    _data = new TData[_width * _height * _levelsCount];
+    memset(_data, 0, sizer);
     memcpy(_data, formation.data(), sizer);
 }
 
