@@ -89,7 +89,7 @@ void ACrafter::createWell()
 
 void ACrafter::createColoredBlock(const AFormation& formation, const AColor& color)
 {
-	ARenderInterface *newColoredBlock = ARenderObject::createColoredBlock(formation, _dataStorage.cellSize(), color);
+	ARenderInterface *newColoredBlock = ARenderObject::createColoredBlock(formation, _dataStorage.cellSize(), color, ERenderStyle::RENDERSTYLE_CARCAS);
 	ARenderObject newRenderObject = ARenderObject(newColoredBlock);
 	_coloredObjectsList.push_back(newRenderObject);
 }

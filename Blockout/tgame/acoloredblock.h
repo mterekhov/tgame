@@ -14,14 +14,6 @@ namespace spcTGame
     
 //==============================================================================
 
-enum ERenderStyle
-{
-	RENDERSTYLE_CARCAS,
-	RENDERSTYLE_SOLID
-};
-
-//==============================================================================
-
 class AColoredBlock : public ARenderInterface
 {
 private:
@@ -31,7 +23,7 @@ private:
     ERenderStyle _renderStyle;
 
 public:
-    AColoredBlock(const AFormation& formation, const TFloat size, const AColor& color);
+    AColoredBlock(const AFormation& formation, const TFloat size, const AColor& color, const ERenderStyle renderStyle);
     AColoredBlock(const AColoredBlock& block);
     virtual ~AColoredBlock();
     

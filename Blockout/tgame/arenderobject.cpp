@@ -49,9 +49,9 @@ ARenderInterface *ARenderObject::createTexturedBlock(const AFormation &formation
 	
 //==============================================================================
 
-ARenderInterface *ARenderObject::createColoredBlock(const AFormation& formation, const TFloat size, const AColor& color)
+ARenderInterface *ARenderObject::createColoredBlock(const AFormation& formation, const TFloat size, const AColor& color, const ERenderStyle renderStyle)
 {
-	AColoredBlock *newBlock = new AColoredBlock(formation, size, color);
+	AColoredBlock *newBlock = new AColoredBlock(formation, size, color, renderStyle);
 	return newBlock;
 }
 	

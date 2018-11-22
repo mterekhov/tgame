@@ -15,14 +15,6 @@ namespace spcTGame
     
 //==============================================================================
 
-enum ERenderType
-{
-    RENDERTYPE_COLORED,
-    RENDERTYPE_TEXTURED
-};
-
-//==============================================================================
-
 class ARenderObject
 {
 private:
@@ -30,7 +22,7 @@ private:
     
 public:
 	static ARenderInterface *createTexturedBlock(const AFormation& formation, const TFloat size, const ATexture &texture);
-	static ARenderInterface *createColoredBlock(const AFormation& formation, const TFloat size, const AColor& color);
+	static ARenderInterface *createColoredBlock(const AFormation& formation, const TFloat size, const AColor& color, const ERenderStyle renderStyle);
 	static ARenderInterface *createWell(const AFormation& formation, const TFloat size, const AColor& color);
 
 	ARenderObject();

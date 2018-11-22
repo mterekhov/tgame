@@ -10,13 +10,13 @@ namespace spcTGame
     
 //==============================================================================
     
-AColoredBlock::AColoredBlock(const AFormation& formation, const TFloat size, const AColor& color) : _formation(formation), _size(size), _color(color)
+AColoredBlock::AColoredBlock(const AFormation& formation, const TFloat size, const AColor& color, const ERenderStyle renderStyle) : _formation(formation), _size(size), _color(color), _renderStyle(renderStyle)
 {
 }
 
 //==============================================================================
 
-AColoredBlock::AColoredBlock(const AColoredBlock& block) : _formation(block._formation), _size(block._size), _color(block._color)
+AColoredBlock::AColoredBlock(const AColoredBlock& block) : _formation(block._formation), _size(block._size), _color(block._color), _renderStyle(block._renderStyle)
 {
 }
 
@@ -30,7 +30,7 @@ AColoredBlock::~AColoredBlock()
 
 ARenderInterface *AColoredBlock::copy()
 {
-	return ARenderObject::createColoredBlock(_formation, _size, _color);
+	return ARenderObject::createColoredBlock(_formation, _size, _color, _renderStyle);
 }
 
 //==============================================================================
