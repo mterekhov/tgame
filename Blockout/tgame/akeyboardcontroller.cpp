@@ -2,7 +2,7 @@
 #include "blockoutdebug.h"
 #include "keymaps.h"
 #include "amoveformationstep.h"
-#include "aformationrotategamestep.h"
+#include "arotateformationstep.h"
 #include "aformationdropgamestep.h"
 #include "arandomformationstep.h"
 
@@ -51,7 +51,7 @@ void AKeyboardController::keyPressed(TUint buttonCode)
         case EKEYCODES_ROTATE_X:
         case EKEYCODES_ROTATE_Y:
         case EKEYCODES_ROTATE_Z:
-		    _gameStepsController.addStepToProcessQueue(new AFormationRotateGameStep(buttonCode));
+		    _gameStepsController.addStepToProcessQueue(new ARotateFormationStep(buttonCode));
         break;
         
         case EKEYCODES_DROP_BLOCK:

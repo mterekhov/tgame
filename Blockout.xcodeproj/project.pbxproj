@@ -75,7 +75,7 @@
 		4CF304661949ED540092A63D /* blockoutdebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304651949ED540092A63D /* blockoutdebug.h */; };
 		AE0A7D131BF2352700D5A589 /* abundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0A7D111BF2352700D5A589 /* abundle.cpp */; };
 		AE0A7D141BF2352700D5A589 /* abundle.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0A7D121BF2352700D5A589 /* abundle.h */; };
-		AE0ACB1F1CC63FB400375824 /* aformationrotategamestep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0ACB1B1CC63FA800375824 /* aformationrotategamestep.cpp */; };
+		AE0ACB1F1CC63FB400375824 /* arotateformationstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0ACB1B1CC63FA800375824 /* arotateformationstep.cpp */; };
 		AE0ACB201CC63FB400375824 /* amoveformationstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0ACB181CC63ECD00375824 /* amoveformationstep.cpp */; };
 		AE51D1EB1BF4E08A00BFFB03 /* abundleprotocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */; };
 		AE51D1EE1BF4E20400BFFB03 /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */; };
@@ -181,8 +181,8 @@
 		AE0A7D121BF2352700D5A589 /* abundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundle.h; path = Blockout/tgame/abundle.h; sourceTree = "<group>"; };
 		AE0ACB181CC63ECD00375824 /* amoveformationstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amoveformationstep.cpp; path = Blockout/tgame/amoveformationstep.cpp; sourceTree = "<group>"; };
 		AE0ACB191CC63ECD00375824 /* amoveformationstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amoveformationstep.h; path = Blockout/tgame/amoveformationstep.h; sourceTree = "<group>"; };
-		AE0ACB1B1CC63FA800375824 /* aformationrotategamestep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformationrotategamestep.cpp; path = Blockout/tgame/aformationrotategamestep.cpp; sourceTree = "<group>"; };
-		AE0ACB1C1CC63FA800375824 /* aformationrotategamestep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformationrotategamestep.h; path = Blockout/tgame/aformationrotategamestep.h; sourceTree = "<group>"; };
+		AE0ACB1B1CC63FA800375824 /* arotateformationstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arotateformationstep.cpp; path = Blockout/tgame/arotateformationstep.cpp; sourceTree = "<group>"; };
+		AE0ACB1C1CC63FA800375824 /* arotateformationstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arotateformationstep.h; path = Blockout/tgame/arotateformationstep.h; sourceTree = "<group>"; };
 		AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = Blockout/tgame/abundleprotocol.h; sourceTree = "<group>"; };
 		AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = Blockout/tgame/mac/amacbundle.mm; sourceTree = "<group>"; };
 		AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = Blockout/tgame/mac/amacbundle.h; sourceTree = "<group>"; };
@@ -391,8 +391,8 @@
 				4C64BB7E20949FC10042AA21 /* anewwellstep.cpp */,
 				AE0ACB191CC63ECD00375824 /* amoveformationstep.h */,
 				AE0ACB181CC63ECD00375824 /* amoveformationstep.cpp */,
-				AE0ACB1C1CC63FA800375824 /* aformationrotategamestep.h */,
-				AE0ACB1B1CC63FA800375824 /* aformationrotategamestep.cpp */,
+				AE0ACB1C1CC63FA800375824 /* arotateformationstep.h */,
+				AE0ACB1B1CC63FA800375824 /* arotateformationstep.cpp */,
 				AE9E2FF01BFCB88200ECACDC /* aformationdropgamestep.h */,
 				AE9E2FEF1BFCB88200ECACDC /* aformationdropgamestep.cpp */,
 			);
@@ -635,7 +635,7 @@
 				4C3CC40B1B25B4C7002D540A /* afrustumborder.cpp in Sources */,
 				4CF304601949ED340092A63D /* ablockout.cpp in Sources */,
 				4CF304191949EC8B0092A63D /* apoint.cpp in Sources */,
-				AE0ACB1F1CC63FB400375824 /* aformationrotategamestep.cpp in Sources */,
+				AE0ACB1F1CC63FB400375824 /* arotateformationstep.cpp in Sources */,
 				4CF3041D1949EC8B0092A63D /* avector.cpp in Sources */,
 				4CF3040D1949EC720092A63D /* alogic.cpp in Sources */,
 				4CF304171949EC8B0092A63D /* acolor.cpp in Sources */,

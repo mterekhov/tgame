@@ -1,4 +1,4 @@
-#include "aformationrotategamestep.h"
+#include "arotateformationstep.h"
 #include "keymaps.h"
 #include "aformationoperations.h"
 
@@ -9,19 +9,19 @@ namespace spcTGame
     
 //==============================================================================
 
-AFormationRotateGameStep::AFormationRotateGameStep(const TUint buttonCode) : _buttonCode(buttonCode)
+ARotateFormationStep::ARotateFormationStep(const TUint buttonCode) : _buttonCode(buttonCode)
 {
 }
 
 //==============================================================================
 
-AFormationRotateGameStep::~AFormationRotateGameStep()
+ARotateFormationStep::~ARotateFormationStep()
 {
 }
 
 //==============================================================================
 
-void AFormationRotateGameStep::executeStep(ADataStorage &dataStorage)
+void ARotateFormationStep::executeStep(ADataStorage &dataStorage)
 {
     switch (_buttonCode)
     {
@@ -44,7 +44,7 @@ void AFormationRotateGameStep::executeStep(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotateX(ADataStorage &dataStorage)
+void ARotateFormationStep::rotateX(ADataStorage &dataStorage)
 {
     AMatrix m = AMatrix::rotationX(M_PI_2);
     rotate(m, dataStorage);
@@ -52,7 +52,7 @@ void AFormationRotateGameStep::rotateX(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotateY(ADataStorage &dataStorage)
+void ARotateFormationStep::rotateY(ADataStorage &dataStorage)
 {
     AMatrix m = AMatrix::rotationY(M_PI_2);
     rotate(m, dataStorage);
@@ -60,7 +60,7 @@ void AFormationRotateGameStep::rotateY(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotateZ(ADataStorage &dataStorage)
+void ARotateFormationStep::rotateZ(ADataStorage &dataStorage)
 {
     AMatrix m = AMatrix::rotationZ(M_PI_2);
     rotate(m, dataStorage);
@@ -68,7 +68,7 @@ void AFormationRotateGameStep::rotateZ(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationRotateGameStep::rotate(const AMatrix& m, ADataStorage &dataStorage)
+void ARotateFormationStep::rotate(const AMatrix& m, ADataStorage &dataStorage)
 {
     AFormation rotatedFormation = AFormationOperations::createRotatedFrustumFormation(dataStorage.currentFormation(),
                                                                                    m,
