@@ -1,7 +1,7 @@
 #include "akeyboardcontroller.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
-#include "aformationmovegamestep.h"
+#include "amoveformationstep.h"
 #include "aformationrotategamestep.h"
 #include "aformationdropgamestep.h"
 #include "arandomformationstep.h"
@@ -45,7 +45,7 @@ void AKeyboardController::keyPressed(TUint buttonCode)
         case EKEYCODES_UP:
         case EKEYCODES_LEFT:
         case EKEYCODES_RIGHT:
-		    _gameStepsController.addStepToProcessQueue(new AFormationMoveGameStep(buttonCode));
+		    _gameStepsController.addStepToProcessQueue(new AMoveFormationStep(buttonCode));
         break;
         
         case EKEYCODES_ROTATE_X:

@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_AFORMATIONMOVEGAMESTEP_H
-#define SPCTGAME_AFORMATIONMOVEGAMESTEP_H
+#ifndef SPCTGAME_AMOVEFORMATIONSTEP_H
+#define SPCTGAME_AMOVEFORMATIONSTEP_H
 
 //==============================================================================
 
@@ -12,7 +12,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class AFormationMoveGameStep : public AGameStepProtocol
+class AMoveFormationStep : public AGameStepProtocol
 {
 private:
     TUint _buttonCode;
@@ -25,8 +25,8 @@ private:
     void moveCurrentFormationRight(ADataStorage &dataStorage);
     
 public:
-    AFormationMoveGameStep(const TUint buttonCode);
-    virtual ~AFormationMoveGameStep();
+    AMoveFormationStep(const TUint buttonCode);
+    virtual ~AMoveFormationStep();
     
     virtual void executeStep(ADataStorage &dataStorage);
 };
@@ -37,4 +37,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_AFORMATIONMOVEGAMESTEP_H
+#endif  //  SPCTGAME_AMOVEFORMATIONSTEP_H
