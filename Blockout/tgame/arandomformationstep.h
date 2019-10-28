@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
-#define SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
+#ifndef SPCTGAME_ARANDOMFORMATIONSTEP_H
+#define SPCTGAME_ARANDOMFORMATIONSTEP_H
 
 //==============================================================================
 
@@ -12,11 +12,11 @@ namespace spcTGame
 
 //==============================================================================
 
-class ANewRandomCurrentFormationGameStep : public AGameStepProtocol
+class ARandomFormationStep : public AGameStepProtocol
 {
 public:
-    ANewRandomCurrentFormationGameStep();
-    virtual ~ANewRandomCurrentFormationGameStep();
+    ARandomFormationStep();
+    virtual ~ARandomFormationStep();
     
     virtual void executeStep(ADataStorage &dataStorage);
 };
@@ -27,4 +27,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ANEWRANDOMCURRENTFORMATIONGAMESTEP_H
+#endif  //  SPCTGAME_ARANDOMFORMATIONSTEP_H

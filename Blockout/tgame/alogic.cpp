@@ -2,7 +2,7 @@
 #include "blockoutdebug.h"
 #include "keymaps.h"
 #include "acreatewellgamestep.h"
-#include "anewrandomcurrentformationgamestep.h"
+#include "arandomformationstep.h"
 #include "alowerstep.h"
 
 //==============================================================================
@@ -47,7 +47,7 @@ void ALogic::processLogic()
 void ALogic::startGame()
 {
 	_gameStepsController.addStepToProcessQueue(new ACreateWellGameStep());
-	_gameStepsController.addStepToProcessQueue(new ANewRandomCurrentFormationGameStep());
+	_gameStepsController.addStepToProcessQueue(new ARandomFormationStep());
 }
 
 //==============================================================================

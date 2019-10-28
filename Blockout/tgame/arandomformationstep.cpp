@@ -1,4 +1,4 @@
-#include "anewrandomcurrentformationgamestep.h"
+#include "arandomformationstep.h"
 
 //==============================================================================
 
@@ -7,19 +7,19 @@ namespace spcTGame
     
 //==============================================================================
 
-ANewRandomCurrentFormationGameStep::ANewRandomCurrentFormationGameStep()
+ARandomFormationStep::ARandomFormationStep()
 {
 }
 
 //==============================================================================
 
-ANewRandomCurrentFormationGameStep::~ANewRandomCurrentFormationGameStep()
+ARandomFormationStep::~ARandomFormationStep()
 {
 }
 
 //==============================================================================
 
-void ANewRandomCurrentFormationGameStep::executeStep(ADataStorage &dataStorage)
+void ARandomFormationStep::executeStep(ADataStorage &dataStorage)
 {
 	dataStorage.createCurrentFormation();
     AFormation& newStartFormation = dataStorage.currentFormation();

@@ -4,7 +4,7 @@
 #include "aformationmovegamestep.h"
 #include "aformationrotategamestep.h"
 #include "aformationdropgamestep.h"
-#include "anewrandomcurrentformationgamestep.h"
+#include "arandomformationstep.h"
 
 //==============================================================================
 
@@ -56,7 +56,7 @@ void AKeyboardController::keyPressed(TUint buttonCode)
         
         case EKEYCODES_DROP_BLOCK:
 		    _gameStepsController.addStepToProcessQueue(new AFormationDropGameStep());
-		    _gameStepsController.addStepToProcessQueue(new ANewRandomCurrentFormationGameStep());
+		    _gameStepsController.addStepToProcessQueue(new ARandomFormationStep());
         break;
     }
 }
