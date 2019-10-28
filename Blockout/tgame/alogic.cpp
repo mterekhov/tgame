@@ -3,7 +3,7 @@
 #include "keymaps.h"
 #include "acreatewellgamestep.h"
 #include "anewrandomcurrentformationgamestep.h"
-#include "adecreasecurrentformationlevelgamestep.h"
+#include "alowerstep.h"
 
 //==============================================================================
 
