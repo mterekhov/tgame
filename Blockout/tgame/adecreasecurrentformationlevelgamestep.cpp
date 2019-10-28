@@ -7,19 +7,19 @@ namespace spcTGame
     
 //==============================================================================
 
-ADecreaseCurrentFormationLevelGameStep::ADecreaseCurrentFormationLevelGameStep()
+ALowerStep::ALowerStep()
 {
 }
 
 //==============================================================================
 
-ADecreaseCurrentFormationLevelGameStep::~ADecreaseCurrentFormationLevelGameStep()
+ALowerStep::~ALowerStep()
 {
 }
 
 //==============================================================================
 
-void ADecreaseCurrentFormationLevelGameStep::executeStep(ADataStorage &dataStorage)
+void ALowerStep::executeStep(ADataStorage &dataStorage)
 {
     AFormation& currentFormation = dataStorage.currentFormation();
     APoint currentFormationPosition = currentFormation.gridSpacePosition();

@@ -37,7 +37,7 @@ void ALogic::processLogic()
     
     if (diff > LEVEL_DEC_PERIOD)
     {
-		_gameStepsController.addStepToProcessQueue(new ADecreaseCurrentFormationLevelGameStep());
+		_gameStepsController.addStepToProcessQueue(new ALowerStep());
         _previousCycleTimeStamp = timeStamp;
     }
 }

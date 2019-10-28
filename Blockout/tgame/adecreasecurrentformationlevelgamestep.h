@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H
-#define SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H
+#ifndef SPCTGAME_ALOWERSTEP_H
+#define SPCTGAME_ALOWERSTEP_H
 
 //==============================================================================
 
@@ -12,11 +12,11 @@ namespace spcTGame
 
 //==============================================================================
 
-class ADecreaseCurrentFormationLevelGameStep : public AGameStepProtocol
+class ALowerStep : public AGameStepProtocol
 {
 public:
-    ADecreaseCurrentFormationLevelGameStep();
-    virtual ~ADecreaseCurrentFormationLevelGameStep();
+    ALowerStep();
+    virtual ~ALowerStep();
     
     virtual void executeStep(ADataStorage &dataStorage);
 };
@@ -27,4 +27,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ADECREASECURRENTFORMATIONLEVELGAMESTEP_H
+#endif  //  SPCTGAME_ALOWERSTEP_H
