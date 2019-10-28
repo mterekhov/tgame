@@ -1,4 +1,4 @@
-#include "acreatewellgamestep.h"
+#include "anewwellstep.h"
 
 //==============================================================================
 
@@ -7,19 +7,19 @@ namespace spcTGame
     
 //==============================================================================
 
-ACreateWellGameStep::ACreateWellGameStep()
+ANewWellStep::ANewWellStep()
 {
 }
 
 //==============================================================================
 
-ACreateWellGameStep::~ACreateWellGameStep()
+ANewWellStep::~ANewWellStep()
 {
 }
 
 //==============================================================================
 
-void ACreateWellGameStep::executeStep(ADataStorage &dataStorage)
+void ANewWellStep::executeStep(ADataStorage &dataStorage)
 {
     dataStorage.createWellFormation(7, 7, 15);
 }

@@ -1,7 +1,7 @@
 #include "alogic.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
-#include "acreatewellgamestep.h"
+#include "anewwellstep.h"
 #include "arandomformationstep.h"
 #include "alowerstep.h"
 
@@ -46,7 +46,7 @@ void ALogic::processLogic()
 
 void ALogic::startGame()
 {
-	_gameStepsController.addStepToProcessQueue(new ACreateWellGameStep());
+	_gameStepsController.addStepToProcessQueue(new ANewWellStep());
 	_gameStepsController.addStepToProcessQueue(new ARandomFormationStep());
 }
 

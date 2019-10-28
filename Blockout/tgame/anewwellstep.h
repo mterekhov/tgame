@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_ACREATEWELLGAMESTEP_H
-#define SPCTGAME_ACREATEWELLGAMESTEP_H
+#ifndef SPCTGAME_ANEWWELLSTEP_H
+#define SPCTGAME_ANEWWELLSTEP_H
 
 //==============================================================================
 
@@ -12,14 +12,14 @@ namespace spcTGame
 
 //==============================================================================
 
-class ACreateWellGameStep : public AGameStepProtocol
+class ANewWellStep : public AGameStepProtocol
 {
 private:
     APoint findDropPosition(AFormation* formation);
     
 public:
-    ACreateWellGameStep();
-    virtual ~ACreateWellGameStep();
+    ANewWellStep();
+    virtual ~ANewWellStep();
     
     virtual void executeStep(ADataStorage &dataStorage);
 };
@@ -30,4 +30,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_ACREATEWELLGAMESTEP_H
+#endif  //  SPCTGAME_ANEWWELLSTEP_H
