@@ -15,7 +15,7 @@ namespace spcTGame
 class AFormationDropGameStep : public AGameStepProtocol
 {
 private:
-    APoint findDropPosition(AFormation* formation);
+    APoint findDropPosition(const AFormation& formation);
     
 public:
     AFormationDropGameStep();

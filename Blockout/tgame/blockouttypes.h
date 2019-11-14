@@ -40,6 +40,20 @@ typedef std::string TString;
 
 //==============================================================================
     
+enum ERenderType
+{
+    RENDERTYPE_COLORED,
+    RENDERTYPE_TEXTURED
+};
+
+enum ERenderStyle
+{
+	RENDERSTYLE_CARCAS,
+	RENDERSTYLE_SOLID
+};
+
+//==============================================================================
+
 }   //  namespace spcTGame
     
 //==============================================================================

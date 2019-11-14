@@ -3,7 +3,8 @@
 
 //==============================================================================
 
-#include "ablock.h"
+#include "arenderinterface.h"
+#include "aformation.h"
 #include "atexture.h"
 
 //==============================================================================
@@ -13,17 +14,20 @@ namespace spcTGame
     
 //==============================================================================
     
-class ATexturedBlock : public ABlock
+class ATexturedBlock : public ARenderInterface
 {
 private:
+    AFormation _formation;
+    TFloat _size;
     ATexture _texture;
 
 public:
-    ATexturedBlock(AFormation* data, const ATexture& tex);
+    ATexturedBlock(const AFormation& formation, const TFloat size, const ATexture& texture);
     ATexturedBlock(const ATexturedBlock& block);
     virtual ~ATexturedBlock();
     
-    virtual void renderObject();
+    virtual void render();
+	virtual ARenderInterface *copy();
 };
 
 //==============================================================================

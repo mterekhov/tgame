@@ -1,4 +1,4 @@
-#include "aformationmovegamestep.h"
+#include "amoveformationstep.h"
 #include "keymaps.h"
 
 //==============================================================================
@@ -8,19 +8,19 @@ namespace spcTGame
     
 //==============================================================================
 
-AFormationMoveGameStep::AFormationMoveGameStep(const TUint buttonCode) : _buttonCode(buttonCode)
+AMoveFormationStep::AMoveFormationStep(const TUint buttonCode) : _buttonCode(buttonCode)
 {
 }
 
 //==============================================================================
 
-AFormationMoveGameStep::~AFormationMoveGameStep()
+AMoveFormationStep::~AMoveFormationStep()
 {
 }
 
 //==============================================================================
 
-void AFormationMoveGameStep::executeStep(ADataStorage &dataStorage)
+void AMoveFormationStep::executeStep(ADataStorage &dataStorage)
 {
     switch (_buttonCode)
     {
@@ -48,62 +48,62 @@ void AFormationMoveGameStep::executeStep(ADataStorage &dataStorage)
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationRight(ADataStorage &dataStorage)
+void AMoveFormationStep::moveCurrentFormationRight(ADataStorage &dataStorage)
 {
-    AFormation* currentFormation = dataStorage.currentFormation();
-    APoint position = currentFormation->gridSpacePosition();
+    AFormation& currentFormation = dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
     position.z += dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentFormation, dataStorage) == false)
-        currentFormation->gridSpacePosition(position);
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationLeft(ADataStorage &dataStorage)
+void AMoveFormationStep::moveCurrentFormationLeft(ADataStorage &dataStorage)
 {
-    AFormation* currentFormation = dataStorage.currentFormation();
-    APoint position = currentFormation->gridSpacePosition();
+    AFormation& currentFormation = dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
     position.z -= dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentFormation, dataStorage) == false)
-        currentFormation->gridSpacePosition(position);
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationDown(ADataStorage &dataStorage)
+void AMoveFormationStep::moveCurrentFormationDown(ADataStorage &dataStorage)
 {
-    AFormation* currentFormation = dataStorage.currentFormation();
-    APoint position = currentFormation->gridSpacePosition();
+    AFormation& currentFormation = dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
     position.x -= dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentFormation, dataStorage) == false)
-        currentFormation->gridSpacePosition(position);
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================
 
-void AFormationMoveGameStep::moveCurrentFormationUp(ADataStorage &dataStorage)
+void AMoveFormationStep::moveCurrentFormationUp(ADataStorage &dataStorage)
 {
-    AFormation* currentFormation = dataStorage.currentFormation();
-    APoint position = currentFormation->gridSpacePosition();
+    AFormation& currentFormation = dataStorage.currentFormation();
+    APoint position = currentFormation.gridSpacePosition();
     position.x += dataStorage.cellSize();
 
     if (isBreakingWellBound(position, currentFormation, dataStorage) == false)
-        currentFormation->gridSpacePosition(position);
+        currentFormation.gridSpacePosition(position);
 }
 
 //==============================================================================
 
-TBool AFormationMoveGameStep::isBreakingWellBound(const APoint& position, const AFormation* formation, ADataStorage &dataStorage)
+TBool AMoveFormationStep::isBreakingWellBound(const APoint& position, const AFormation& formation, ADataStorage &dataStorage)
 {
     //  check top border
-    if ((position.x + formation->height()) > dataStorage.wellHeight() ||
+    if ((position.x + formation.height()) > dataStorage.wellHeight() ||
          position.x < 0)
         return true;
         
-    if ((position.z + formation->width()) > dataStorage.wellWidth() ||
+    if ((position.z + formation.width()) > dataStorage.wellWidth() ||
          position.z < 0)
         return true;
         

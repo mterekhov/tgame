@@ -20,9 +20,9 @@ namespace spcTGame
 
 //==============================================================================
 
-typedef std::list<AFormation*> TFormationList;
-typedef TFormationList::iterator TFormationListIter;
-typedef TFormationList::const_iterator TFormationListConstIter;
+typedef std::vector<AFormation> TFormationsList;
+typedef TFormationsList::iterator TFormationsListIter;
+typedef TFormationsList::const_iterator TFormationsListConstIter;
 
 //==============================================================================
 
@@ -31,30 +31,18 @@ class ADataStorage
 private:
     //  list of all formations. It shouldn't be used for rendering!!!!
     //  It is memory managment only
-    TFormationList _formationList;
-
-    //  current block formation
-    AFormation* _currentFormation;
-
-    //  well formation just to define well sizes WIDTHxHEIGHTxDEPTH
-    AFormation* _wellFormation;
+    TFormationsList _formationList;
 
     //  list of all formations for dropped blocks
-    TFormationList _droppedFormationsList;
+    TFormationsList _droppedFormationsList;
 
     //  push formation into _formationList
-    AFormation* createFormation(AFormation *formation);
-    
+    AFormation& addFormationToList(AFormation& formation);
+	
     //  delete formation from _formationList and destroy as object(call delete)
-    void deleteFormation(AFormation* formation);
+    void deleteFormation(AFormation& formation);
     
-    //  Push formation into _formationList
-    AFormation* pushFormation(AFormation* pushFormation);
-
-    //  clear _formationList
-    void destroyAllFormations();
-
-    void makeFormationDropped(AFormation *formation);
+    void makeFormationDropped(AFormation& formation);
 
 public:
     static TFloat cellSize();
@@ -62,37 +50,14 @@ public:
     ADataStorage();
     ~ADataStorage();
     
-    //  These methods create formations
-    //  push it into _formationList and returns the created one
-    AFormation* createFormation1();
-    AFormation* createFormation2();
-    AFormation* createFormation3();
-    AFormation* createFormation4();
-    AFormation* createFormation5();
-    AFormation* createFormation6();
-    AFormation* createFormation7();
-    AFormation* createFormation8();
-    AFormation* createFormation9();
-    AFormation* createFormation10();
-    AFormation* createRandomFormation();
+    AFormation createRandomFormation();
 
-    //  destroys current formation completely with deleteFormation() call
-    //  assignes new one with createFormation(...) call
-    void replaceCurrentFormation(AFormation* formation);
-    
-    //  assigns new value to _currentFormation
-    //  and NOT removes it from _formationsList
-    void assignCurrentFormation(AFormation* formation);
-    
-    //  returns current formation
-    AFormation* currentFormation();
-    
-    //  creates well formation with createFormation()
-    //  and assignes it to _wellFormation
-    AFormation* createWellFormation(const TFloat width, const TFloat height, const TFloat depth);
-    
-    //  _wellFormation getter
-    AFormation* wellFormation();
+	void createCurrentFormation();
+    AFormation& currentFormation();
+    void assignCurrentFormation(AFormation& formation);
+
+    void createWellFormation(const TFloat width, const TFloat height, const TFloat depth);
+    const AFormation& wellFormation() const;
 
     //  _wellFormation width
     TFloat wellWidth();
@@ -103,8 +68,7 @@ public:
     //  _wellFormation depth
     TFloat wellDepth();
 
-    const TFormationList& droppedFormationsList();
-    
+    const TFormationsList& droppedFormationsList();
     void dropCurrentFormation();
 };
 

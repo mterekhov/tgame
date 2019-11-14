@@ -21,16 +21,16 @@ AFormation::AFormation(const TUint width, const TUint height, const TUint count)
 {
     TUint sizer = width * height * count;
     _data = new TData[sizer];
-    memset(_data, EDATASTATE_EMPTY, sizer * sizeof(TData));
+	memset(_data, 0, sizer * sizeof(TData));
 }
 
 //==============================================================================
 
 AFormation::AFormation(const AFormation& formation) : _width(formation.width()), _height(formation.height()), _levelsCount(formation.levelsCount())
 {
-    _data = new TData[_width * _height * _levelsCount];
-    TUint sizer = _width * _height * _levelsCount * sizeof(TData);
-    memcpy(_data, formation.data(), sizer);
+    TUint sizer = _width * _height * _levelsCount;
+    _data = new TData[sizer];
+    memcpy(_data, formation.data(), sizer * sizeof(TData));
 }
 
 //==============================================================================

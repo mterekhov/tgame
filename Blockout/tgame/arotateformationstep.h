@@ -1,5 +1,5 @@
-#ifndef SPCTGAME_AFORMATIONROTATEGAMESTEP_H
-#define SPCTGAME_AFORMATIONROTATEGAMESTEP_H
+#ifndef SPCTGAME_AROTATEFORMATIONSTEP_H
+#define SPCTGAME_AROTATEFORMATIONSTEP_H
 
 //==============================================================================
 
@@ -13,7 +13,7 @@ namespace spcTGame
 
 //==============================================================================
 
-class AFormationRotateGameStep : public AGameStepProtocol
+class ARotateFormationStep : public AGameStepProtocol
 {
 private:
     TUint _buttonCode;
@@ -26,8 +26,8 @@ private:
     void rotate(const AMatrix& m, ADataStorage &dataStorage);
 
 public:
-    AFormationRotateGameStep(const TUint buttonCode);
-    virtual ~AFormationRotateGameStep();
+    ARotateFormationStep(const TUint buttonCode);
+    virtual ~ARotateFormationStep();
     
     virtual void executeStep(ADataStorage &dataStorage);
 };
@@ -38,4 +38,4 @@ public:
 
 //==============================================================================
     
-#endif  //  SPCTGAME_AFORMATIONROTATEGAMESTEP_H
+#endif  //  SPCTGAME_AROTATEFORMATIONSTEP_H

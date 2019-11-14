@@ -4,6 +4,7 @@
 #include "aoglwrapper.h"
 #include "adrawbasics.h"
 #include "abundle.h"
+#include "awell.h"
 
 //==============================================================================
 
@@ -52,7 +53,7 @@ void ACrafter::renewRenderLists()
     createWell();
     
     //  create current block and add it to render cycle
-    createColoredBlock(_dataStorage.currentFormation());
+    createColoredBlock(_dataStorage.currentFormation(), AColor::blueColor());
     
     //  create render list for all dropped blocks
     createDroppedBlocks();
@@ -62,10 +63,10 @@ void ACrafter::renewRenderLists()
 
 void ACrafter::createDroppedBlocks()
 {
-    const TFormationList& droppedFormations = _dataStorage.droppedFormationsList();
-    for (TFormationListConstIter iter = droppedFormations.begin(); iter != droppedFormations.end(); iter++)
+    const TFormationsList& droppedFormations = _dataStorage.droppedFormationsList();
+    for (TFormationsListConstIter iter = droppedFormations.begin(); iter != droppedFormations.end(); iter++)
     {
-        TString textureFileName = "celtic.tga";
+        TString textureFileName = "MARBFAC3.tga";
         textureFileName = ABundle().fullPathToResource(textureFileName);
         createTexturedBlock(*iter, _textureManager.createTextureFromTGA(textureFileName));
     }
@@ -77,57 +78,36 @@ void ACrafter::createDroppedBlocks()
 
 //==============================================================================
 
-AWell* ACrafter::createWell()
+void ACrafter::createWell()
 {
-    AWell* well = new AWell(_dataStorage.wellFormation());
-    addObjectForRender(well);
-    
-    return well;
+	ARenderInterface *newWell = ARenderObject::createWell(_dataStorage.wellFormation(), _dataStorage.cellSize(), AColor::greenColor());
+	ARenderObject wellRenderObject = ARenderObject(newWell);
+	_coloredObjectsList.push_back(wellRenderObject);
 }
 
 //==============================================================================
 
-#pragma mark - blocks creation -
-
-//==============================================================================
-
-ASolidBlock* ACrafter::createSolidBlock(AFormation* formation)
+void ACrafter::createColoredBlock(const AFormation& formation, const AColor& color)
 {
-    ASolidBlock* newBlock = new ASolidBlock(formation);
-    addObjectForRender(newBlock);
-    
-    return newBlock;
+	ARenderInterface *newColoredBlock = ARenderObject::createColoredBlock(formation, _dataStorage.cellSize(), color, ERenderStyle::RENDERSTYLE_CARCAS);
+	ARenderObject newRenderObject = ARenderObject(newColoredBlock);
+	_coloredObjectsList.push_back(newRenderObject);
 }
 
 //==============================================================================
 
-AColoredBlock* ACrafter::createColoredBlock(AFormation* formation)
+void ACrafter::createTexturedBlock(const AFormation& formation, ATexture& texture)
 {
-    AColoredBlock* newBlock = new AColoredBlock(formation);
-    addObjectForRender(newBlock);
-    
-    return newBlock;
+	ARenderInterface *newTexturedBlock = ARenderObject::createTexturedBlock(formation, _dataStorage.cellSize(), texture);
+	ARenderObject newRenderObject = ARenderObject(newTexturedBlock);
+	_texturedObjectsList.push_back(newRenderObject);
 }
 
 //==============================================================================
 
-ATexturedBlock* ACrafter::createTexturedBlock(AFormation* formation, const ATexture& texture)
+void ACrafter::generateTexturedRenderList(const TFormationsList& formations, ATexture& texture)
 {
-    ATexturedBlock* newBlock = new ATexturedBlock(formation, texture);
-    addObjectForRender(newBlock);
-    
-    return newBlock;
-}
-
-//==============================================================================
-
-#pragma mark - render list management -
-
-//==============================================================================
-
-void ACrafter::generateTexturedRenderList(const TFormationList& formations, const ATexture& texture)
-{
-    for (TFormationListConstIter iter = formations.begin(); iter != formations.end(); iter++)
+    for (TFormationsListConstIter iter = formations.begin(); iter != formations.end(); iter++)
     {
         createTexturedBlock((*iter), texture);
     }
@@ -137,69 +117,15 @@ void ACrafter::generateTexturedRenderList(const TFormationList& formations, cons
 
 void ACrafter::clearAllLists()
 {
-    clearRenderList();
-    clearTextureList();
-}
-
-//==============================================================================
-
-void ACrafter::clearRenderList()
-{
-    if (!clearList(_solidRenderList))
+    if (_texturedObjectsList.size() != 0)
     {
-        loger("failed to clear solid objects list");
-    }
-}
-
-//==============================================================================
-
-void ACrafter::clearTextureList()
-{
-    if (!clearList(_texturedRenderList))
+	    _texturedObjectsList.clear();
+	}
+	
+    if (_coloredObjectsList.size() != 0)
     {
-        loger("failed to clear textured objects list");
-    }
-}
-
-//==============================================================================
-
-TBool ACrafter::clearList(TRObjectsList& renderList)
-{
-    if (renderList.size() == 0)
-        return false;
-
-    TRObjectsListConstIter iterBegin = renderList.begin();
-    TRObjectsListConstIter iterEnd = renderList.end();
-    for (TRObjectsListConstIter iter = iterBegin; iter != iterEnd; iter++)
-        delete (*iter);
-    
-    renderList.clear();
-    
-    return true;
-}
-
-//==============================================================================
-
-TBool ACrafter::addObjectForRender(ARObject* object)
-{
-    if (object == 0)
-        return false;
-    
-    switch (object->objectType())
-    {
-        case OBJECTTYPE_SOLID:
-            _solidRenderList.push_back(object);
-        break;
-            
-        case OBJECTTYPE_TEXTURED:
-            _texturedRenderList.push_back(object);
-        break;
-        
-        default:
-            return false;
-    }
-    
-    return true;
+	    _coloredObjectsList.clear();
+	}
 }
 
 //==============================================================================
@@ -235,33 +161,49 @@ void ACrafter::renderContent()
 
     //  Draw solid list
     AColor previousColor = oglState->drawColor();
-    TRObjectsList listToRender = _solidRenderList;
-    renderList(listToRender);
+    renderColoredObjects();
     oglState->drawColor(previousColor);
 
     //  Draw textured objects
     previousColor = oglState->drawColor();
     oglState->drawColor(AColor::whiteColor());
     oglState->textureEnable();
-    listToRender = _texturedRenderList;
-    renderList(listToRender);
+    renderTexturedObjects();
     oglState->textureDisable();
     oglState->drawColor(previousColor);
 }
 
 //==============================================================================
 
-void ACrafter::renderList(const TRObjectsList& renderList)
+void ACrafter::renderColoredObjects()
 {
-    if (renderList.size() == 0)
+    if (_coloredObjectsList.size() == 0)
         return;
 
-    TRObjectsListConstIter iterBegin = renderList.begin();
-    TRObjectsListConstIter iterEnd = renderList.end();
-    for (TRObjectsListConstIter iter = iterBegin; iter != iterEnd; iter++)
-        (*iter)->renderObject();
+    TRenderObjectsListIter iterBegin = _coloredObjectsList.begin();
+    TRenderObjectsListIter iterEnd = _coloredObjectsList.end();
+    for (TRenderObjectsListIter iter = iterBegin; iter != iterEnd; iter++)
+    {
+    	const ARenderObject& object = *iter;
+        object.render();
+	}
 }
 
 //==============================================================================
-    
+	
+void ACrafter::renderTexturedObjects()
+{
+    if (_coloredObjectsList.size() == 0)
+        return;
+
+    TRenderObjectsListIter iterBegin = _texturedObjectsList.begin();
+    TRenderObjectsListIter iterEnd = _texturedObjectsList.end();
+    for (TRenderObjectsListIter iter = iterBegin; iter != iterEnd; iter++)
+    {
+        iter->render();
+	}
+}
+
+//==============================================================================
+	
 }   //  namespace spcTGame

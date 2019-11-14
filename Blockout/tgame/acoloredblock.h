@@ -3,7 +3,7 @@
 
 //==============================================================================
 
-#include "ablock.h"
+#include "arenderinterface.h"
 #include "aformation.h"
 #include "acolor.h"
 
@@ -13,21 +13,22 @@ namespace spcTGame
 {
     
 //==============================================================================
-    
-class AColoredBlock : public ABlock
+
+class AColoredBlock : public ARenderInterface
 {
-protected:
+private:
+    AFormation _formation;
+    TFloat _size;
     AColor _color;
+    ERenderStyle _renderStyle;
 
 public:
-    AColoredBlock(AFormation* data);
+    AColoredBlock(const AFormation& formation, const TFloat size, const AColor& color, const ERenderStyle renderStyle);
     AColoredBlock(const AColoredBlock& block);
     virtual ~AColoredBlock();
     
-    virtual void renderObject();
-    
-    AColor color() const;
-    void color(const AColor& color);
+    virtual void render();
+    virtual ARenderInterface *copy();
 };
 
 //==============================================================================

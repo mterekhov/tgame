@@ -1,40 +1,33 @@
-#ifndef SPCTGAME_ABLOCK_H
-#define SPCTGAME_ABLOCK_H
+#ifndef SPCTGAME_ANEWWELLSTEP_H
+#define SPCTGAME_ANEWWELLSTEP_H
 
 //==============================================================================
 
-#include "arobject.h"
-#include "aformation.h"
-#include "acolor.h"
-#include "apoint.h"
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-    
+
 //==============================================================================
-    
-class ABlock : public ARObject
+
+class ANewWellStep : public AGameStepProtocol
 {
-protected:
-    AFormation* _data;
-    TFloat _size;
-
-public:
-    ABlock(AFormation* data);
-    ABlock(const ABlock& block);
-    virtual ~ABlock();
+private:
+    APoint findDropPosition(AFormation* formation);
     
-    AFormation* data() const;
-
-    TFloat size() const;
+public:
+    ANewWellStep();
+    virtual ~ANewWellStep();
+    
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
-
-}   //  namespace spcTGame
     
+}   //  namespace spcTGame
+
 //==============================================================================
     
-#endif  //  SPCTGAME_ABLOCK_H
+#endif  //  SPCTGAME_ANEWWELLSTEP_H

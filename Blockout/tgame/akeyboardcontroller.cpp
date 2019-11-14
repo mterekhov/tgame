@@ -1,10 +1,10 @@
 #include "akeyboardcontroller.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
-#include "aformationmovegamestep.h"
-#include "aformationrotategamestep.h"
+#include "amoveformationstep.h"
+#include "arotateformationstep.h"
 #include "aformationdropgamestep.h"
-#include "anewrandomcurrentformationgamestep.h"
+#include "arandomformationstep.h"
 
 //==============================================================================
 
@@ -45,18 +45,18 @@ void AKeyboardController::keyPressed(TUint buttonCode)
         case EKEYCODES_UP:
         case EKEYCODES_LEFT:
         case EKEYCODES_RIGHT:
-		    _gameStepsController.addStepToProcessQueue(new AFormationMoveGameStep(buttonCode));
+		    _gameStepsController.addStepToProcessQueue(new AMoveFormationStep(buttonCode));
         break;
         
         case EKEYCODES_ROTATE_X:
         case EKEYCODES_ROTATE_Y:
         case EKEYCODES_ROTATE_Z:
-		    _gameStepsController.addStepToProcessQueue(new AFormationRotateGameStep(buttonCode));
+		    _gameStepsController.addStepToProcessQueue(new ARotateFormationStep(buttonCode));
         break;
         
         case EKEYCODES_DROP_BLOCK:
 		    _gameStepsController.addStepToProcessQueue(new AFormationDropGameStep());
-		    _gameStepsController.addStepToProcessQueue(new ANewRandomCurrentFormationGameStep());
+		    _gameStepsController.addStepToProcessQueue(new ARandomFormationStep());
         break;
     }
 }

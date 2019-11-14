@@ -13,12 +13,13 @@
 		4C580AB11955A647000E71E6 /* image.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C580AB01955A647000E71E6 /* image.tga */; };
 		4C580B201955B0FB000E71E6 /* akeyboardcontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C580B1E1955B0FB000E71E6 /* akeyboardcontroller.cpp */; };
 		4C580B211955B0FB000E71E6 /* akeyboardcontroller.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C580B1F1955B0FB000E71E6 /* akeyboardcontroller.h */; };
-		4C64BB8020949FC20042AA21 /* acreatewellgamestep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C64BB7E20949FC10042AA21 /* acreatewellgamestep.cpp */; };
-		4C64BB832094A1860042AA21 /* anewrandomcurrentformationgamestep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C64BB812094A1860042AA21 /* anewrandomcurrentformationgamestep.cpp */; };
-		4C64BB862094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C64BB842094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.cpp */; };
+		4C64BB8020949FC20042AA21 /* anewwellstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C64BB7E20949FC10042AA21 /* anewwellstep.cpp */; };
+		4C64BB832094A1860042AA21 /* arandomformationstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C64BB812094A1860042AA21 /* arandomformationstep.cpp */; };
+		4C64BB862094A24D0042AA21 /* alowerstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C64BB842094A24D0042AA21 /* alowerstep.cpp */; };
 		4C7C09DB194726640081B310 /* notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C09DA194726640081B310 /* notes.txt */; };
 		4C84B4471824F06000EFD26A /* libtgame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C84B3851824EE8500EFD26A /* libtgame.a */; };
 		4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4CB3AF4216EB3C0B002DE363 /* celtic.tga */; };
+		4CB47EB021A6A7F4000216E6 /* MARBFAC3.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4CB47EAF21A6A7F4000216E6 /* MARBFAC3.tga */; };
 		4CBFB5B419598633002D7249 /* adatastorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CBFB5B219598633002D7249 /* adatastorage.cpp */; };
 		4CBFB5B519598633002D7249 /* adatastorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBFB5B319598633002D7249 /* adatastorage.h */; };
 		4CBFB5BA195B202C002D7249 /* amatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CBFB5B8195B202C002D7249 /* amatrix.cpp */; };
@@ -57,16 +58,12 @@
 		4CF3043A1949ECB90092A63D /* atga.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304321949ECB90092A63D /* atga.h */; };
 		4CF3043D1949ECCA0092A63D /* adrawbasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3043B1949ECCA0092A63D /* adrawbasics.cpp */; };
 		4CF3043E1949ECCA0092A63D /* adrawbasics.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF3043C1949ECCA0092A63D /* adrawbasics.h */; };
-		4CF304471949ED030092A63D /* ablock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3043F1949ED030092A63D /* ablock.cpp */; };
-		4CF304481949ED030092A63D /* ablock.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304401949ED030092A63D /* ablock.h */; };
 		4CF304491949ED030092A63D /* acoloredblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF304411949ED030092A63D /* acoloredblock.cpp */; };
 		4CF3044A1949ED030092A63D /* acoloredblock.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304421949ED030092A63D /* acoloredblock.h */; };
-		4CF3044B1949ED030092A63D /* asolidblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF304431949ED030092A63D /* asolidblock.cpp */; };
-		4CF3044C1949ED030092A63D /* asolidblock.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304441949ED030092A63D /* asolidblock.h */; };
 		4CF3044D1949ED030092A63D /* atexturedblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF304451949ED030092A63D /* atexturedblock.cpp */; };
 		4CF3044E1949ED030092A63D /* atexturedblock.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304461949ED030092A63D /* atexturedblock.h */; };
-		4CF304531949ED110092A63D /* arobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3044F1949ED110092A63D /* arobject.cpp */; };
-		4CF304541949ED110092A63D /* arobject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304501949ED110092A63D /* arobject.h */; };
+		4CF304531949ED110092A63D /* arenderobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3044F1949ED110092A63D /* arenderobject.cpp */; };
+		4CF304541949ED110092A63D /* arenderobject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304501949ED110092A63D /* arenderobject.h */; };
 		4CF304551949ED110092A63D /* awell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF304511949ED110092A63D /* awell.cpp */; };
 		4CF304561949ED110092A63D /* awell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304521949ED110092A63D /* awell.h */; };
 		4CF304591949ED220092A63D /* acrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CF304571949ED220092A63D /* acrafter.cpp */; };
@@ -78,8 +75,8 @@
 		4CF304661949ED540092A63D /* blockoutdebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF304651949ED540092A63D /* blockoutdebug.h */; };
 		AE0A7D131BF2352700D5A589 /* abundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0A7D111BF2352700D5A589 /* abundle.cpp */; };
 		AE0A7D141BF2352700D5A589 /* abundle.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0A7D121BF2352700D5A589 /* abundle.h */; };
-		AE0ACB1F1CC63FB400375824 /* aformationrotategamestep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0ACB1B1CC63FA800375824 /* aformationrotategamestep.cpp */; };
-		AE0ACB201CC63FB400375824 /* aformationmovegamestep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0ACB181CC63ECD00375824 /* aformationmovegamestep.cpp */; };
+		AE0ACB1F1CC63FB400375824 /* arotateformationstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0ACB1B1CC63FA800375824 /* arotateformationstep.cpp */; };
+		AE0ACB201CC63FB400375824 /* amoveformationstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0ACB181CC63ECD00375824 /* amoveformationstep.cpp */; };
 		AE51D1EB1BF4E08A00BFFB03 /* abundleprotocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */; };
 		AE51D1EE1BF4E20400BFFB03 /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */; };
 		AE51D1EF1BF4E20400BFFB03 /* amacbundle.h in Headers */ = {isa = PBXBuildFile; fileRef = AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */; };
@@ -108,6 +105,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C05AC0F219AF9BC00904C4D /* arenderinterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = arenderinterface.h; path = Blockout/tgame/arenderinterface.h; sourceTree = "<group>"; };
 		4C3CC4051B25AED6002D540A /* aformationoperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformationoperations.cpp; path = Blockout/tgame/aformationoperations.cpp; sourceTree = "<group>"; };
 		4C3CC4061B25AED6002D540A /* aformationoperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformationoperations.h; path = Blockout/tgame/aformationoperations.h; sourceTree = "<group>"; };
 		4C3CC4091B25B4C7002D540A /* afrustumborder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = afrustumborder.cpp; path = Blockout/tgame/afrustumborder.cpp; sourceTree = "<group>"; };
@@ -115,15 +113,16 @@
 		4C580AB01955A647000E71E6 /* image.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = image.tga; path = Blockout/resources/image.tga; sourceTree = "<group>"; };
 		4C580B1E1955B0FB000E71E6 /* akeyboardcontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyboardcontroller.cpp; path = Blockout/tgame/akeyboardcontroller.cpp; sourceTree = "<group>"; };
 		4C580B1F1955B0FB000E71E6 /* akeyboardcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyboardcontroller.h; path = Blockout/tgame/akeyboardcontroller.h; sourceTree = "<group>"; };
-		4C64BB7D20949FC10042AA21 /* acreatewellgamestep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acreatewellgamestep.h; path = Blockout/tgame/acreatewellgamestep.h; sourceTree = "<group>"; };
-		4C64BB7E20949FC10042AA21 /* acreatewellgamestep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acreatewellgamestep.cpp; path = Blockout/tgame/acreatewellgamestep.cpp; sourceTree = "<group>"; };
-		4C64BB812094A1860042AA21 /* anewrandomcurrentformationgamestep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = anewrandomcurrentformationgamestep.cpp; path = Blockout/tgame/anewrandomcurrentformationgamestep.cpp; sourceTree = "<group>"; };
-		4C64BB822094A1860042AA21 /* anewrandomcurrentformationgamestep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = anewrandomcurrentformationgamestep.h; path = Blockout/tgame/anewrandomcurrentformationgamestep.h; sourceTree = "<group>"; };
-		4C64BB842094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adecreasecurrentformationlevelgamestep.cpp; path = Blockout/tgame/adecreasecurrentformationlevelgamestep.cpp; sourceTree = "<group>"; };
-		4C64BB852094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adecreasecurrentformationlevelgamestep.h; path = Blockout/tgame/adecreasecurrentformationlevelgamestep.h; sourceTree = "<group>"; };
+		4C64BB7D20949FC10042AA21 /* anewwellstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = anewwellstep.h; path = Blockout/tgame/anewwellstep.h; sourceTree = "<group>"; };
+		4C64BB7E20949FC10042AA21 /* anewwellstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = anewwellstep.cpp; path = Blockout/tgame/anewwellstep.cpp; sourceTree = "<group>"; };
+		4C64BB812094A1860042AA21 /* arandomformationstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arandomformationstep.cpp; path = Blockout/tgame/arandomformationstep.cpp; sourceTree = "<group>"; };
+		4C64BB822094A1860042AA21 /* arandomformationstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arandomformationstep.h; path = Blockout/tgame/arandomformationstep.h; sourceTree = "<group>"; };
+		4C64BB842094A24D0042AA21 /* alowerstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alowerstep.cpp; path = Blockout/tgame/alowerstep.cpp; sourceTree = "<group>"; };
+		4C64BB852094A24D0042AA21 /* alowerstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alowerstep.h; path = Blockout/tgame/alowerstep.h; sourceTree = "<group>"; };
 		4C7C09DA194726640081B310 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
 		4C84B3851824EE8500EFD26A /* libtgame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtgame.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB3AF4216EB3C0B002DE363 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = Blockout/resources/celtic.tga; sourceTree = "<group>"; };
+		4CB47EAF21A6A7F4000216E6 /* MARBFAC3.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = MARBFAC3.tga; path = Blockout/resources/MARBFAC3.tga; sourceTree = "<group>"; };
 		4CBFB5AC19596A28002D7249 /* keymaps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = keymaps.h; path = Blockout/tgame/keymaps.h; sourceTree = "<group>"; };
 		4CBFB5B219598633002D7249 /* adatastorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adatastorage.cpp; path = Blockout/tgame/adatastorage.cpp; sourceTree = "<group>"; };
 		4CBFB5B319598633002D7249 /* adatastorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adatastorage.h; path = Blockout/tgame/adatastorage.h; sourceTree = "<group>"; };
@@ -163,16 +162,12 @@
 		4CF304321949ECB90092A63D /* atga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atga.h; path = Blockout/tgame/atga.h; sourceTree = "<group>"; };
 		4CF3043B1949ECCA0092A63D /* adrawbasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adrawbasics.cpp; path = Blockout/tgame/adrawbasics.cpp; sourceTree = "<group>"; };
 		4CF3043C1949ECCA0092A63D /* adrawbasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adrawbasics.h; path = Blockout/tgame/adrawbasics.h; sourceTree = "<group>"; };
-		4CF3043F1949ED030092A63D /* ablock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablock.cpp; path = Blockout/tgame/ablock.cpp; sourceTree = "<group>"; };
-		4CF304401949ED030092A63D /* ablock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ablock.h; path = Blockout/tgame/ablock.h; sourceTree = "<group>"; };
 		4CF304411949ED030092A63D /* acoloredblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acoloredblock.cpp; path = Blockout/tgame/acoloredblock.cpp; sourceTree = "<group>"; };
 		4CF304421949ED030092A63D /* acoloredblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acoloredblock.h; path = Blockout/tgame/acoloredblock.h; sourceTree = "<group>"; };
-		4CF304431949ED030092A63D /* asolidblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asolidblock.cpp; path = Blockout/tgame/asolidblock.cpp; sourceTree = "<group>"; };
-		4CF304441949ED030092A63D /* asolidblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = asolidblock.h; path = Blockout/tgame/asolidblock.h; sourceTree = "<group>"; };
 		4CF304451949ED030092A63D /* atexturedblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexturedblock.cpp; path = Blockout/tgame/atexturedblock.cpp; sourceTree = "<group>"; };
 		4CF304461949ED030092A63D /* atexturedblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexturedblock.h; path = Blockout/tgame/atexturedblock.h; sourceTree = "<group>"; };
-		4CF3044F1949ED110092A63D /* arobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arobject.cpp; path = Blockout/tgame/arobject.cpp; sourceTree = "<group>"; };
-		4CF304501949ED110092A63D /* arobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arobject.h; path = Blockout/tgame/arobject.h; sourceTree = "<group>"; };
+		4CF3044F1949ED110092A63D /* arenderobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arenderobject.cpp; path = Blockout/tgame/arenderobject.cpp; sourceTree = "<group>"; };
+		4CF304501949ED110092A63D /* arenderobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arenderobject.h; path = Blockout/tgame/arenderobject.h; sourceTree = "<group>"; };
 		4CF304511949ED110092A63D /* awell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = awell.cpp; path = Blockout/tgame/awell.cpp; sourceTree = "<group>"; };
 		4CF304521949ED110092A63D /* awell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = awell.h; path = Blockout/tgame/awell.h; sourceTree = "<group>"; };
 		4CF304571949ED220092A63D /* acrafter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acrafter.cpp; path = Blockout/tgame/acrafter.cpp; sourceTree = "<group>"; };
@@ -184,10 +179,10 @@
 		4CF304651949ED540092A63D /* blockoutdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockoutdebug.h; path = Blockout/tgame/blockoutdebug.h; sourceTree = "<group>"; };
 		AE0A7D111BF2352700D5A589 /* abundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abundle.cpp; path = Blockout/tgame/abundle.cpp; sourceTree = "<group>"; };
 		AE0A7D121BF2352700D5A589 /* abundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundle.h; path = Blockout/tgame/abundle.h; sourceTree = "<group>"; };
-		AE0ACB181CC63ECD00375824 /* aformationmovegamestep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformationmovegamestep.cpp; path = Blockout/tgame/aformationmovegamestep.cpp; sourceTree = "<group>"; };
-		AE0ACB191CC63ECD00375824 /* aformationmovegamestep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformationmovegamestep.h; path = Blockout/tgame/aformationmovegamestep.h; sourceTree = "<group>"; };
-		AE0ACB1B1CC63FA800375824 /* aformationrotategamestep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformationrotategamestep.cpp; path = Blockout/tgame/aformationrotategamestep.cpp; sourceTree = "<group>"; };
-		AE0ACB1C1CC63FA800375824 /* aformationrotategamestep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformationrotategamestep.h; path = Blockout/tgame/aformationrotategamestep.h; sourceTree = "<group>"; };
+		AE0ACB181CC63ECD00375824 /* amoveformationstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amoveformationstep.cpp; path = Blockout/tgame/amoveformationstep.cpp; sourceTree = "<group>"; };
+		AE0ACB191CC63ECD00375824 /* amoveformationstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amoveformationstep.h; path = Blockout/tgame/amoveformationstep.h; sourceTree = "<group>"; };
+		AE0ACB1B1CC63FA800375824 /* arotateformationstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arotateformationstep.cpp; path = Blockout/tgame/arotateformationstep.cpp; sourceTree = "<group>"; };
+		AE0ACB1C1CC63FA800375824 /* arotateformationstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arotateformationstep.h; path = Blockout/tgame/arotateformationstep.h; sourceTree = "<group>"; };
 		AE51D1E91BF4E08A00BFFB03 /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = Blockout/tgame/abundleprotocol.h; sourceTree = "<group>"; };
 		AE51D1EC1BF4E20400BFFB03 /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = Blockout/tgame/mac/amacbundle.mm; sourceTree = "<group>"; };
 		AE51D1ED1BF4E20400BFFB03 /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = Blockout/tgame/mac/amacbundle.h; sourceTree = "<group>"; };
@@ -267,10 +262,10 @@
 			children = (
 				4CF3045C1949ED340092A63D /* ablockout.h */,
 				4CF3045B1949ED340092A63D /* ablockout.cpp */,
-				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
 				4CBFB5B319598633002D7249 /* adatastorage.h */,
-				4CF304571949ED220092A63D /* acrafter.cpp */,
+				4CBFB5B219598633002D7249 /* adatastorage.cpp */,
 				4CF304581949ED220092A63D /* acrafter.h */,
+				4CF304571949ED220092A63D /* acrafter.cpp */,
 				4CF3040C1949EC720092A63D /* alogic.h */,
 				4CF3040B1949EC720092A63D /* alogic.cpp */,
 			);
@@ -280,18 +275,15 @@
 		4CAF5A6016E647A600E04427 /* ObjectsToRender */ = {
 			isa = PBXGroup;
 			children = (
-				4CF3044F1949ED110092A63D /* arobject.cpp */,
-				4CF304501949ED110092A63D /* arobject.h */,
-				4CF3043F1949ED030092A63D /* ablock.cpp */,
-				4CF304401949ED030092A63D /* ablock.h */,
-				4CF304411949ED030092A63D /* acoloredblock.cpp */,
+				4C05AC0F219AF9BC00904C4D /* arenderinterface.h */,
+				4CF304501949ED110092A63D /* arenderobject.h */,
+				4CF3044F1949ED110092A63D /* arenderobject.cpp */,
 				4CF304421949ED030092A63D /* acoloredblock.h */,
-				4CF304431949ED030092A63D /* asolidblock.cpp */,
-				4CF304441949ED030092A63D /* asolidblock.h */,
-				4CF304451949ED030092A63D /* atexturedblock.cpp */,
+				4CF304411949ED030092A63D /* acoloredblock.cpp */,
 				4CF304461949ED030092A63D /* atexturedblock.h */,
-				4CF304511949ED110092A63D /* awell.cpp */,
+				4CF304451949ED030092A63D /* atexturedblock.cpp */,
 				4CF304521949ED110092A63D /* awell.h */,
+				4CF304511949ED110092A63D /* awell.cpp */,
 			);
 			name = ObjectsToRender;
 			sourceTree = "<group>";
@@ -329,6 +321,7 @@
 		4CC8217B16D7A3100090CE07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CB47EAF21A6A7F4000216E6 /* MARBFAC3.tga */,
 				4C580AB01955A647000E71E6 /* image.tga */,
 				4CC8218216D7A52A0090CE07 /* celtic.png */,
 				4CB3AF4216EB3C0B002DE363 /* celtic.tga */,
@@ -390,16 +383,16 @@
 			isa = PBXGroup;
 			children = (
 				AE9E2FF31BFCB8E700ECACDC /* agamestepprotocol.h */,
-				4C64BB842094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.cpp */,
-				4C64BB852094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.h */,
-				4C64BB812094A1860042AA21 /* anewrandomcurrentformationgamestep.cpp */,
-				4C64BB822094A1860042AA21 /* anewrandomcurrentformationgamestep.h */,
-				4C64BB7E20949FC10042AA21 /* acreatewellgamestep.cpp */,
-				4C64BB7D20949FC10042AA21 /* acreatewellgamestep.h */,
-				AE0ACB191CC63ECD00375824 /* aformationmovegamestep.h */,
-				AE0ACB181CC63ECD00375824 /* aformationmovegamestep.cpp */,
-				AE0ACB1C1CC63FA800375824 /* aformationrotategamestep.h */,
-				AE0ACB1B1CC63FA800375824 /* aformationrotategamestep.cpp */,
+				4C64BB852094A24D0042AA21 /* alowerstep.h */,
+				4C64BB842094A24D0042AA21 /* alowerstep.cpp */,
+				4C64BB822094A1860042AA21 /* arandomformationstep.h */,
+				4C64BB812094A1860042AA21 /* arandomformationstep.cpp */,
+				4C64BB7D20949FC10042AA21 /* anewwellstep.h */,
+				4C64BB7E20949FC10042AA21 /* anewwellstep.cpp */,
+				AE0ACB191CC63ECD00375824 /* amoveformationstep.h */,
+				AE0ACB181CC63ECD00375824 /* amoveformationstep.cpp */,
+				AE0ACB1C1CC63FA800375824 /* arotateformationstep.h */,
+				AE0ACB1B1CC63FA800375824 /* arotateformationstep.cpp */,
 				AE9E2FF01BFCB88200ECACDC /* aformationdropgamestep.h */,
 				AE9E2FEF1BFCB88200ECACDC /* aformationdropgamestep.cpp */,
 			);
@@ -493,9 +486,7 @@
 				4CF304221949EC980092A63D /* adataliner.h in Headers */,
 				4CF3043E1949ECCA0092A63D /* adrawbasics.h in Headers */,
 				4CF304641949ED340092A63D /* blockouttypes.h in Headers */,
-				4CF304541949ED110092A63D /* arobject.h in Headers */,
-				4CF3044C1949ED030092A63D /* asolidblock.h in Headers */,
-				4CF304481949ED030092A63D /* ablock.h in Headers */,
+				4CF304541949ED110092A63D /* arenderobject.h in Headers */,
 				4CF304281949ECA70092A63D /* aformation.h in Headers */,
 				4CF304361949ECB90092A63D /* atexture.h in Headers */,
 				4CF304661949ED540092A63D /* blockoutdebug.h in Headers */,
@@ -580,6 +571,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = B732725916AB20C2001DE602;
@@ -604,6 +596,7 @@
 				4CC8218516D7A52A0090CE07 /* celtic.png in Resources */,
 				4CB3AF4316EB3C0B002DE363 /* celtic.tga in Resources */,
 				B732727916AB20C2001DE602 /* Credits.rtf in Resources */,
+				4CB47EB021A6A7F4000216E6 /* MARBFAC3.tga in Resources */,
 				B732727316AB20C2001DE602 /* InfoPlist.strings in Resources */,
 				4CC8218616D7A52A0090CE07 /* marble.png in Resources */,
 				4CC85D6F16C409A600B961AB /* readme.txt in Resources */,
@@ -623,28 +616,26 @@
 				4CF304351949ECB90092A63D /* atexture.cpp in Sources */,
 				4CF304331949ECB90092A63D /* aimage.cpp in Sources */,
 				4CF304591949ED220092A63D /* acrafter.cpp in Sources */,
-				4CF304531949ED110092A63D /* arobject.cpp in Sources */,
+				4CF304531949ED110092A63D /* arenderobject.cpp in Sources */,
 				4CF304551949ED110092A63D /* awell.cpp in Sources */,
 				AE9E2FF11BFCB88200ECACDC /* aformationdropgamestep.cpp in Sources */,
 				4C3CC4081B25AEDB002D540A /* aformationoperations.cpp in Sources */,
 				4C580B201955B0FB000E71E6 /* akeyboardcontroller.cpp in Sources */,
-				4CF304471949ED030092A63D /* ablock.cpp in Sources */,
 				4CF304371949ECB90092A63D /* atexturemanager.cpp in Sources */,
 				4CF3041B1949EC8B0092A63D /* apoint2d.cpp in Sources */,
 				4CF304211949EC980092A63D /* adataliner.cpp in Sources */,
-				AE0ACB201CC63FB400375824 /* aformationmovegamestep.cpp in Sources */,
+				AE0ACB201CC63FB400375824 /* amoveformationstep.cpp in Sources */,
 				4CF3043D1949ECCA0092A63D /* adrawbasics.cpp in Sources */,
 				4CBFB5BA195B202C002D7249 /* amatrix.cpp in Sources */,
 				AE51D1EE1BF4E20400BFFB03 /* amacbundle.mm in Sources */,
 				4CBFB5B419598633002D7249 /* adatastorage.cpp in Sources */,
 				4CF304271949ECA70092A63D /* aformation.cpp in Sources */,
-				4CF3044B1949ED030092A63D /* asolidblock.cpp in Sources */,
 				4CF304391949ECB90092A63D /* atga.cpp in Sources */,
 				AE9E2FED1BFCB7A400ECACDC /* agamestepscontroller.cpp in Sources */,
 				4C3CC40B1B25B4C7002D540A /* afrustumborder.cpp in Sources */,
 				4CF304601949ED340092A63D /* ablockout.cpp in Sources */,
 				4CF304191949EC8B0092A63D /* apoint.cpp in Sources */,
-				AE0ACB1F1CC63FB400375824 /* aformationrotategamestep.cpp in Sources */,
+				AE0ACB1F1CC63FB400375824 /* arotateformationstep.cpp in Sources */,
 				4CF3041D1949EC8B0092A63D /* avector.cpp in Sources */,
 				4CF3040D1949EC720092A63D /* alogic.cpp in Sources */,
 				4CF304171949EC8B0092A63D /* acolor.cpp in Sources */,
@@ -660,12 +651,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C64BB862094A24D0042AA21 /* adecreasecurrentformationlevelgamestep.cpp in Sources */,
+				4C64BB862094A24D0042AA21 /* alowerstep.cpp in Sources */,
 				B732727C16AB20C2001DE602 /* AAppDelegate.mm in Sources */,
-				4C64BB8020949FC20042AA21 /* acreatewellgamestep.cpp in Sources */,
+				4C64BB8020949FC20042AA21 /* anewwellstep.cpp in Sources */,
 				B732728716AB2507001DE602 /* ARenderView.mm in Sources */,
 				B732727516AB20C2001DE602 /* main.m in Sources */,
-				4C64BB832094A1860042AA21 /* anewrandomcurrentformationgamestep.cpp in Sources */,
+				4C64BB832094A1860042AA21 /* arandomformationstep.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

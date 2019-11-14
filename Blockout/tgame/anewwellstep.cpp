@@ -1,4 +1,4 @@
-#include "arobject.h"
+#include "anewwellstep.h"
 
 //==============================================================================
 
@@ -6,37 +6,24 @@ namespace spcTGame
 {
     
 //==============================================================================
-    
-ARObject::ARObject() : _objectType(OBJECTTYPE_SOLID)
+
+ANewWellStep::ANewWellStep()
 {
 }
 
 //==============================================================================
 
-ARObject::ARObject(const ARObject& object) : _objectType(object._objectType)
+ANewWellStep::~ANewWellStep()
 {
 }
 
 //==============================================================================
 
-ARObject::~ARObject()
+void ANewWellStep::executeStep(ADataStorage &dataStorage)
 {
+    dataStorage.createWellFormation(7, 7, 15);
 }
 
 //==============================================================================
 
-void ARObject::renderObject()
-{
-}
-
-//==============================================================================
-
-EObjectType ARObject::objectType() const
-{
-    return _objectType;
-}
-
-//==============================================================================
-    
 }   //  namespace spcTGame
-

@@ -1,9 +1,9 @@
 #include "alogic.h"
 #include "blockoutdebug.h"
 #include "keymaps.h"
-#include "acreatewellgamestep.h"
-#include "anewrandomcurrentformationgamestep.h"
-#include "adecreasecurrentformationlevelgamestep.h"
+#include "anewwellstep.h"
+#include "arandomformationstep.h"
+#include "alowerstep.h"
 
 //==============================================================================
 
@@ -37,7 +37,7 @@ void ALogic::processLogic()
     
     if (diff > LEVEL_DEC_PERIOD)
     {
-		_gameStepsController.addStepToProcessQueue(new ADecreaseCurrentFormationLevelGameStep());
+		_gameStepsController.addStepToProcessQueue(new ALowerStep());
         _previousCycleTimeStamp = timeStamp;
     }
 }
@@ -46,8 +46,8 @@ void ALogic::processLogic()
 
 void ALogic::startGame()
 {
-	_gameStepsController.addStepToProcessQueue(new ACreateWellGameStep());
-	_gameStepsController.addStepToProcessQueue(new ANewRandomCurrentFormationGameStep());
+	_gameStepsController.addStepToProcessQueue(new ANewWellStep());
+	_gameStepsController.addStepToProcessQueue(new ARandomFormationStep());
 }
 
 //==============================================================================

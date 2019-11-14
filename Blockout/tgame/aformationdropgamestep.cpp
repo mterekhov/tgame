@@ -22,20 +22,19 @@ AFormationDropGameStep::~AFormationDropGameStep()
 void AFormationDropGameStep::executeStep(ADataStorage &dataStorage)
 {
     //  assign drop position to current formation
-    AFormation *formationToDrop = dataStorage.currentFormation();
+    AFormation& formationToDrop = dataStorage.currentFormation();
     APoint dropPosition = findDropPosition(formationToDrop);
-    formationToDrop->gridSpacePosition(dropPosition);
+    formationToDrop.gridSpacePosition(dropPosition);
 
     //  mark current formation as dropped
-    //  and generate new current formation
     dataStorage.dropCurrentFormation();
 }
 
 //==============================================================================
 
-APoint AFormationDropGameStep::findDropPosition(AFormation* formation)
+APoint AFormationDropGameStep::findDropPosition(const AFormation& formation)
 {
-    APoint dropPosition = formation->gridSpacePosition();
+    APoint dropPosition = formation.gridSpacePosition();
     dropPosition.y = 0;
 //    AFormation* wellFormation = _dataStorage.wellFormation();
 //

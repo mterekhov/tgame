@@ -10,11 +10,10 @@
 #include <list>
 
 #include "atexturedblock.h"
-#include "asolidblock.h"
-#include "ablock.h"
 #include "atexturemanager.h"
 #include "awell.h"
 #include "adatastorage.h"
+#include "arenderobject.h"
 
 //==============================================================================
 
@@ -23,9 +22,11 @@ namespace spcTGame
     
 //==============================================================================
 
-typedef std::list<ARObject*> TRObjectsList;
-typedef TRObjectsList::iterator TRObjectsListIter;
-typedef TRObjectsList::const_iterator TRObjectsListConstIter;
+typedef std::list<ARenderObject> TRenderObjectsList;
+typedef TRenderObjectsList::iterator TRenderObjectsListIter;
+typedef TRenderObjectsList::const_iterator TRenderObjectsListConstIter;
+
+class AWell;
 
 //==============================================================================
 
@@ -34,25 +35,22 @@ class ACrafter
 private:
     ATextureManager _textureManager;
     ADataStorage& _dataStorage;
-    TRObjectsList _texturedRenderList;
-    TRObjectsList _solidRenderList;
+    TRenderObjectsList _texturedObjectsList;
+    TRenderObjectsList _coloredObjectsList;
 
-    void generateTexturedRenderList(const TFormationList& formations, const ATexture& texture);
+    void generateTexturedRenderList(const TFormationsList& formations, ATexture& texture);
     
     void renewRenderLists();
     void clearAllLists();
-    void clearTextureList();
-    void clearRenderList();
-    TBool clearList(TRObjectsList& renderList);
-    
+    void createWell();
+
     void renderContent();
-    void renderList(const TRObjectsList& renderList);
-    
-    TBool addObjectForRender(ARObject* object);
-    ATexturedBlock* createTexturedBlock(AFormation* formation, const ATexture& texture);
-    ASolidBlock* createSolidBlock(AFormation* formation);
-    AColoredBlock* createColoredBlock(AFormation* formation);
-    AWell* createWell();
+    void renderColoredObjects();
+    void renderTexturedObjects();
+
+
+	void createColoredBlock(const AFormation& formation, const AColor& color);
+	void createTexturedBlock(const AFormation& formation, ATexture& texture);
     void createDroppedBlocks();
     
 public:

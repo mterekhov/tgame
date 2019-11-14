@@ -1,39 +1,30 @@
-#ifndef SPCTGAME_AROBJECT_H
-#define SPCTGAME_AROBJECT_H
+#ifndef SPCTGAME_ARANDOMFORMATIONSTEP_H
+#define SPCTGAME_ARANDOMFORMATIONSTEP_H
+
+//==============================================================================
+
+#include "agamestepprotocol.h"
 
 //==============================================================================
 
 namespace spcTGame
 {
-    
-//==============================================================================
-    
-enum EObjectType
-{
-    OBJECTTYPE_SOLID,
-    OBJECTTYPE_TEXTURED
-};
 
 //==============================================================================
 
-class ARObject
+class ARandomFormationStep : public AGameStepProtocol
 {
-protected:
-    EObjectType _objectType;
-    
 public:
-    ARObject();
-    ARObject(const ARObject& object);
-    virtual ~ARObject();
+    ARandomFormationStep();
+    virtual ~ARandomFormationStep();
     
-    virtual void renderObject();
-    EObjectType objectType() const;
+    virtual void executeStep(ADataStorage &dataStorage);
 };
 
 //==============================================================================
-
+    
 }   //  namespace spcTGame
 
 //==============================================================================
     
-#endif  //  SPCTGAME_AROBJECT_H
+#endif  //  SPCTGAME_ARANDOMFORMATIONSTEP_H
