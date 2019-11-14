@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C43F37423673EDC00B43845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F37323673EDC00B43845 /* AppDelegate.swift */; };
+		4C43F37623673EDC00B43845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C43F37523673EDC00B43845 /* Assets.xcassets */; };
+		4C43F3822367401600B43845 /* AOpenGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F3812367401600B43845 /* AOpenGLView.swift */; };
+		4C43F3862367456E00B43845 /* CPPBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F3852367456E00B43845 /* CPPBridge.mm */; };
+		4C43F3892367462400B43845 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C43F3872367462400B43845 /* MainMenu.xib */; };
+		4C43F4BF236746D600B43845 /* amoveformationstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F474236746D200B43845 /* amoveformationstep.cpp */; };
+		4C43F4C0236746D600B43845 /* adropstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F475236746D200B43845 /* adropstep.cpp */; };
+		4C43F4C1236746D600B43845 /* atexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F476236746D200B43845 /* atexture.cpp */; };
+		4C43F4C2236746D600B43845 /* arenderobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F47B236746D200B43845 /* arenderobject.cpp */; };
+		4C43F4C3236746D600B43845 /* aoglwrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F47D236746D200B43845 /* aoglwrapper.cpp */; };
+		4C43F4C4236746D600B43845 /* atexturedblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F47F236746D300B43845 /* atexturedblock.cpp */; };
+		4C43F4C5236746D600B43845 /* astepscontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F480236746D300B43845 /* astepscontroller.cpp */; };
+		4C43F4C6236746D600B43845 /* avector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F484236746D300B43845 /* avector.cpp */; };
+		4C43F4C7236746D600B43845 /* aimage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F487236746D300B43845 /* aimage.cpp */; };
+		4C43F4C8236746D600B43845 /* adatastorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F488236746D300B43845 /* adatastorage.cpp */; };
+		4C43F4C9236746D600B43845 /* acolor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F48B236746D300B43845 /* acolor.cpp */; };
+		4C43F4CA236746D600B43845 /* adataliner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F48C236746D300B43845 /* adataliner.cpp */; };
+		4C43F4CB236746D600B43845 /* arotateformationstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F48E236746D300B43845 /* arotateformationstep.cpp */; };
+		4C43F4CC236746D600B43845 /* alowerstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F490236746D300B43845 /* alowerstep.cpp */; };
+		4C43F4CD236746D600B43845 /* amatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F491236746D300B43845 /* amatrix.cpp */; };
+		4C43F4CE236746D600B43845 /* aformationoperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F493236746D300B43845 /* aformationoperations.cpp */; };
+		4C43F4CF236746D600B43845 /* anewwellstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F495236746D300B43845 /* anewwellstep.cpp */; };
+		4C43F4D0236746D600B43845 /* aopenglstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F496236746D300B43845 /* aopenglstate.cpp */; };
+		4C43F4D1236746D600B43845 /* blockoutdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F49A236746D400B43845 /* blockoutdebug.cpp */; };
+		4C43F4D2236746D600B43845 /* awell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F49C236746D400B43845 /* awell.cpp */; };
+		4C43F4D3236746D600B43845 /* afrustumborder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F49D236746D400B43845 /* afrustumborder.cpp */; };
+		4C43F4D4236746D600B43845 /* aformation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F49E236746D400B43845 /* aformation.cpp */; };
+		4C43F4D5236746D600B43845 /* aformationfactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F49F236746D400B43845 /* aformationfactory.cpp */; };
+		4C43F4D6236746D600B43845 /* atga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4A3236746D400B43845 /* atga.cpp */; };
+		4C43F4D7236746D600B43845 /* alogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4AB236746D500B43845 /* alogic.cpp */; };
+		4C43F4D8236746D600B43845 /* akeyboardcontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4AE236746D500B43845 /* akeyboardcontroller.cpp */; };
+		4C43F4D9236746D600B43845 /* apoint2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4B1236746D500B43845 /* apoint2d.cpp */; };
+		4C43F4DA236746D600B43845 /* atexturemanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4B3236746D500B43845 /* atexturemanager.cpp */; };
+		4C43F4DB236746D600B43845 /* acoloredblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4B4236746D500B43845 /* acoloredblock.cpp */; };
+		4C43F4DC236746D600B43845 /* acrafter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4B5236746D500B43845 /* acrafter.cpp */; };
+		4C43F4DD236746D600B43845 /* apoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4B7236746D600B43845 /* apoint.cpp */; };
+		4C43F4DE236746D600B43845 /* adrawbasics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4B9236746D600B43845 /* adrawbasics.cpp */; };
+		4C43F4DF236746D600B43845 /* ablockout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4BC236746D600B43845 /* ablockout.cpp */; };
+		4C43F4E0236746D600B43845 /* abundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4BD236746D600B43845 /* abundle.cpp */; };
+		4C43F4E1236746D600B43845 /* arandomstep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4BE236746D600B43845 /* arandomstep.cpp */; };
+		4C43F4E8236746F400B43845 /* amacbundle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C43F4E7236746F400B43845 /* amacbundle.mm */; };
+		4C43F4EC2368713300B43845 /* celtic.tga in Resources */ = {isa = PBXBuildFile; fileRef = 4C43F4EB2368713300B43845 /* celtic.tga */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C43F37023673EDC00B43845 /* tgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C43F37323673EDC00B43845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = tgame/AppDelegate.swift; sourceTree = "<group>"; };
+		4C43F37523673EDC00B43845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = tgame/Assets.xcassets; sourceTree = "<group>"; };
+		4C43F37A23673EDC00B43845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = tgame/Info.plist; sourceTree = "<group>"; };
+		4C43F37B23673EDC00B43845 /* tgame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = tgame.entitlements; path = tgame/tgame.entitlements; sourceTree = "<group>"; };
+		4C43F3812367401600B43845 /* AOpenGLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AOpenGLView.swift; path = tgame/AOpenGLView.swift; sourceTree = "<group>"; };
+		4C43F3832367456E00B43845 /* tgame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "tgame-Bridging-Header.h"; path = "tgame/tgame-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C43F3842367456E00B43845 /* CPPBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CPPBridge.h; path = tgame/CPPBridge.h; sourceTree = "<group>"; };
+		4C43F3852367456E00B43845 /* CPPBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = CPPBridge.mm; path = tgame/CPPBridge.mm; sourceTree = "<group>"; };
+		4C43F3882367462400B43845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = tgame/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4C43F474236746D200B43845 /* amoveformationstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amoveformationstep.cpp; path = tengine/amoveformationstep.cpp; sourceTree = "<group>"; };
+		4C43F475236746D200B43845 /* adropstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adropstep.cpp; path = tengine/adropstep.cpp; sourceTree = "<group>"; };
+		4C43F476236746D200B43845 /* atexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexture.cpp; path = tengine/atexture.cpp; sourceTree = "<group>"; };
+		4C43F477236746D200B43845 /* acolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acolor.h; path = tengine/acolor.h; sourceTree = "<group>"; };
+		4C43F478236746D200B43845 /* apoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apoint.h; path = tengine/apoint.h; sourceTree = "<group>"; };
+		4C43F479236746D200B43845 /* amatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amatrix.h; path = tengine/amatrix.h; sourceTree = "<group>"; };
+		4C43F47A236746D200B43845 /* aformationoperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformationoperations.h; path = tengine/aformationoperations.h; sourceTree = "<group>"; };
+		4C43F47B236746D200B43845 /* arenderobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arenderobject.cpp; path = tengine/arenderobject.cpp; sourceTree = "<group>"; };
+		4C43F47C236746D200B43845 /* keymaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keymaps.h; path = tengine/keymaps.h; sourceTree = "<group>"; };
+		4C43F47D236746D200B43845 /* aoglwrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aoglwrapper.cpp; path = tengine/aoglwrapper.cpp; sourceTree = "<group>"; };
+		4C43F47E236746D200B43845 /* astepscontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = astepscontroller.h; path = tengine/astepscontroller.h; sourceTree = "<group>"; };
+		4C43F47F236746D300B43845 /* atexturedblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexturedblock.cpp; path = tengine/atexturedblock.cpp; sourceTree = "<group>"; };
+		4C43F480236746D300B43845 /* astepscontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = astepscontroller.cpp; path = tengine/astepscontroller.cpp; sourceTree = "<group>"; };
+		4C43F481236746D300B43845 /* avector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avector.h; path = tengine/avector.h; sourceTree = "<group>"; };
+		4C43F482236746D300B43845 /* acoloredblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acoloredblock.h; path = tengine/acoloredblock.h; sourceTree = "<group>"; };
+		4C43F483236746D300B43845 /* aimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aimage.h; path = tengine/aimage.h; sourceTree = "<group>"; };
+		4C43F484236746D300B43845 /* avector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = avector.cpp; path = tengine/avector.cpp; sourceTree = "<group>"; };
+		4C43F485236746D300B43845 /* aformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformation.h; path = tengine/aformation.h; sourceTree = "<group>"; };
+		4C43F486236746D300B43845 /* arandomstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arandomstep.h; path = tengine/arandomstep.h; sourceTree = "<group>"; };
+		4C43F487236746D300B43845 /* aimage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aimage.cpp; path = tengine/aimage.cpp; sourceTree = "<group>"; };
+		4C43F488236746D300B43845 /* adatastorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adatastorage.cpp; path = tengine/adatastorage.cpp; sourceTree = "<group>"; };
+		4C43F489236746D300B43845 /* acrafter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = acrafter.h; path = tengine/acrafter.h; sourceTree = "<group>"; };
+		4C43F48A236746D300B43845 /* alogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alogic.h; path = tengine/alogic.h; sourceTree = "<group>"; };
+		4C43F48B236746D300B43845 /* acolor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acolor.cpp; path = tengine/acolor.cpp; sourceTree = "<group>"; };
+		4C43F48C236746D300B43845 /* adataliner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adataliner.cpp; path = tengine/adataliner.cpp; sourceTree = "<group>"; };
+		4C43F48D236746D300B43845 /* anewwellstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = anewwellstep.h; path = tengine/anewwellstep.h; sourceTree = "<group>"; };
+		4C43F48E236746D300B43845 /* arotateformationstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arotateformationstep.cpp; path = tengine/arotateformationstep.cpp; sourceTree = "<group>"; };
+		4C43F48F236746D300B43845 /* blockouttypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockouttypes.h; path = tengine/blockouttypes.h; sourceTree = "<group>"; };
+		4C43F490236746D300B43845 /* alowerstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alowerstep.cpp; path = tengine/alowerstep.cpp; sourceTree = "<group>"; };
+		4C43F491236746D300B43845 /* amatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = amatrix.cpp; path = tengine/amatrix.cpp; sourceTree = "<group>"; };
+		4C43F492236746D300B43845 /* apoint2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = apoint2d.h; path = tengine/apoint2d.h; sourceTree = "<group>"; };
+		4C43F493236746D300B43845 /* aformationoperations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformationoperations.cpp; path = tengine/aformationoperations.cpp; sourceTree = "<group>"; };
+		4C43F494236746D300B43845 /* atexturemanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexturemanager.h; path = tengine/atexturemanager.h; sourceTree = "<group>"; };
+		4C43F495236746D300B43845 /* anewwellstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = anewwellstep.cpp; path = tengine/anewwellstep.cpp; sourceTree = "<group>"; };
+		4C43F496236746D300B43845 /* aopenglstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aopenglstate.cpp; path = tengine/aopenglstate.cpp; sourceTree = "<group>"; };
+		4C43F497236746D400B43845 /* adatastorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adatastorage.h; path = tengine/adatastorage.h; sourceTree = "<group>"; };
+		4C43F498236746D400B43845 /* arotateformationstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arotateformationstep.h; path = tengine/arotateformationstep.h; sourceTree = "<group>"; };
+		4C43F499236746D400B43845 /* ablockout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ablockout.h; path = tengine/ablockout.h; sourceTree = "<group>"; };
+		4C43F49A236746D400B43845 /* blockoutdebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = blockoutdebug.cpp; path = tengine/blockoutdebug.cpp; sourceTree = "<group>"; };
+		4C43F49B236746D400B43845 /* awell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = awell.h; path = tengine/awell.h; sourceTree = "<group>"; };
+		4C43F49C236746D400B43845 /* awell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = awell.cpp; path = tengine/awell.cpp; sourceTree = "<group>"; };
+		4C43F49D236746D400B43845 /* afrustumborder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = afrustumborder.cpp; path = tengine/afrustumborder.cpp; sourceTree = "<group>"; };
+		4C43F49E236746D400B43845 /* aformation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformation.cpp; path = tengine/aformation.cpp; sourceTree = "<group>"; };
+		4C43F49F236746D400B43845 /* aformationfactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aformationfactory.cpp; path = tengine/aformationfactory.cpp; sourceTree = "<group>"; };
+		4C43F4A0236746D400B43845 /* arenderinterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arenderinterface.h; path = tengine/arenderinterface.h; sourceTree = "<group>"; };
+		4C43F4A1236746D400B43845 /* atexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexture.h; path = tengine/atexture.h; sourceTree = "<group>"; };
+		4C43F4A2236746D400B43845 /* adrawbasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adrawbasics.h; path = tengine/adrawbasics.h; sourceTree = "<group>"; };
+		4C43F4A3236746D400B43845 /* atga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atga.cpp; path = tengine/atga.cpp; sourceTree = "<group>"; };
+		4C43F4A4236746D400B43845 /* adataliner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adataliner.h; path = tengine/adataliner.h; sourceTree = "<group>"; };
+		4C43F4A5236746D400B43845 /* astepprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = astepprotocol.h; path = tengine/astepprotocol.h; sourceTree = "<group>"; };
+		4C43F4A6236746D400B43845 /* alowerstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alowerstep.h; path = tengine/alowerstep.h; sourceTree = "<group>"; };
+		4C43F4A7236746D500B43845 /* abundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundle.h; path = tengine/abundle.h; sourceTree = "<group>"; };
+		4C43F4A8236746D500B43845 /* arenderobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = arenderobject.h; path = tengine/arenderobject.h; sourceTree = "<group>"; };
+		4C43F4A9236746D500B43845 /* atga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atga.h; path = tengine/atga.h; sourceTree = "<group>"; };
+		4C43F4AA236746D500B43845 /* akeyboardcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = akeyboardcontroller.h; path = tengine/akeyboardcontroller.h; sourceTree = "<group>"; };
+		4C43F4AB236746D500B43845 /* alogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alogic.cpp; path = tengine/alogic.cpp; sourceTree = "<group>"; };
+		4C43F4AC236746D500B43845 /* aformationfactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aformationfactory.h; path = tengine/aformationfactory.h; sourceTree = "<group>"; };
+		4C43F4AD236746D500B43845 /* blockoutdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockoutdebug.h; path = tengine/blockoutdebug.h; sourceTree = "<group>"; };
+		4C43F4AE236746D500B43845 /* akeyboardcontroller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = akeyboardcontroller.cpp; path = tengine/akeyboardcontroller.cpp; sourceTree = "<group>"; };
+		4C43F4AF236746D500B43845 /* adropstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adropstep.h; path = tengine/adropstep.h; sourceTree = "<group>"; };
+		4C43F4B0236746D500B43845 /* aoglwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aoglwrapper.h; path = tengine/aoglwrapper.h; sourceTree = "<group>"; };
+		4C43F4B1236746D500B43845 /* apoint2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apoint2d.cpp; path = tengine/apoint2d.cpp; sourceTree = "<group>"; };
+		4C43F4B2236746D500B43845 /* afrustumborder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = afrustumborder.h; path = tengine/afrustumborder.h; sourceTree = "<group>"; };
+		4C43F4B3236746D500B43845 /* atexturemanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atexturemanager.cpp; path = tengine/atexturemanager.cpp; sourceTree = "<group>"; };
+		4C43F4B4236746D500B43845 /* acoloredblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acoloredblock.cpp; path = tengine/acoloredblock.cpp; sourceTree = "<group>"; };
+		4C43F4B5236746D500B43845 /* acrafter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acrafter.cpp; path = tengine/acrafter.cpp; sourceTree = "<group>"; };
+		4C43F4B6236746D600B43845 /* abundleprotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abundleprotocol.h; path = tengine/abundleprotocol.h; sourceTree = "<group>"; };
+		4C43F4B7236746D600B43845 /* apoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = apoint.cpp; path = tengine/apoint.cpp; sourceTree = "<group>"; };
+		4C43F4B8236746D600B43845 /* amoveformationstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amoveformationstep.h; path = tengine/amoveformationstep.h; sourceTree = "<group>"; };
+		4C43F4B9236746D600B43845 /* adrawbasics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adrawbasics.cpp; path = tengine/adrawbasics.cpp; sourceTree = "<group>"; };
+		4C43F4BA236746D600B43845 /* aopenglstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aopenglstate.h; path = tengine/aopenglstate.h; sourceTree = "<group>"; };
+		4C43F4BB236746D600B43845 /* atexturedblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atexturedblock.h; path = tengine/atexturedblock.h; sourceTree = "<group>"; };
+		4C43F4BC236746D600B43845 /* ablockout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ablockout.cpp; path = tengine/ablockout.cpp; sourceTree = "<group>"; };
+		4C43F4BD236746D600B43845 /* abundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abundle.cpp; path = tengine/abundle.cpp; sourceTree = "<group>"; };
+		4C43F4BE236746D600B43845 /* arandomstep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arandomstep.cpp; path = tengine/arandomstep.cpp; sourceTree = "<group>"; };
+		4C43F4E6236746F400B43845 /* amacbundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = amacbundle.h; path = tengine/mac/amacbundle.h; sourceTree = "<group>"; };
+		4C43F4E7236746F400B43845 /* amacbundle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = amacbundle.mm; path = tengine/mac/amacbundle.mm; sourceTree = "<group>"; };
+		4C43F4EB2368713300B43845 /* celtic.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = celtic.tga; path = tgame/celtic.tga; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C43F36D23673EDC00B43845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C43F36723673EDC00B43845 = {
+			isa = PBXGroup;
+			children = (
+				4C43F401236746BE00B43845 /* tengine */,
+				4C43F37223673EDC00B43845 /* Application */,
+				4C43F37123673EDC00B43845 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C43F37123673EDC00B43845 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C43F37023673EDC00B43845 /* tgame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C43F37223673EDC00B43845 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4C43F3842367456E00B43845 /* CPPBridge.h */,
+				4C43F3852367456E00B43845 /* CPPBridge.mm */,
+				4C43F37323673EDC00B43845 /* AppDelegate.swift */,
+				4C43F3812367401600B43845 /* AOpenGLView.swift */,
+				4C43F37523673EDC00B43845 /* Assets.xcassets */,
+				4C43F3872367462400B43845 /* MainMenu.xib */,
+				4C43F37A23673EDC00B43845 /* Info.plist */,
+				4C43F37B23673EDC00B43845 /* tgame.entitlements */,
+				4C43F4EB2368713300B43845 /* celtic.tga */,
+				4C43F3832367456E00B43845 /* tgame-Bridging-Header.h */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		4C43F401236746BE00B43845 /* tengine */ = {
+			isa = PBXGroup;
+			children = (
+				4C43F4E2236746E400B43845 /* mac */,
+				4C43F4BC236746D600B43845 /* ablockout.cpp */,
+				4C43F499236746D400B43845 /* ablockout.h */,
+				4C43F4BD236746D600B43845 /* abundle.cpp */,
+				4C43F4A7236746D500B43845 /* abundle.h */,
+				4C43F4B6236746D600B43845 /* abundleprotocol.h */,
+				4C43F48B236746D300B43845 /* acolor.cpp */,
+				4C43F477236746D200B43845 /* acolor.h */,
+				4C43F4B4236746D500B43845 /* acoloredblock.cpp */,
+				4C43F482236746D300B43845 /* acoloredblock.h */,
+				4C43F4B5236746D500B43845 /* acrafter.cpp */,
+				4C43F489236746D300B43845 /* acrafter.h */,
+				4C43F48C236746D300B43845 /* adataliner.cpp */,
+				4C43F4A4236746D400B43845 /* adataliner.h */,
+				4C43F488236746D300B43845 /* adatastorage.cpp */,
+				4C43F497236746D400B43845 /* adatastorage.h */,
+				4C43F4B9236746D600B43845 /* adrawbasics.cpp */,
+				4C43F4A2236746D400B43845 /* adrawbasics.h */,
+				4C43F475236746D200B43845 /* adropstep.cpp */,
+				4C43F4AF236746D500B43845 /* adropstep.h */,
+				4C43F49E236746D400B43845 /* aformation.cpp */,
+				4C43F485236746D300B43845 /* aformation.h */,
+				4C43F49F236746D400B43845 /* aformationfactory.cpp */,
+				4C43F4AC236746D500B43845 /* aformationfactory.h */,
+				4C43F493236746D300B43845 /* aformationoperations.cpp */,
+				4C43F47A236746D200B43845 /* aformationoperations.h */,
+				4C43F49D236746D400B43845 /* afrustumborder.cpp */,
+				4C43F4B2236746D500B43845 /* afrustumborder.h */,
+				4C43F487236746D300B43845 /* aimage.cpp */,
+				4C43F483236746D300B43845 /* aimage.h */,
+				4C43F4AE236746D500B43845 /* akeyboardcontroller.cpp */,
+				4C43F4AA236746D500B43845 /* akeyboardcontroller.h */,
+				4C43F4AB236746D500B43845 /* alogic.cpp */,
+				4C43F48A236746D300B43845 /* alogic.h */,
+				4C43F490236746D300B43845 /* alowerstep.cpp */,
+				4C43F4A6236746D400B43845 /* alowerstep.h */,
+				4C43F491236746D300B43845 /* amatrix.cpp */,
+				4C43F479236746D200B43845 /* amatrix.h */,
+				4C43F474236746D200B43845 /* amoveformationstep.cpp */,
+				4C43F4B8236746D600B43845 /* amoveformationstep.h */,
+				4C43F495236746D300B43845 /* anewwellstep.cpp */,
+				4C43F48D236746D300B43845 /* anewwellstep.h */,
+				4C43F47D236746D200B43845 /* aoglwrapper.cpp */,
+				4C43F4B0236746D500B43845 /* aoglwrapper.h */,
+				4C43F496236746D300B43845 /* aopenglstate.cpp */,
+				4C43F4BA236746D600B43845 /* aopenglstate.h */,
+				4C43F4B7236746D600B43845 /* apoint.cpp */,
+				4C43F478236746D200B43845 /* apoint.h */,
+				4C43F4B1236746D500B43845 /* apoint2d.cpp */,
+				4C43F492236746D300B43845 /* apoint2d.h */,
+				4C43F4BE236746D600B43845 /* arandomstep.cpp */,
+				4C43F486236746D300B43845 /* arandomstep.h */,
+				4C43F4A0236746D400B43845 /* arenderinterface.h */,
+				4C43F47B236746D200B43845 /* arenderobject.cpp */,
+				4C43F4A8236746D500B43845 /* arenderobject.h */,
+				4C43F48E236746D300B43845 /* arotateformationstep.cpp */,
+				4C43F498236746D400B43845 /* arotateformationstep.h */,
+				4C43F4A5236746D400B43845 /* astepprotocol.h */,
+				4C43F480236746D300B43845 /* astepscontroller.cpp */,
+				4C43F47E236746D200B43845 /* astepscontroller.h */,
+				4C43F476236746D200B43845 /* atexture.cpp */,
+				4C43F4A1236746D400B43845 /* atexture.h */,
+				4C43F47F236746D300B43845 /* atexturedblock.cpp */,
+				4C43F4BB236746D600B43845 /* atexturedblock.h */,
+				4C43F4B3236746D500B43845 /* atexturemanager.cpp */,
+				4C43F494236746D300B43845 /* atexturemanager.h */,
+				4C43F4A3236746D400B43845 /* atga.cpp */,
+				4C43F4A9236746D500B43845 /* atga.h */,
+				4C43F484236746D300B43845 /* avector.cpp */,
+				4C43F481236746D300B43845 /* avector.h */,
+				4C43F49C236746D400B43845 /* awell.cpp */,
+				4C43F49B236746D400B43845 /* awell.h */,
+				4C43F49A236746D400B43845 /* blockoutdebug.cpp */,
+				4C43F4AD236746D500B43845 /* blockoutdebug.h */,
+				4C43F48F236746D300B43845 /* blockouttypes.h */,
+				4C43F47C236746D200B43845 /* keymaps.h */,
+			);
+			name = tengine;
+			sourceTree = "<group>";
+		};
+		4C43F4E2236746E400B43845 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				4C43F4E6236746F400B43845 /* amacbundle.h */,
+				4C43F4E7236746F400B43845 /* amacbundle.mm */,
+			);
+			name = mac;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C43F36F23673EDC00B43845 /* tgame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C43F37E23673EDC00B43845 /* Build configuration list for PBXNativeTarget "tgame" */;
+			buildPhases = (
+				4C43F36C23673EDC00B43845 /* Sources */,
+				4C43F36D23673EDC00B43845 /* Frameworks */,
+				4C43F36E23673EDC00B43845 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tgame;
+			productName = tgame;
+			productReference = 4C43F37023673EDC00B43845 /* tgame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C43F36823673EDC00B43845 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Michael;
+				TargetAttributes = {
+					4C43F36F23673EDC00B43845 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = 4C43F36B23673EDC00B43845 /* Build configuration list for PBXProject "tgame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C43F36723673EDC00B43845;
+			productRefGroup = 4C43F37123673EDC00B43845 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C43F36F23673EDC00B43845 /* tgame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C43F36E23673EDC00B43845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C43F4EC2368713300B43845 /* celtic.tga in Resources */,
+				4C43F37623673EDC00B43845 /* Assets.xcassets in Resources */,
+				4C43F3892367462400B43845 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C43F36C23673EDC00B43845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C43F4D5236746D600B43845 /* aformationfactory.cpp in Sources */,
+				4C43F4D3236746D600B43845 /* afrustumborder.cpp in Sources */,
+				4C43F4D6236746D600B43845 /* atga.cpp in Sources */,
+				4C43F4CA236746D600B43845 /* adataliner.cpp in Sources */,
+				4C43F4DD236746D600B43845 /* apoint.cpp in Sources */,
+				4C43F37423673EDC00B43845 /* AppDelegate.swift in Sources */,
+				4C43F4DF236746D600B43845 /* ablockout.cpp in Sources */,
+				4C43F4C5236746D600B43845 /* astepscontroller.cpp in Sources */,
+				4C43F4D4236746D600B43845 /* aformation.cpp in Sources */,
+				4C43F4C6236746D600B43845 /* avector.cpp in Sources */,
+				4C43F4D9236746D600B43845 /* apoint2d.cpp in Sources */,
+				4C43F4CF236746D600B43845 /* anewwellstep.cpp in Sources */,
+				4C43F4CB236746D600B43845 /* arotateformationstep.cpp in Sources */,
+				4C43F4C7236746D600B43845 /* aimage.cpp in Sources */,
+				4C43F4C2236746D600B43845 /* arenderobject.cpp in Sources */,
+				4C43F4D1236746D600B43845 /* blockoutdebug.cpp in Sources */,
+				4C43F4E0236746D600B43845 /* abundle.cpp in Sources */,
+				4C43F4C4236746D600B43845 /* atexturedblock.cpp in Sources */,
+				4C43F4CD236746D600B43845 /* amatrix.cpp in Sources */,
+				4C43F4CC236746D600B43845 /* alowerstep.cpp in Sources */,
+				4C43F4E1236746D600B43845 /* arandomstep.cpp in Sources */,
+				4C43F4C1236746D600B43845 /* atexture.cpp in Sources */,
+				4C43F4D0236746D600B43845 /* aopenglstate.cpp in Sources */,
+				4C43F3862367456E00B43845 /* CPPBridge.mm in Sources */,
+				4C43F4C3236746D600B43845 /* aoglwrapper.cpp in Sources */,
+				4C43F4BF236746D600B43845 /* amoveformationstep.cpp in Sources */,
+				4C43F4DB236746D600B43845 /* acoloredblock.cpp in Sources */,
+				4C43F4C8236746D600B43845 /* adatastorage.cpp in Sources */,
+				4C43F4DA236746D600B43845 /* atexturemanager.cpp in Sources */,
+				4C43F4DE236746D600B43845 /* adrawbasics.cpp in Sources */,
+				4C43F4C9236746D600B43845 /* acolor.cpp in Sources */,
+				4C43F4DC236746D600B43845 /* acrafter.cpp in Sources */,
+				4C43F4CE236746D600B43845 /* aformationoperations.cpp in Sources */,
+				4C43F3822367401600B43845 /* AOpenGLView.swift in Sources */,
+				4C43F4E8236746F400B43845 /* amacbundle.mm in Sources */,
+				4C43F4C0236746D600B43845 /* adropstep.cpp in Sources */,
+				4C43F4D7236746D600B43845 /* alogic.cpp in Sources */,
+				4C43F4D8236746D600B43845 /* akeyboardcontroller.cpp in Sources */,
+				4C43F4D2236746D600B43845 /* awell.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C43F3872367462400B43845 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C43F3882367462400B43845 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C43F37C23673EDC00B43845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4C43F37D23673EDC00B43845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4C43F37F23673EDC00B43845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = tgame/tgame.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 67BUZRGVX2;
+				INFOPLIST_FILE = tgame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = customertimes.tgame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tgame/tgame-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4C43F38023673EDC00B43845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = tgame/tgame.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 67BUZRGVX2;
+				INFOPLIST_FILE = tgame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = customertimes.tgame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tgame/tgame-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C43F36B23673EDC00B43845 /* Build configuration list for PBXProject "tgame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C43F37C23673EDC00B43845 /* Debug */,
+				4C43F37D23673EDC00B43845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C43F37E23673EDC00B43845 /* Build configuration list for PBXNativeTarget "tgame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C43F37F23673EDC00B43845 /* Debug */,
+				4C43F38023673EDC00B43845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C43F36823673EDC00B43845 /* Project object */;
+}
